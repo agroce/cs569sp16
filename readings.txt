@@ -1,0 +1,20 @@
+============= TSTL Papers ==========
+
+There are a few early papers on a version of TSTL with a less readable
+(but still supported) syntax:
+
+ISSTA tool paper on TSTL:
+
+http://www.cs.cmu.edu/~agroce/issta15.pdf
+
+NASA Formal Methods longer paper on TSTL:
+
+http://www.cs.cmu.edu/~agroce/nfm15.pdf
+
+Submitted journal paper on "modern" TSTL:
+
+tstl.pdf (in this repository!)
+
+The place to start is probably the last paper.  The others are
+potentially useful reading as well, as are the .tstl files in the
+tstl/examples directories on the TSTL github repo.
