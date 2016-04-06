@@ -1,7 +1,11 @@
 @import avl
+<@
+def sortedVals(s):
+    return sorted(list(s))
+@>
 
 pool: <avl> 2 REF
-pool: <val> 4
+pool: <val> 4 CONST
 
 <val> := <[1..20]>
 
@@ -14,10 +18,11 @@ pool: <val> 4
 
 property: <avl>.check_balanced()
 
+
 reference: avl.AVLTree ==> set
 reference: insert ==> add
 reference: delete ==> discard
 reference: find ==> __contains__
-reference: METHOD(inorder) ==> CALL(len)
+reference: METHOD(inorder) ==> CALL(sortedVals)
 
 compare: find

@@ -17,7 +17,7 @@ visited = []
 
 d = 1
 while d <= DEPTH:
-    print "DEPTH",d,"QUEUE SIZE",len(queue)
+    print "DEPTH",d,"QUEUE SIZE",len(queue),"VISITED SET",len(visited)
     d += 1
     frontier = []
     for s in queue:

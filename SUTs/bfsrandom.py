@@ -7,7 +7,7 @@ rgen = random.Random()
 
 #NUM_TESTS = 100
 
-GOAL_DEPTH = 11
+GOAL_DEPTH = 7
 BUDGET = 60.0
 
 LAYER_BUDGET = BUDGET/GOAL_DEPTH
@@ -28,7 +28,9 @@ while d <= GOAL_DEPTH:
     d += 1
     frontier = []
     startLayer = time.time()
+    scount = 0
     for s in queue:
+        scount += 1
         sut.backtrack(s)
         allEnabled = sut.enabled()
         rgen.shuffle(allEnabled)
@@ -36,17 +38,29 @@ while d <= GOAL_DEPTH:
             elapsed = time.time() - startLayer
             if elapsed >= LAYER_BUDGET:
                 break
-            sut.safely(a)
+            ok = sut.safely(a)
+            if not ok:
+                print "FOUND A FAILURE"
+                sut.prettyPrintTest(sut.test())
+                print sut.failure()
+                print "REDUCING"
+                R = sut.reduce(sut.test(),sut.fails, True, True)
+                sut.prettyPrintTest(R)
+                print sut.failure()
+                sys.exit(1)
             s2 = sut.state()
             if s2 not in visited:
                 visited.append(s2)
                 frontier.append(s2)
         if elapsed >= LAYER_BUDGET:
+            print "DID NOT GET TO EXPAND",len(queue)-scount,"STATES"
             break
     elapsed = time.time() - startLayer
-    slack += LAYER_BUDGET-slack
+    slack = float(LAYER_BUDGET-elapsed)
+    if GOAL_DEPTH < d:
+        LAYER_BUDGET = LAYER_BUDGET+slack/(GOAL_DEPTH-d)
     queue = frontier
-    sut.internalReport()
+sut.internalReport()
 
 print slack
 
