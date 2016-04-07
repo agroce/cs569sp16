@@ -22,15 +22,16 @@ sut.silenceCoverage()
 sut.restart()
 
 queue = [sut.state()]
-visited = []
 
 startAll = time.time()
+
+bugs = 0
 
 actCount = 0
 elapsed = 0
 d = 1
 while d <= GOAL_DEPTH:
-    print "DEPTH",d,"QUEUE SIZE",len(queue),"VISITED SET",len(visited)
+    print "DEPTH",d,"QUEUE SIZE",len(queue)
     d += 1
     frontier = []
     startLayer = time.time()
@@ -47,6 +48,7 @@ while d <= GOAL_DEPTH:
             ok = sut.safely(a)
             actCount += 1
             if not ok:
+                bugs += 1
                 print "FOUND A FAILURE"
                 #sut.prettyPrintTest(sut.test())
                 print sut.failure()
@@ -56,9 +58,7 @@ while d <= GOAL_DEPTH:
                 print sut.failure()
                 #sys.exit(1)
             s2 = sut.state()
-            if s2 not in visited:
-                visited.append(s2)
-                frontier.append(s2)
+            frontier.append(s2)
             sut.backtrack(s)
         if elapsed >= LAYER_BUDGET:
             print "DID NOT GET TO EXPAND",len(queue)-scount,"STATES"
@@ -73,5 +73,6 @@ while d <= GOAL_DEPTH:
 sut.internalReport()
 
 print "SLACK",slack
+print bugs,"FAILED"
 print "TOTAL ACTIONS",actCount
 print "TOTAL RUNTIME",time.time()-startAll
