@@ -18,3 +18,31 @@ tstl.pdf (in this repository!)
 The place to start is probably the last paper.  The others are
 potentially useful reading as well, as are the .tstl files in the
 tstl/examples directories on the TSTL github repo.
+
+============= Test Generation Papers ==============
+
+Some algorithms it might be very interesting to implement in TSTL:
+
+Older approach using feedback and pools of objects (may be hard to implement
+exactly this in TSTL, but it would be very interesting):
+
+https://homes.cs.washington.edu/~mernst/pubs/feedback-testgen-icse2007.pdf
+
+EvoSuite is a tool and algorithms for generating unit tests for Java.
+Based on genetic/evolutionary algorithm approaches, quite complex by
+now, many papers.  Very popular tool.  Would be very interesting to
+see these methods in TSTL, compare to random etc.
+
+http://www.evosuite.org/
+
+============= Analysis Papers =================
+
+Well-known paper on how to do statistical experiments when using
+randomized methods in SE, by two top-notch testing researchers:
+
+https://www.simula.no/file/simulasimula670pdf/download
+
+Paper from my group, gives an example of the "equal time" strategy for
+comparing methods, lots of discovery curves for branches, etc.:
+
+http://www.cs.cmu.edu/~agroce/issta14.pdf

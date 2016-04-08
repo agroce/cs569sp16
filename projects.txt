@@ -53,6 +53,20 @@ should be produced, using TSTL's internalReport() function.  Your
 tester is allowed to assume that coverage is being collected to guide
 tests.  
 
+<running>: either 0 or 1 depending on whether running info on branch
+coverage should be produced.  The format for output should be the same
+as in the --running option of the TSTL randomtester.py implementation:
+
+[elapsed time since start of testing] [total branch count] New branch [actual branch]
+
+see the code in randomtester.py:
+
+                if sut.newBranches() != set([]):
+                    print "ACTION:",a[0],tryStutter
+                    for b in sut.newBranches():
+                        print elapsed,len(sut.allBranches()),"New branch",b
+                    sawNew = True
+
 Any other parameters that your tools need should be discovered by
 querying the SUT, or by setting sensible defaults.  IF you have
 multiple settings you want to experiment with, you can name files
@@ -61,11 +75,12 @@ these.
 
 So, for example, your tester might be called as follows:
 
-python tester1.py 30 1 100 1 0 1
+python tester1.py 30 1 100 1 0 1 1
 
 This will test sut.py for 30 seconds, with tests of maximum length
 100, a very narrow width (1), and not report or check for failures.
-It will collect and output an internal coverage report.
+It will collect and output an internal coverage report, and also
+report each new branch as it is discovered.
 
 At each milestone, we will run all submitted testing algorithms
 multiple times, with multiple seeds and parameters (but I am keeping
