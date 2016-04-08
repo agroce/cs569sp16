@@ -5,7 +5,7 @@ import sys
 bases = ["seq.2","seq.3","seq.4","rt.10","rt.100","grt.10","grt.100","bfsnovisit"]
 bases = ["seq.2","seq.3","seq.4","grt.10","grt.100","bfsnovisit"]
 suffix = "hardout"
-n = 22
+n = 23
 
 failures = {}
 for b in bases:
@@ -35,9 +35,9 @@ for i in xrange(0,n+1):
 for b in bases:
     print "======================================================================================"
     print b
-    print "FAILURES:",failures[b], "MEAN:", scipy.mean(failures[b]), "SDEV:", scipy.std(failures[b])
-    print "BRANCHES:",branches[b], "MEAN:", scipy.mean(branches[b]), "SDEV:", scipy.std(branches[b])
-    print "STATEMENTS:",statements[b], "MEAN:", scipy.mean(statements[b]), "SDEV:", scipy.std(statements[b])        
+    print "FAILURES:",failures[b], "\nMEAN:", scipy.mean(failures[b]), "SDEV:", scipy.std(failures[b])
+    print "BRANCHES:",branches[b], "\nMEAN:", scipy.mean(branches[b]), "SDEV:", scipy.std(branches[b])
+    print "STATEMENTS:",statements[b], "\nMEAN:", scipy.mean(statements[b]), "SDEV:", scipy.std(statements[b])        
 
 ptarget = 0.50
 
