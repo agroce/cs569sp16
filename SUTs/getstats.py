@@ -2,6 +2,8 @@ import scipy
 import scipy.stats
 import sys
 
+dir = "data/hardout/"
+
 bases = ["seq.2","seq.3","seq.4","rt.10","rt.100","grt.10","grt.100","bfsnovisit"]
 bases = ["seq.2","seq.3","seq.4","grt.10","grt.100","bfsnovisit"]
 bases = ["seq.2","seq.3","seq.4","grt.100"]
@@ -24,9 +26,9 @@ ops = {}
 for b in bases:
     ops[b] = []        
 
-for i in xrange(0,n+1):
+for i in xrange(1,n+1):
     for b in bases:
-        filename = b + "." + suffix + "." + str(i)
+        filename = dir + b + "." + suffix + "." + str(i)
         for l in open (filename):
             ls = l.split()
             if len(ls) > 1:
@@ -52,7 +54,7 @@ for b in bases:
     print "STATEMENTS:",statements[b], "\nMEAN:", scipy.mean(statements[b]), "SDEV:", scipy.std(statements[b])
     print "ACTIONS:",ops[b],"\nMEAN:", scipy.mean(ops[b]), "SDEV:", scipy.std(ops[b])            
 
-ptarget = 0.70
+ptarget = 1.0
 
 print
 print
@@ -63,15 +65,15 @@ for b1 in bases:
         if (b1 < b2):
             print "======================================================================================"
             print b1,"VS.",b2
-            wfailures = scipy.stats.wilcoxon(failures[b1],failures[b2]).pvalue
+            wfailures = scipy.stats.wilcoxon(failures[b1],failures[b2])[1]
             if wfailures < ptarget:
                 print "FAILURES WILCOX:",wfailures
-            wbranches = scipy.stats.wilcoxon(branches[b1],branches[b2]).pvalue
+            wbranches = scipy.stats.wilcoxon(branches[b1],branches[b2])[1]
             if wbranches < ptarget:
                 print "BRANCHES WILCOX:",wbranches
-            wstatements = scipy.stats.wilcoxon(statements[b1],statements[b2]).pvalue
+            wstatements = scipy.stats.wilcoxon(statements[b1],statements[b2])[1]
             if wstatements < ptarget:
                 print "STATEMENTS WILCOX:",wstatements
-            wops = scipy.stats.wilcoxon(ops[b1],ops[b2]).pvalue
+            wops = scipy.stats.wilcoxon(ops[b1],ops[b2])[1]
             if wops < ptarget:
                 print "OPERATIONS WILCOX:",wops                
