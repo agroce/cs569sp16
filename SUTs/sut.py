@@ -3919,6 +3919,9 @@ class sut(object):
                 pfind = newName.find(p+"[")
         return newName
     
+    def actOrder(self, action):
+        return self.__orderings[action[0]]
+    
     def prettyPrintTest(self, test, columns=80):
         i = 0
         for (s,_,_) in test:
@@ -3965,6 +3968,52 @@ class sut(object):
                 a = None
             acts = acts[:p] + acts[p+1:]
         return a
+    
+    def randomEnableds(self,rgen,n):
+        """
+        Return list of random enabled actions, up to n actions if possible
+        """
+    
+        retActs = []
+        acts = self.__actions
+        while len(retActs) < n:
+            if len(acts) == 1:
+                p = 0
+            elif len(acts) == 0:
+                break
+            else:
+                p = rgen.randint(0,len(acts)-1)
+            a = acts[p]
+            if a[1]():
+                retActs.append(a)
+            acts = acts[:p] + acts[p+1:]
+        return retActs
+    
+    def randomEnabledPred(self,rgen,n,pred):
+        """
+        Return first enabled action satisfying pred, with up to n attempts.
+        If none found, returns last enabled action checked.
+        """
+    
+        tries = 0
+        acts = self.__actions
+        a = None
+        lastSafe = None
+        while tries < n:
+            if len(acts) == 1:
+                p = 0
+            elif len(acts) == 0:
+                break
+            else:
+                p = rgen.randint(0,len(acts)-1)
+            a = acts[p]
+            if a[1]():
+                lastSafe = a
+                if pred(a):
+                    return a
+                tries += 1
+            acts = acts[:p] + acts[p+1:]
+        return lastSafe
     
     def features(self):
         return self.__features

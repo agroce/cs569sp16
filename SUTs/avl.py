@@ -88,10 +88,12 @@ class AVLTree:
         if (key == 1) and (self.evilstate == 0):
             self.evilstate = 1
         elif (key == 2) and (self.evilstate == 1):
-            key = key/0
             self.evilstate = 2
         elif (key == 3) and (self.evilstate == 2):
-            key = key / 0
+            self.evilstate = 3
+        elif (key == 4) and (self.evilstate == 3):
+            key = key/0
+            self.evilstate = 3            
         else:
             self.evilstate = 0
 
