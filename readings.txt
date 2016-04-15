@@ -46,3 +46,7 @@ Paper from my group, gives an example of the "equal time" strategy for
 comparing methods, lots of discovery curves for branches, etc.:
 
 http://www.cs.cmu.edu/~agroce/issta14.pdf
+
+Hamlet's paper on "Why random testing?"
+
+http://web.cecs.pdx.edu/~hamlet/rt.pdf
