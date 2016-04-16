@@ -42,6 +42,10 @@ we have tried except for event-based testing of Android apps):
 
 http://www.cs.cmu.edu/~agroce/issta12.pdf
 
+Paper on suppression:
+
+http://www.cs.cmu.edu/~agroce/issre13.pdf
+
 ABP testing:
 
 Machine-learning based attempt to improve testing.  Mixed results on
