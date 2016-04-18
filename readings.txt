@@ -35,6 +35,25 @@ see these methods in TSTL, compare to random etc.
 
 http://www.evosuite.org/
 
+Swarm testing:
+
+Close to random testing, but much more effective in many settings (all
+we have tried except for event-based testing of Android apps):
+
+http://www.cs.cmu.edu/~agroce/issta12.pdf
+
+Paper on suppression:
+
+http://www.cs.cmu.edu/~agroce/issre13.pdf
+
+ABP testing:
+
+Machine-learning based attempt to improve testing.  Mixed results on
+Java container classes.
+
+http://www.cs.cmu.edu/~agroce/issre12.pdf
+
+
 ============= Analysis Papers =================
 
 Well-known paper on how to do statistical experiments when using
