@@ -21,6 +21,15 @@ method to possibly be effective?
 
 Should be about 500 words.  Can be more, probably should not be less.
 
+Where can you get ideas?  Look in the readings.txt file.
+
+Also, look at recent ISSTA and ICST papers.  Also, many ICSE, FSE,
+ASE, ISSRE, and even SPLASH/OOPSLA or PLDI papers concern testing.
+
+American Fuzzy Lop is a powerful and popular fuzzer that might give
+ideas, if you look it up.  However, it aims at mutating (modifying)
+files to test programs, not sequence-based testing.
+
 Part 2:  COMPETITIVE MILESTONE 1
 Due:     May 3
 File(s): tester1.py doc1.pdf
