@@ -1,1 +1,1 @@
-CS569
+CS569 - Software Engineering 
