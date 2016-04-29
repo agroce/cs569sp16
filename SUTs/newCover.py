@@ -1,0 +1,119 @@
+import sut
+import random
+import sys
+import time
+
+def collectCoverage():
+    global coverageCount
+    for s in sut.currStatements():
+        if s not in coverageCount:
+            coverageCount[s] = 0
+        coverageCount[s] += 1    
+
+def expandPool():
+    if len(sut.newStatements()) != 0:
+        fullPool.append((list(sut.test()), set(sut.currStatements())))
+
+def randomAction():
+    global actCount, bugs
+    act = sut.randomEnabled(rgen)
+    actCount += 1
+    ok = sut.safely(act)
+    expandPool()
+    if not ok:
+        bugs += 1
+        print "FOUND A FAILURE"
+        print sut.failure()
+        print "REDUCING"
+        collectCoverage()
+        R = sut.reduce(sut.test(),sut.fails, True, True)
+        sut.prettyPrintTest(R)
+        print sut.failure()
+    return ok     
+
+def findBelowMean():
+    global belowMean
+
+    belowMean = set([])
+    sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
+
+    coverSum = sum(coverageCount.values())
+    coverMean = coverSum / (1.0*len(coverageCount))
+    for s in sortedCov:
+        if coverageCount[s] < coverMean:
+            belowMean.add(s)
+        else:
+            break
+    print len(belowMean),"STATEMENTS BELOW MEAN COVERAGE OUT OF",len(coverageCount)
+
+def buildActivePool():
+    global activePool
+    findBelowMean()
+    activePool = []
+    for (t,c) in fullPool:
+        for s in c:
+            if s in belowMean:
+                activePool.append((t,c))
+                break
+    print len(activePool),"TESTS IN THE ACTIVE POOL,",len(fullPool),"IN FULL POOL"        
+
+def exploitPool():
+    sut.replay(rgen.choice(activePool)[0])
+
+rgen = random.Random()
+depth = 100
+
+explore = 0.7
+
+actCount = 0
+BUDGET1 = int(sys.argv[1])
+BUDGET2 = int(sys.argv[2])
+
+sut = sut.sut()
+
+bugs = 0
+
+coverageCount = {}
+activePool = []
+fullPool = []
+
+belowMean = set([])
+
+print "STARTING PHASE 1"
+
+start = time.time()
+ntests = 0
+while time.time()-start < BUDGET1:
+    sut.restart()
+    ntests += 1
+    for s in xrange(0,depth):
+        if not randomAction():
+            break
+    collectCoverage()    
+
+print "STARTING PHASE 2"
+
+start = time.time()
+while time.time()-start < BUDGET2:
+    buildActivePool()
+    sut.restart()
+    if rgen.random() > explore:
+        exploitPool()
+    ntests += 1
+    for s in xrange(0,depth):
+        if not randomAction():
+            break
+    collectCoverage()    
+
+#sut.internalReport()
+
+print ntests,"TESTS"
+
+
+for (t,s) in fullPool:
+    print len(t),len(s)
+
+
+print bugs,"FAILED"
+print "TOTAL ACTIONS",actCount
+print "TOTAL RUNTIME",time.time()-start
