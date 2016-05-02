@@ -12,23 +12,27 @@ def collectCoverage():
 
 def expandPool():
     if len(sut.newStatements()) != 0:
+        print "NEW STATEMENTS DISCOVERED",sut.newStatements()
         fullPool.append((list(sut.test()), set(sut.currStatements())))
 
 def randomAction():
-    global actCount, bugs
+    global actCount, bugs, failPool
     act = sut.randomEnabled(rgen)
     actCount += 1
     ok = sut.safely(act)
-    expandPool()
     if not ok:
         bugs += 1
         print "FOUND A FAILURE"
         print sut.failure()
         print "REDUCING"
+        failPool.append(sut.test())
         collectCoverage()
         R = sut.reduce(sut.test(),sut.fails, True, True)
         sut.prettyPrintTest(R)
         print sut.failure()
+        sut.restart()
+    else:
+        expandPool()
     return ok     
 
 def findBelowMean():
@@ -45,6 +49,24 @@ def findBelowMean():
         else:
             break
     print len(belowMean),"STATEMENTS BELOW MEAN COVERAGE OUT OF",len(coverageCount)
+    newBelowMean = set([])
+    coverSum = sum(map(lambda x:coverageCount[x],belowMean))
+    coverMean = coverSum / (1.0*len(belowMean))
+    for s in belowMean:
+        if coverageCount[s] < coverMean:
+            newBelowMean.add(s)
+    print len(newBelowMean),"STATEMENTS BELOW MEAN BELOW MEAN COVERAGE OUT OF",len(belowMean)
+    belowMean = newBelowMean
+        
+
+def printCoverage():
+    sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
+
+    coverSum = sum(coverageCount.values())
+    coverMean = coverSum / (1.0*len(coverageCount))
+    print "MEAN COVERAGE IS",coverMean
+    for s in sortedCov:
+        print s, coverageCount[s]
 
 def buildActivePool():
     global activePool
@@ -76,6 +98,7 @@ bugs = 0
 coverageCount = {}
 activePool = []
 fullPool = []
+failPool = []
 
 belowMean = set([])
 
@@ -91,6 +114,7 @@ while time.time()-start < BUDGET1:
             break
     collectCoverage()    
 
+printCoverage()
 print "STARTING PHASE 2"
 
 start = time.time()
@@ -106,6 +130,7 @@ while time.time()-start < BUDGET2:
     collectCoverage()    
 
 #sut.internalReport()
+printCoverage()
 
 print ntests,"TESTS"
 
