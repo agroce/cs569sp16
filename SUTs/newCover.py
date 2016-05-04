@@ -11,9 +11,22 @@ def collectCoverage():
         coverageCount[s] += 1    
 
 def expandPool():
+    global belowMean,lastAddCoverage 
     if len(sut.newStatements()) != 0:
         print "NEW STATEMENTS DISCOVERED",sut.newStatements()
-        fullPool.append((list(sut.test()), set(sut.currStatements())))
+        oldTest = list(sut.test())
+        storeTest = sut.reduce(oldTest,sut.coversStatements(sut.newStatements()))
+        print "OLD LENGTH = ",len(oldTest),"NEW LENGTH = ",len(storeTest)
+        sut.replay(oldTest)
+        fullPool.append((storeTest, set(sut.currStatements())))
+        lastAddCoverage = set(sut.currStatements())
+        return
+    for s in belowMean:
+        if s in sut.currStatements() and s not in lastAddCoverage:
+            print "NEW PATH TO LOW COVERAGE STATEMENT",s
+            fullPool.append((list(sut.test()), set(sut.currStatements())))
+            lastAddCoverage = set(sut.currStatements())
+            return
 
 def randomAction():
     global actCount, bugs, failPool
@@ -120,9 +133,11 @@ print "STARTING PHASE 2"
 start = time.time()
 while time.time()-start < BUDGET2:
     buildActivePool()
+    lastAddCoverage = set([])
     sut.restart()
     if rgen.random() > explore:
         exploitPool()
+        lastAddCoverage = set(sut.currStatements()) 
     ntests += 1
     for s in xrange(0,depth):
         if not randomAction():
