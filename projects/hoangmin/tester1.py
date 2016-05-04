@@ -36,8 +36,6 @@ new_statement_by_state = []
 selected_state = []
 k_selected = []
 
-LEVEL_BUDGET = TIME_BUDGET / DEPTH
-
 state_queue = []
 state_visited = []
 
@@ -84,7 +82,7 @@ time_start = time.time()
 curDepth = 1
 state_queue = [sut.state()]
 
-# Phase 1 : run random test in TIME_BUDGET/8 seconds with depth = DEPTH to find out k statements that we rarely cover
+# Phase 1 : run random test in TIME_BUDGET/4 seconds with depth = DEPTH to find out k statements that we rarely cover
 
 TIME_PHASE1 = TIME_BUDGET / 4
 print "PHASE 1..."
@@ -173,8 +171,6 @@ while(time.time()<time_start + TIME_PHASE2):
                     break
                 if (len(sut.newStatements()) > 0):  # we found some new statements. Of course such statement coverages are least, so save it for later use
                     print "Found new statement!"
-                    all_state.append(sut.state())
-                    new_statement_by_state.append(sut.newStatements())
                     # test thu cai nay
                     #selected_state.append(sut.state())
                     selected_state.insert(i,sut.state()) #insert new found statement to the next position inoder to browse it in next loop
