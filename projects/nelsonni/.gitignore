@@ -1,1 +1,3 @@
+# Python build and cache files
 __pycache__/
+*.pyc
