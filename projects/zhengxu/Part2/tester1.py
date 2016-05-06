@@ -97,6 +97,8 @@ def main():
 	if config.coverage:
 		print len(sut.allBranches()),"BRANCHES COVERED"
 		print len(sut.allStatements()),"STATEMENTS COVERED"
+
+	sut.internalReport()
 	
 	print "TOTAL ACTIONS",actCount
 	print "TOTAL RUNTIME",time.time()-start
