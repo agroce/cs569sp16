@@ -74,6 +74,8 @@ def main():
             sut.backtrack(s)
             for w in xrange(0, config.width):
                 for d in xrange(0, config.depth):
+                    if (time.time() > start + config.timeout):
+                        break
                     ok = check_action()
 		    news = sut.newStatements()
                     if not ok:
@@ -86,7 +88,7 @@ def main():
         sut.internalReport()
 
     print "Bugs ",num
-
+    print "Running time: ", time.time() - start
 
 if __name__ == '__main__':
     main()
