@@ -95,10 +95,7 @@ def main():
 		print "TOTAL FAULTS", failCount
 
 	if config.coverage:
-		print len(sut.allBranches()),"BRANCHES COVERED"
-		print len(sut.allStatements()),"STATEMENTS COVERED"
-
-	sut.internalReport()
+		sut.internalReport()
 	
 	print "TOTAL ACTIONS",actCount
 	print "TOTAL RUNTIME",time.time()-start
