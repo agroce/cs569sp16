@@ -84,8 +84,8 @@ errorSeqs = []
 nonErrorSeqs = []
 start = time.time()
 while time.time() - start < timeout:
-	if random.randint(0, 9) == 0:
-		acts = sut.randomEnableds(rgen, seed)
+	if len(sut.enabled()) < 10:
+		acts = sut.randomEnableds(rgen, len(sut.enabled()))
 	else:
 		acts = sut.randomEnableds(rgen, 1)
 
