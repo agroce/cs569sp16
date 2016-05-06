@@ -89,7 +89,8 @@ while time.time() - start < BUDGET:
     leastCovered = sortedCov[0]
     print "LEAST COVERED STATEMENT IS",leastCovered,coverageCount[leastCovered]
 
-sut.internalReport()
+if (COVERAGE_REPORT == 1):
+    sut.internalReport()
 
 sortedCov = sorted(coverageCount.keys(), key = lambda x: coverageCount[x])
 for s in sortedCov:
