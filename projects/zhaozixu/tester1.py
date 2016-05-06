@@ -33,6 +33,7 @@ def parse_args():
     
     return args
     
+#randomly generate a new sequence
 def random_seq(seqs, rgen, n):
     seq = ()
     while len(seq) < n:
@@ -77,7 +78,8 @@ while time.time() - start < args['timeout']:
             print "APPEND BAD SEQUENCE"
             print sut.failure()
             continue
-            
+    #filter part, not success yet
+    
     #ok, then we can output good sequence
     nice_pool.append(seqs)
     com_pool.append(seqs)
@@ -85,6 +87,12 @@ while time.time() - start < args['timeout']:
             
 
 duration = (time.time() - start)
+
+print"####################TEST REPORT####################"
 print "TEST DURATION", duration
-print bugs, "FAILED"
+if args['faults'] == True:
+    print bugs, "FAILED"
+if args['cover']:
+    sut.internalReport()
+print"###################################################"
 #print com_pool
