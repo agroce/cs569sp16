@@ -40,6 +40,7 @@ RUNNING = int(sys.argv[7])
 
 average_time_dep = TIMEOUT/DEPTH
 elapsed=0
+dep=0
 regn = random.Random()
 queue_q = [sut.state()]  
 ran_queue = []
@@ -49,7 +50,7 @@ start_time_1 = time.time()
 
 while time.time() - start_time_1 < TIMEOUT:
 	# for dep in xrange(1,DEPTH):
-		# dep = dep +1 
+		dep = dep +1 
 		queue_list =[]
 		inside_time = time.time()
 		for x in queue_q:
@@ -72,7 +73,9 @@ while time.time() - start_time_1 < TIMEOUT:
 				coverage_counter[s] = coverage_counter[s] + 1	
 		queue_q = queue_list
 
-# print "depth:", dep
+if COVERAGE:
+	sut.internalReport()
+print "depth:", dep
 print "*** coverage_counter is : ***",1.0*len(coverage_counter)
 print "*** failed ***",bugs
 print "***total running time ***",time.time()-start_time_1
