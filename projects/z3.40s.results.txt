@@ -1,0 +1,221 @@
+SWARM SWARM.z3.40s.1.out RUNNING: 2110 BRANCHES: 2110 STATEMENTS: 1851 
+SWARM SWARM.z3.40s.2.out RUNNING: 2104 BRANCHES: 2104 STATEMENTS: 1847 
+RANDOM RANDOM.z3.40s.1.out RUNNING: 1883 BRANCHES: 1883 STATEMENTS: 1696 
+RANDOM RANDOM.z3.40s.2.out RUNNING: 1775 BRANCHES: 1775 STATEMENTS: 1619 
+alizades alizades.z3.40s.1.out RUNNING: 1272 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS 
+alizades alizades.z3.40s.2.out RUNNING: 1269 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS 
+changti changti.z3.40s.1.out RUNNING: 1729 BRANCHES: 1729 STATEMENTS: 1585 
+changti changti.z3.40s.2.out RUNNING: 1727 BRANCHES: 1727 STATEMENTS: 1583 
+guohe guohe.z3.40s.1.out RUNNING: 0 BRANCHES: 1890 STATEMENTS: 1700 
+guohe guohe.z3.40s.2.out RUNNING: 0 BRANCHES: 1776 STATEMENTS: 1619 
+hanxia hanxia.z3.40s.1.out RUNNING: 2083 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+hanxia hanxia.z3.40s.2.out RUNNING: 2126 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+hoangmin hoangmin.z3.40s.1.out RUNNING: 1749 BRANCHES: 1749 STATEMENTS: 1600 
+hoangmin hoangmin.z3.40s.2.out RUNNING: 1761 BRANCHES: 1761 STATEMENTS: 1608 
+limsuwap limsuwap.z3.40s.1.out RUNNING: 1687 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+limsuwap limsuwap.z3.40s.2.out RUNNING: 1589 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+liuh2 liuh2.z3.40s.1.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+liuh2 liuh2.z3.40s.2.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+nelsonni nelsonni.z3.40s.1.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS 
+nelsonni nelsonni.z3.40s.2.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS 
+pengxin pengxin.z3.40s.1.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+pengxin pengxin.z3.40s.2.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+tangz tangz.z3.40s.1.out RUNNING: 1649 BRANCHES: 1666 STATEMENTS: 1535 
+tangz tangz.z3.40s.2.out RUNNING: 1396 BRANCHES: 1630 STATEMENTS: 1508 
+thakuro thakuro.z3.40s.1.out RUNNING: 1761 BRANCHES: 1761 STATEMENTS: 1608 
+thakuro thakuro.z3.40s.2.out RUNNING: 1740 BRANCHES: 1740 STATEMENTS: 1593 
+tsengyu tsengyu.z3.40s.1.out RUNNING: 0 BRANCHES: 1749 STATEMENTS: 1600 
+tsengyu tsengyu.z3.40s.2.out RUNNING: 0 BRANCHES: 1761 STATEMENTS: 1608 
+wangweny wangweny.z3.40s.1.out RUNNING: 1715 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS 
+wangweny wangweny.z3.40s.2.out RUNNING: 1739 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS 
+wutso wutso.z3.40s.1.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+wutso wutso.z3.40s.2.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+zhangh7 zhangh7.z3.40s.1.out RUNNING: 1876 BRANCHES: 1876 STATEMENTS: 1691 
+zhangh7 zhangh7.z3.40s.2.out RUNNING: 1761 BRANCHES: 1761 STATEMENTS: 1608 
+zhaozixu zhaozixu.z3.40s.1.out RUNNING: 0 BRANCHES: 1367 STATEMENTS: 1307 
+zhaozixu zhaozixu.z3.40s.2.out RUNNING: 0 BRANCHES: 1367 STATEMENTS: 1307 
+zhouzh zhouzh.z3.40s.1.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+zhouzh zhouzh.z3.40s.2.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+alghamha alghamha.z3.40s.1.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+alghamha alghamha.z3.40s.2.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+chenk4 chenk4.z3.40s.1.out RUNNING: 0 BRANCHES: 1588 STATEMENTS: 1474 
+chenk4 chenk4.z3.40s.2.out RUNNING: 0 BRANCHES: 1545 STATEMENTS: 1442 
+guoru guoru.z3.40s.1.out RUNNING: 1742 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+guoru guoru.z3.40s.2.out RUNNING: 1697 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+kaneokak kaneokak.z3.40s.1.out RUNNING: 2091 BRANCHES: 2091 STATEMENTS: 1837 
+kaneokak kaneokak.z3.40s.2.out RUNNING: 2110 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+kouc kouc.z3.40s.1.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+kouc kouc.z3.40s.2.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+lasharih lasharih.z3.40s.1.out RUNNING: 1876 BRANCHES: 1876 STATEMENTS: 1691 
+lasharih lasharih.z3.40s.2.out RUNNING: 1761 BRANCHES: 1761 STATEMENTS: 1608 
+lix6 lix6.z3.40s.1.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+lix6 lix6.z3.40s.2.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+panju panju.z3.40s.1.out RUNNING: 0 BRANCHES: 1600 STATEMENTS: 1482 
+panju panju.z3.40s.2.out RUNNING: 0 BRANCHES: 1600 STATEMENTS: 1482 
+rayalas rayalas.z3.40s.1.out RUNNING: 1876 BRANCHES: 1876 STATEMENTS: 1691 
+rayalas rayalas.z3.40s.2.out RUNNING: 1775 BRANCHES: 1775 STATEMENTS: 1619 
+shik shik.z3.40s.1.out RUNNING: 0 BRANCHES: 1775 STATEMENTS: 1619 
+shik shik.z3.40s.2.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+wanghao wanghao.z3.40s.1.out RUNNING: 1749 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+wanghao wanghao.z3.40s.2.out RUNNING: 1740 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+wangq5 wangq5.z3.40s.1.out RUNNING: 0 BRANCHES: 2104 STATEMENTS: 1847 
+wangq5 wangq5.z3.40s.2.out RUNNING: 0 BRANCHES: 1878 STATEMENTS: 1692 
+wangyans wangyans.z3.40s.1.out RUNNING: 2083 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+wangyans wangyans.z3.40s.2.out RUNNING: 2115 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+xuhui xuhui.z3.40s.1.out RUNNING: 1768 BRANCHES: 1768 STATEMENTS: 1614 
+xuhui xuhui.z3.40s.2.out RUNNING: 1761 BRANCHES: 1761 STATEMENTS: 1608 
+yub yub.z3.40s.1.out RUNNING: 0 BRANCHES: 1784 STATEMENTS: 1625 
+yub yub.z3.40s.2.out RUNNING: 0 BRANCHES: 2083 STATEMENTS: 1833 
+zhangcha zhangcha.z3.40s.1.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+zhangcha zhangcha.z3.40s.2.out RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT!
+zhengxu zhengxu.z3.40s.1.out RUNNING: 1759 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS 
+zhengxu zhengxu.z3.40s.2.out RUNNING: 1773 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS 
+zhouxuh zhouxuh.z3.40s.1.out RUNNING: 1759 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS 
+zhouxuh zhouxuh.z3.40s.2.out RUNNING: 1773 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS 
+
+
+SORTED BY BEST BRANCH COVERAGE RUNNING TOTAL
+SWARM.z3.40s.1.out 2110
+SWARM.z3.40s.2.out 2104
+kaneokak.z3.40s.1.out 2091
+RANDOM.z3.40s.1.out 1883
+zhangh7.z3.40s.1.out 1876
+lasharih.z3.40s.1.out 1876
+rayalas.z3.40s.1.out 1876
+RANDOM.z3.40s.2.out 1775
+rayalas.z3.40s.2.out 1775
+zhengxu.z3.40s.2.out 1773
+zhouxuh.z3.40s.2.out 1773
+xuhui.z3.40s.1.out 1768
+hoangmin.z3.40s.2.out 1761
+thakuro.z3.40s.1.out 1761
+zhangh7.z3.40s.2.out 1761
+lasharih.z3.40s.2.out 1761
+xuhui.z3.40s.2.out 1761
+zhengxu.z3.40s.1.out 1759
+zhouxuh.z3.40s.1.out 1759
+hoangmin.z3.40s.1.out 1749
+thakuro.z3.40s.2.out 1740
+wangweny.z3.40s.2.out 1739
+changti.z3.40s.1.out 1729
+changti.z3.40s.2.out 1727
+wangweny.z3.40s.1.out 1715
+tangz.z3.40s.1.out 1649
+tangz.z3.40s.2.out 1396
+alizades.z3.40s.1.out 1272
+alizades.z3.40s.2.out 1269
+guohe.z3.40s.1.out 0
+guohe.z3.40s.2.out 0
+nelsonni.z3.40s.1.out 0
+nelsonni.z3.40s.2.out 0
+tsengyu.z3.40s.1.out 0
+tsengyu.z3.40s.2.out 0
+zhaozixu.z3.40s.1.out 0
+zhaozixu.z3.40s.2.out 0
+chenk4.z3.40s.1.out 0
+chenk4.z3.40s.2.out 0
+panju.z3.40s.1.out 0
+panju.z3.40s.2.out 0
+shik.z3.40s.1.out 0
+wangq5.z3.40s.1.out 0
+wangq5.z3.40s.2.out 0
+yub.z3.40s.1.out 0
+yub.z3.40s.2.out 0
+
+
+SORTED BY BEST TOTAL STATEMENT COVERAGE
+SWARM.z3.40s.1.out 1851
+SWARM.z3.40s.2.out 1847
+wangq5.z3.40s.1.out 1847
+kaneokak.z3.40s.1.out 1837
+yub.z3.40s.2.out 1833
+guohe.z3.40s.1.out 1700
+RANDOM.z3.40s.1.out 1696
+wangq5.z3.40s.2.out 1692
+zhangh7.z3.40s.1.out 1691
+lasharih.z3.40s.1.out 1691
+rayalas.z3.40s.1.out 1691
+yub.z3.40s.1.out 1625
+RANDOM.z3.40s.2.out 1619
+guohe.z3.40s.2.out 1619
+rayalas.z3.40s.2.out 1619
+shik.z3.40s.1.out 1619
+xuhui.z3.40s.1.out 1614
+hoangmin.z3.40s.2.out 1608
+thakuro.z3.40s.1.out 1608
+tsengyu.z3.40s.2.out 1608
+zhangh7.z3.40s.2.out 1608
+lasharih.z3.40s.2.out 1608
+xuhui.z3.40s.2.out 1608
+hoangmin.z3.40s.1.out 1600
+tsengyu.z3.40s.1.out 1600
+thakuro.z3.40s.2.out 1593
+changti.z3.40s.1.out 1585
+changti.z3.40s.2.out 1583
+tangz.z3.40s.1.out 1535
+tangz.z3.40s.2.out 1508
+panju.z3.40s.1.out 1482
+panju.z3.40s.2.out 1482
+chenk4.z3.40s.1.out 1474
+chenk4.z3.40s.2.out 1442
+zhaozixu.z3.40s.1.out 1307
+zhaozixu.z3.40s.2.out 1307
+alizades.z3.40s.1.out 0
+alizades.z3.40s.2.out 0
+nelsonni.z3.40s.1.out 0
+nelsonni.z3.40s.2.out 0
+wangweny.z3.40s.1.out 0
+wangweny.z3.40s.2.out 0
+zhengxu.z3.40s.1.out 0
+zhengxu.z3.40s.2.out 0
+zhouxuh.z3.40s.1.out 0
+zhouxuh.z3.40s.2.out 0
+
+
+SORTED BY EITHER BRANCH COVERAGE METHOD
+SWARM.z3.40s.1.out 2110
+SWARM.z3.40s.2.out 2104
+wangq5.z3.40s.1.out 2104
+kaneokak.z3.40s.1.out 2091
+yub.z3.40s.2.out 2083
+guohe.z3.40s.1.out 1890
+RANDOM.z3.40s.1.out 1883
+wangq5.z3.40s.2.out 1878
+zhangh7.z3.40s.1.out 1876
+lasharih.z3.40s.1.out 1876
+rayalas.z3.40s.1.out 1876
+yub.z3.40s.1.out 1784
+guohe.z3.40s.2.out 1776
+RANDOM.z3.40s.2.out 1775
+rayalas.z3.40s.2.out 1775
+shik.z3.40s.1.out 1775
+zhengxu.z3.40s.2.out 1773
+zhouxuh.z3.40s.2.out 1773
+xuhui.z3.40s.1.out 1768
+hoangmin.z3.40s.2.out 1761
+thakuro.z3.40s.1.out 1761
+tsengyu.z3.40s.2.out 1761
+zhangh7.z3.40s.2.out 1761
+lasharih.z3.40s.2.out 1761
+xuhui.z3.40s.2.out 1761
+zhengxu.z3.40s.1.out 1759
+zhouxuh.z3.40s.1.out 1759
+hoangmin.z3.40s.1.out 1749
+tsengyu.z3.40s.1.out 1749
+thakuro.z3.40s.2.out 1740
+wangweny.z3.40s.2.out 1739
+changti.z3.40s.1.out 1729
+changti.z3.40s.2.out 1727
+wangweny.z3.40s.1.out 1715
+tangz.z3.40s.1.out 1666
+tangz.z3.40s.2.out 1630
+panju.z3.40s.1.out 1600
+panju.z3.40s.2.out 1600
+chenk4.z3.40s.1.out 1588
+chenk4.z3.40s.2.out 1545
+zhaozixu.z3.40s.1.out 1367
+zhaozixu.z3.40s.2.out 1367
+alizades.z3.40s.1.out 1272
+alizades.z3.40s.2.out 1269
+nelsonni.z3.40s.1.out 0
+nelsonni.z3.40s.2.out 0
