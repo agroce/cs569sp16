@@ -57,7 +57,7 @@ def randomAction():
 
 
 def buildQueue():
-	global activePool, belowMedian
+	global activeQueue, belowMedian
 
 	belowMedian = set([])
 
@@ -81,11 +81,11 @@ def buildQueue():
 			newBelowMedian.add(s)
 	print len(newBelowMedian),"STATEMENTS BELOW MEDIAN BELOW MEDIAN COVERAGE OUT OF", len(belowMedian)
 	belowMedian = newBelowMedian
-	activePool = []
+	activeQueue = []
 	for (t,c) in newQueue:
 		for s in c:
 			if s in belowMedian:
-				activePool.append((t,c))
+				activeQueue.append((t,c))
 				break
 
 print "STARTING PHASE 1"
@@ -114,7 +114,7 @@ while time.time() - start2 < TIMEOUT * 0.5:
 	cover = set([])
 	sut.restart()
 	# if rgen.random() > 0.7:
-	# 	sut.replay(rgen.choice(activePool)[0])
+	# 	sut.replay(rgen.choice(activeQueue)[0])
 	# 	cover = set(sut.currStatements())
 	for s in xrange(0, DEPTH):
 		if not randomAction():
