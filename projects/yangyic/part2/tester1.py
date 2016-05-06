@@ -3,7 +3,7 @@ import random
 import math
 import sys 
 import time
-#import statistics
+
 def Find_bugs(a):
 	#print "aaaaa"
 	global coverage_counter
