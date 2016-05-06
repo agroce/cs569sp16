@@ -15,39 +15,97 @@ def main(argv):
 	# GLOBAL VARIABLES
 	sut = sut.sut()
 	rgen = random.Random(options.seed)
-	coverageMap    = {}
-	randomPool     = []
-	restrictedPool = []
-	failedPool     = []
+	coverageMap    = {}  # dictionary of statements -> execution counts
+
+	randomPool     = []  # list of random valid tests
+	selectPool     = []  # filtered list of reduced, ancestral merged, thresholded tests
+	failedPool     = []  # list of failed tests
 
 	# BEGIN TEST GENERATION
 	total_start = time.time()
 	
+	# PHASE 1
+	# create a pool of random tests
+	# capture statement coverage from each test
+
+	# PHASE 2
+	# calculate threshold limit (lowest 10% of statement coverage)
+	# create a pool of tests that contain the threshold statements
+	# analyze limited pool for common ancestory and merge
+
+	# PHASE 3
+	# select from both pools, higher probability of limited pool
+	# if no new statements are reached, expand pool
+
 	print "STARTING PHASE 1"
 	phase1()
 	print "TESTS:",len(randomPool)
 	print "BUGS:",len(failedPool)
+	printCoverage()
 
-	print "================================="
-	print "STARTING PHASE 2"
-	phase2()
-	print "TESTS:",len(randomPool)
-	print "BUGS:",len(failedPool)
+	# print "================================="
+	# print "STARTING PHASE 2"
+	# phase2()
+	# print "TESTS:",len(randomPool)
+	# print "BUGS:",len(failedPool)
 
-	print "================================="
-	print "TOTAL ELAPSED:",(time.time() - total_start)
-	print "TOTAL TESTS:",len(randomPool)
-	print "TOTAL BUGS:",len(failedPool)
+	# print "================================="
+	# print "TOTAL ELAPSED:",(time.time() - total_start)
+	# print "TOTAL TESTS:",len(randomPool)
+	# print "TOTAL BUGS:",len(failedPool)
 
 	if (options.coverage):
 		sut.internalReport()
+
+
+
+
+
+def expandPool():
+	if len(sut.newStatements()) != 0:
+		print "NEW STATEMENTS DISCOVERED",map(lambda x:(x[1]),sut.newStatements())
+		state = sut.state()
+		test = sut.reduce(list(sut.test()), sut.coversStatements(sut.newStatements()))
+		sut.backtrack(state)
+		randomPool.append((test, set(sut.currStatements())))
+		return
+
+
+
+def takeAction():
+	act = sut.randomEnabled(rgen)
+	ok = sut.safely(act)
+	if not ok:
+		collectCoverage()
+		captureFailure()
+	else:
+		if (options.running):
+			runtimeCoverage(act)
+		collectCoverage()
+		expandPool()
+
+def captureFailure():
+	print "FAILURE LOCATED:"
+	print sut.failure()
+	failedPool.append(sut.test())
+	
+	print "REDUCING FAILURE:"
+	R = sut.reduce(sut.test(),sut.fails, True, True)
+	sut.prettyPrintTest(R)
+	print sut.failure()
+
+	sut.restart()
+
+
+
+
 
 
 def randomAction():
 	act = sut.randomEnabled(rgen)
 	ok = sut.safely(act)
 	if ok:
-		expandPool()
+		oldExpandPool()
 		if (options.running):
 			runtimeCoverage(act)
 	else:
@@ -76,9 +134,9 @@ def phase1():
 	while time.time()-start < BUDGET:
 		sut.restart()
 		for s in xrange(0,DEPTH):
-			if not randomAction():
-				break
-		collectCoverage()
+			takeAction()
+			# if not randomAction():
+			# 	break
 
 def phase2():
 	global coverageMap
@@ -108,7 +166,7 @@ def printCoverage():
 		if coverageMap[s] < t:
 			print s, coverageMap[s]
 
-def expandPool():
+def oldExpandPool():
 	if len(sut.newStatements()) != 0:
 		test = sut.reduce(sut.test(),sut.coversStatements(sut.newStatements()))
 		state = sut.state()

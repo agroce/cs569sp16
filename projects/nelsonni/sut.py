@@ -3926,7 +3926,7 @@ class sut(object):
         i = 0
         for (s,_,_) in test:
             steps = "# STEP " + str(i)
-            print(self.prettyName(s).ljust(columns - len(steps),' '),steps)
+            print self.prettyName(s).ljust(columns - len(steps),' '),steps
             i += 1
     
     def captureReplay(self, test):
@@ -3946,7 +3946,7 @@ class sut(object):
         """
         Returns all enabled action objects.
         """
-        return filter(lambda s: s[1], self.__actions)
+        return filter(lambda (s, g, a): g(), self.__actions)
     
     def randomEnabled(self,rgen):
         """
@@ -4138,10 +4138,10 @@ class sut(object):
         self.__logAction = f
     
     def logPrint(self, name, code, text, after):
-        print("["),
+        print "[",
         if after:
-            print("POST"),
-        print("LOG " + name + "  :  " + str(code) + "] " + str(text))
+            print "POST",
+        print "LOG " + name + "  :  " + str(code) + "] " + str(text)
     
     def __candidates(self, t, n):
         candidates = []
@@ -4319,7 +4319,7 @@ class sut(object):
     
     def reduceLengthStep(self, test, pred, pruneGuards = False, keepLast = True, verbose = False, checkEnabled = False, distLimit = None):
         if verbose == "VERY":
-            print("STARTING REDUCE LENGTH STEP")
+            print "STARTING REDUCE LENGTH STEP"
         # Replace any action with another action, if that allows test to be further reduced
         enableChange = self.getEnabled(test,checkEnabled)
     
@@ -4338,13 +4338,13 @@ class sut(object):
                         rtestC = self.reduce(testC, pred, pruneGuards, keepLast)
                         if len(rtestC) < len(test):
                             if verbose:
-                                print("NORMALIZER: RULE ReduceAction: STEP",i,name1,"-->",name2,"REDUCING LENGTH FROM",len(test),"TO",len(rtestC))
+                                print "NORMALIZER: RULE ReduceAction: STEP",i,name1,"-->",name2,"REDUCING LENGTH FROM",len(test),"TO",len(rtestC)
                             return (True, rtestC)
         return (False, test)
     
     def replaceAllStep(self, test, pred, pruneGuards = False, keepLast = True, verbose = False, checkEnabled = False, distLimit = None):
         if verbose == "VERY":
-            print("STARTING REPLACE ALL STEP")    
+            print "STARTING REPLACE ALL STEP"    
         # Replace all occurrences of an action with a simpler action
         enableChange = self.getEnabled(test,checkEnabled)    
     
@@ -4363,13 +4363,13 @@ class sut(object):
                     testC = map(lambda x: self.actionModify(x,name1,name2), test)
                     if (self.numReassigns(testC) <= reassignCount) and pred(testC):
                         if verbose:
-                            print("NORMALIZER: RULE SimplifyAll:",name1,"-->",name2)
+                            print "NORMALIZER: RULE SimplifyAll:",name1,"-->",name2
                         return (True, testC)
         return (False, test)
     
     def replacePoolStep(self, test, pred, pruneGuards = False, keepLast = True, verbose = False, checkEnabled = False, distLimit = None):
         if verbose == "VERY":
-            print("STARTING REPLACE POOL STEP")        
+            print "STARTING REPLACE POOL STEP"        
         # Replace pools with lower-numbered pools
     
         pools = []
@@ -4390,7 +4390,7 @@ class sut(object):
                     testC = map(lambda x: self.actionModify(x,p,new), test)
                     if (testC != test) and (self.numReassigns(testC) <= reassignCount) and pred(testC):
                         if verbose:
-                            print("NORMALIZER: RULE ReplacePool:",p,"WITH",new)
+                            print "NORMALIZER: RULE ReplacePool:",p,"WITH",new
                         return (True, testC)    
     
             # Remained of this code is now not needed, probably, due to noReassignRule
@@ -4413,9 +4413,9 @@ class sut(object):
                     if (testC != test) and (self.numReassigns(testC) <= reassignCount) and pred(testC):
                         if verbose:
                             if pos == 0:
-                                print("NORMALIZER: RULE ReplacePool:",p,"WITH",new)
+                                print "NORMALIZER: RULE ReplacePool:",p,"WITH",new
                             else:
-                                print("NORMALIZER: RULE ReplaceMovePool:",p,"WITH",new," -- MOVED TO",pos)
+                                print "NORMALIZER: RULE ReplaceMovePool:",p,"WITH",new," -- MOVED TO",pos
                         return (True, testC)
                     # Not possible, try with only replacing between pos and pos2
                     for pos2 in xrange(len(test),pos,-1):
@@ -4424,14 +4424,14 @@ class sut(object):
                         testC = prefix + suffix + test[pos2:]
                         if (testC != test) and (self.numReassigns(testC) <= reassignCount) and pred(testC):
                             if verbose:
-                                print("NORMALIZER: RULE ReplacePool:",p,"WITH",new,"FROM",pos,"TO",pos2)
+                                print "NORMALIZER: RULE ReplacePool:",p,"WITH",new,"FROM",pos,"TO",pos2
                             return (True, testC)
         return (False, test)
     
     
     def replaceSingleStep(self, test, pred, pruneGuards = False, keepLast = True, verbose = False, checkEnabled = False, distLimit = None):
         if verbose == "VERY":
-            print("STARTING REPLACE SINGLE STEP")        
+            print "STARTING REPLACE SINGLE STEP"        
         # Replace any single action with a lower-numbered action
         enableChange = self.getEnabled(test,checkEnabled)    
     
@@ -4448,13 +4448,13 @@ class sut(object):
                     testC = test[0:i] + [self.__names[name2]] + test[i+1:]
                     if (self.numReassigns(testC) <= reassignCount) and pred(testC):
                         if verbose:
-                            print("NORMALIZER: RULE SimplifySingle: STEP",i,name1,"-->",name2)
+                            print "NORMALIZER: RULE SimplifySingle: STEP",i,name1,"-->",name2
                         return (True, testC)
         return (False, test)
     
     def swapPoolStep(self, test, pred, pruneGuards = False, keepLast = True, verbose = False, checkEnabled = False, distLimit = None):
         if verbose == "VERY":
-            print("STARTING SWAP POOL STEP")        
+            print "STARTING SWAP POOL STEP"        
         # Swap two pool uses in between two positions, if this lowers the minimal action ordering between them
         pools = []
         for s in test:
@@ -4489,7 +4489,7 @@ class sut(object):
                             if leastTestC < leastTest:
                                 if (self.numReassigns(testC) <= reassignCount) and pred(testC):
                                     if verbose:
-                                        print("NORMALIZER: RULE SwapPool:",p1,"AND",p2,"BETWEEN STEP",pos1,"AND",pos2)
+                                        print "NORMALIZER: RULE SwapPool:",p1,"AND",p2,"BETWEEN STEP",pos1,"AND",pos2
                                     return (True, testC)
         return (False, test)
     
@@ -4498,7 +4498,7 @@ class sut(object):
             return (False, test)
         
         if verbose == "VERY":
-            print("STARTING NOREASSIGNS STEP")
+            print "STARTING NOREASSIGNS STEP"
         # Replace reassignments with fresh variables
         pools = []
         lhsPools = []
@@ -4528,14 +4528,14 @@ class sut(object):
                 if int(ni) == int(pnum):
                     continue
                 tnewp = p.replace("[" + str(pnum) + "]","[" + str(ni) + "]")
-                print("REPLACING",tnewp,ni,p,pnum)
+                print "REPLACING",tnewp,ni,p,pnum
                 if tnewp not in pools:
                     newp = tnewp
                     break
             if newp == None:
                 continue
             if verbose:
-                print("NORMALIZER: RULE NoReassigns:",i,test[i][0],p,"TO",newp)
+                print "NORMALIZER: RULE NoReassigns:",i,test[i][0],p,"TO",newp
             suffix = []
             for s in test[i:]:
                 suffix.append(self.actionModify(s,p,newp))
@@ -4545,7 +4545,7 @@ class sut(object):
     
     def swapActionOrderStep(self, test, pred, pruneGuards = False, keepLast = True, verbose = False, checkEnabled = False, distLimit = None):
         if verbose == "VERY":
-            print("STARTING SWAP ACTION ORDER STEP")
+            print "STARTING SWAP ACTION ORDER STEP"        
         # Try to swap any out-of-order actions
         lastMover = len(test)
         if keepLast:
@@ -4564,7 +4564,7 @@ class sut(object):
                         testC = frag1 + frag2 + frag3 + frag4 + frag5
                         if pred(testC):
                             if verbose:
-                                print("NORMALIZER: RULE SwapAction:",i,test[i][0],"WITH STEP",j,test[j][0])
+                                print "NORMALIZER: RULE SwapAction:",i,test[i][0],"WITH STEP",j,test[j][0]
                             return (True, testC)
         return (False, test)
     
@@ -4587,7 +4587,7 @@ class sut(object):
         stest = self.captureReplay(test)
         if stest in self.__simplifyCache:
             if verbose:
-                print("NORMALIZER: FOUND TEST IN CACHED RESULTS")
+                print "NORMALIZER: FOUND TEST IN CACHED RESULTS"
             return self.__simplifyCache[stest]
         history = [stest]
             
@@ -4642,7 +4642,7 @@ class sut(object):
                     stest = self.captureReplay(test)
                     if stest in self.__simplifyCache:
                         if verbose:
-                            print("NORMALIZER: FOUND TEST IN CACHED RESULTS")
+                            print "NORMALIZER: FOUND TEST IN CACHED RESULTS"
                         result = self.__simplifyCache[stest]
                         for t in history:
                             self.__simplifyCache[t] = result
@@ -4671,7 +4671,7 @@ class sut(object):
         return test
     
     def freshSimpleVariants(self, name, previous, replacements):
-    #    print("FINDING FRESH SIMPLES FOR",name)
+    #    print "FINDING FRESH SIMPLES FOR",name
         prevNames = map(lambda x:x[0], previous)
         prevNames.reverse()
         lastAppear = []
@@ -4693,7 +4693,7 @@ class sut(object):
             skeys = filter(lambda x: x < len(previous), skeys)
             skeys = sorted(skeys, reverse = True)
             for i in skeys:
-    #            print("i = ",i)
+    #            print "i = ",i
                 foundAny = False
                 for r in replacements[i]:
                     if p[0:p.find("[")] in self.__consts:
@@ -4708,7 +4708,7 @@ class sut(object):
                     break
         for n in lastAppearMap:
             lastAppear.extend(lastAppearMap[n])
-    #    print("LAST APPEAR = ",lastAppear)
+    #    print "LAST APPEAR = ",lastAppear
         freshSimples = []
         for (p,i) in pools:
             if p == poolAssign:
@@ -4807,10 +4807,10 @@ class sut(object):
             for i in xrange(0,len(test)):
                 for (begin,end) in noOrder:
                     if i == begin:
-                        print("#[")
+                        print "#["
                 pn = self.prettyName(test[i][0])
                 spaces = " " * (90-len(pn)-len(" # STEP"))
-                print(self.prettyName(test[i][0]),spaces,"# STEP",i)
+                print self.prettyName(test[i][0]),spaces,"# STEP",i
                 if canReplace[i] != []:
                     firstRep = None
                     lastRep = None
@@ -4820,37 +4820,37 @@ class sut(object):
                             lastRep = rep
                         elif self.__orderings[rep] != (self.__orderings[lastRep] + 1):
                             if firstRep == lastRep:
-                                print("#  or",self.prettyName(firstRep))
+                                print "#  or",self.prettyName(firstRep)
                             else:
-                                print("#  or",self.prettyName(firstRep))
-                                print("#   -",self.prettyName(lastRep))
+                                print "#  or",self.prettyName(firstRep)
+                                print "#   -",self.prettyName(lastRep)
                             firstRep = rep
                             lastRep = rep
                         else:
                             lastRep = rep
                     if firstRep == lastRep:
-                        print("#  or",self.prettyName(firstRep))
+                        print "#  or",self.prettyName(firstRep)
                     else:
-                        print("#  or",self.prettyName(firstRep))
-                        print("#   -",self.prettyName(lastRep))
+                        print "#  or",self.prettyName(firstRep)
+                        print "#   -",self.prettyName(lastRep)
                 if canMakeSimple[i] != []:
                     for v in canMakeSimple[i]:
-                        print("#  or (")
+                        print "#  or ("
                         for s in v[:-1]:
-                            print("#     ",self.prettyName(s[0]),";")
-                        print("#     ",self.prettyName(v[-1][0]))
-                        print("#     )")
+                            print "#     ",self.prettyName(s[0]),";"
+                        print "#     ",self.prettyName(v[-1][0])
+                        print "#     )"
                 if canSwap[i] != []:
                     if len(canSwap[i]) == 1:
-                        print("#  swaps with step", end=" ")
+                        print "#  swaps with step",
                     else:
-                        print("#  swaps with steps", end=" ")
+                        print "#  swaps with steps",
                     for j in canSwap[i]:
-                        print(j, end=" ")
+                        print j,
                     print
                 for (begin,end) in noOrder:
                     if i == end:
-                        print("#] (steps in [] can be in any order)")
+                        print "#] (steps in [] can be in any order)"
         # Restore semantics
         self.stopRelax()
         if returnCollect:
@@ -4908,33 +4908,33 @@ class sut(object):
         self.__cov._warn_no_data = False
                                     
     def internalReport(self):
-        print("TSTL INTERNAL COVERAGE REPORT:")
+        print "TSTL INTERNAL COVERAGE REPORT:"
         if self.__oldCovData == None:
             return
         for src_file in self.__oldCovData.measured_files():
             adata = self.__oldCovData.arcs(src_file)
-            print(src_file,"ARCS:",len(adata),sorted(adata))
+            print src_file,"ARCS:",len(adata),sorted(adata)
             for (f,a) in self.__allBranches:
                 if f == src_file:
                     if a not in adata:
-                        print("WARNING:",a,"VISITED BUT MISSING FROM COVERAGEDATA")
+                        print "WARNING:",a,"VISITED BUT MISSING FROM COVERAGEDATA"
             for a in adata:
                 if (src_file,a) not in self.__allBranches:
-                    print("WARNING:",a,"IN COVERAGEDATA BUT NOT IN TSTL COVERAGE")
+                    print "WARNING:",a,"IN COVERAGEDATA BUT NOT IN TSTL COVERAGE"
             ldata = list(set(self.__oldCovData.lines(src_file)))
-            print(src_file,"LINES:",len(ldata),sorted(ldata))
+            print src_file,"LINES:",len(ldata),sorted(ldata)
             for (f,l) in self.__allStatements:
                 if f == src_file:
                     if l not in ldata:
-                        print("WARNING:",l,"VISITED BUT MISSING FROM COVERAGEDATA")
+                        print "WARNING:",l,"VISITED BUT MISSING FROM COVERAGEDATA"
             for l in ldata:
                 if (src_file,l) not in self.__allStatements:
-                    print("WARNING",l,"IN COVERAGEDATA BUT NOT IN TSTL COVERAGE")
+                    print "WARNING",l,"IN COVERAGEDATA BUT NOT IN TSTL COVERAGE"
         for (f,l) in self.__allStatements:
             if f not in self.__oldCovData.measured_files():
-                print("WARNING:",(f,l),"IS NOT IN COVERAGEDATA")
-        print("TSTL BRANCH COUNT:",len(self.__allBranches))                
-        print("TSTL STATEMENT COUNT:",len(self.__allStatements))
+                print "WARNING:",(f,l),"IS NOT IN COVERAGEDATA"
+        print "TSTL BRANCH COUNT:",len(self.__allBranches)                
+        print "TSTL STATEMENT COUNT:",len(self.__allStatements)
                     
     def cleanCov(self):
         self.__newBranches = set()
