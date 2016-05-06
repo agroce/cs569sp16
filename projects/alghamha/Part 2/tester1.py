@@ -65,7 +65,7 @@ def	saveFaults(elapsedFailure, fault, act, bug, REDUCING):
 # Sequntial algorithm that will traverse over all actions and execute them one by one
 for act in sut.enabled():
 	seq = sut.safely(act)
-	if (not seq) and (FaultEnabled == 1):
+	if (not seq) and (FaultsEnabled == 1):
 		elapsedFailure = time.time() - startTime
 		bugs += 1
 		print "FOUND A FAILURE"
@@ -131,6 +131,7 @@ if CoverageEnabled == 1:
 	print "Coverage Report is Saved on Disk"
 	print len(sut.allBranches()),"BRANCHES COVERED"
 	print len(sut.allStatements()),"STATEMENTS COVERED"
+	sut.internalReport()
 
 
 
