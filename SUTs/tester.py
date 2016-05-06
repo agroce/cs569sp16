@@ -39,11 +39,6 @@ covTolerance = 400
 
 start = time.time()
 
-
-# The SUT testing algorithm is from coverTest.py.
-# The part I implemented is the part in which
-# we find coverages that are below mean but
-# still acceptable by user standard
 while time.time()-start < BUDGET:
     sut.restart()
     if (savedTest != None) and (rgen.random() > explore):
