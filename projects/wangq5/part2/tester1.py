@@ -51,55 +51,61 @@ testSaving = None
 calculateWei = 0
 allCoverage = 100
 TIMEBUDGET = int(sys.argv[1])
-
 start = time.time()
-while time.time()-start < TIMEBUDGET:
-    sut.restart()
-    if (testSaving != None):
-    	if (gene.random() > 0.3):
-        	sut.backtrack(testSaving)
-    testStored = False
 
-    print "Firstly test the AVL tree"
-    for s in xrange(0,100):
-        act = sut.randomEnabled(gene)
-        srun = sut.safely(act)
-        
-        if len(sut.newStatements()) > 0:
+def func1():
+    global sut,testSaving,testStored,srun,failCount,R,flag,actionsCount
+    flag = 0
+    if len(sut.newStatements()) > 0:
+        testSaving = sut.state()
+        testStored = True
+        print "Find statements:",sut.newStatements()
+    if (covrageLeast != None):
+        if (covrageLeast in sut.currStatements()) and (testStored == 0):
             testSaving = sut.state()
             testStored = True
-            print "Find statements:",sut.newStatements()
-        if (covrageLeast != None):
-            if (covrageLeast in sut.currStatements()) and (testStored == 0):
-                testSaving = sut.state()
-                testStored = True
-        actionsCount = actionsCount + 1
-        if (srun == 0):
-            failCount = failCount + 1
-            print "This is failure"
-            print sut.failure()
-            print "Now reducing.."
-            R = sut.reduce(sut.test(),sut.fails, True, True)
-            sut.prettyPrintTest(R)
-            
-            print sut.failure()
-            break
-    for s in sut.currStatements():
-        if s not in coverageCount:
-            coverageCount[s] = 0
-        coverageCount[s] = coverageCount[s] + 1
-    covrSort = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-    print "Secondly calculate weight of the coverage"
-    for st in covrSort:
-        calculateWei = (allCoverage - coverageCount[st])
-        cW = st*calculateWei
-        if cW > 25:
-            coverageWM.append(cW)
-            print "Now I have the statement below coverage:", st
-for sd in covrSort:
-    print sd, coverageCount[sd]
-sut.internalReport() 
-   
-print failCount,"FAILED"
-print actionsCount,"TOTAL ACTIONS"
-print time.time()-start,"TOTAL RUNTIME"
+    actionsCount = actionsCount + 1
+    if (srun == 0):
+        failCount = failCount + 1
+        print "This is failure"
+        print sut.failure()
+        print "Now reducing.."
+        R = sut.reduce(sut.test(),sut.fails, True, True)
+        sut.prettyPrintTest(R)            
+        print sut.failure()
+        flag = 1
+def main():
+    global start,TIMEBUDGET,sut,testSaving,gene,testStored,act,srun,flag,coverageCount,covrSort,calculateWei,allCoverage,cW,coverageWM,failCount,actionsCount,sd
+    while time.time()-start < TIMEBUDGET:
+        sut.restart()
+        if (testSaving != None) and (gene.random() > 0.3):
+            sut.backtrack(testSaving)
+        testStored = False
+        print "Firstly test the AVL tree"
+        for s in xrange(0,100):
+            act = sut.randomEnabled(gene)
+            srun = sut.safely(act)
+            func1()
+            if flag == 1:
+                break
+        for s in sut.currStatements():
+            if s not in coverageCount:
+                coverageCount[s] = 0
+            coverageCount[s] = coverageCount[s] + 1
+        covrSort = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
+        print "Secondly calculate weight of the coverage"
+        for st in covrSort:
+            calculateWei = (allCoverage - coverageCount[st])
+            cW = st*calculateWei
+            if cW > 25:
+                coverageWM.append(cW)
+                print "Now I have the statement below coverage:", st
+
+    for sd in covrSort:
+        print sd,coverageCount[sd]
+    sut.internalReport()    
+    print failCount,"FAILED"
+    print actionsCount,"TOTAL ACTIONS"
+    print time.time()-start,"TOTAL RUNTIME"
+if __name__ == '__main__':
+    main()
