@@ -8,9 +8,9 @@ depth = 100
 
 explore = 0.7
 
-savedTest = None
+savecoverage_test = None
 
-actCount = 0
+Number = 0
 
 sut = sut.sut()
 
@@ -21,76 +21,75 @@ faults = int(sys.argv[4])
 coverage = int(sys.argv[5])
 running = int(sys.argv[6])
 
-bugs = 0
+bugs_found = 0
 
-coverageCount = {}
-coverageWeightedBelowMean = []
-leastCovered = None
+Cover_percent = {}
+Coverage_W = []
+Least = None
 weight = 0
-totalCov = 100
+Coverage_all = 100
 # coverage tolerance
-covTolerance = 25
+
 
 
 start = time.time()
 def newFunction():
-	global savedTest,rgen,depth,explore,savedTest,actCount,sut,BUDGET,seed,width,faults,coverage,running,bugs,coverageCount,coverageWeightedBelowMean,leastCovered,weight,totalCov,covTolerance,start
+	global savecoverage_test,rgen,depth,explore,savecoverage_test,Number,sut,BUDGET,seed,width,faults,coverage,running,bugs_found,Cover_percent,Coverage_W,Least,weight,Coverage_all,start
 	sut.restart()
-	if (savedTest != None) and (rgen.random() > explore):
-		print "EXPLOITING"
-		sut.backtrack(savedTest)
+	if (savecoverage_test != None) and (rgen.random() > explore):
+		print "processing"
+		sut.backtrack(savecoverage_test)
 	storedTest = False
-	print "Step one: test AVL tree"
+	print "part1: AVL"
 	for s in xrange(0,100):
 		act = sut.randomEnabled(rgen)
 		ok = sut.safely(act)
 		if len(sut.newStatements()) > 0:
-			savedTest = sut.state()
+			savecoverage_test = sut.state()
 			storedTest = True
-			print "FOUND NEW STATEMENTS",sut.newStatements()
-		if (not storedTest) and (leastCovered != None) and (leastCovered in sut.currStatements()):
+			print "New state",sut.newStatements()
+		if (not storedTest) and (Least != None) and (Least in sut.currStatements()):
 			#print "SAW LEAST COVERED STATEMENT, STORING TEST"
-			savedTest = sut.state()
+			savecoverage_test = sut.state()
 			storedTest = True
-		actCount += 1
+		Number += 1
 		if not ok:
-			bugs += 1
-			print "FOUND A FAILURE"
+			bugs_found += 1
+			print "FAILURE"
             #sut.prettyPrintTest(sut.test())
 			print sut.failure()
-			print "REDUCING"
 			R = sut.reduce(sut.test(),sut.fails, True, True)
 			sut.prettyPrintTest(R)
 			print sut.failure()
 			break
 	for s in sut.currStatements():
-		if s not in coverageCount:
-			coverageCount[s] = 0
-		coverageCount[s] += 1
-	sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
+		if s not in Cover_percent:
+			Cover_percent[s] = 0
+		Cover_percent[s] += 1
+	sortedCov = sorted(Cover_percent.keys(), key=lambda x: Cover_percent[x])
 	# go through the sortedCov and assign weights on them
-	print "Step two: Weight the coverage"
-	# weight is calculated by: coverage * (mean - coverageCount),
+	print "part2: coverage"
+	# weight is calculated by: coverage * (mean - Cover_percent),
 	# the greater the difference between the mean and the coverage count,
 	# the larger your weight will be
 	for t in sortedCov:
-		weight = (totalCov - coverageCount[t])
+		weight = (Coverage_all - Cover_percent[t])
 		weightedCov = t*weight
-		if weightedCov > covTolerance:
-			coverageWeightedBelowMean.append(weightedCov)
-			print "statement below coverage:", t
+		if weightedCov > 20:
+			Coverage_W.append(weightedCov)
+			print "Coverage:", t
 
 def main():
-	global start,BUDGET,sortedCov,coverageCount,actCount
+	global start,BUDGET,sortedCov,Cover_percent,Number
 	while time.time()-start < BUDGET:
 		newFunction()
 	sut.internalReport()
-	sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
+	sortedCov = sorted(Cover_percent.keys(), key=lambda x: Cover_percent[x])
 
 	for s in sortedCov:
-		print s, coverageCount[s]
-	print bugs,"FAILED"
-	print "TOTAL ACTIONS",actCount
-	print "TOTAL RUNTIME",time.time()-start
+		print s, Cover_percent[s]
+	print bugs_found,"FAILED"
+	print "ACTIONS_total",Number
+	print "RUNTIME_total",time.time()-start
 if __name__ == '__main__':
 	main()
