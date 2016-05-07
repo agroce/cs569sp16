@@ -49,7 +49,7 @@ selected_d = [random.randint(0, GOAL_DEPTH) for i in range(1, len_dep)]
 fix_blocks = 10;
 blk_sparse = 2;
 
-def binary_srand(len, s_level, min_num):# minimum number: min_num, sparseity level: s_level
+def binary_srand(len, s_level, min_num): # minimum number: min_num, sparseity level: s_level
 
     arr = [0]*len;
     sparsity = int(len*s_level);
@@ -83,6 +83,22 @@ def block_rand_ids( n ):
         ref_tb = binary_srand(n,0.5, 1);
 
     return ref_tb
+
+def about_branch(running, action):
+    if running:
+        if sut.newBranches() != set([]):
+            print "ACTION:", action[0]  # , tryStutter
+            for b in sut.newBranches():
+                print elapsed, len(sut.allBranches()), "New branch", b
+            sawNew = True
+
+        if sut.newStatements() != set([]):
+            print "ACTION:", a[0]
+            for s in sut.newStatements():
+                print elapsed, len(sut.allStatements()), "New statement", s
+            sawNew = True
+        else:
+            sawNew = False
 
 break_count = 0;
 fact_cnt =0;
@@ -122,7 +138,13 @@ while d <= GOAL_DEPTH:
             if elapsed >= LAYER_BUDGET:
                 #print 'breaking .....'
                 break
+
+            elapsedALL = time.time() - startALL
+            if elapsedALL >= timeout:
+                break
             ok = sut.safely(a)
+            about_branch(running,a)
+
             actCount += 1
             if not ok:
                 print "FOUND A FAILURE"
@@ -144,7 +166,7 @@ while d <= GOAL_DEPTH:
     #    print "DID NOT GET TO EXPAND", len(queue) - scount, "STATES"
      #   break
     #print 'actcount....',actCount, 'break_acount', break_count, 'fact_cnt', fact_cnt
-    print 'save rate = ', actCount/fact_cnt
+    #print 'save rate = ', float(actCount/fact_cnt)
     elapsed = time.time() - startLayer
     slack = float(LAYER_BUDGET-elapsed)
     print "SLACK",slack
