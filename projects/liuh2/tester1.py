@@ -20,17 +20,19 @@ width = int(sys.argv[4])
 faults = int(sys.argv[5])
 coverage_report = int(sys.argv[6])
 running = int(sys.argv[7])
+currentCoverageWeight = 0
 
-
-collectedstatementNum = 400
+covTolerance = 100
 bugs = 0
 
 rgen = random.Random()
 rgen.seed(SEED)
 CovW = []
 coverageCount = {}
-CovWeight = []
+
 startT = time.time()
+CoverageTemp = 0
+
 
 while time.time()-startT < BUDGET:
     sut.restart()
@@ -74,7 +76,11 @@ while time.time()-startT < BUDGET:
     sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
 
     for t in sortedCov:
-        print t, coverageCount[t]
+            CoverageTemp = (depth - coverageCount[t])
+            currentCoverageWeight = t*CoverageTemp
+            if currentCoverageWeight > covTolerance:
+                CovW.append(currentCoverageWeight)
+                print "statement below coverage:", t
 
 if(coverage_report):
     sut.internalReport()
