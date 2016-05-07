@@ -49,7 +49,10 @@ def branchFun(running,possible):
                 print elapsed,len(sut.allBranches()),"New branch",b
             sawNew=True
         else:
-            sawNew=False    
+            sawNew=False
+
+
+
 
 d = 1
 while d <= depth:
