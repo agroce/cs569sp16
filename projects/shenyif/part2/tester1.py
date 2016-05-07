@@ -51,13 +51,13 @@ while S != []  :
                 test.append(name)
                 
                 ok = sut.safely((name, guard, act))
-                propok = sut.check()                  #new
+                propok = sut.check()                
                 
                 if not ok:
                     
                     bugs += 1
                     print "use"+str(time.time()-startAll)
-                    print "FOUND A LARGE FAILURE"
+                    print "FOUND A FAILURE"
                     print sut.failure()
                     print "REDUCING"
                     R = sut.reduce(sut.test(),sut.fails, True, True)
@@ -68,7 +68,7 @@ while S != []  :
 
                 if RUNNING:
                     if sut.newBranches() != set([]):
-        #                        print "ACTION:",a[0],tryStutter
+                        #  print "ACTION:",a[0],tryStutter
                         for b in sut.newBranches():
                             print time.time()-startAll,len(sut.allBranches())," new branch",b
                         new = True
