@@ -117,17 +117,17 @@ while time.time()-start < int(timeout):
 print "STARTING PHASE 2"
 
 start = time.time()
-while time.time()-start < int(timeout):
-    buildActivePool()
-    lastAddCoverage = set([])
-    sut.restart()
-    if random.Random().random() > explore:
-        sut.replay(random.Random().choice(activePool)[0])
-        lastAddCoverage = set(sut.currStatements())
-    ntests += 1
-    for s in xrange(0,depth):
-        if not randomAction():
-            break
+#while time.time()-start < int(timeout):
+buildActivePool()
+lastAddCoverage = set([])
+sut.restart()
+if random.Random().random() > explore:
+    sut.replay(random.Random().choice(activePool)[0])
+    lastAddCoverage = set(sut.currStatements())
+ntests += 1
+for s in xrange(0,depth):
+    if not randomAction():
+        break
 
 
 print ntests,"TESTS"
