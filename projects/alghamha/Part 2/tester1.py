@@ -47,16 +47,16 @@ goodTests = []
 startTime = time.time()
 
 # Function To Save The Faults
-def	saveFaults(elapsedFailure, fault, act, bug, REDUCING, Algorithm):
+def	saveFaults(elapsedFailure, fault, act, bug, testCase, Algorithm):
 	FileName = 'failure'+str(bug)+'.test'
 	file = open(FileName, 'w+')
 	print >> file, Algorithm
 	print >> file, elapsedFailure, "Time it takes the tester to discover this fault \n"
 	print >> file, fault, "\n"
-	print >> file, " Reduced Test Case \n"	
+	print >> file, " Test Case \n"	
 	i = 0
-	# Reducing the Test Case
-	for s in REDUCING:
+	# Reading the test case as in randomester.py
+	for s in testCase:
 		steps = "# STEP " + str(i)
 		print >> file, sut.prettyName(s[0]).ljust(80-len(steps),' '),steps
 		i += 1
@@ -140,10 +140,9 @@ elapsed = time.time() - startTime
 print "\n                  ############ The Final Report ############# \n"
 print elapsed, "Total Running Time"
 print bugs, " Bugs Found"
+print len(sut.allBranches()),"BRANCHES COVERED"
+print len(sut.allStatements()),"STATEMENTS COVERED"
 if CoverageEnabled == 1:
-	CoverageFileName = 'coverage.out'
-	sut.report(CoverageFileName)
-	print "Coverage Report is Saved on Disk"
 	print len(sut.allBranches()),"BRANCHES COVERED"
 	print len(sut.allStatements()),"STATEMENTS COVERED"
 	sut.internalReport()
