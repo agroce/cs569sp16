@@ -84,7 +84,7 @@ failureCount = 0
 errorSeqs = []
 nonErrorSeqs = []
 start = time.time()
-while timeout - (time.time() - start) >= 0.5:
+while time.time() - start < timeout:
 	if rgen.randint(0, 9) == 0:
 		acts = sut.randomEnableds(rgen, 10)
 	else:
