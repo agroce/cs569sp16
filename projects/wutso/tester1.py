@@ -78,7 +78,15 @@ while time.time() - start < BUDGET:
         sortActs = sorted(acts, key=lambda x:actionCount[abstract(x[0])])
         act      = sortActs[0]
         actCount += 1
+
+
         ok  = sut.safely(act)
+        if RUNNING_DETAIL == 1:
+            if len(sut.newBranches()) > 0:
+                print "ACTION:", act[0]
+                for b in sut.newBranches():
+                    print time.time() - start, len(sut.allBranches()), "Newbranch", b
+
         if not ok:
             notOK()
             break
