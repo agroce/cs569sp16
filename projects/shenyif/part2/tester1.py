@@ -3,18 +3,19 @@ import random
 import sys
 import time
 
-TIME_BUDGET = int(sys.argv[1])
+timeout = int(sys.argv[1])
 SEED = int(sys.argv[2])
 DEPTH = int(sys.argv[3])
 WIDTH = int(sys.argv[4])
 FAULT_CHECK = int(sys.argv[5])
 COVERAGE_REPORT = int(sys.argv[6])
-RUNNING_DETAIL = int(sys.argv[7])
+RUNNING= int(sys.argv[7])
 
 rgen = random.Random()
 MAX_DEPTH = DEPTH 
 
 bugs = 0
+elapsed = 0
 
 sut = sut.sut()
 sut.silenceCoverage()
@@ -30,7 +31,11 @@ S.append((sut.state(),[]))
 startAll = time.time()
 
 
-while (S != [] and (time.time()-startAll)<TIME_BUDGET) :
+while S != []  :
+    
+    elapsedTime = time.time()-startAll
+    if elapsedTime>=timeout:
+        break
     
     (v, test) = S.pop()
     sut.backtrack(v)
@@ -46,6 +51,7 @@ while (S != [] and (time.time()-startAll)<TIME_BUDGET) :
                 test.append(name)
                 
                 ok = sut.safely((name, guard, act))
+                propok = sut.check()                  #new
                 
                 if not ok:
                     
@@ -60,8 +66,19 @@ while (S != [] and (time.time()-startAll)<TIME_BUDGET) :
                 
                 S.append((sut.state(),test))
 
+                if RUNNING:
+                    if sut.newBranches() != set([]):
+        #                        print "ACTION:",a[0],tryStutter
+                        for b in sut.newBranches():
+                            print time.time()-startAll,len(sut.allBranches())," new branch",b
+                        new = True
+                    else:
+                        new = False
 
-print bugs,"FAILED"
+
+
+
+#print bugs,"FAILED"
 if (COVERAGE_REPORT):
     sut.internalReport()
 
