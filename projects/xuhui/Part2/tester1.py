@@ -1,12 +1,6 @@
-import os
-import sys
-import sut
-import time
-import random
+import os, sys, sut, time, random
 
-			
-# To save the current branches
-def saveCover():
+def collectCoverage():
     global coverageCount
     for b in sut.currBranches():
         if b not in coverageCount:
@@ -20,24 +14,20 @@ def randomAction():
     actCount += 1
     ok = sut.safely(act)
     check = sut.check()
-    #if running=1, print elapsed time, total brach count, new branch otherwise don't print
     if running:
         if sut.newBranches() != set([]):
-        #print "ACTION:",act[0],tryStutter
             for b in sut.newBranches():
                 print time.time()-start,len(sut.allBranches()),"New branch",b
             sawNew = True
         else:
             sawNew = False    
                     
-    #if faults=1, check for bugs, otherwise don't check for bugs.
     if not ok or not check:
         if faults:
             bugs += 1
             fail.append(sut.test())
-            saveCover()
+            collectCoverage()
             R = sut.reduce(sut.test(),sut.failpool, True, True)
-            #sut.prettyPrintTest(R)
             sut.restart()
             print "FOUND A FAILURE"
             fault = sut.failure()
@@ -46,22 +36,20 @@ def randomAction():
             wfile.write(str(fault))
             wfile.close() 
             sut.restart() 
-     
-    #Store new branches in tests pool            
+           
     else:
         if len(sut.newBranches()) != 0:
             print "FOUND NEW BRANCHES",sut.newBranches()
             tests.append((list(sut.test()), set(sut.currBranches())))    
-    return ok 
-
-timeout = int(sys.argv[1])
-seed = int(sys.argv[2])
-depth = int(sys.argv[3])
-width = int(sys.argv[4])
-faults = int(sys.argv[5])
-coverage = int(sys.argv[6])
-running = int(sys.argv[7])
-
+    return ok
+	
+timeout = int(sys.argv[1]) #you can use 60 as a default number 
+seed = int(sys.argv[2])    #1
+depth = int(sys.argv[3])   #100
+width = int(sys.argv[4])   #1
+faults = int(sys.argv[5])  #0
+coverage = int(sys.argv[6])#1
+running = int(sys.argv[7]) #1
 rgen = random.Random(seed)
 
 sut = sut.sut()
@@ -71,51 +59,49 @@ collect = []
 fail = []
 belowMean = set([])
 
+bugs = 0
+actCount = 0
 budget1 = 20
 budget2 = 20
-actCount = 0
-bugs = 0
-no_tests = 0
 
-print "STARTING PHASE 1: GATHER COVERAGE"
-
+print "STARTING PHASE 1: COLLECTE COVERAGE"
 start = time.time()
+ntests = 0
 while time.time()-start < budget1:
     for ts in xrange(0,width):
         sut.restart()
-        no_tests += 1
+        ntests += 1
         for b in xrange(0,depth):
             if not randomAction():
                 break    
-        saveCover()
-print "STARTING PHASE 2: ANALYSIS COVERAGE"
-        
+        collectCoverage()
+
+print "STARTING PHASE 2: ANALYSIS COVERAGE"        
 start = time.time()
 while time.time()-start < budget2:
-    sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-    covSum = sum(coverageCount.values())
+    sortedcoverage = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
+    coverageSum = sum(coverageCount.values())
     try:
-        covMean = covSum / (float(len(coverageCount)))
+        coverageMean = coverageSum / (float(len(coverageCount)))
     
-    except ZeroDivisionError:
-        print ("WARNING: NO BRANCHES COLLECTED")  
+    except Zero_Division_Error:
+        print ("NO BRANCHES COLLECTED")  
           
-    for b1 in sortedCov:
-        if coverageCount[b1] < covMean:
+    for b1 in sortedcoverage:
+        if coverageCount[b1] < coverageMean:
                 belowMean.add(b1)
         else:
             break            
         print len(belowMean),"Branches BELOW MEAN COVERAGE OUT OF",len(coverageCount) 
                   
     if time.time()-start > timeout:
-        print "THE TEST IS STOPPED SINCE TIMEOUT"
+        print "THE TEST STOP SINCE TIMEOUT"
         break 
                            
 if coverage:
     sut.internalReport()
-    
+
 print "TOTAL BUGS",bugs
-print "TOTAL TESTS",no_tests
+print "TOTAL TESTS",ntests
 print "TOTAL ACTIONS",actCount
 print "TOTAL RUNTIME",time.time()-start
-          
