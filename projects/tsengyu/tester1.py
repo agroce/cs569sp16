@@ -19,11 +19,11 @@ sut.silenceCoverage()
 rand = random.Random()
 rand.seed(Seed)
 
-Num_Bug = 0
 Failure_Report = "Fail"
 
 def randomOperation():
-	global Num_Bug, Time_Start
+	global Num_Bug = 0
+	global Time_Start
 	Operation = sut.randomEnabled(rand)
 	Good = sut.safely(Operation)
 	Runtime = time.time() - Time_Start
@@ -57,7 +57,7 @@ def randomOperation():
 				i += 1
 			file.close()
 		print "Runtime: ", round(Runtime, 3)
-	return Good
+	return Good, Num_Bug
 
 
 def mian():
@@ -75,7 +75,7 @@ def mian():
 	while (time.time() < (Time_Start + Phase1_Time_Budget)):
 		sut.restart()
 		for d in xrange(0, Depth):
-			Good = randomOperation()
+			Good, bugNum = randomOperation()
 			if (len(sut.newStatements()) > 0):
 				New_State.append(sut.state())
 				New_Statement.append(sut.newStatements())
@@ -120,7 +120,7 @@ def mian():
 	for k in Kth_chosen:
 		Chosen_State.append(New_State[k])
 
-	print Num_Bug, "BUGS FOUND!!!"
+	print bugNum, "BUGS FOUND!!!"
 
 	for s in sorted_Coverage:
 		print s, CoverageCount[s]
@@ -148,7 +148,7 @@ def mian():
 				sut.backtrack(s)
 
 				for d in xrange(0, Depth):
-					Good = randomOperation()
+					Good, bugNum = randomOperation()
 					if (len(sut.newStatements()) > 0):
 						print "FOUND New Statements!!!"
 						Chosen_State.insert(i, sut.state())
@@ -163,7 +163,7 @@ def mian():
 
 			sorted_Coverage = sorted(CoverageCount.keys(), key = lambda x: CoverageCount[x])
 
-	print Num_Bug, "BUGS FOUND!!!"
+	print bugNum, "BUGS FOUND!!!"
 
 	for s in sorted_Coverage:
 		print s, CoverageCount[s]
