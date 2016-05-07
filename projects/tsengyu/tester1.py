@@ -60,115 +60,119 @@ def randomOperation():
 	return Good
 
 
-CoverageCount = {}
-New_State = []
-New_Statement = []
-Chosen_State = []
-Kth_chosen =[]
-Time_Start = time.time()
-Phase1_Time_Budget = TimeOut / 3
+def mian():
+	CoverageCount = {}
+	New_State = []
+	New_Statement = []
+	Chosen_State = []
+	Kth_chosen =[]
+	Time_Start = time.time()
+	Phase1_Time_Budget = TimeOut / 3
 
-print "***PHASE 1 Starting ..."
-print "=========================================================="
+	print "***PHASE 1 Starting ..."
+	print "=========================================================="
 
-while (time.time() < (Time_Start + Phase1_Time_Budget)):
-	sut.restart()
-	for d in xrange(0, Depth):
-		Good = randomOperation()
-		if (len(sut.newStatements()) > 0):
-			New_State.append(sut.state())
-			New_Statement.append(sut.newStatements())
+	while (time.time() < (Time_Start + Phase1_Time_Budget)):
+		sut.restart()
+		for d in xrange(0, Depth):
+			Good = randomOperation()
+			if (len(sut.newStatements()) > 0):
+				New_State.append(sut.state())
+				New_Statement.append(sut.newStatements())
 
-		if (not Good):
+			if (not Good):
+				break
+
+		for s in sut.currStatements():
+			if s not in CoverageCount:
+				CoverageCount[s] = 0
+			CoverageCount[s] += 1
+
+	sorted_Coverage = sorted(CoverageCount.keys(), key = lambda x: CoverageCount[x])
+
+	sum_value = 0
+	for s in sorted_Coverage:
+		sum_value += CoverageCount[s]
+
+	mean_value = sum_value / len(CoverageCount)
+
+	temp_sum = 0.0
+	for s in sorted_Coverage:
+		temp_sum += math.pow(CoverageCount[s] - mean_value, 2)
+
+	STD = math.sqrt(temp_sum / len(CoverageCount))
+	Threshold = mean_value - (0.66 * STD)
+	print "Mean: ", mean_value
+	print "Standard Deviation: ", round(STD, 3)
+	print "Threshold: ", round(Threshold, 3)
+	print "=========================================================="
+
+	for s in sorted_Coverage:
+		if (CoverageCount[s] > Threshold):
 			break
+		for k in Kth_chosen:
+			if s in New_Statement[k]:
+				continue
+		for k in xrange(0, len(New_Statement)):
+			if s in New_Statement[k]:
+				Kth_chosen.append(k)
 
-	for s in sut.currStatements():
-		if s not in CoverageCount:
-			CoverageCount[s] = 0
-		CoverageCount[s] += 1
-
-sorted_Coverage = sorted(CoverageCount.keys(), key = lambda x: CoverageCount[x])
-
-sum_value = 0
-for s in sorted_Coverage:
-	sum_value += CoverageCount[s]
-
-mean_value = sum_value / len(CoverageCount)
-
-temp_sum = 0.0
-for s in sorted_Coverage:
-	temp_sum += math.pow(CoverageCount[s] - mean_value, 2)
-
-STD = math.sqrt(temp_sum / len(CoverageCount))
-Threshold = mean_value - (0.66 * STD)
-print "Mean: ", mean_value
-print "Standard Deviation: ", round(STD, 3)
-print "Threshold: ", round(Threshold, 3)
-print "=========================================================="
-
-for s in sorted_Coverage:
-	if (CoverageCount[s] > Threshold):
-		break
 	for k in Kth_chosen:
-		if s in New_Statement[k]:
-			continue
-	for k in xrange(0, len(New_Statement)):
-		if s in New_Statement[k]:
-			Kth_chosen.append(k)
+		Chosen_State.append(New_State[k])
 
-for k in Kth_chosen:
-	Chosen_State.append(New_State[k])
+	print Num_Bug, "BUGS FOUND!!!"
 
-print Num_Bug, "BUGS FOUND!!!"
+	for s in sorted_Coverage:
+		print s, CoverageCount[s]
+	print "=========================================================="
 
-for s in sorted_Coverage:
-	print s, CoverageCount[s]
-print "=========================================================="
+	if (Coverage):
+		sut.internalReport()
 
-if (Coverage):
-	sut.internalReport()
+	print ""
+	print "***PHASE 2 Starting..."
+	print "=========================================================="
 
-print ""
-print "***PHASE 2 Starting..."
-print "=========================================================="
+	Phase2_Time_Budget = TimeOut - Phase1_Time_Budget
+	i = 0;
+	Time_Start = time.time()
 
-Phase2_Time_Budget = TimeOut - Phase1_Time_Budget
-New_Statement = []
-i = 0;
-Time_Start = time.time()
+	while (time.time() < (Time_Start + Phase2_Time_Budget)):
+		for s in Chosen_State:
+			i += 1
+			temp_time = float(Phase2_Time_Budget) / (len(Chosen_State) * (i + 1))
+			time_start_2= time.time()
 
-while (time.time() < (Time_Start + Phase2_Time_Budget)):
-	for s in Chosen_State:
-		i += 1
-		temp_time = float(Phase2_Time_Budget) / (len(Chosen_State) * (i + 1))
-		time_start_2= time.time()
+			while (time.time() < time_start_2 + temp_time):
+				sut.restart()
+				sut.backtrack(s)
 
-		while (time.time() < time_start_2 + temp_time):
-			sut.restart()
-			sut.backtrack(s)
+				for d in xrange(0, Depth):
+					Good = randomOperation()
+					if (len(sut.newStatements()) > 0):
+						print "FOUND New Statements!!!"
+						Chosen_State.insert(i, sut.state())
 
-			for d in xrange(0, Depth):
-				Good = randomOperation()
-				if (len(sut.newStatements()) > 0):
-					print "FOUND New Statements!!!"
-					Chosen_State.insert(i, sut.state())
+					if (not Good):
+						break
 
-				if (not Good):
-					break
+				for j in sut.currStatements():
+					if j not in CoverageCount:
+						CoverageCount[j] = 0
+					CoverageCount[j] += 1
 
-			for j in sut.currStatements():
-				if j not in CoverageCount:
-					CoverageCount[j] = 0
-				CoverageCount[j] += 1
+			sorted_Coverage = sorted(CoverageCount.keys(), key = lambda x: CoverageCount[x])
 
-		sorted_Coverage = sorted(CoverageCount.keys(), key = lambda x: CoverageCount[x])
+	print Num_Bug, "BUGS FOUND!!!"
 
-print Num_Bug, "BUGS FOUND!!!"
+	for s in sorted_Coverage:
+		print s, CoverageCount[s]
+	print "=========================================================="
 
-for s in sorted_Coverage:
-	print s, CoverageCount[s]
-print "=========================================================="
+	if (Coverage):
+		sut.internalReport()
 
-if (Coverage):
-	sut.internalReport()
+
+if __name__ == '__main__':
+	main()
 
