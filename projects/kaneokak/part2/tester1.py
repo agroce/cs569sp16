@@ -79,18 +79,19 @@ def printSeq(seq):
 
 sut = sut.sut()
 rgen = random.Random()
+rgen.seed(seed)
 failureCount = 0
 errorSeqs = []
 nonErrorSeqs = []
 start = time.time()
 while time.time() - start < timeout:
-	if random.randint(0, 9) == 0:
+	if rgen.randint(0, 9) == 0:
 		acts = sut.randomEnableds(rgen, 10)
 	else:
 		acts = sut.randomEnableds(rgen, 1)
 
 	if nonErrorSeqs:
-		newSeq = random.choice(nonErrorSeqs)
+		newSeq = rgen.choice(nonErrorSeqs)
 		newSeq.extend(acts)
 	else:
 		newSeq = acts
