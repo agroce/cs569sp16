@@ -115,7 +115,7 @@ while time.time() - start < args['timeout']:
     #which way to increase
     which = rand.randint(1,2)
     if which == 1:
-        test = random_seq(com_pool, rand, rand.randint(2, 50))
+        test = random_seq(com_pool, rand, rand.randint(2, 100))
         fc = sut.failsCheck(test)
         if sut.test() not in nice_pool and sut.test() not in bad_pool:
             if not fc:
