@@ -50,22 +50,22 @@ def randomOperation():
 			file = open((Failure_Report + str(Num_Bug) + ".test"), "w")
 			print >> file, sut.failure()
 
-			i = 0
+			i = 1
 			for (reducing, _, _) in reduce:
 				Step_Reduce = "#" + str(i) + "STEP"
 				print >> file, sut.prettyName(reducing).ljust(100 - len(Step_Reduce), ' '), Step_Reduce
 				i += 1
 			file.close()
-		print "Runtime: ", round(Runtime, 3)
+
 	return Good, Num_Bug
 
 
 def mian():
 	CoverageCount = {}
-	New_State = []
-	New_Statement = []
-	Chosen_State = []
-	Kth_chosen =[]
+	NS = []
+	NSM = []
+	CS = []
+	KC =[]
 	Time_Start = time.time()
 	Phase1_Time_Budget = TimeOut / 3
 
@@ -77,8 +77,8 @@ def mian():
 		for d in xrange(0, Depth):
 			Good, bugNum = randomOperation()
 			if (len(sut.newStatements()) > 0):
-				New_State.append(sut.state())
-				New_Statement.append(sut.newStatements())
+				NS.append(sut.state())
+				NSM.append(sut.newStatements())
 
 			if (not Good):
 				break
@@ -101,7 +101,7 @@ def mian():
 		temp_sum += math.pow(CoverageCount[s] - mean_value, 2)
 
 	STD = math.sqrt(temp_sum / len(CoverageCount))
-	Threshold = mean_value - (0.66 * STD)
+	Threshold = mean_value - (0.6 * STD)
 	print "Mean: ", mean_value
 	print "Standard Deviation: ", round(STD, 3)
 	print "Threshold: ", round(Threshold, 3)
@@ -110,15 +110,15 @@ def mian():
 	for s in sorted_Coverage:
 		if (CoverageCount[s] > Threshold):
 			break
-		for k in Kth_chosen:
-			if s in New_Statement[k]:
+		for k in KC:
+			if s in NSM[k]:
 				continue
-		for k in xrange(0, len(New_Statement)):
-			if s in New_Statement[k]:
-				Kth_chosen.append(k)
+		for k in xrange(0, len(NSM)):
+			if s in NSM[k]:
+				KC.append(k)
 
-	for k in Kth_chosen:
-		Chosen_State.append(New_State[k])
+	for k in KC:
+		CS.append(NS[k])
 
 	print bugNum, "BUGS FOUND!!!"
 
@@ -126,7 +126,7 @@ def mian():
 		print s, CoverageCount[s]
 	print "=========================================================="
 
-	if (Coverage):
+	if (Coverage == 1):
 		sut.internalReport()
 
 	print ""
@@ -134,14 +134,13 @@ def mian():
 	print "=========================================================="
 
 	Phase2_Time_Budget = TimeOut - Phase1_Time_Budget
-	i = 0;
 	Time_Start = time.time()
-
+	i = 1
 	while (time.time() < (Time_Start + Phase2_Time_Budget)):
-		for s in Chosen_State:
+		for s in CS:
 			i += 1
-			temp_time = float(Phase2_Time_Budget) / (len(Chosen_State) * (i + 1))
-			time_start_2= time.time()
+			temp_time = Phase2_Time_Budget / (len(CS) * i)
+			time_start_2 = time.time()
 
 			while (time.time() < time_start_2 + temp_time):
 				sut.restart()
@@ -151,7 +150,7 @@ def mian():
 					Good, bugNum = randomOperation()
 					if (len(sut.newStatements()) > 0):
 						print "FOUND New Statements!!!"
-						Chosen_State.insert(i, sut.state())
+						CS.insert(i, sut.state())
 
 					if (not Good):
 						break
@@ -169,7 +168,7 @@ def mian():
 		print s, CoverageCount[s]
 	print "=========================================================="
 
-	if (Coverage):
+	if (Coverage == 1):
 		sut.internalReport()
 
 
