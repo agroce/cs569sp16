@@ -1,4 +1,4 @@
-# CS569 - Milestone #1 Rivised
+# CS569 - Milestone #1 Revised
 # Name: Xu Zheng
 # Onid: zhengxu
 # May 7, 2016
@@ -46,7 +46,6 @@ def failureHandle(failCount):
 	ft = open(filename, 'a')
 	ft.write(str(sut.failure()))
 	ft.close()
-
 
 sut = sut.sut()
 
