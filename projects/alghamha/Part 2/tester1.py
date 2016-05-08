@@ -7,19 +7,19 @@ import os
 
 # Terminate the program with time
 # You can use 60 as a default Value
-TIMEOUT = int(sys.argv[1])
+timeout = int(sys.argv[1])
 
 # Determines the random seed for testing. This should be assigned 0 when using the MEMORY/WIDTH
 # You can use 12 as a default Value
-SEEDS = int(sys.argv[2])
+seeds = int(sys.argv[2])
 
 # TEST_LENGTH or Depth
 # You can use 100 as a default Value
-DEPTH = int(sys.argv[3])
+depth = int(sys.argv[3])
 
 # MEMORY or Width, the number of "good" tests to store
 # You can use a 100 as a default Value when testing combination lock faults
-MEMORY = int(sys.argv[4])
+length = int(sys.argv[4])
 
 # Enable/Disable Faults
 # You can use 1 as a default Value
@@ -33,15 +33,9 @@ CoverageEnabled = int(sys.argv[6])
 # You can use 1 as a default Value
 RunningEnabled = int(sys.argv[7])
 
-
-if (SEEDS > 0 ):
-	rgen = random.Random(SEEDS)
-else:
-	rgen = random.Random(None)
-
 # gloable variables initilization
 sut = sut.sut()
-sut.silenceCoverage()
+
 bugs = 0
 goodTests = []
 startTime = time.time()
@@ -84,20 +78,21 @@ for act in sut.enabled():
 		for b in sut.newBranches():
 			print elapsed1,len(sut.allBranches()),"New branch",b
 
+rgen = random.Random(seeds)
 
 # RandomTester based on randomly selcted propability
-while (time.time() - startTime <= TIMEOUT):
+while (time.time() - startTime <= timeout):
 	# This will work only Memory input is set. It is good for finding combanition luck faults
 	if (len(goodTests) > 0) and (rgen.random() < 0.5):
 		sut.backtrack(rgen.choice(goodTests)[1])
-		if (time.time() - startTime >= TIMEOUT):
+		if (time.time() - startTime >= timeout):
 			break
 	else:
 		sut.restart()
 
 	# Based on the depth randonly execute an action
-	for s in xrange(0,DEPTH):
-		if (time.time() - startTime >= TIMEOUT):
+	for s in xrange(0,depth):
+		if (time.time() - startTime >= timeout):
 			break
 		action = sut.randomEnabled(rgen)
 		r = sut.safely(action)
@@ -114,7 +109,7 @@ while (time.time() - startTime <= TIMEOUT):
 			saveFaults(elapsedFailure, Fault, action, bugs, test, RandomAlgorithm)
 			# Rest the system state
 			sut.restart()
-		if (time.time() - startTime >= TIMEOUT):
+		if (time.time() - startTime >= timeout):
 			break
 		# Print the new discovered branches	
 		if (len(sut.newBranches()) > 0) and (RunningEnabled == 1):
@@ -122,14 +117,14 @@ while (time.time() - startTime <= TIMEOUT):
 			elapsed1 = time.time() - startTime
 			for b in sut.newBranches():
 				print elapsed1,len(sut.allBranches()),"New branch",b
-		if (time.time() - startTime >= TIMEOUT):
+		if (time.time() - startTime >= timeout):
 			break
 		# When getting new branches, save the test case into goodTest list to be executed based on random propability
-		if ((MEMORY != 0) and (len(sut.newBranches()) > 0)):
+		if ((length != 0) and (len(sut.newBranches()) > 0)):
 			goodTests.append((sut.currBranches(), sut.state()))
-			goodTests = sorted(goodTests, reverse=True)[:MEMORY]
+			goodTests = sorted(goodTests, reverse=True)[:length]
 		# Cleanup goodTest list based on the length of the goodTests
-		elif (MEMORY != 0) and (len(sut.newBranches()) == 0) and (len(goodTests) >= MEMORY):
+		elif (length != 0) and (len(sut.newBranches()) == 0) and (len(goodTests) >= length):
 			RandomMemebersSelection = random.sample(goodTests,int(float((len(goodTests))*.20)))
 			for x in RandomMemebersSelection:
 				goodTests.remove(x)
@@ -140,8 +135,6 @@ elapsed = time.time() - startTime
 print "\n                  ############ The Final Report ############# \n"
 print elapsed, "Total Running Time"
 print bugs, " Bugs Found"
-print len(sut.allBranches()),"BRANCHES COVERED"
-print len(sut.allStatements()),"STATEMENTS COVERED"
 if CoverageEnabled == 1:
 	print len(sut.allBranches()),"BRANCHES COVERED"
 	print len(sut.allStatements()),"STATEMENTS COVERED"
