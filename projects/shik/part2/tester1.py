@@ -5,6 +5,7 @@ import time
 import math
 import os
 
+start = time.time()
 
 TIMEOUT = int(sys.argv[1])
 
@@ -28,7 +29,6 @@ coverageCount = {}
 
 actCount = 0
 bugs = 0
-
 visited = []
 failPool = []
 belowMid = set([])
@@ -44,12 +44,10 @@ def failures():
 		if s not in coverageCount:
 			coverageCount[s] = 0
 		coverageCount[s] += 1  
-	R = sut.reduce(sut.test(),sut.fails, True, True)
-	sut.prettyPrintTest(R)
 	print sut.failure()
 	if FAULTS:
 		with open("failure"+str(bugs)+".test",'w') as f:
-			f.write('\n'+str(bugs)+' bugs found:\n'+str(R))
+			f.write('\n'+str(bugs)+' bugs found:\n')
 			f.write(str(sut.failure())+'\n')
 		
 
@@ -119,8 +117,7 @@ queue =[sut.state()]
 
 #########1
 print "STARTING FIRST HALF TIME"
-start = time.time()
-print "Testing of half", TIMEOUT/2., "time..."
+print "Testing of half", TIMEOUT*0.5, "time..."
 while time.time() - start < TIMEOUT/2.:
 	sut.restart()
 	for s in xrange (0,DEPTH):
@@ -142,8 +139,7 @@ for s in sortedCov:
 
 #########2
 print "STARTING REST HALF TIME"
-start2 = time.time()
-while time.time() - start2 < TIMEOUT/2.:
+while time.time() - start < TIMEOUT:
 	findMid()
 	queue = []
 	for (t,c) in visited:
