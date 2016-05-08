@@ -75,7 +75,7 @@ def main():
     d = 1
     ntests = 0
     nbugs = 0
-    faults_file = "faults.txt"
+    faults_file = "failure"
     coverage_count = []
     start = time.time()
 
@@ -88,9 +88,10 @@ def main():
 
         frontier = []
         depth_start = time.time()
+        random.shuffle(state_queue)
         for s in state_queue:
             sut.backtrack(s)
-
+            print type(sut.enabled())
             for a in sut.enabled():
 
                 depth_time = time.time() - depth_start
@@ -125,7 +126,7 @@ def main():
                     if Config.faults == 1:
                         f = open(faults_file + str(nbugs) + ".test", "w")
                         print >> f, sut.failure()
-                        
+
 
 
                 elapsed = time.time() - start
@@ -153,6 +154,8 @@ def main():
 
         if elapsed >= Config.timeout:
             print "Stopping Test Due To Timeout, Terminated at Length", len(sut.test())
+            print time.time()-start, "TOTAL RUNTIME"
+            print ntests, "EXECUTED"
             break
         d += 1
 
