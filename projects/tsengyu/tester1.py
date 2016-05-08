@@ -19,10 +19,8 @@ sut.silenceCoverage()
 rand = random.Random()
 rand.seed(Seed)
 
-Failure_Report = "Fail"
 
 def randomOperation():
-	global Num_Bug = 0
 	global Time_Start
 	Operation = sut.randomEnabled(rand)
 	Good = sut.safely(Operation)
@@ -34,6 +32,14 @@ def randomOperation():
 			for i in sut.newBranches():
 				print "Runtime: ", round(Runtime, 3), "| All Branches: ", len(sut.allBranches()), "| New Branch: ", i
 			print "=========================================================="
+
+	return Good
+
+
+Failure_Report = "Fail"
+def notOK():
+	global Num_Bug = 0
+	Good = randomOperation()
 
 	if (not Good):
 		Num_Bug += 1
@@ -57,7 +63,7 @@ def randomOperation():
 				i += 1
 			file.close()
 
-	return Good, Num_Bug
+	return Num_Bug
 
 
 def mian():
@@ -75,13 +81,13 @@ def mian():
 	while (time.time() < (Time_Start + Phase1_Time_Budget)):
 		sut.restart()
 		for d in xrange(0, Depth):
-			Good, bugNum = randomOperation()
+			Good = randomOperation()
 			if (len(sut.newStatements()) > 0):
 				NS.append(sut.state())
 				NSM.append(sut.newStatements())
 
 			if (not Good):
-				break
+				bugNum = notOK()
 
 		for s in sut.currStatements():
 			if s not in CoverageCount:
@@ -147,13 +153,13 @@ def mian():
 				sut.backtrack(s)
 
 				for d in xrange(0, Depth):
-					Good, bugNum = randomOperation()
+					Good = randomOperation()
 					if (len(sut.newStatements()) > 0):
 						print "FOUND New Statements!!!"
 						CS.insert(i, sut.state())
 
 					if (not Good):
-						break
+						bugNum = notOK()
 
 				for j in sut.currStatements():
 					if j not in CoverageCount:
