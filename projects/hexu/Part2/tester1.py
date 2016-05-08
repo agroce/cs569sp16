@@ -19,7 +19,7 @@ start = time.time()
 
 bugs = 0
 
-
+acts = 0
 
 for m in xrange(0,Width):
 	if time.time() - start > Timeout:
@@ -30,6 +30,7 @@ for m in xrange(0,Width):
 			break
 		act = sut.randomEnabled(rgen)
 		ok  = sut.safely(act)
+		acts += 1
 		if not ok :
 			bugs += 1
 			if Faults :
@@ -43,21 +44,19 @@ for m in xrange(0,Width):
 				output = open("failure" + str(bugs) + ".test",'w')
 				output.write("FOUND A FAILURE \n " + str(sut.failure()) + "\nREDUCING \n" + result + str(sut.failure()) + "\n" )
 				output.close
-			break
+			sut.restart()
 		if Running :
 			if sut.newBranches() != set([]):
-				print "ACTION:", act[1]
+				print "ACTION:", act[0]
 				elapsed = time.time() - start
 				for b in sut.newBranches():
 					print elapsed,len(sut.allBranches()),"New branch",b
-		if bugs :
-			break
 if Coverage :
 	sut.internalReport()
 
-if bugs :
-	print "FOUND A FAILURE"
-print "SPEND TIME : ", time.time() - start
+print  bugs, "FAILED"
+print "ACTIONS  : ", acts
+print "RUN TIME : ", time.time() - start
 
 #python tester1.py 30 1 100 1 0 1 1
 

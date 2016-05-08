@@ -47,15 +47,16 @@ goodTests = []
 startTime = time.time()
 
 # Function To Save The Faults
-def	saveFaults(elapsedFailure, fault, act, bug, REDUCING):
+def	saveFaults(elapsedFailure, fault, act, bug, testCase, Algorithm):
 	FileName = 'failure'+str(bug)+'.test'
 	file = open(FileName, 'w+')
+	print >> file, Algorithm
 	print >> file, elapsedFailure, "Time it takes the tester to discover this fault \n"
 	print >> file, fault, "\n"
-	print >> file, " Reduced Test Case \n"	
+	print >> file, " Test Case \n"	
 	i = 0
-	# Reducing the Test Case
-	for s in REDUCING:
+	# Reading the test case as in randomester.py
+	for s in testCase:
 		steps = "# STEP " + str(i)
 		print >> file, sut.prettyName(s[0]).ljust(80-len(steps),' '),steps
 		i += 1
@@ -63,54 +64,66 @@ def	saveFaults(elapsedFailure, fault, act, bug, REDUCING):
 	print fault
 
 # Sequntial algorithm that will traverse over all actions and execute them one by one
+
 for act in sut.enabled():
 	seq = sut.safely(act)
-	if (not seq) and (FaultEnabled == 1):
+	if (not seq) and (FaultsEnabled == 1):
+		Sequential = "Discovered By Sequential Algorithm" 
 		elapsedFailure = time.time() - startTime
 		bugs += 1
 		print "FOUND A FAILURE"
 		sut.prettyPrintTest(sut.test())
 		test = sut.test()
 		Fault = sut.failure()
-		print "REDUCING"
-		REDUCING = sut.reduce(sut.test(),sut.fails, True, True)
-		sut.prettyPrintTest(REDUCING)
-		saveFaults(elapsedFailure, Fault, act, bugs, REDUCING)
+		saveFaults(elapsedFailure, Fault, act, bugs, test, Sequential)
 		sut.restart()
+			# Print the new discovered branches	
+	if (len(sut.newBranches()) > 0) and (RunningEnabled == 1):
+		print "ACTION:",act[0]
+		elapsed1 = time.time() - startTime
+		for b in sut.newBranches():
+			print elapsed1,len(sut.allBranches()),"New branch",b
+
 
 # RandomTester based on randomly selcted propability
 while (time.time() - startTime <= TIMEOUT):
 	# This will work only Memory input is set. It is good for finding combanition luck faults
 	if (len(goodTests) > 0) and (rgen.random() < 0.5):
 		sut.backtrack(rgen.choice(goodTests)[1])
+		if (time.time() - startTime >= TIMEOUT):
+			break
 	else:
 		sut.restart()
+
 	# Based on the depth randonly execute an action
 	for s in xrange(0,DEPTH):
+		if (time.time() - startTime >= TIMEOUT):
+			break
 		action = sut.randomEnabled(rgen)
 		r = sut.safely(action)
 		# Start saving discovered fault on Disk
 		if (not r) and (FaultsEnabled == 1):
+			RandomAlgorithm = "Discovered By Random Algorithm" 
 			elapsedFailure = time.time() - startTime
 			bugs += 1
 			print "FOUND A FAILURE"
 			sut.prettyPrintTest(sut.test())
 			test = sut.test()
 			Fault = sut.failure()
-			# Start Reducing the Test Case
-			print "REDUCING"
-			REDUCING = sut.reduce(sut.test(),sut.fails, True, True)
-			sut.prettyPrintTest(REDUCING)
 			#Saving discovered fault on Disk
-			saveFaults(elapsedFailure, Fault, act, bugs, REDUCING)
+			saveFaults(elapsedFailure, Fault, action, bugs, test, RandomAlgorithm)
 			# Rest the system state
 			sut.restart()
+		if (time.time() - startTime >= TIMEOUT):
+			break
 		# Print the new discovered branches	
 		if (len(sut.newBranches()) > 0) and (RunningEnabled == 1):
 			print "ACTION:",action[0]
 			elapsed1 = time.time() - startTime
 			for b in sut.newBranches():
 				print elapsed1,len(sut.allBranches()),"New branch",b
+		if (time.time() - startTime >= TIMEOUT):
+			break
 		# When getting new branches, save the test case into goodTest list to be executed based on random propability
 		if ((MEMORY != 0) and (len(sut.newBranches()) > 0)):
 			goodTests.append((sut.currBranches(), sut.state()))
@@ -120,17 +133,19 @@ while (time.time() - startTime <= TIMEOUT):
 			RandomMemebersSelection = random.sample(goodTests,int(float((len(goodTests))*.20)))
 			for x in RandomMemebersSelection:
 				goodTests.remove(x)
+
+
 # Printing Report
 elapsed = time.time() - startTime
 print "\n                  ############ The Final Report ############# \n"
 print elapsed, "Total Running Time"
 print bugs, " Bugs Found"
+print len(sut.allBranches()),"BRANCHES COVERED"
+print len(sut.allStatements()),"STATEMENTS COVERED"
 if CoverageEnabled == 1:
-	CoverageFileName = 'coverage.out'
-	sut.report(CoverageFileName)
-	print "Coverage Report is Saved on Disk"
 	print len(sut.allBranches()),"BRANCHES COVERED"
 	print len(sut.allStatements()),"STATEMENTS COVERED"
+	sut.internalReport()
 
 
 

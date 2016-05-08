@@ -6,162 +6,178 @@ import time
 import os
 
 
-timeout = int(sys.argv[1])
-seed = int(sys.argv[2])
-depth = int(sys.argv[3])
-width = int(sys.argv[4])
-faults = int(sys.argv[5])
-coverage = int(sys.argv[6])
-running = int(sys.argv[7])
+TimeOut = int(sys.argv[1])
+Seed = int(sys.argv[2])
+Depth = int(sys.argv[3])
+Width = int(sys.argv[4])
+Faults = int(sys.argv[5])
+Coverage = int(sys.argv[6])
+Running = int(sys.argv[7])
 
 sut = sut.sut()
 sut.silenceCoverage()
 rand = random.Random()
-rand.seed(seed)
+rand.seed(Seed)
 
-coverageCount = {}
-
-new_state = []
-new_statement = []
-
-chosen_state = []
-k_chosen = []
-
-state_queue = []
-state_visited = []
-
-fail = "fail"
-bug_num = 0
 
 def randomOperation():
-	global bug_num, time_start
-	operation = sut.randomEnabled(rand)
-	good = sut.safely(operation)
-	runtime = time.time() - time_start
+	global Time_Start
+	Operation = sut.randomEnabled(rand)
+	Good = sut.safely(Operation)
+	Runtime = time.time() - Time_Start
 
-	if (running):
-		if (len(sut.newBranches())) > 0
-		print "Operation: ", operation[0]
-		for i in sut.newBranches():
-			print runtime, len(sut.allBranches()), "New Branch", i
+	if (Running):
+		if ((len(sut.newBranches())) > 0):
+			print "Operation: ", Operation[0]
+			for i in sut.newBranches():
+				print "Runtime: ", round(Runtime, 3), "| All Branches: ", len(sut.allBranches()), "| New Branch: ", i
+			print "=========================================================="
 
-	if (not good):
-		bug_num += 1
-		print "A bug is found! #", bug_num
+	return Good
+
+
+Failure_Report = "Fail"
+def notOK():
+	global Num_Bug = 0
+	Good = randomOperation()
+
+	if (not Good):
+		Num_Bug += 1
+		print "BUG FOUND! Num: ", Num_Bug
 		print sut.failure()
-		print ("Reducing!")
+		print "=========================================================="
+		print "***Reducing ..."
 		reduce = sut.reduce(sut.test(), sut.fails, True, True)
 		sut.prettyPrintTest(reduce)
-		print(sut.failure())
+		print sut.failure()
+		print "=========================================================="
 
-		if (faults):
-			f = open((fail + str(bug_num) + ".test"), "w")
-			print >> f, sut.failure()
+		if (Faults):
+			file = open((Failure_Report + str(Num_Bug) + ".test"), "w")
+			print >> file, sut.failure()
 
-			j = 0
-			for (s_reduce, _, _) in reduce:
-				steps_reduce = "# Step " + str(j)
-				print >> f, sut.prettyName(s_reduce).ljust(80 - len(steps_reduce), ' '), steps_reduce
-				j += 1
-			f.close()
-		print "Time: ", runtime
-	return good
+			i = 1
+			for (reducing, _, _) in reduce:
+				Step_Reduce = "#" + str(i) + "STEP"
+				print >> file, sut.prettyName(reducing).ljust(100 - len(Step_Reduce), ' '), Step_Reduce
+				i += 1
+			file.close()
 
-time_start = time.time()
-current_depth = 1
-state_queue = [sut.state()]
+	return Num_Bug
 
-Time_Phase1 = timeout / 4
-print "PHASE 1 ..."
-while (time.time() < (time_start + Time_Phase1)):
-	sut.restart()
-	for d in xrange(0, depth):
-		good = randomOperation()
-		if (not good):
+
+def mian():
+	CoverageCount = {}
+	NS = []
+	NSM = []
+	CS = []
+	KC =[]
+	Time_Start = time.time()
+	Phase1_Time_Budget = TimeOut / 3
+
+	print "***PHASE 1 Starting ..."
+	print "=========================================================="
+
+	while (time.time() < (Time_Start + Phase1_Time_Budget)):
+		sut.restart()
+		for d in xrange(0, Depth):
+			Good = randomOperation()
+			if (len(sut.newStatements()) > 0):
+				NS.append(sut.state())
+				NSM.append(sut.newStatements())
+
+			if (not Good):
+				bugNum = notOK()
+
+		for s in sut.currStatements():
+			if s not in CoverageCount:
+				CoverageCount[s] = 0
+			CoverageCount[s] += 1
+
+	sorted_Coverage = sorted(CoverageCount.keys(), key = lambda x: CoverageCount[x])
+
+	sum_value = 0
+	for s in sorted_Coverage:
+		sum_value += CoverageCount[s]
+
+	mean_value = sum_value / len(CoverageCount)
+
+	temp_sum = 0.0
+	for s in sorted_Coverage:
+		temp_sum += math.pow(CoverageCount[s] - mean_value, 2)
+
+	STD = math.sqrt(temp_sum / len(CoverageCount))
+	Threshold = mean_value - (0.6 * STD)
+	print "Mean: ", mean_value
+	print "Standard Deviation: ", round(STD, 3)
+	print "Threshold: ", round(Threshold, 3)
+	print "=========================================================="
+
+	for s in sorted_Coverage:
+		if (CoverageCount[s] > Threshold):
 			break
-		if (len(sut.newStatements()) > 0):
-			new_state.append(sut.state())
-			new_statement.append(sut.newStatements())
+		for k in KC:
+			if s in NSM[k]:
+				continue
+		for k in xrange(0, len(NSM)):
+			if s in NSM[k]:
+				KC.append(k)
 
-	for s in sut.currStatements():
-		if s not in coverageCount:
-			coverageCount[s] = 0
-		coverageCount[s] += 1
+	for k in KC:
+		CS.append(NS[k])
 
-sortedCoverage = sorted(coverageCount.keys(), key = lambda x: coverageCount[x])
+	print bugNum, "BUGS FOUND!!!"
 
-sum_value = 0
-for s in sortedCoverage:
-	sum_value += coverageCount[s]
+	for s in sorted_Coverage:
+		print s, CoverageCount[s]
+	print "=========================================================="
 
-mean_value = sum_value / len(coverageCount)
-sum_value = 0.0
-for s in sortedCoverage:
-	sum_value += math.pow(coverageCount[s] - mean_value, 2)
-sum_value = sum_value / (len(coverageCount) - 1)
+	if (Coverage == 1):
+		sut.internalReport()
 
-std = math.sqrt(sum_value)
-threshold = mean_value - (0.67 * std)
-print "Mean: ", mean_value
-print "Standard Deviation: ", std
-print "Threshold: ", threshold
+	print ""
+	print "***PHASE 2 Starting..."
+	print "=========================================================="
 
-for s in sortedCoverage:
-	if (coverageCount[s] > threshold):
-		break
-	for k in k_chosen:
-		if s in new_statement[k]:
-			continue
-	for k in xrange(0, len(new_statement)):
-		if s in new_statement[k]:
-			k_chosen.append(k)
+	Phase2_Time_Budget = TimeOut - Phase1_Time_Budget
+	Time_Start = time.time()
+	i = 1
+	while (time.time() < (Time_Start + Phase2_Time_Budget)):
+		for s in CS:
+			i += 1
+			temp_time = Phase2_Time_Budget / (len(CS) * i)
+			time_start_2 = time.time()
 
-for k in k_chosen:
-	chosen_state.append(new_state[k])
+			while (time.time() < time_start_2 + temp_time):
+				sut.restart()
+				sut.backtrack(s)
 
-print bug_num, " Bugs Found!"
+				for d in xrange(0, Depth):
+					Good = randomOperation()
+					if (len(sut.newStatements()) > 0):
+						print "FOUND New Statements!!!"
+						CS.insert(i, sut.state())
 
-for s in sortedCoverage:
-	print s, coverageCount[s]
-if (coverage):
-	sut.internalReport()
+					if (not Good):
+						bugNum = notOK()
+
+				for j in sut.currStatements():
+					if j not in CoverageCount:
+						CoverageCount[j] = 0
+					CoverageCount[j] += 1
+
+			sorted_Coverage = sorted(CoverageCount.keys(), key = lambda x: CoverageCount[x])
+
+	print bugNum, "BUGS FOUND!!!"
+
+	for s in sorted_Coverage:
+		print s, CoverageCount[s]
+	print "=========================================================="
+
+	if (Coverage == 1):
+		sut.internalReport()
 
 
-print "PHASE 2 ..."
-Time_Phase2 = timeout - Time_Phase1
-
-all_state = []
-new_statement = []
-i = 0;
-time_start = time.time()
-while (time.time() < (time_start + Time_Phase2)):
-	for state in chosen_state:
-		i += 1
-		time_state = float(Time_Phase2) / (len(chosen_state) * (i + 1))
-		time_start2 = time.time()
-		while (time.time() < time_start2 + time_state):
-			sut.restart()
-			sut.backtrack(state)
-			for d in xrange(0, depth):
-				good = randomOperation()
-				if (not good):
-					break
-				if (len(sut.newStatements()) > 0):
-					print "A New Statement is Found!"
-					chosen_state.insert(i, sut.state())
-
-			for s in sut.currStatements():
-				if s not in coverageCount:
-					coverageCount[s] = 0
-				coverageCount[s] += 1
-
-		sortedCoverage = sorted(coverageCount.keys(), key = lambda x: coverageCount[x])
-
-print bug_num, " Bugs Found!"
-
-for s in sortedCoverage:
-	print s, coverageCount[s]
-
-if (coverage):
-	sut.internalReport()
+if __name__ == '__main__':
+	main()
 

@@ -8,106 +8,170 @@ import traceback
 import argparse
 
 
-TIMEOUT = int(sys.argv[1])
+##TIMEOUT = int(sys.argv[1])
 
-SEED = int(sys.argv[2])
+##SEED = int(sys.argv[2])
 
-DEPTH = int(sys.argv[3])
+##DEPTH = int(sys.argv[3])
 
-WIDTH = int(sys.argv[4])
+##WIDTH = int(sys.argv[4])
 
-FAULTS = int(sys.argv[5])
+##FAULTS = int(sys.argv[5])
 
-COVERAGE = int(sys.argv[6])
+##COVERAGE = int(sys.argv[6])
 
-RUNNING = int(sys.argv[7])
+##RUNNING = int(sys.argv[7])
+
+
+
+def parse_args():
+	parser = argparse.ArgumentParser()
+	parser.add_argument('timeout', type=int, default=30)
+	parser.add_argument('seed', type=int, default=None)
+	parser.add_argument('depth', type=int, default=100)
+	parser.add_argument('width', type=int, default=1)
+	parser.add_argument('faults', type=int, default=0)
+	parser.add_argument('coverage', type=int, default=1)
+	parser.add_argument('running', type=int, default=1)
+	parsed_args = parser.parse_args(sys.argv[1:])
+	return (parsed_args, parser)
+
+def make_config(pargs, parser):
+	pdict = pargs.__dict__
+	key_list = pdict.keys()
+	arg_list = [pdict[k] for k in key_list]
+	Config = namedtuple('Config', key_list)
+	nt_config = Config(*arg_list)
+	return nt_config
+
+def failures():
+	bugs += 1
+	print "FOUND A FAILURE"
+	print sut.failure()
+	print "REDUCING"
+	failPool.append(sut.test())
+	collectCoverage()
+	R = sut.reduce(sut.test(),sut.fails, True, True)
+	sut.prettyPrintTest(R)
+	print sut.failure()
+	sut.restart()
 
 sut=sut.sut()
-sut.silenceCoverage()
-rgen = random.Random()
 
-coverageCount = {}
+def main():
 
-actCount = 0
-bugs = 0
+	global config,rgen,actCount,failCount,ntests,coverageCount
 
-visited = []
-failPool = []
-belowMid = set([])
+	parsed_args, parser = parse_args()
+	config = make_config(parsed_args, parser)
 
-def randomAction():
-	global actCount, bugs, failPool
-	act = sut.randomEnabled(rgen)
-	actCount += 1
-	ok = sut.safely(act)
-	if not ok:
-		failures()
-	else:
-		Statement()
-	return ok  
+    print ('testing using config={}'.format(Config))
 
-def Statement():
-	global belowMid,lastAddCoverage 
-	if len(sut.newStatements()) != 0:
-		oldTest = list(sut.test())
-		storeTest = sut.reduce(oldTest,sut.coversStatements(sut.newStatements()))
-		sut.replay(oldTest)
-		visited.append((storeTest, set(sut.currStatements())))
-		lastAddCoverage = set(sut.currStatements())
-		return
-	for s in belowMid:
-		if s in sut.currStatements() and s not in lastAddCoverage:
-			visited.append((list(sut.test()), set(sut.currStatements())))
-			lastAddCoverage = set(sut.currStatements())
-			return	
+    sut.silenceCoverage()
+    sut.restart()
+
+    R = random.Random(Config.seed)
+
+    state_queue = [sut.state()]
+    visited = []
+
+    max_depth_time = 30
+
+    d = 1
+    ntests = 0
+    nbugs = 0
+    faults_file = "faults.txt"
+    coverage_count = []
+    start = time.time()
 
 
-queue =[sut.state()]
+    while d <= Config.depth:
+        print "Depth", d, "Size", len(state_queue), "Set", len(visited)
+        w = 1
+        len_queue = len(state_queue)
+        ntests += 1
 
-#########1
-print "1"
-start1 = time.time()
-print "Testing of first", TIMEOUT/2, "time..."
-while time.time() - start1 < TIMEOUT/2:
-	sut.restart()
-	for s in xrange (0,DEPTH):
-		if not randomAction():
-			break
-	for s in sut.currStatements():
-		if s not in coverageCount:
-			coverageCount[s] = 0
-		coverageCount[s] += 1 
+        frontier = []
+        depth_start = time.time()
+        for s in state_queue:
+            sut.backtrack(s)
 
-sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-ss = len(coverageCount)/2
-coverMid = coverageCount[sortedCov[ss]]
-for s in sortedCov:
-	print s, coverageCount[s]   
+            for a in sut.enabled():
 
-print "2"
-start2 = time.time()
-print "Testing of second", TIMEOUT/2, "time..."
-while time.time() - start2 < TIMEOUT/2:
-	queue = []
-	for (t,c) in visited:
-		for s in c:
-			if s in belowMid:
-				queue.append((t,c))
-				break
-	lastAddCoverage = set([])
-	sut.restart()
-	if rgen.random() > 0.7:
-		sut.replay(rgen.choice(queue)[0])
-		lastAddCoverage = set(sut.currStatements())  
-	for d in xrange (0,DEPTH):
-		if not randomAction():
-			break
-	for s in sut.currStatements():
-		if s not in coverageCount:
-			coverageCount[s] = 0
-		coverageCount[s] += 1 
-	print s, coverageCount[s]
+                depth_time = time.time() - depth_start
+
+                if depth_time >= max_depth_time:
+                    break
+
+                isGood = sut.safely(a)
+
+                if Config.running:
+                    if sut.newBranches() != set([]):
+                        print "Action:", a[0]
+                        for b in sut.newBranches():
+                           print elapsed, len(sut.allBranches()), "New Branch", b
+                    if sut.newStatements() != set([]):
+                        print "Action:", a[0]
+                        for s in sut.newStatements():
+                            print elapsed, len(sut.allStatements()), "New Statement", s
+
+                if not isGood:
+                    nbugs += 1
+                    print "Found A Bug! number of bugs:", nbugs
+                    print sut.failure()
+                    print "Reducing......"
+
+                    reduction = sut.reduce(sut.test(), sut.fails, True, True)
+
+                    sut.prettyPrintTest(reduction)
+                    print sut.failure()
+
+                    if Config.faults == 1:
+                        f = open(faults_file, "w")
+                        print >> f, sut.failure()
+
+
+                elapsed = time.time() - start
+
+                if elapsed >= Config.timeout:
+                    break
+
+                s_next = sut.state()
+
+                if s_next not in visited:
+                    visited.append(s_next)
+                    frontier.append(s_next)
+
+            if depth_time >= max_depth_time:
+                break
+
+            if elapsed >= Config.timeout:
+                break
+
+            if w <= Config.width:
+                w += 1
+            else:
+                break
+            state_queue = frontier
+
+
+        if elapsed >= Config.timeout:
+            print "Stopping Test Due To Timeout, Terminated at Length", len(sut.test())
+            break
+
+        if Config.coverage == 1:
+            sut.internalReport()
+
+        d += 1
+
+    print len(sut.allBranches()),"BRANCHES COVERED"
+    print len(sut.allStatements()),"STATEMENTS COVERED"
 
 print bugs,"FAILED"
 print "TOTAL ACTIONS",actCount
 print "TOTAL RUNTIME",time.time()-start
+
+if __name__ == '__main__':
+    main()
+
+

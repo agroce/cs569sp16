@@ -1,6 +1,5 @@
 import sut
 import random
-import statistics
 import math
 import sys 
 import time
