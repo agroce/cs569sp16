@@ -123,8 +123,9 @@ def main():
                     print sut.failure()
 
                     if Config.faults == 1:
-                        f = open(faults_file, "w")
+                        f = open(faults_file + str(nbugs) + ".test", "w")
                         print >> f, sut.failure()
+                        
 
 
                 elapsed = time.time() - start
@@ -149,7 +150,6 @@ def main():
             else:
                 break
             state_queue = frontier
-
 
         if elapsed >= Config.timeout:
             print "Stopping Test Due To Timeout, Terminated at Length", len(sut.test())
