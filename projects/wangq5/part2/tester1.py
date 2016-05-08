@@ -115,7 +115,6 @@ def main():
                 coverageCount[s] = 0
             coverageCount[s] = coverageCount[s] + 1
         covrSort = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-        print "Secondly calculate weight of the coverage"
         for st in covrSort:
         	if st*(allCoverage - coverageCount[st]) >25:
         		coverageWM.append(st*(allCoverage - coverageCount[st]))
