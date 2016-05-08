@@ -68,7 +68,8 @@ while S != []  :
                         print "this is fault:"+ str(sut.failure())
                         fname = 'failure'+str(bugs)+'.test'
                         with open(fname,'w+') as f:
-                            f.write(str(sut.failure()))
+                            f.write(str(sut.failure())+'\n')
+                            f.write(str(R)+'\n')
                 
                 S.append((sut.state(),test))
 

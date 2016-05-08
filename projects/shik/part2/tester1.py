@@ -48,9 +48,10 @@ def failures():
 	sut.prettyPrintTest(R)
 	print sut.failure()
 	if FAULTS:
-		with open('failure1.test','a') as f:
+		with open("failure"+str(bugs)+".test",'w') as f:
 			f.write('\n'+str(bugs)+' bugs found:\n'+str(R))
 			f.write(str(sut.failure())+'\n')
+		
 
 	sut.restart()
 

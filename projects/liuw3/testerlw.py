@@ -6,10 +6,11 @@ import time
 BUDGET = int(sys.argv[1])
 SEED = int(sys.argv[2])
 depth = int(sys.argv[3])
-width = int(sys.argv[3])
-faults = int(sys.argv[4])
-coverage_report = int(sys.argv[5])
+width = int(sys.argv[4])
+faults = int(sys.argv[5])
+
 running = int(sys.argv[6])
+coverage = int(sys.argv[7])
 ## parsing parameter
 
 
@@ -32,7 +33,7 @@ start = time.time()
 ## intilize
 
 def expandNewState():
-    global sut,Coverage,sortedCov,weight,weightedCov,BelowCoverage
+    global sut,Coverage,BUDGET,sortedCov,weight,weightedCov,BelowCoverage
     for s in sut.currStatements():
         if s not in Coverage:
             Coverage[s] = 0
@@ -48,10 +49,10 @@ def expandNewState():
             sut.backtrack(sut.state())
 
 def main():
-    global start,BUDGET,sut,savedcoverage,rgen,storedTest,act,ok,savedcoverage,running,savedcoverage,Num,faults,foundbug,savedTestState
+    global start,BUDGET,sut,COVERAGE_REPORT,savedcoverage,rgen,storedTest,act,ok,savedcoverage,running,savedcoverage,Num,faults,foundbug,savedTestState
     while time.time()-start < BUDGET:
         sut.restart()
-        if (savedcoverage != None) and (rgen.random() > 0.4):
+        if (savedcoverage != None) and (rgen.random() > 0.7):
             print "Processing"
             sut.backtrack(savedcoverage)
         storedTest = False
@@ -59,6 +60,11 @@ def main():
         for s in xrange(0,100):
             act = sut.randomEnabled(rgen)
             ok = sut.safely(act)
+            if running:
+                if sut.newBranches() != set([]):
+                    for d in sut.newBranches():
+                        print time.time() - start,len(sut.allBranches()),"New Branches",d
+
             if len(sut.newStatements()) > 0:
                 savedcoverage = sut.state()
                 storedTest = True
@@ -82,12 +88,14 @@ def main():
         savedTestState = sut.state()
         expandNewState()
 
+    if coverage:
+        sut.internalReport()
+
     print foundbug,"FAILED"
     print "ACTIVE",Num
     print "RUNTIME",time.time()-start
-    for s in sortedCoverage:
-        print s, coverageCount[s]
-    if (COVERAGE_REPORT):
-        sut.internalReport()
+ #   for s in sortedCoverage:
+  #      print s, coverageCount[s]
+
 if __name__ == '__main__':
     main()
