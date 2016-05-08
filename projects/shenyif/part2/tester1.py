@@ -30,8 +30,6 @@ S.append((sut.state(),[]))
 
 
 startAll = time.time()
-
-#while (time.time()-startAll)<timeout:
     
 while S != []  :
     
@@ -85,7 +83,7 @@ while S != []  :
                         new = False
 
 
-#print bugs,"FAILED"
+
 if (COVERAGE_REPORT):
     sut.internalReport()
 print "TOTAL NUMBER OF BUGS",bugs
