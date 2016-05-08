@@ -102,7 +102,7 @@ while time.time() - start < TIMEOUT :
     sut.restart()
     if len(sut.newStatements()) != 0:
         print "NEW STATEMENTS DISCOVERED",sut.newStatements()
-        fullPool.append((list(sut.test()), set(sut.currStatements())))
+        visited.append((list(sut.test()), set(sut.currStatements())))
     for s in xrange(0,DEPTH):
         if not randomAction():
             break
