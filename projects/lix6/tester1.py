@@ -88,11 +88,13 @@ while time.time() - start < TIMEOUT :
     belowMedian = set([])
     sort = sorted(coveraged.keys(),key = lambda x : coveraged[x])
 
+
     for s in sort:
         if coveraged[s] < belowMedian:
             belowMedian.add(s)
         else:
             break
+       	
     
     activePool = []
     for (t,c) in visited:
