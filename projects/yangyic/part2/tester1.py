@@ -61,9 +61,10 @@ def running_oh():
 		print "*** find a new branch :", sut.newBranches()
 
 def record_failures():
-	global string
-	file = open("record_failures.txt","w")
-	file.write(str(sut.failure()))
+	global string,failure
+	for x in xrange(1,bugs):
+		file = open((failure + str(x) + ".test"),"w")
+		file.write(str(sut.failure()))
 	# file.write(string)
 
 
@@ -88,7 +89,7 @@ ran_queue = []
 visited = []
 start_time_1 = time.time()
 Record = False
-
+failure = "failure"
 
 four_coverage = set([])
 three_coverage= set([])
