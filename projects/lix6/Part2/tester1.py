@@ -23,7 +23,8 @@ def randomAction():
     if not ok:
         bugs += 1
         if FAULTS:
-            f = open("failure1.test",'a')
+            file = "failure"+str(bugs)+".test"
+            f = open(file,'a')
             f.write(str(sut.failure()))
             f.close()
             if COVERAGE:
