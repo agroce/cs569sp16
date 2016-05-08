@@ -5,6 +5,7 @@ import time
 import math
 import os
 
+start = time.time()
 
 TIMEOUT = int(sys.argv[1])
 
@@ -28,28 +29,53 @@ coverageCount = {}
 
 actCount = 0
 bugs = 0
-
 visited = []
 failPool = []
 belowMid = set([])
 
 def failures():
+	global bugs,coverageCount
 	bugs += 1
 	print "FOUND A FAILURE"
 	print sut.failure()
 	print "REDUCING"
 	failPool.append(sut.test())
-	collectCoverage()
-	R = sut.reduce(sut.test(),sut.fails, True, True)
-	sut.prettyPrintTest(R)
+	for s in sut.currStatements():
+		if s not in coverageCount:
+			coverageCount[s] = 0
+		coverageCount[s] += 1  
 	print sut.failure()
+	if FAULTS:
+		with open("failure"+str(bugs)+".test",'w') as f:
+			f.write('\n'+str(bugs)+' bugs found:\n')
+			f.write(str(sut.failure())+'\n')
+		
+
 	sut.restart()
 
 def randomAction():
-	global actCount, bugs, failPool
+	global actCount, failPool
 	act = sut.randomEnabled(rgen)
 	actCount += 1
 	ok = sut.safely(act)
+	elapsed = time.time() - start
+	if RUNNING:
+		if sut.newBranches() != set([]):
+			print "ACTION:",act[0]
+			for d in sut.newBranches():
+				print elapsed,len(sut.allBranches()),"New branch",d
+			sawNew = True
+		else:
+			sawNew = False
+
+		if sut.newStatements() != set([]):
+			print "ACTION:",act[0]
+			for s in sut.newStatements():
+				print elapsed,len(sut.allStatements()),"New statement",s
+			sawNew = True
+		else:
+			sawNew = False
+
 	if not ok:
 		failures()
 	else:
@@ -82,7 +108,7 @@ def findMid():
 			belowMid.add(s)
 		else:
 			break
-	print len(belowMid),"STATEMENTS BELOW MID COVERAGE OUT OF",len(coverageCount)
+	#print len(belowMid),"STATEMENTS BELOW MID COVERAGE OUT OF",len(coverageCount)
 	
 		
 
@@ -90,10 +116,9 @@ def findMid():
 queue =[sut.state()]
 
 #########1
-print "STARTING PHASE 1"
-start = time.time()
-print "Testing of half", TIMEOUT/2, "time..."
-while time.time() - start < TIMEOUT/2:
+print "STARTING FIRST HALF TIME"
+print "Testing of half", TIMEOUT*0.5, "time..."
+while time.time() - start < TIMEOUT/2.:
 	sut.restart()
 	for s in xrange (0,DEPTH):
 		if not randomAction():
@@ -113,9 +138,8 @@ for s in sortedCov:
 #########
 
 #########2
-print "STARTING PHASE 2"
-start2 = time.time()
-while time.time() - start2 < TIMEOUT/2:
+print "STARTING REST HALF TIME"
+while time.time() - start < TIMEOUT:
 	findMid()
 	queue = []
 	for (t,c) in visited:
@@ -147,12 +171,9 @@ for s in sortedCov:
 print "\nBelowMid coverageCount 2nd running Coverage results has printed\n"
 
 
+if COVERAGE:
+	sut.internalReport()
 
 print bugs,"FAILED"
 print "TOTAL ACTIONS",actCount
 print "TOTAL RUNTIME",time.time()-start
-
-if COVERAGE:
-	sut.internalReport()
-
-

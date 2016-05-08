@@ -4,25 +4,37 @@ import sys
 import time
 
 
-TIME_BUDGET = int(sys.argv[1])
+
+depth = 100
+
+explore = 0.7
+
+savedTest = None
+
+actCount = 0
+sut = sut.sut()
+BUDGET = int(sys.argv[1])
 SEED = int(sys.argv[2])
 depth = int(sys.argv[3])
 width = int(sys.argv[4])
 faults = int(sys.argv[5])
 coverage_report = int(sys.argv[6])
 running = int(sys.argv[7])
+currentCoverageWeight = 0
 
-
+covTolerance = 100
 bugs = 0
 
 rgen = random.Random()
 rgen.seed(SEED)
-
+CovW = []
 coverageCount = {}
 
-start = time.time()
+startT = time.time()
+CoverageTemp = 0
 
-while time.time()-start < BUDGET:
+
+while time.time()-startT < BUDGET:
     sut.restart()
     if (savedTest != None) and (rgen.random() > explore):
         print "EXPLOITING"
@@ -33,11 +45,11 @@ while time.time()-start < BUDGET:
         act = sut.randomEnabled(rgen)
         ok = sut.safely(act)
         actCount += 1
-        if (running):
+        if (running == 1):
             if len(sut.newBranches()) > 0:
                 print "ACTION:", act[0]
                 for b in sut.newBranches():
-                    print time.time() - start, len(sut.allBranches()), "Newbranch", b
+                    print time.time() - startT, len(sut.allBranches()), "Newbranch", b
 
         if(faults):
             if not ok:
@@ -57,7 +69,6 @@ while time.time()-start < BUDGET:
                 print "FOUND NEW STATEMENTS", sut.newStatements()
 
 
-    savedTestState = sut.state()
     for s in sut.currStatements():
         if s not in coverageCount:
             coverageCount[s] = 0
@@ -65,7 +76,11 @@ while time.time()-start < BUDGET:
     sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
 
     for t in sortedCov:
-        print t, coverageCount[t]
+            CoverageTemp = (depth - coverageCount[t])
+            currentCoverageWeight = t*CoverageTemp
+            if currentCoverageWeight > covTolerance:
+                CovW.append(currentCoverageWeight)
+                print "statement below coverage:", t
 
 if(coverage_report):
     sut.internalReport()
@@ -75,4 +90,4 @@ if(coverage_report):
 
 print bugs,"FAILED"
 print "TOTAL ACTIONS",actCount
-print "TOTAL RUNTIME",time.time()-start
+print "TOTAL RUNTIME",time.time()-startT

@@ -87,9 +87,10 @@ while time.time() - start < BUDGET:
                 for b in sut.newBranches():
                     print time.time() - start, len(sut.allBranches()), "Newbranch", b
 
-        if not ok:
-            notOK()
-            break
+        if FAULT_CHECK == 1:
+            if not ok:
+                notOK()
+                break
 
         collectCoverage()
 
@@ -99,10 +100,9 @@ while time.time() - start < BUDGET:
 
 if (COVERAGE_REPORT == 1):
     sut.internalReport()
-
-sortedCov = sorted(coverageCount.keys(), key = lambda x: coverageCount[x])
-for s in sortedCov:
-    print s, coverageCount[s] 
+    sortedCov = sorted(coverageCount.keys(), key = lambda x: coverageCount[x])
+    for s in sortedCov:
+        print s, coverageCount[s] 
 
 print bugs,"FAILED"
 print "TOTAL ACTIONS",actCount
