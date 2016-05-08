@@ -1,4 +1,4 @@
-import sut as sut
+import sut
 import random
 import time
 import sys
@@ -35,7 +35,7 @@ RunningEnabled = int(sys.argv[7])
 
 # gloable variables initilization
 sut = sut.sut()
-
+sut.silenceCoverage()
 bugs = 0
 goodTests = []
 startTime = time.time()
