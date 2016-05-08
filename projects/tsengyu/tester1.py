@@ -69,12 +69,12 @@ def mian():
 	NSM = []
 	CS = []
 	KC =[]
-	Time_Start = time.time()
-	Phase1_Time_Budget = TimeOut * 0.45
 
 	print "***PHASE 1 Starting ..."
 	print "=========================================================="
 
+	Time_Start = time.time()
+	Phase1_Time_Budget = TimeOut * 0.45
 	while (time.time() < (Time_Start + Phase1_Time_Budget)):
 		sut.restart()
 		for d in xrange(0, Depth):
