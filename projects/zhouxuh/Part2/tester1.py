@@ -31,48 +31,14 @@ def action():
             R = sut.reduce(sut.test(),sut.fails, True, True)
             sut.prettyPrintTest(R)
             print sut.failure()
+            
+            f = open(("failure" + str(bugs) + ".test"),"w")
+            f.writelines(str(sut.failure()))
+            f.close()
+            
             sut.restart()
-        else:
-            expand()
+
     return ok
-
-def expand():
-    global belowMean,lastAddCoverage 
-    if len(sut.newStatements()) != 0:
-        print "NEW STATEMENTS DISCOVERED",sut.newStatements()
-        oldTest = list(sut.test())
-        storeTest = sut.reduce(oldTest,sut.coversStatements(sut.newStatements()))
-        print "OLD LENGTH = ",len(oldTest),"NEW LENGTH = ",len(storeTest)
-        sut.replay(oldTest)
-        fullPool.append((storeTest, set(sut.currStatements())))
-        lastAddCoverage = set(sut.currStatements())
-        return
-    for s in belowMean:
-        if s in sut.currStatements() and s not in lastAddCoverage:
-            print "NEW PATH TO LOW COVERAGE STATEMENT",s
-            fullPool.append((list(sut.test()), set(sut.currStatements())))
-            lastAddCoverage = set(sut.currStatements())
-            return
-
-def printCov():
-    global belowMean
-
-    belowMean = set([])
-    sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-
-    coverSum = sum(coverageCount.values())
-    coverMean = coverSum / (1.0*len(coverageCount))
-    print "MEAN COVERAGE IS",coverMean
-    for s in sortedCov:
-        print s, coverageCount[s]
-    for s in sortedCov:
-        if coverageCount[s] < coverMean:
-            belowMean.add(s)
-        else:
-            break
-    print len(belowMean),"STATEMENTS BELOW MEAN COVERAGE OUT OF",len(coverageCount)
-
-    
 
 timeout  = int(sys.argv[1])
 seed     = int(sys.argv[2])
@@ -88,9 +54,7 @@ actCount = 0
 sut = sut.sut()
 bugs = 0
 coverageCount = {}
-fullPool = []
 failPool = []
-belowMean = set([])
 ntests = 0
 
 start = time.time()
@@ -102,15 +66,11 @@ while time.time()-start < timeout:
             break
     collectCoverage()    
 
-printCov()
 
 if (coverage == 1):
     sut.internalReport()
 
 print ntests,"TESTS"
-
-for (t,s) in fullPool:
-    print len(t),len(s)
 
 print bugs,"FAILED"
 print "TOTAL ACTIONS",actCount
