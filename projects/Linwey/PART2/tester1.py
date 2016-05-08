@@ -48,13 +48,14 @@ def newState():
             collected_test = sut.state()
             storedTest = True
         action_cnt += 1
-        if not no_bug_found:
-            bugfound += 1
-            print "A failure happened here."
-            rds = sut.reduce(sut.test(),sut.fails, True, True)
-            sut.prettyPrintTest(rds)
-            print sut.failure()
-            break
+        if FAULTS:    
+            if not no_bug_found:
+                bugfound += 1
+                print "A failure happened here."
+                rds = sut.reduce(sut.test(),sut.fails, True, True)
+                sut.prettyPrintTest(rds)
+                print sut.failure()
+                break
 
 while time.time()-start < BUDGET:
     sut.restart()
