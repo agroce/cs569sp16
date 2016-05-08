@@ -128,10 +128,11 @@ def main():
 	if config.coverage:
 		sut.restart()
 		sut.report("coverage.out")
-		printCoverage()
-	
-	print "Covered", len(sut.allBranches()), "branches"
-	print "Covered", len(sut.allStatements()), "statements"
+		#printCoverage()
+		sut.internalReport()
+
+	#print "Covered", len(sut.allBranches()), "branches"
+	#print "Covered", len(sut.allStatements()), "statements"
 	
 	print "Failed", bugs, "times"
 	print "Total actions", actCount
