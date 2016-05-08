@@ -78,7 +78,7 @@ def main():
     faults_file = "failure"
     coverage_count = []
     start = time.time()
-
+    elapsed = time.time() - start
 
     while d <= Config.depth:
         print "Depth", d, "Queue size", len(state_queue), "Visited set", len(visited)
@@ -91,7 +91,6 @@ def main():
         random.shuffle(state_queue)
         for s in state_queue:
             sut.backtrack(s)
-            print type(sut.enabled())
             for a in sut.enabled():
 
                 depth_time = time.time() - depth_start
@@ -99,7 +98,6 @@ def main():
                 if depth_time >= max_depth_time:
                     break
 
-                #print sut.newStatements()
                 isGood = sut.safely(a)
 
                 if Config.running:
