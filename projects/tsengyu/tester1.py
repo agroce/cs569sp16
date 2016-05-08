@@ -20,8 +20,10 @@ rand = random.Random()
 rand.seed(Seed)
 
 
+Failure_Report = "Fail"
 def randomOperation():
 	global Time_Start
+	Num_Bug = 0
 	Operation = sut.randomEnabled(rand)
 	okay = sut.safely(Operation)
 	Runtime = time.time() - Time_Start
@@ -32,14 +34,6 @@ def randomOperation():
 			for i in sut.newBranches():
 				print "Runtime: ", round(Runtime, 3), "| All Branches: ", len(sut.allBranches()), "| New Branch: ", i
 			print "=========================================================="
-
-	return okay
-
-
-Failure_Report = "Fail"
-def isOK():
-	Num_Bug = 0
-	okay = randomOperation()
 
 	if (not okay):
 		Num_Bug += 1
@@ -74,11 +68,11 @@ def mian():
 	print "=========================================================="
 
 	Time_Start = time.time()
-	Phase1_Time_Budget = TimeOut * 0.45
+	Phase1_Time_Budget = TimeOut * 0.5
 	while (time.time() < (Time_Start + Phase1_Time_Budget)):
 		sut.restart()
 		for d in xrange(0, Depth):
-			Good, bugNum = isOK()
+			Good, bugNum = randomOperation()
 			if (len(sut.newStatements()) > 0):
 				NS.append(sut.state())
 				NSM.append(sut.newStatements())
@@ -119,7 +113,7 @@ def mian():
 		temp_sum += math.pow(CoverageCount[s] - mean_value, 2)
 
 	STD = math.sqrt(temp_sum / len(CoverageCount))
-	Threshold = mean_value - (0.5 * STD)
+	Threshold = mean_value - (0.75 * STD)
 
 	for s in sorted_Coverage:
 		if (CoverageCount[s] > Threshold):
@@ -148,7 +142,7 @@ def mian():
 				sut.backtrack(s)
 
 				for d in xrange(0, Depth):
-					Good, bugNum = isOK()
+					Good, bugNum = randomOperation()
 					if (len(sut.newStatements()) > 0):
 						print "FOUND New Statements!!!"
 						CS.insert(i, sut.state())
