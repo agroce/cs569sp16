@@ -21,24 +21,25 @@ running = int(sys.argv[7]) #print the branch
 # running = 1
 
 
-rgen = random.Random()
-rgen.seed(seed)
+rgen = random.Random(seed)
 
 layer = width
 
 slack = 0.0
 bugs = 0
+actCount = 0
+elapsed = 0
+
 sut = sut.sut()
 sut.silenceCoverage()
 
-sut.restart()
+# sut.restart()
 startTM = time.time()
-queue = [sut.state()]
+# queue = [sut.state()]
+queue=[]
 visited = []
+vistedRandom=[]
 frontier = []
-
-actCount = 0
-elapsed = 0
 
 
 def branchFun(running,possible,elapsed):
@@ -57,6 +58,40 @@ def branchFun(running,possible,elapsed):
             sawNew = True
         else:
             sawNew = False
+
+print "START PHASE ONE ........\n"
+
+while (time.time() - startTM) <= (timeout/20):
+    sut.restart()
+    for s0 in xrange(0,depth):
+        act = sut.randomEnabled(rgen)
+        ok0 = sut.safely(act)
+        sstate=sut.state()
+        actCount+=1
+        branchFun(running,act,0)  #print the branch
+        if sstate not in visited:
+            visited.append(sstate)
+        if not ok0:
+            queue.append(sstate)
+            print "Note:: There is a Failure"
+            print "Start Reducing"
+            R = sut.reduce(sut.test(),sut.fails, True, True) # find a bug, min size sequence
+            sut.prettyPrintTest(R)
+            print sut.failure()
+            if faults:
+                bugs+=1
+                failname='failure'+str(bugs)+'.test'
+                for i in range(len(R)):
+                    with open(failname,'w') as f:
+                        f.write('\n'+'This is a bug'+str(bugs)+'\n')                          
+                        f.write(str(sut.failure())+'\n')
+                        f.write(str(R)+'\n')   
+
+if  len(queue)==0:
+    sut.restart()
+    queue = [sut.state()]
+
+print "START PHASE TWO ........\n"
 
 d = 1
 while d <= depth:
@@ -92,9 +127,14 @@ while d <= depth:
                 break   
             elapsed = time.time() - start
             if (elapsed >= layer):
-                break
-   
-            branchFun(running,possible,elapsed)                  
+                break   
+  
+            if len(sut.newStatements()) != 0:
+                print "NEW STATEMENTS DISCOVERED",sut.newStatements()   
+            if len(sut.newBranches()) != 0:
+                print "NEW STATEMENTS DISCOVERED",sut.newStatements() 
+            branchFun(running,possible,1)                 
+                                
             ok = sut.safely(act)
 
             actCount += 1  #count all action excuted
