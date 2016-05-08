@@ -56,14 +56,7 @@ def branchFun(running,possible,elapsed):
                 print elapsed,len(sut.allStatements()),"New statement",s
             sawNew = True
         else:
-<<<<<<< Updated upstream
-            sawNew=False
-
-
-=======
             sawNew = False
->>>>>>> Stashed changes
-
 
 d = 1
 while d <= depth:
