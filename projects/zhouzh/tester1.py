@@ -14,41 +14,41 @@ import argparse
 sut  = SUT.sut()
 
 
-# def parse_args():
-#     parser = argparse.ArgumentParser()
+def parse_args():
+     parser = argparse.ArgumentParser()
 
-#     parser.add_argument('-t', '--timeout', type=int, default=60, help='Timeout in seconds. (60 default)')
-#     parser.add_argument('-s', '--seed', type=int, default=None, help='Random seed. (default = None)')
-#     parser.add_argument('-d', '--depth', type=int, default=100, help='Maximum search depth. (100 default)')
-#     parser.add_argument('-w', '--width', type=int, default=10000, help='Maximum memory. (10000 default)')
-#     parser.add_argument('-f', '--faults', type=int, default=0, choices=[0, 1], help='Check for faults or not. 1 for check, 0 for do not check (0 default)')
-#     parser.add_argument('-c', '--coverage', type=int, default=0, choices=[0, 1] ,help='report coverage or not. 1 for report, 0 for do not report(0 default)')
-#     parser.add_argument('-r', '--running', type=int, default=0, choices=[0, 1], help='Produce running branch coverage report.')
-#     parsed_args = parser.parse_args(sys.argv[1:])
+     parser.add_argument('timeout', type=int, default=60, help='Timeout in seconds. (60 default)')
+     parser.add_argument('seed', type=int, default=None, help='Random seed. (default = None)')
+     parser.add_argument('depth', type=int, default=100, help='Maximum search depth. (100 default)')
+     parser.add_argument('width', type=int, default=10000, help='Maximum memory. (10000 default)')
+     parser.add_argument('faults', type=int, default=0, choices=[0, 1], help='Check for faults or not. 1 for check, 0 for do not check (0 default)')
+     parser.add_argument('coverage', type=int, default=0, choices=[0, 1] ,help='report coverage or not. 1 for report, 0 for do not report(0 default)')
+     parser.add_argument('running', type=int, default=0, choices=[0, 1], help='Produce running branch coverage report.')
+     parsed_args = parser.parse_args(sys.argv[1:])
 
-#     return (parsed_args, parser)
-
-
-# def make_config(pargs, parser):
-
-#     pdict = pargs.__dict__
-#     key_list = pdict.keys()
-#     arg_list = [pdict[k] for k in key_list]
-#     Config = namedtuple('Config', key_list)
-#     nt_config = Config(*arg_list)
-#     return nt_config
+     return (parsed_args, parser)
 
 
-class config:
+def make_config(pargs, parser):
 
-    def __init__(self):
-        self.timeout = int(sys.argv[1])
-        self.seed = int(sys.argv[2])
-        self.depth = int(sys.argv[3])
-        self.width = int(sys.argv[4])
-        self.faults = int(sys.argv[5])
-        self.coverage = int(sys.argv[6])
-        self.running = int(sys.argv[7])
+     pdict = pargs.__dict__
+     key_list = pdict.keys()
+     arg_list = [pdict[k] for k in key_list]
+     Config = namedtuple('Config', key_list)
+     nt_config = Config(*arg_list)
+     return nt_config
+
+
+#class config:
+#
+#    def __init__(self):
+#        self.timeout = int(sys.argv[1])
+#        self.seed = int(sys.argv[2])
+#        self.depth = int(sys.argv[3])
+#        self.width = int(sys.argv[4])
+#        self.faults = int(sys.argv[5])
+#        self.coverage = int(sys.argv[6])
+#        self.running = int(sys.argv[7])
 
 
 
@@ -57,8 +57,8 @@ def main():
     '''
     Phase one: BFS
     '''
-
-    Config = config()
+    parsed_args, parser = parse_args()
+    Config = make_config(parsed_args, parser)
 
     print ('testing using config={}'.format(Config))
 
@@ -154,14 +154,10 @@ def main():
         if elapsed >= Config.timeout:
             print "Stopping Test Due To Timeout, Terminated at Length", len(sut.test())
             break
-
-        if Config.coverage == 1:
-            sut.internalReport()
-
         d += 1
 
-    print len(sut.allBranches()),"BRANCHES COVERED"
-    print len(sut.allStatements()),"STATEMENTS COVERED"
+    if Config.coverage == 1:
+        sut.internalReport()
 
     '''
     Phase two: Focusing on the least 1/3 coverage (TODO)
@@ -169,7 +165,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
