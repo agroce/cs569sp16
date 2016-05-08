@@ -32,25 +32,6 @@ def parse_args():
     print "TIMEOUT=", args['timeout'], ", SEED=", args['seed'], ", DEPTH=", args['depth'], ", WIDTH=", args['width'], ", FAULTS=", args['faults'], ", COVER=", args['cover'], ", RUNNING=", args['running'] 
     
     return args
-    
-#randomly generate a new sequence
-def random_seq(seqs, rand, n):
-    seq = ()
-    while len(seq) < n:
-        if len(seqs) == 1:
-            p = 0
-        elif len(seqs) == 0:
-            break
-        else:
-            p = rand.randint(0, len(seqs)-1)
-        print seqs[p], len(seq)
-        if (len(seqs[p]) == 3) and isinstance(seqs[p][0], basestring):
-            seq = seq, seqs[p]
-        else:
-            seq = seq + seqs[p]
-    if cmp(seq[0], ()) == 0:
-        return seq[1:]
-    return seq
 
 #initilize all variable for severals
 def init_com_pool(sut, rand):
@@ -79,7 +60,7 @@ def init_com_pool(sut, rand):
     
     return com_pool
 
-def random_sequ(seqs, rand, n):
+def random_seq(seqs, rand, n):
     seq = []
     while len(seq) < n:
         if len(seqs) == 1:
@@ -89,12 +70,14 @@ def random_sequ(seqs, rand, n):
         else:
             p = rand.randint(0, len(seqs)-1)
         #print seqs[p], len(seq)
-        seq = seq + seqs[p]
+        if seqs[p] not in seq:
+            seq = seq + seqs[p]
     return seq
              
-    
+#check
 #check dependency to see whether we properly initialized    
 #def check_dependency(action):
+    
     
 #check variables   
 #def check_variables():
@@ -128,34 +111,35 @@ nice_pool = []
 start = time.time()
 while time.time() - start < args['timeout']:
     sut.restart()
-    test = com_pool[rand.randint(0, len(com_pool)-1)]
     
     #which way to increase
     which = rand.randint(1,2)
     if which == 1:
-        test = random_sequ(com_pool, rand, rand.randint(2, 50))
+        test = random_seq(com_pool, rand, rand.randint(2, 50))
         fc = sut.failsCheck(test)
-        if not fc:
-            com_pool.append(sut.test())
-            nice_pool.append(sut.test())
-        else:
-            bad_pool.append(sut.test())
-            if args['faults']:
-                sut.prettyPrintTest(sut.test())
+        if sut.test() not in nice_pool and sut.test() not in bad_pool:
+            if not fc:
+                com_pool.append(sut.test())
+                nice_pool.append(sut.test())
+            else:
+                bad_pool.append(sut.test())
+                if args['faults']:
+                    sut.prettyPrintTest(sut.test())
     else:
         test = com_pool[rand.randint(0, len(com_pool)-1)]
         ok = sut.failsCheck(test)
         action = sut.randomEnabled(rand)
         ok = sut.safely(action) 
-        if ok:
-            com_pool.append(sut.test())
-            nice_pool.append(sut.test())
-        else:
-            bad_pool.append(sut.test())
-            if args['faults']:
-                sut.prettyPrintTest(sut.test())
+        if sut.test() not in nice_pool and sut.test() not in bad_pool:
+            if ok:
+                com_pool.append(sut.test())
+                nice_pool.append(sut.test())
+            else:
+                bad_pool.append(sut.test())
+                if args['faults']:
+                    sut.prettyPrintTest(sut.test())
     #print "1111111111111111111111111111111111111111111111111"
-    
+    sut.saveTest(sut.test(), "out.txt")
     if args['running']:
         if sut.newBranches() != set([]):
             for b in sut.newBranches():
