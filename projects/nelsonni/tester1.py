@@ -5,223 +5,233 @@ import random
 import sys
 import time
 import math
+import bisect
 from optparse import OptionParser
 
 def main(argv):
-	global sut, rgen, coverageMap, randomPool, failedPool
+    global sut, rgen, ntest, nbug, coverageCount, start, selectStatements, threshold
+    parse_options(argv)
 
-	parse_options(argv)
+    # GLOBAL VARIABLES
+    sut = sut.sut()
+    rgen = random.Random(opts.seed)
+    ntest = 0
+    nbug = 0
+    coverageCount = {}
+    selectStatements = {}
+    threshold = 0
+    start = time.time()
+    
+    # PHASES
+    phaseLimit = 0
+    if opts.timeout < 30:
+        phaseLimit = int(round(opts.timeout/3*2))
+    else: 
+        phaseLimit = int(round(opts.timeout/10))
 
-	# GLOBAL VARIABLES
-	sut = sut.sut()
-	rgen = random.Random(options.seed)
-	coverageMap    = {}  # dictionary of statements -> execution counts
+    while (time.time() - start) < (0.95 * opts.timeout):
+        randomPool = phase1(phaseLimit)
+        selectPool = filterPool(randomPool)
+        phase2(randomPool, selectPool)
+        print "FULL POOL:",len(randomPool),", SELECT POOL:",len(selectPool)
 
-	randomPool     = []  # list of random valid tests
-	selectPool     = []  # filtered list of reduced, ancestral merged, thresholded tests
-	failedPool     = []  # list of failed tests
+    print "EXECUTED:",ntest,"tests"
+    print "BUGS:",nbug
+    print "TOTAL ELAPSED:",round(time.time() - start,5),"seconds"
 
-	# BEGIN TEST GENERATION
-	total_start = time.time()
-	
-	# PHASE 1
-	# create a pool of random tests
-	# capture statement coverage from each test
+    if (opts.coverage):
+        sut.internalReport()
 
-	# PHASE 2
-	# calculate threshold limit (lowest 10% of statement coverage)
-	# create a pool of tests that contain the threshold statements
-	# analyze limited pool for common ancestory and merge
+def phase1(timeLimit):
+    global ntest
+    BUDGET = timeLimit
+    DEPTH = opts.depth
+    print "-------------------------------------------"
+    print "PHASE 1: Starting\t(BUDGET:",BUDGET,"seconds,","DEPTH:",DEPTH,"tests)"
+    phase_start = time.time()
+    phase_test = ntest
 
-	# PHASE 3
-	# select from both pools, higher probability of limited pool
-	# if no new statements are reached, expand pool
+    pool = Pool("randomPool")
+    
+    elapsed = time.time()-phase_start
+    while elapsed < BUDGET and (time.time() - start) < opts.timeout:
+        sut.restart()
+        ntest += 1
+        if opts.progress and ntest % 300:
+            update_progress(elapsed/BUDGET)
+        for s in xrange(0,DEPTH):
+            if not randomAction(pool):
+                break
+        collectCoverage() # collecting coverage at the end of each test
+        elapsed = time.time()-phase_start
+    if opts.progress:
+        update_progress(1.0)
+    
+    interval = time.time()-phase_start
+    print "PHASE 1: Ending\t\t(EXECUTED:",(ntest - phase_test),"tests, USED:",round(interval,5),"seconds)"
+    print "-------------------------------------------"
+    return pool
 
-	print "STARTING PHASE 1"
-	phase1()
-	print "TESTS:",len(randomPool)
-	print "BUGS:",len(failedPool)
-	printCoverage()
+def phase2(randomPool, selectPool):
+    global ntest
+    DEPTH = opts.depth
+    print "PHASE 2: Starting\t(FILTER SET:", len(selectStatements),"DEPTH:",DEPTH,"tests)"
+    phase_start = time.time()
+    phase_test = ntest
 
-	# print "================================="
-	# print "STARTING PHASE 2"
-	# phase2()
-	# print "TESTS:",len(randomPool)
-	# print "BUGS:",len(failedPool)
+    mean = calculateMean(selectStatements)
+    initialMean = mean
 
-	# print "================================="
-	# print "TOTAL ELAPSED:",(time.time() - total_start)
-	# print "TOTAL TESTS:",len(randomPool)
-	# print "TOTAL BUGS:",len(failedPool)
+    while mean < threshold and (time.time() - start) < opts.timeout:
+        sut.restart()
+        test = selectPool.getRandom()
+        #sut.replay(test[0])
+        sut.backtrack(test[1])
+        ntest += 1
+        if opts.progress and ntest % 10:
+            update_progress((mean - initialMean)/threshold)
+        for s in xrange(0,DEPTH):
+            if not randomAction(selectPool):
+                break
+        mean = calculateMean(selectStatements)
+        collectCoverage() # collecting coverage at the end of each test
+    if opts.progress:
+        update_progress(1.0)
+    
+    interval = time.time()-phase_start
+    print "PHASE 2: Ending\t\t(EXECUTED:",(ntest - phase_test),"tests, USED:",round(interval,5),"seconds)"
+    print "-------------------------------------------"
 
-	if (options.coverage):
-		sut.internalReport()
+def filterPool(pool):
+    'Build a new pool from pool using coverage-based threshold'
+    calculateBelowSet()
+    pool.setFilter(selectStatements)
+    filteredStatements = pool.runFilter()
+    filteredPool = Pool("selectPool",filteredStatements)
+    return filteredPool
 
-
-
-
-
-def expandPool():
-	if len(sut.newStatements()) != 0:
-		print "NEW STATEMENTS DISCOVERED",map(lambda x:(x[1]),sut.newStatements())
-		state = sut.state()
-		test = sut.reduce(list(sut.test()), sut.coversStatements(sut.newStatements()))
-		sut.backtrack(state)
-		randomPool.append((test, set(sut.currStatements())))
-		return
-
-
-
-def takeAction():
-	act = sut.randomEnabled(rgen)
-	ok = sut.safely(act)
-	if not ok:
-		collectCoverage()
-		captureFailure()
-	else:
-		if (options.running):
-			runtimeCoverage(act)
-		collectCoverage()
-		expandPool()
-
-def captureFailure():
-	print "FAILURE LOCATED:"
-	print sut.failure()
-	failedPool.append(sut.test())
-	
-	print "REDUCING FAILURE:"
-	R = sut.reduce(sut.test(),sut.fails, True, True)
-	sut.prettyPrintTest(R)
-	print sut.failure()
-
-	sut.restart()
-
-
-
-
-
-
-def randomAction():
-	act = sut.randomEnabled(rgen)
-	ok = sut.safely(act)
-	if ok:
-		oldExpandPool()
-		if (options.running):
-			runtimeCoverage(act)
-	else:
-		print "FOUND A FAILURE"
-		print sut.failure()
-		failedPool.append(sut.test())
-		collectCoverage()
-
-		print "REDUCING FAILURE"
-		R = sut.reduce(sut.test(),sut.fails, True, True)
-		sut.prettyPrintTest(R)
-		print sut.failure()
-
-		sut.restart()
-	return ok
-
-
-
-
-def phase1():
-	BUDGET = (options.width/float(100)*options.timeout)
-	DEPTH = options.depth
-	print "BUDGET:",BUDGET,"seconds","DEPTH:",DEPTH,"tests"
-
-	start = time.time()
-	while time.time()-start < BUDGET:
-		sut.restart()
-		for s in xrange(0,DEPTH):
-			takeAction()
-			# if not randomAction():
-			# 	break
-
-def phase2():
-	global coverageMap
-	BUDGET = options.timeout - (options.width/float(100)*options.timeout) 
-	print "BUDGET:",BUDGET,"seconds"
-	print "WIDTH:",options.width,"shared ancestor actions"
-
-	start = time.time()
-	while time.time()-start < BUDGET:
-		restrictPool()
-
-	#printCoverage()
+def randomAction(pool):
+    'Execute a random enabled action from the SUT, catch bugs or add to pool'
+    global nbug
+    act = sut.randomEnabled(rgen)
+    ok = sut.safely(act)
+    if not ok:
+        nbug += 1
+        if (opts.fault):
+            captureFault()
+        else:
+            print "FAILURE LOCATED"
+        collectCoverage() # collecting coverage because sut.restart() resets internal coverage
+        sut.restart()   
+    else:
+        if (opts.running):
+            runtimeCoverage()
+        pool.addTest(sut.test(),sut.state(),set(sut.currStatements()))
+    return ok
 
 def collectCoverage():
-	global coverageMap
-	for s in sut.currStatements():
-		if s not in coverageMap:
-			coverageMap[s] = 0
-		coverageMap[s] += 1
+    'Update the global coverage count for executions on each statement'
+    global coverageCount
+    for s in sut.currStatements():
+        if s not in coverageCount:
+            coverageCount[s] = 0
+        coverageCount[s] += 1   
 
 def printCoverage():
-	global coverageMap
-	sortedMap = sorted(coverageMap.keys(), key=lambda x: coverageMap[x], reverse=True)
-	t = threshold()
-	print "THRESHOLD COVERAGE:",t,"statements"
-	for s in sortedMap:
-		if coverageMap[s] < t:
-			print s, coverageMap[s]
+    'Print the state of the global coverage count for executions on each statement'
+    if not coverageCount: # might not be any coverage yet
+        return
+    sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
+    coverSum = sum(coverageCount.values())
+    coverMean = coverSum / (1.0*len(coverageCount))
+    print "MEAN COVERAGE IS",coverMean
+    for s in sortedCov:
+        print s, coverageCount[s]
 
-def oldExpandPool():
-	if len(sut.newStatements()) != 0:
-		test = sut.reduce(sut.test(),sut.coversStatements(sut.newStatements()))
-		state = sut.state()
-		sut.backtrack(state)
-		randomPool.append((test, set(sut.currStatements())))
-		return
-	thresholdSet = belowThreshold()
-	for s in thresholdSet:
-		if s in sut.currStatements():
-			randomPool.append((list(sut.test()), set(sut.currStatements())))
-			return
+def calculateThreshold():
+    'Determine coverage count for the lowest 10 percent of all statements in global coverage count'
+    global coverageCount
+    sortedMap = sorted(coverageCount.keys(), key=lambda x: coverageCount[x], reverse=True)
+    sortedCov = map(lambda x:(x[1]),sortedMap)
+    return percentile(sortedCov, 0.1)
 
-def restrictPool():
-	global restrictedPool
-	restrictedPool = []
-	thresholdSet = belowThreshold()
-	print "thresholdSet:",len(thresholdSet)
-	for (t,c) in randomPool:
-		for s in c:
-			if s in thresholdSet:
-				restrictedPool.append((t,c))
-				break
-	print "RANDOM POOL:",len(randomPool),"RESTRICTED POOL:",len(restrictedPool)
+def calculateBelowSet():
+    'Calculate the set of statements that are below the threshold'
+    global coverageCount, threshold, selectStatements
+    selectStatements = set([]) # clear global selectStatements
+    sortedMap = sorted(coverageCount.keys(), key=lambda x: coverageCount[x], reverse=False)
+    threshold = calculateThreshold() # update global threshold
+    for s in sortedMap:
+        if coverageCount[s] < threshold:
+            selectStatements.add(s) # update global selectStatements
+        else:
+            break
 
-def belowThreshold():
-	global coverageMap
-	thresholdSet = set([])
-	sortedMap = sorted(coverageMap.keys(), key=lambda x: coverageMap[x], reverse=True)
-	limit = threshold()
-	for s in sortedMap:
-		if coverageMap[s] < limit:
-			thresholdSet.add(s)
-		else:
-			break
-	print "belowThreshold: found",len(thresholdSet)
-	return thresholdSet
+def calculateMean(statements):
+    'Calculate the mean coverage across all statements in the provided set'
+    stmtCov = [coverageCount[x] for x in statements]
+    return percentile(stmtCov, 0.5)
 
-def threshold():
-	global coverageMap
-	sortedMap = sorted(coverageMap.keys(), key=lambda x: coverageMap[x], reverse=True)
-	sortedCov = map(lambda x:(x[1]),sortedMap)
-	return percentile(sortedCov, 0.1)
+def captureFault():
+    'Print failure state and reduction'
+    print "FAILURE LOCATED:"
+    print sut.failure()
+    print "REDUCING FAILURE:"
+    R = sut.reduce(sut.test(),sut.fails, True, True)
+    sut.prettyPrintTest(R)
+    print sut.failure()
+    # output to file for each fault
+    fname = 'failure%d.test' % nbugs
+    fo = open(fname, "wb")
+    fo.write(sut.failure())
+    fo.close()
 
-def runtimeCoverage(action):
-	elapsed = time.time() - start
 
-	if sut.newBranches() != set([]):
-		print "ACTION:", action[0]
-		for b in sut.newBranches():
-			print elapsed, len(sut.allBranches()),"New branch", b
+class Pool:
+    'Common base class for pools of tests (sequences of actions)'
+    poolCount = 0
 
-	if sut.newStatements() != set([]):
-		print "ACTION:",action[0]
-		for s in sut.newStatements():
-			print elapsed, len(sut.newStatements()), "New statement", s
+    def __init__(self, name, pool=None):
+        self.name = name           
+        self.filter = []
+        Pool.poolCount += 1
+        if not pool:
+            self.pool = []
+        else:
+            self.pool = pool
+
+    def __len__(self):
+        return len(self.pool)
+
+    def setFilter(self, filterSet):
+        self.filter = filterSet
+
+    def getFilter(self):
+        return self.filter
+
+    def addTest(self, test, state, statements=None):
+        if statements:
+            self.pool.append((test,state,statements))
+        else:
+            self.pool.append((test,state,{}))
+
+    def getRandom(self):
+        return rgen.choice(self.pool)
+
+    def runFilter(self):
+        statPool = []
+        for (t,s,c) in self.pool:
+            for stmt in c:
+                if stmt in self.filter:
+                    statPool.append((t,s,c))
+                    break
+        return statPool
+
+    def displayPoolCount(self):
+        print "Number of pools: %d" % Pool.poolCount
+
+    def displayInfo(self):
+        print "Name:", self.name, ", Size:", self.sizeOf()
 
 def percentile(N, percent, key=lambda x:x):
     """
@@ -245,21 +255,95 @@ def percentile(N, percent, key=lambda x:x):
     d1 = key(N[int(c)]) * (k-f)
     return d0+d1
 
+def update_progress(progress):
+    'Display or updates a console progress bar, accepts floats from 0 to 1'
+    barLength = 20
+    status = ""
+    if isinstance(progress, int):
+        progress = float(progress)
+    if not isinstance(progress, float):
+        progress = 0
+        status = "error: progress var must be float\r\n"
+    if progress < 0:
+        progress = 0
+        status = "Halt...\r\n"
+    if progress >= 1:
+        progress = 1
+        status = "Done...\r\n"
+    block = int(round(barLength*progress))
+    text = "\rProgress: [{0}] {1}% {2}".format( "#"*block + "-"*(barLength-block), round(progress*100,2), status)
+    sys.stdout.write(text)
+    sys.stdout.flush()
+
+def runtimeCoverage():
+    'Handler for generating running info on branch and statement coverage'
+    elapsed = time.time() - start
+
+    if sut.newBranches() != set([]):
+        for b in sut.newBranches():
+            print elapsed, len(sut.allBranches()),"New branch", b
+
+    if sut.newStatements() != set([]):
+        for s in sut.newStatements():
+            print elapsed, len(sut.newStatements()), "New statement", s
+
 def parse_options(argv):
-	global options 
-	parser = OptionParser()
-	parser.add_option('-t', '--timeout', action="store", type="int", dest="timeout", default=30, help="time in seconds for testing")
-	parser.add_option('-s', '--seed', action="store", type="int", dest="seed", default=10, help="seed used for random number generation")
-	parser.add_option('-d', '--depth', action="store", type="int", dest="depth", default=10, help="maximum length of a test")
-	parser.add_option('-p', '--percent', action="store", type="int", dest="percent", default=50, help="percent (0-100%) of timeout spent exploring in PHASE 1")
-	parser.add_option('-w', '--width', action="store", type="int", dest="width", default=50, help="minimum shared ancestory for grouping in PHASE 2")
-	parser.add_option('-f', '--fault', action="store_true", dest="fault", default=False, help="check for faults in the SUT")
-	parser.add_option('-c', '--coverage', action="store_true", dest="coverage", default=False, help="produce a final coverage report")
-	parser.add_option('-r', '--running', action="store_true", dest="running", default=False, help="produce running info on branch coverage")
-	options, args = parser.parse_args()
-	if (options.percent < 0 or options.percent > 100):
-		print "Error! Option out of bounds: percent (-p) option must be a value between 0 and 100."
-		sys.exit(1)
+    global opts 
+    parser = OptionParser()
+    parser.add_option('-t', '--timeout', action="store", type="int", dest="timeout", default=30, 
+        help="time in seconds for testing")
+    parser.add_option('-s', '--seed', action="store", type="int", dest="seed", default=1, 
+        help="seed used for random number generation")
+    parser.add_option('-d', '--depth', action="store", type="int", dest="depth", default=100, 
+        help="maximum length of a test")
+    parser.add_option('-w', '--width', action="store", type="int", dest="width", default=1, 
+        help="maximum width of a pool of tests")
+    parser.add_option('-f', '--fault', action="store_true", dest="fault", default=False, 
+        help="check for faults in the SUT")
+    parser.add_option('-c', '--coverage', action="store_true", dest="coverage", default=False, 
+        help="produce a final coverage report")
+    parser.add_option('-r', '--running', action="store_true", dest="running", default=False, 
+        help="produce running info on branch coverage")
+    parser.add_option('-p', '--progress', action="store_true", dest="progress", default=True,
+        help="provide a progress bar on the console while running")
+    parser.add_option('--nuke', action="store_true", dest="nuke")
+    (opts, args) = parser.parse_args()
+
+    print "OPTIONS:",opts
+    print "ARGS:",args
+
+    if len(args) > 0:
+        for idx,arg in enumerate(args):
+            if idx == 0:
+                opts.timeout = int(arg)
+            elif idx == 1:
+                opts.seed = int(arg)
+            elif idx == 2:
+                opts.depth = int(arg)
+            elif idx == 3:
+                opts.width = int(arg)
+            elif idx == 4:
+                opts.fault = bool(int(arg))
+            elif idx == 5:
+                opts.coverage = bool(int(arg))
+            elif idx == 6:
+                opts.running = bool(int(arg))
+            elif idx == 7:
+                opts.progress = bool(int(arg))
+            else:
+                print "Error! Options out of bounds: too many parameters"
+                sys.exit(1)
+
+    if opts.timeout <= 0:
+        print "Error! Option out of bounds: timeout (-t) option must be greater than 0 seconds."
+        sys.exit(1)
+
+    print "------------------------"
+    print "OPTIONS:",opts
+    print "ARGS:",args
+
+    if opts.nuke:
+        sys.exit(1)
 
 if __name__ == "__main__":
-	main(sys.argv[1:])
+    main(sys.argv[1:])

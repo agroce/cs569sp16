@@ -1,133 +1,118 @@
 import sut
-import random
 import sys
+import os
 import time
+import random
 
-timeout = int(sys.argv[1])
-seed = int(sys.argv[2])
-depth = int(sys.argv[3])
-width = int(sys.argv[4])
-faults = int(sys.argv[5])
-coverage = int(sys.argv[6])
-running  = int(sys.argv[7])
+class FBDR_Tester():
+	def __init__(self):
+		self.errorSeqs = []
+		self.nonErrorSeqs = []
+		self.sut = sut.sut()
+		
+	def CheckArguments(self):
+		if len(sys.argv) == 8:
+			self.timeout 	= int(sys.argv[1])
+			self.seed 		= int(sys.argv[2])
+			self.depth 		= int(sys.argv[3])
+			self.width 		= int(sys.argv[4])
+			self.faults 	= int(sys.argv[5])
+			self.coverage 	= int(sys.argv[6])
+			self.running  	= int(sys.argv[7])
+			return True
+		else:
+			print "ERROR! Need 7 arguments:"
+			print "[timeout] [seed] [depth] [width] [faults] [coverage] [running]"
+			return False
 
+	def DiscardDuplicates(self, newSequence):
+		for nes in self.nonErrorSeqs:
+			if set(newSequence) < set(nes):
+				return True
+		for es in self.errorSeqs:
+			if set(newSequence) < set(es):
+				return True
+		return False # no duplicate
 
-def randomAction():   
-    global actCount, bugs, fails, belowMean, lastAddCoverage
-    sawNew = False
-    act = sut.randomEnabled(seeds)
-    actCount += 1
-    ok = sut.safely(act)
-    propok = sut.check()
-   
-    if running:
-        if sut.newBranches() != set([]):
-            for b in sut.newBranches():
-                print time.time()-start,len(sut.allBranches()),"New branch",b
-            sawNew = True
-        else:
-            sawNew = False    
+	def RandomSeqsAndVals(self, nonErrorSeqs, n=1):
+		if nonErrorSeqs == [] or n > len(nonErrorSeqs):
+			return []
+		return [random.choice(nonErrorSeqs) for i in xrange(n)]
 
-    if not ok or not propok:
-        if faults:
-            bugs += 1
-            fail.append(sut.test())
-            global covCount
-            for b in sut.currBranches():
-                if b not in covCount:
-                    covCount[b] = 0
-                covCount[b] += 1
-            R = sut.reduce(sut.test(),sut.fails, True, True)
-            sut.restart()
-            print "FAILURE FOUND.....FAILURES ARE STORING IN FILES"
-            fault = sut.failure()
-            fname = 'failure' + str(bugs) + '.test'
-            wfile = open(fname, 'w+')
-            wfile.write(str(fault))
-            wfile.close() 
-            sut.restart() 
+	def SetExtensibleFlags(self, newSequence):
+		pass
 
-    else:
-        if len(sut.newStatements()) != 0:
-            print "NEW STATEMENTS DISCOVERED",sut.newStatements()
-            oldTest = list(sut.test())
-            storeTest = sut.reduce(oldTest,sut.coversStatements(sut.newStatements()))
-            print "OLD LENGTH = ",len(oldTest),"NEW LENGTH = ",len(storeTest)
-            sut.replay(oldTest)
-            fullPool.append((storeTest, set(sut.currStatements())))
-            lastAddCoverage = set(sut.currStatements())
-            return
-        for s in belowMean:
-            if s in sut.currStatements() and s not in lastAddCoverage:
-                print "NEW PATH TO LOW COVERAGE STATEMENT",s
-                fullPool.append((list(sut.test()), set(sut.currStatements())))
-                lastAddCoverage = set(sut.currStatements())
-                return
-    return ok 
+	def ProduceRunningInfo(self, act, elapsed):
+		if self.sut.newBranches() != set([]):
+			print "ACTION:",act[0]
+			for b in self.sut.newBranches():
+				print elapsed,len(self.sut.allBranches()),"New branch",b
+	
+	def RecordFailure(self):
+		count = 0
+		while os.path.exists('failure' +str(count) + '.test') == True:
+			count += 1
+		recoder = open('failure' +str(count) + '.test', 'w')
+		recoder.write(str(self.sut.failure())) 
+		recoder.close
 
-explore = 0.7
-actCount = 0
-bugs = 0
-seeds = random.Random(seed)
-coverageCount = {}
-activePool = []
-fullPool = []
-failPool = []
-tests = []
-sut = sut.sut()
-fail = []
-covCount = {}
+	def Generation(self):
+		# random seed
+		rgen = random.Random()
+		rgen.seed(self.seed)
 
-belowMean = set([])
+		# Testing loop
+		startTime = time.time()
+		while (time.time()-startTime) < self.timeout:
+			#print self.timeout, (time.time()-startTime)
 
-print "STARTING PHASE 1"
+			# Generate a sequence of n actions
+			newSequence = self.sut.randomEnableds(rgen, self.depth) 
+			seqs = self.RandomSeqsAndVals(self.nonErrorSeqs,n=5)
+			newSequence.extend(seqs)
 
-start = time.time()
-ntests = 0
-while time.time()-start < int(timeout):
-    sut.restart()
-    ntests += 1
-    for s in xrange(0,depth):
-        if not randomAction():
-            break
-    for s in sut.currStatements():
-        if s not in coverageCount:
-            coverageCount[s] = 0
-        coverageCount[s] += 1
+			# Discard duplicates
+			if self.DiscardDuplicates(newSequence):
+				continue
 
-print "STARTING PHASE 2"
+			# Excute (newSeq, contracts)
+			violated = False
+			for act in newSequence:
+				if self.running == True:
+					self.ProduceRunningInfo(act, elapsed=(time.time() - startTime))
+				# Check if violated
+				stepOK = self.sut.safely(act)
+				if self.sut.check() == False:
+					violated = True
 
-start = time.time()
-while time.time()-start < int(timeout):
-    global activePool
-
-    activePool = []
-    for (t,c) in fullPool:
-        for s in c:
-            if s in belowMean:
-                activePool.append((t,c))
-                break
-    print len(activePool),"TESTS IN THE ACTIVE POOL,",len(fullPool),"IN FULL POOL"
-    lastAddCoverage = set([])
-    sut.restart()
-    if random.Random().random() > explore:
-        sut.replay(random.Random().choice(activePool)[0])
-        lastAddCoverage = set(sut.currStatements())
-    ntests += 1
-    for s in xrange(0,depth):
-        if not randomAction():
-            break
+				# Failure check and record
+				if self.faults == True:
+				 	if stepOK == False or violated == True:
+						self.RecordFailure()
+						print 'Failure found. Program is terminated'
+						return self.nonErrorSeqs, self.errorSeqs 
 
 
-print ntests,"TESTS"
+			if violated == True:
+				self.errorSeqs += newSequence
+			else:
+				self.nonErrorSeqs += newSequence
+				self.SetExtensibleFlags(newSequence)
+
+		return self.nonErrorSeqs, self.errorSeqs
+
+	def Report(self):
+		if self.coverage == True:
+			self.sut.internalReport()
+		
 
 
-for (t,s) in fullPool:
-    print len(t),len(s)
+if __name__ == '__main__':
 
-if coverage:
-    sut.internalReport()
+	tester = FBDR_Tester()
 
-print bugs,"FAILED"
-print "TOTAL ACTIONS",actCount
-print "TOTAL RUNTIME",time.time()-start
+	if not tester.CheckArguments():
+		sys.exit()
+
+	tester.Generation()
+	tester.Report()

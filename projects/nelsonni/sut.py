@@ -1950,8 +1950,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[0] = set()
+        try:
+            self.p_avl_REF[0] = set()
 
+        except:
+            pass
         self.p_avl_used[0]=False
     def guard80(self):
         return (((self.p_avl_used[0]) or (self.p_avl[0] == None) or (self.__relaxUsedRestriction)))
@@ -1976,8 +1979,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[1] = set()
+        try:
+            self.p_avl_REF[1] = set()
 
+        except:
+            pass
         self.p_avl_used[1]=False
     def guard81(self):
         return (((self.p_avl_used[1]) or (self.p_avl[1] == None) or (self.__relaxUsedRestriction)))
@@ -2002,8 +2008,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[0].add(self.p_val[0])
+        try:
+            self.p_avl_REF[0].add(self.p_val[0])
 
+        except:
+            pass
         self.p_avl_used[0]=True
         self.p_val_used[0]=True
     def guard82(self):
@@ -2029,8 +2038,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[0].add(self.p_val[1])
+        try:
+            self.p_avl_REF[0].add(self.p_val[1])
 
+        except:
+            pass
         self.p_avl_used[0]=True
         self.p_val_used[1]=True
     def guard83(self):
@@ -2056,8 +2068,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[0].add(self.p_val[2])
+        try:
+            self.p_avl_REF[0].add(self.p_val[2])
 
+        except:
+            pass
         self.p_avl_used[0]=True
         self.p_val_used[2]=True
     def guard84(self):
@@ -2083,8 +2098,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[0].add(self.p_val[3])
+        try:
+            self.p_avl_REF[0].add(self.p_val[3])
 
+        except:
+            pass
         self.p_avl_used[0]=True
         self.p_val_used[3]=True
     def guard85(self):
@@ -2110,8 +2128,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[1].add(self.p_val[0])
+        try:
+            self.p_avl_REF[1].add(self.p_val[0])
 
+        except:
+            pass
         self.p_avl_used[1]=True
         self.p_val_used[0]=True
     def guard86(self):
@@ -2137,8 +2158,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[1].add(self.p_val[1])
+        try:
+            self.p_avl_REF[1].add(self.p_val[1])
 
+        except:
+            pass
         self.p_avl_used[1]=True
         self.p_val_used[1]=True
     def guard87(self):
@@ -2164,8 +2188,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[1].add(self.p_val[2])
+        try:
+            self.p_avl_REF[1].add(self.p_val[2])
 
+        except:
+            pass
         self.p_avl_used[1]=True
         self.p_val_used[2]=True
     def guard88(self):
@@ -2191,8 +2218,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[1].add(self.p_val[3])
+        try:
+            self.p_avl_REF[1].add(self.p_val[3])
 
+        except:
+            pass
         self.p_avl_used[1]=True
         self.p_val_used[3]=True
     def guard89(self):
@@ -2218,8 +2248,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[0].discard(self.p_val[0])
+        try:
+            self.p_avl_REF[0].discard(self.p_val[0])
 
+        except:
+            pass
         self.p_avl_used[0]=True
         self.p_val_used[0]=True
     def guard90(self):
@@ -2245,8 +2278,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[0].discard(self.p_val[1])
+        try:
+            self.p_avl_REF[0].discard(self.p_val[1])
 
+        except:
+            pass
         self.p_avl_used[0]=True
         self.p_val_used[1]=True
     def guard91(self):
@@ -2272,8 +2308,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[0].discard(self.p_val[2])
+        try:
+            self.p_avl_REF[0].discard(self.p_val[2])
 
+        except:
+            pass
         self.p_avl_used[0]=True
         self.p_val_used[2]=True
     def guard92(self):
@@ -2299,8 +2338,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[0].discard(self.p_val[3])
+        try:
+            self.p_avl_REF[0].discard(self.p_val[3])
 
+        except:
+            pass
         self.p_avl_used[0]=True
         self.p_val_used[3]=True
     def guard93(self):
@@ -2326,8 +2368,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[1].discard(self.p_val[0])
+        try:
+            self.p_avl_REF[1].discard(self.p_val[0])
 
+        except:
+            pass
         self.p_avl_used[1]=True
         self.p_val_used[0]=True
     def guard94(self):
@@ -2353,8 +2398,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[1].discard(self.p_val[1])
+        try:
+            self.p_avl_REF[1].discard(self.p_val[1])
 
+        except:
+            pass
         self.p_avl_used[1]=True
         self.p_val_used[1]=True
     def guard95(self):
@@ -2380,8 +2428,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[1].discard(self.p_val[2])
+        try:
+            self.p_avl_REF[1].discard(self.p_val[2])
 
+        except:
+            pass
         self.p_avl_used[1]=True
         self.p_val_used[2]=True
     def guard96(self):
@@ -2407,8 +2458,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        self.p_avl_REF[1].discard(self.p_val[3])
+        try:
+            self.p_avl_REF[1].discard(self.p_val[3])
 
+        except:
+            pass
         self.p_avl_used[1]=True
         self.p_val_used[3]=True
     def guard97(self):
@@ -2434,8 +2488,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        __result_REF = self.p_avl_REF[0].__contains__(self.p_val[0])
+        try:
+            __result_REF = self.p_avl_REF[0].__contains__(self.p_val[0])
 
+        except:
+            pass
         assert __result == __result_REF, " (%s) == (%s) " % (__result, __result_REF)
         self.p_avl_used[0]=True
         self.p_val_used[0]=True
@@ -2462,8 +2519,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        __result_REF = self.p_avl_REF[0].__contains__(self.p_val[1])
+        try:
+            __result_REF = self.p_avl_REF[0].__contains__(self.p_val[1])
 
+        except:
+            pass
         assert __result == __result_REF, " (%s) == (%s) " % (__result, __result_REF)
         self.p_avl_used[0]=True
         self.p_val_used[1]=True
@@ -2490,8 +2550,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        __result_REF = self.p_avl_REF[0].__contains__(self.p_val[2])
+        try:
+            __result_REF = self.p_avl_REF[0].__contains__(self.p_val[2])
 
+        except:
+            pass
         assert __result == __result_REF, " (%s) == (%s) " % (__result, __result_REF)
         self.p_avl_used[0]=True
         self.p_val_used[2]=True
@@ -2518,8 +2581,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        __result_REF = self.p_avl_REF[0].__contains__(self.p_val[3])
+        try:
+            __result_REF = self.p_avl_REF[0].__contains__(self.p_val[3])
 
+        except:
+            pass
         assert __result == __result_REF, " (%s) == (%s) " % (__result, __result_REF)
         self.p_avl_used[0]=True
         self.p_val_used[3]=True
@@ -2546,8 +2612,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        __result_REF = self.p_avl_REF[1].__contains__(self.p_val[0])
+        try:
+            __result_REF = self.p_avl_REF[1].__contains__(self.p_val[0])
 
+        except:
+            pass
         assert __result == __result_REF, " (%s) == (%s) " % (__result, __result_REF)
         self.p_avl_used[1]=True
         self.p_val_used[0]=True
@@ -2574,8 +2643,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        __result_REF = self.p_avl_REF[1].__contains__(self.p_val[1])
+        try:
+            __result_REF = self.p_avl_REF[1].__contains__(self.p_val[1])
 
+        except:
+            pass
         assert __result == __result_REF, " (%s) == (%s) " % (__result, __result_REF)
         self.p_avl_used[1]=True
         self.p_val_used[1]=True
@@ -2602,8 +2674,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        __result_REF = self.p_avl_REF[1].__contains__(self.p_val[2])
+        try:
+            __result_REF = self.p_avl_REF[1].__contains__(self.p_val[2])
 
+        except:
+            pass
         assert __result == __result_REF, " (%s) == (%s) " % (__result, __result_REF)
         self.p_avl_used[1]=True
         self.p_val_used[2]=True
@@ -2630,8 +2705,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        __result_REF = self.p_avl_REF[1].__contains__(self.p_val[3])
+        try:
+            __result_REF = self.p_avl_REF[1].__contains__(self.p_val[3])
 
+        except:
+            pass
         assert __result == __result_REF, " (%s) == (%s) " % (__result, __result_REF)
         self.p_avl_used[1]=True
         self.p_val_used[3]=True
@@ -2658,8 +2736,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        sortedVals(self.p_avl_REF[0])
+        try:
+            sortedVals(self.p_avl_REF[0])
 
+        except:
+            pass
         self.p_avl_used[0]=True
     def guard106(self):
         return (self.p_avl[0] != None)
@@ -2684,8 +2765,11 @@ class sut(object):
             if self.__collectCov:
                 self.__cov.stop()
                 self.__updateCov()
-        sortedVals(self.p_avl_REF[1])
+        try:
+            sortedVals(self.p_avl_REF[1])
 
+        except:
+            pass
         self.p_avl_used[1]=True
     def guard107(self):
         return (self.p_avl[1] != None)
@@ -2756,6 +2840,29 @@ class sut(object):
         self.__names = {}
         self.__poolPrefix = "self.p_"
         self.__names["<<RESTART>>"] = ("<<RESTART>>", lambda x: True, lambda x: self.restart())
+        self.__actionClass = {}
+        self.__swarmConfig = None
+        self.__actionClasses = []
+        self.__actionClasses.append('''<val> := <[1..20]>''')
+        self.__actionClasses.append('''<avl> := avl.AVLTree()''')
+        self.__actionClasses.append('''<avl>.insert(<val>)''')
+        self.__actionClasses.append('''<avl>.delete(<val>)''')
+        self.__actionClasses.append('''<avl>.find(<val>)''')
+        self.__actionClasses.append('''<avl>.inorder()''')
+        self.__dependencies = {}
+        self.__dependencies['''<val> := <[1..20]>'''] = []
+        self.__dependencies['''<avl> := avl.AVLTree()'''] = []
+        self.__dependencies['''<avl>.insert(<val>)'''] = []
+        self.__dependencies['''<avl>.insert(<val>)'''].append(['<avl> := avl.AVLTree()'])
+        self.__dependencies['''<avl>.insert(<val>)'''].append(['<val> := <[1..20]>'])
+        self.__dependencies['''<avl>.delete(<val>)'''] = []
+        self.__dependencies['''<avl>.delete(<val>)'''].append(['<avl> := avl.AVLTree()'])
+        self.__dependencies['''<avl>.delete(<val>)'''].append(['<val> := <[1..20]>'])
+        self.__dependencies['''<avl>.find(<val>)'''] = []
+        self.__dependencies['''<avl>.find(<val>)'''].append(['<avl> := avl.AVLTree()'])
+        self.__dependencies['''<avl>.find(<val>)'''].append(['<val> := <[1..20]>'])
+        self.__dependencies['''<avl>.inorder()'''] = []
+        self.__dependencies['''<avl>.inorder()'''].append(['<avl> := avl.AVLTree()'])
         self.__orderings = {}
         self.__okExcepts = {}
         self.__preCode = {}
@@ -2772,6 +2879,8 @@ class sut(object):
 
         self.__names['''self.p_val[0] = 1 '''] = ('''self.p_val[0] = 1 ''',self.guard0,self.act0)
 
+        self.__actionClass['''self.p_val[0] = 1 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[0] = 1 '''] = 1
 
         self.__okExcepts['''self.p_val[0] = 1 '''] = ''''''
@@ -2779,6 +2888,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[0] = 2 ''',self.guard1,self.act1))
 
         self.__names['''self.p_val[0] = 2 '''] = ('''self.p_val[0] = 2 ''',self.guard1,self.act1)
+
+        self.__actionClass['''self.p_val[0] = 2 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[0] = 2 '''] = 2
 
@@ -2788,6 +2899,8 @@ class sut(object):
 
         self.__names['''self.p_val[0] = 3 '''] = ('''self.p_val[0] = 3 ''',self.guard2,self.act2)
 
+        self.__actionClass['''self.p_val[0] = 3 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[0] = 3 '''] = 3
 
         self.__okExcepts['''self.p_val[0] = 3 '''] = ''''''
@@ -2795,6 +2908,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[0] = 4 ''',self.guard3,self.act3))
 
         self.__names['''self.p_val[0] = 4 '''] = ('''self.p_val[0] = 4 ''',self.guard3,self.act3)
+
+        self.__actionClass['''self.p_val[0] = 4 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[0] = 4 '''] = 4
 
@@ -2804,6 +2919,8 @@ class sut(object):
 
         self.__names['''self.p_val[0] = 5 '''] = ('''self.p_val[0] = 5 ''',self.guard4,self.act4)
 
+        self.__actionClass['''self.p_val[0] = 5 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[0] = 5 '''] = 5
 
         self.__okExcepts['''self.p_val[0] = 5 '''] = ''''''
@@ -2811,6 +2928,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[0] = 6 ''',self.guard5,self.act5))
 
         self.__names['''self.p_val[0] = 6 '''] = ('''self.p_val[0] = 6 ''',self.guard5,self.act5)
+
+        self.__actionClass['''self.p_val[0] = 6 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[0] = 6 '''] = 6
 
@@ -2820,6 +2939,8 @@ class sut(object):
 
         self.__names['''self.p_val[0] = 7 '''] = ('''self.p_val[0] = 7 ''',self.guard6,self.act6)
 
+        self.__actionClass['''self.p_val[0] = 7 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[0] = 7 '''] = 7
 
         self.__okExcepts['''self.p_val[0] = 7 '''] = ''''''
@@ -2827,6 +2948,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[0] = 8 ''',self.guard7,self.act7))
 
         self.__names['''self.p_val[0] = 8 '''] = ('''self.p_val[0] = 8 ''',self.guard7,self.act7)
+
+        self.__actionClass['''self.p_val[0] = 8 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[0] = 8 '''] = 8
 
@@ -2836,6 +2959,8 @@ class sut(object):
 
         self.__names['''self.p_val[0] = 9 '''] = ('''self.p_val[0] = 9 ''',self.guard8,self.act8)
 
+        self.__actionClass['''self.p_val[0] = 9 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[0] = 9 '''] = 9
 
         self.__okExcepts['''self.p_val[0] = 9 '''] = ''''''
@@ -2843,6 +2968,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[0] = 10 ''',self.guard9,self.act9))
 
         self.__names['''self.p_val[0] = 10 '''] = ('''self.p_val[0] = 10 ''',self.guard9,self.act9)
+
+        self.__actionClass['''self.p_val[0] = 10 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[0] = 10 '''] = 10
 
@@ -2852,6 +2979,8 @@ class sut(object):
 
         self.__names['''self.p_val[0] = 11 '''] = ('''self.p_val[0] = 11 ''',self.guard10,self.act10)
 
+        self.__actionClass['''self.p_val[0] = 11 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[0] = 11 '''] = 11
 
         self.__okExcepts['''self.p_val[0] = 11 '''] = ''''''
@@ -2859,6 +2988,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[0] = 12 ''',self.guard11,self.act11))
 
         self.__names['''self.p_val[0] = 12 '''] = ('''self.p_val[0] = 12 ''',self.guard11,self.act11)
+
+        self.__actionClass['''self.p_val[0] = 12 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[0] = 12 '''] = 12
 
@@ -2868,6 +2999,8 @@ class sut(object):
 
         self.__names['''self.p_val[0] = 13 '''] = ('''self.p_val[0] = 13 ''',self.guard12,self.act12)
 
+        self.__actionClass['''self.p_val[0] = 13 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[0] = 13 '''] = 13
 
         self.__okExcepts['''self.p_val[0] = 13 '''] = ''''''
@@ -2875,6 +3008,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[0] = 14 ''',self.guard13,self.act13))
 
         self.__names['''self.p_val[0] = 14 '''] = ('''self.p_val[0] = 14 ''',self.guard13,self.act13)
+
+        self.__actionClass['''self.p_val[0] = 14 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[0] = 14 '''] = 14
 
@@ -2884,6 +3019,8 @@ class sut(object):
 
         self.__names['''self.p_val[0] = 15 '''] = ('''self.p_val[0] = 15 ''',self.guard14,self.act14)
 
+        self.__actionClass['''self.p_val[0] = 15 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[0] = 15 '''] = 15
 
         self.__okExcepts['''self.p_val[0] = 15 '''] = ''''''
@@ -2891,6 +3028,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[0] = 16 ''',self.guard15,self.act15))
 
         self.__names['''self.p_val[0] = 16 '''] = ('''self.p_val[0] = 16 ''',self.guard15,self.act15)
+
+        self.__actionClass['''self.p_val[0] = 16 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[0] = 16 '''] = 16
 
@@ -2900,6 +3039,8 @@ class sut(object):
 
         self.__names['''self.p_val[0] = 17 '''] = ('''self.p_val[0] = 17 ''',self.guard16,self.act16)
 
+        self.__actionClass['''self.p_val[0] = 17 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[0] = 17 '''] = 17
 
         self.__okExcepts['''self.p_val[0] = 17 '''] = ''''''
@@ -2907,6 +3048,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[0] = 18 ''',self.guard17,self.act17))
 
         self.__names['''self.p_val[0] = 18 '''] = ('''self.p_val[0] = 18 ''',self.guard17,self.act17)
+
+        self.__actionClass['''self.p_val[0] = 18 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[0] = 18 '''] = 18
 
@@ -2916,6 +3059,8 @@ class sut(object):
 
         self.__names['''self.p_val[0] = 19 '''] = ('''self.p_val[0] = 19 ''',self.guard18,self.act18)
 
+        self.__actionClass['''self.p_val[0] = 19 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[0] = 19 '''] = 19
 
         self.__okExcepts['''self.p_val[0] = 19 '''] = ''''''
@@ -2923,6 +3068,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[0] = 20 ''',self.guard19,self.act19))
 
         self.__names['''self.p_val[0] = 20 '''] = ('''self.p_val[0] = 20 ''',self.guard19,self.act19)
+
+        self.__actionClass['''self.p_val[0] = 20 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[0] = 20 '''] = 20
 
@@ -2932,6 +3079,8 @@ class sut(object):
 
         self.__names['''self.p_val[1] = 1 '''] = ('''self.p_val[1] = 1 ''',self.guard20,self.act20)
 
+        self.__actionClass['''self.p_val[1] = 1 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[1] = 1 '''] = 21
 
         self.__okExcepts['''self.p_val[1] = 1 '''] = ''''''
@@ -2939,6 +3088,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[1] = 2 ''',self.guard21,self.act21))
 
         self.__names['''self.p_val[1] = 2 '''] = ('''self.p_val[1] = 2 ''',self.guard21,self.act21)
+
+        self.__actionClass['''self.p_val[1] = 2 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[1] = 2 '''] = 22
 
@@ -2948,6 +3099,8 @@ class sut(object):
 
         self.__names['''self.p_val[1] = 3 '''] = ('''self.p_val[1] = 3 ''',self.guard22,self.act22)
 
+        self.__actionClass['''self.p_val[1] = 3 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[1] = 3 '''] = 23
 
         self.__okExcepts['''self.p_val[1] = 3 '''] = ''''''
@@ -2955,6 +3108,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[1] = 4 ''',self.guard23,self.act23))
 
         self.__names['''self.p_val[1] = 4 '''] = ('''self.p_val[1] = 4 ''',self.guard23,self.act23)
+
+        self.__actionClass['''self.p_val[1] = 4 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[1] = 4 '''] = 24
 
@@ -2964,6 +3119,8 @@ class sut(object):
 
         self.__names['''self.p_val[1] = 5 '''] = ('''self.p_val[1] = 5 ''',self.guard24,self.act24)
 
+        self.__actionClass['''self.p_val[1] = 5 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[1] = 5 '''] = 25
 
         self.__okExcepts['''self.p_val[1] = 5 '''] = ''''''
@@ -2971,6 +3128,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[1] = 6 ''',self.guard25,self.act25))
 
         self.__names['''self.p_val[1] = 6 '''] = ('''self.p_val[1] = 6 ''',self.guard25,self.act25)
+
+        self.__actionClass['''self.p_val[1] = 6 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[1] = 6 '''] = 26
 
@@ -2980,6 +3139,8 @@ class sut(object):
 
         self.__names['''self.p_val[1] = 7 '''] = ('''self.p_val[1] = 7 ''',self.guard26,self.act26)
 
+        self.__actionClass['''self.p_val[1] = 7 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[1] = 7 '''] = 27
 
         self.__okExcepts['''self.p_val[1] = 7 '''] = ''''''
@@ -2987,6 +3148,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[1] = 8 ''',self.guard27,self.act27))
 
         self.__names['''self.p_val[1] = 8 '''] = ('''self.p_val[1] = 8 ''',self.guard27,self.act27)
+
+        self.__actionClass['''self.p_val[1] = 8 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[1] = 8 '''] = 28
 
@@ -2996,6 +3159,8 @@ class sut(object):
 
         self.__names['''self.p_val[1] = 9 '''] = ('''self.p_val[1] = 9 ''',self.guard28,self.act28)
 
+        self.__actionClass['''self.p_val[1] = 9 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[1] = 9 '''] = 29
 
         self.__okExcepts['''self.p_val[1] = 9 '''] = ''''''
@@ -3003,6 +3168,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[1] = 10 ''',self.guard29,self.act29))
 
         self.__names['''self.p_val[1] = 10 '''] = ('''self.p_val[1] = 10 ''',self.guard29,self.act29)
+
+        self.__actionClass['''self.p_val[1] = 10 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[1] = 10 '''] = 30
 
@@ -3012,6 +3179,8 @@ class sut(object):
 
         self.__names['''self.p_val[1] = 11 '''] = ('''self.p_val[1] = 11 ''',self.guard30,self.act30)
 
+        self.__actionClass['''self.p_val[1] = 11 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[1] = 11 '''] = 31
 
         self.__okExcepts['''self.p_val[1] = 11 '''] = ''''''
@@ -3019,6 +3188,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[1] = 12 ''',self.guard31,self.act31))
 
         self.__names['''self.p_val[1] = 12 '''] = ('''self.p_val[1] = 12 ''',self.guard31,self.act31)
+
+        self.__actionClass['''self.p_val[1] = 12 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[1] = 12 '''] = 32
 
@@ -3028,6 +3199,8 @@ class sut(object):
 
         self.__names['''self.p_val[1] = 13 '''] = ('''self.p_val[1] = 13 ''',self.guard32,self.act32)
 
+        self.__actionClass['''self.p_val[1] = 13 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[1] = 13 '''] = 33
 
         self.__okExcepts['''self.p_val[1] = 13 '''] = ''''''
@@ -3035,6 +3208,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[1] = 14 ''',self.guard33,self.act33))
 
         self.__names['''self.p_val[1] = 14 '''] = ('''self.p_val[1] = 14 ''',self.guard33,self.act33)
+
+        self.__actionClass['''self.p_val[1] = 14 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[1] = 14 '''] = 34
 
@@ -3044,6 +3219,8 @@ class sut(object):
 
         self.__names['''self.p_val[1] = 15 '''] = ('''self.p_val[1] = 15 ''',self.guard34,self.act34)
 
+        self.__actionClass['''self.p_val[1] = 15 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[1] = 15 '''] = 35
 
         self.__okExcepts['''self.p_val[1] = 15 '''] = ''''''
@@ -3051,6 +3228,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[1] = 16 ''',self.guard35,self.act35))
 
         self.__names['''self.p_val[1] = 16 '''] = ('''self.p_val[1] = 16 ''',self.guard35,self.act35)
+
+        self.__actionClass['''self.p_val[1] = 16 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[1] = 16 '''] = 36
 
@@ -3060,6 +3239,8 @@ class sut(object):
 
         self.__names['''self.p_val[1] = 17 '''] = ('''self.p_val[1] = 17 ''',self.guard36,self.act36)
 
+        self.__actionClass['''self.p_val[1] = 17 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[1] = 17 '''] = 37
 
         self.__okExcepts['''self.p_val[1] = 17 '''] = ''''''
@@ -3067,6 +3248,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[1] = 18 ''',self.guard37,self.act37))
 
         self.__names['''self.p_val[1] = 18 '''] = ('''self.p_val[1] = 18 ''',self.guard37,self.act37)
+
+        self.__actionClass['''self.p_val[1] = 18 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[1] = 18 '''] = 38
 
@@ -3076,6 +3259,8 @@ class sut(object):
 
         self.__names['''self.p_val[1] = 19 '''] = ('''self.p_val[1] = 19 ''',self.guard38,self.act38)
 
+        self.__actionClass['''self.p_val[1] = 19 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[1] = 19 '''] = 39
 
         self.__okExcepts['''self.p_val[1] = 19 '''] = ''''''
@@ -3083,6 +3268,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[1] = 20 ''',self.guard39,self.act39))
 
         self.__names['''self.p_val[1] = 20 '''] = ('''self.p_val[1] = 20 ''',self.guard39,self.act39)
+
+        self.__actionClass['''self.p_val[1] = 20 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[1] = 20 '''] = 40
 
@@ -3092,6 +3279,8 @@ class sut(object):
 
         self.__names['''self.p_val[2] = 1 '''] = ('''self.p_val[2] = 1 ''',self.guard40,self.act40)
 
+        self.__actionClass['''self.p_val[2] = 1 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[2] = 1 '''] = 41
 
         self.__okExcepts['''self.p_val[2] = 1 '''] = ''''''
@@ -3099,6 +3288,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[2] = 2 ''',self.guard41,self.act41))
 
         self.__names['''self.p_val[2] = 2 '''] = ('''self.p_val[2] = 2 ''',self.guard41,self.act41)
+
+        self.__actionClass['''self.p_val[2] = 2 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[2] = 2 '''] = 42
 
@@ -3108,6 +3299,8 @@ class sut(object):
 
         self.__names['''self.p_val[2] = 3 '''] = ('''self.p_val[2] = 3 ''',self.guard42,self.act42)
 
+        self.__actionClass['''self.p_val[2] = 3 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[2] = 3 '''] = 43
 
         self.__okExcepts['''self.p_val[2] = 3 '''] = ''''''
@@ -3115,6 +3308,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[2] = 4 ''',self.guard43,self.act43))
 
         self.__names['''self.p_val[2] = 4 '''] = ('''self.p_val[2] = 4 ''',self.guard43,self.act43)
+
+        self.__actionClass['''self.p_val[2] = 4 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[2] = 4 '''] = 44
 
@@ -3124,6 +3319,8 @@ class sut(object):
 
         self.__names['''self.p_val[2] = 5 '''] = ('''self.p_val[2] = 5 ''',self.guard44,self.act44)
 
+        self.__actionClass['''self.p_val[2] = 5 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[2] = 5 '''] = 45
 
         self.__okExcepts['''self.p_val[2] = 5 '''] = ''''''
@@ -3131,6 +3328,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[2] = 6 ''',self.guard45,self.act45))
 
         self.__names['''self.p_val[2] = 6 '''] = ('''self.p_val[2] = 6 ''',self.guard45,self.act45)
+
+        self.__actionClass['''self.p_val[2] = 6 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[2] = 6 '''] = 46
 
@@ -3140,6 +3339,8 @@ class sut(object):
 
         self.__names['''self.p_val[2] = 7 '''] = ('''self.p_val[2] = 7 ''',self.guard46,self.act46)
 
+        self.__actionClass['''self.p_val[2] = 7 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[2] = 7 '''] = 47
 
         self.__okExcepts['''self.p_val[2] = 7 '''] = ''''''
@@ -3147,6 +3348,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[2] = 8 ''',self.guard47,self.act47))
 
         self.__names['''self.p_val[2] = 8 '''] = ('''self.p_val[2] = 8 ''',self.guard47,self.act47)
+
+        self.__actionClass['''self.p_val[2] = 8 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[2] = 8 '''] = 48
 
@@ -3156,6 +3359,8 @@ class sut(object):
 
         self.__names['''self.p_val[2] = 9 '''] = ('''self.p_val[2] = 9 ''',self.guard48,self.act48)
 
+        self.__actionClass['''self.p_val[2] = 9 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[2] = 9 '''] = 49
 
         self.__okExcepts['''self.p_val[2] = 9 '''] = ''''''
@@ -3163,6 +3368,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[2] = 10 ''',self.guard49,self.act49))
 
         self.__names['''self.p_val[2] = 10 '''] = ('''self.p_val[2] = 10 ''',self.guard49,self.act49)
+
+        self.__actionClass['''self.p_val[2] = 10 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[2] = 10 '''] = 50
 
@@ -3172,6 +3379,8 @@ class sut(object):
 
         self.__names['''self.p_val[2] = 11 '''] = ('''self.p_val[2] = 11 ''',self.guard50,self.act50)
 
+        self.__actionClass['''self.p_val[2] = 11 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[2] = 11 '''] = 51
 
         self.__okExcepts['''self.p_val[2] = 11 '''] = ''''''
@@ -3179,6 +3388,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[2] = 12 ''',self.guard51,self.act51))
 
         self.__names['''self.p_val[2] = 12 '''] = ('''self.p_val[2] = 12 ''',self.guard51,self.act51)
+
+        self.__actionClass['''self.p_val[2] = 12 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[2] = 12 '''] = 52
 
@@ -3188,6 +3399,8 @@ class sut(object):
 
         self.__names['''self.p_val[2] = 13 '''] = ('''self.p_val[2] = 13 ''',self.guard52,self.act52)
 
+        self.__actionClass['''self.p_val[2] = 13 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[2] = 13 '''] = 53
 
         self.__okExcepts['''self.p_val[2] = 13 '''] = ''''''
@@ -3195,6 +3408,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[2] = 14 ''',self.guard53,self.act53))
 
         self.__names['''self.p_val[2] = 14 '''] = ('''self.p_val[2] = 14 ''',self.guard53,self.act53)
+
+        self.__actionClass['''self.p_val[2] = 14 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[2] = 14 '''] = 54
 
@@ -3204,6 +3419,8 @@ class sut(object):
 
         self.__names['''self.p_val[2] = 15 '''] = ('''self.p_val[2] = 15 ''',self.guard54,self.act54)
 
+        self.__actionClass['''self.p_val[2] = 15 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[2] = 15 '''] = 55
 
         self.__okExcepts['''self.p_val[2] = 15 '''] = ''''''
@@ -3211,6 +3428,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[2] = 16 ''',self.guard55,self.act55))
 
         self.__names['''self.p_val[2] = 16 '''] = ('''self.p_val[2] = 16 ''',self.guard55,self.act55)
+
+        self.__actionClass['''self.p_val[2] = 16 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[2] = 16 '''] = 56
 
@@ -3220,6 +3439,8 @@ class sut(object):
 
         self.__names['''self.p_val[2] = 17 '''] = ('''self.p_val[2] = 17 ''',self.guard56,self.act56)
 
+        self.__actionClass['''self.p_val[2] = 17 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[2] = 17 '''] = 57
 
         self.__okExcepts['''self.p_val[2] = 17 '''] = ''''''
@@ -3227,6 +3448,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[2] = 18 ''',self.guard57,self.act57))
 
         self.__names['''self.p_val[2] = 18 '''] = ('''self.p_val[2] = 18 ''',self.guard57,self.act57)
+
+        self.__actionClass['''self.p_val[2] = 18 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[2] = 18 '''] = 58
 
@@ -3236,6 +3459,8 @@ class sut(object):
 
         self.__names['''self.p_val[2] = 19 '''] = ('''self.p_val[2] = 19 ''',self.guard58,self.act58)
 
+        self.__actionClass['''self.p_val[2] = 19 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[2] = 19 '''] = 59
 
         self.__okExcepts['''self.p_val[2] = 19 '''] = ''''''
@@ -3243,6 +3468,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[2] = 20 ''',self.guard59,self.act59))
 
         self.__names['''self.p_val[2] = 20 '''] = ('''self.p_val[2] = 20 ''',self.guard59,self.act59)
+
+        self.__actionClass['''self.p_val[2] = 20 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[2] = 20 '''] = 60
 
@@ -3252,6 +3479,8 @@ class sut(object):
 
         self.__names['''self.p_val[3] = 1 '''] = ('''self.p_val[3] = 1 ''',self.guard60,self.act60)
 
+        self.__actionClass['''self.p_val[3] = 1 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[3] = 1 '''] = 61
 
         self.__okExcepts['''self.p_val[3] = 1 '''] = ''''''
@@ -3259,6 +3488,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[3] = 2 ''',self.guard61,self.act61))
 
         self.__names['''self.p_val[3] = 2 '''] = ('''self.p_val[3] = 2 ''',self.guard61,self.act61)
+
+        self.__actionClass['''self.p_val[3] = 2 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[3] = 2 '''] = 62
 
@@ -3268,6 +3499,8 @@ class sut(object):
 
         self.__names['''self.p_val[3] = 3 '''] = ('''self.p_val[3] = 3 ''',self.guard62,self.act62)
 
+        self.__actionClass['''self.p_val[3] = 3 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[3] = 3 '''] = 63
 
         self.__okExcepts['''self.p_val[3] = 3 '''] = ''''''
@@ -3275,6 +3508,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[3] = 4 ''',self.guard63,self.act63))
 
         self.__names['''self.p_val[3] = 4 '''] = ('''self.p_val[3] = 4 ''',self.guard63,self.act63)
+
+        self.__actionClass['''self.p_val[3] = 4 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[3] = 4 '''] = 64
 
@@ -3284,6 +3519,8 @@ class sut(object):
 
         self.__names['''self.p_val[3] = 5 '''] = ('''self.p_val[3] = 5 ''',self.guard64,self.act64)
 
+        self.__actionClass['''self.p_val[3] = 5 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[3] = 5 '''] = 65
 
         self.__okExcepts['''self.p_val[3] = 5 '''] = ''''''
@@ -3291,6 +3528,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[3] = 6 ''',self.guard65,self.act65))
 
         self.__names['''self.p_val[3] = 6 '''] = ('''self.p_val[3] = 6 ''',self.guard65,self.act65)
+
+        self.__actionClass['''self.p_val[3] = 6 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[3] = 6 '''] = 66
 
@@ -3300,6 +3539,8 @@ class sut(object):
 
         self.__names['''self.p_val[3] = 7 '''] = ('''self.p_val[3] = 7 ''',self.guard66,self.act66)
 
+        self.__actionClass['''self.p_val[3] = 7 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[3] = 7 '''] = 67
 
         self.__okExcepts['''self.p_val[3] = 7 '''] = ''''''
@@ -3307,6 +3548,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[3] = 8 ''',self.guard67,self.act67))
 
         self.__names['''self.p_val[3] = 8 '''] = ('''self.p_val[3] = 8 ''',self.guard67,self.act67)
+
+        self.__actionClass['''self.p_val[3] = 8 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[3] = 8 '''] = 68
 
@@ -3316,6 +3559,8 @@ class sut(object):
 
         self.__names['''self.p_val[3] = 9 '''] = ('''self.p_val[3] = 9 ''',self.guard68,self.act68)
 
+        self.__actionClass['''self.p_val[3] = 9 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[3] = 9 '''] = 69
 
         self.__okExcepts['''self.p_val[3] = 9 '''] = ''''''
@@ -3323,6 +3568,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[3] = 10 ''',self.guard69,self.act69))
 
         self.__names['''self.p_val[3] = 10 '''] = ('''self.p_val[3] = 10 ''',self.guard69,self.act69)
+
+        self.__actionClass['''self.p_val[3] = 10 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[3] = 10 '''] = 70
 
@@ -3332,6 +3579,8 @@ class sut(object):
 
         self.__names['''self.p_val[3] = 11 '''] = ('''self.p_val[3] = 11 ''',self.guard70,self.act70)
 
+        self.__actionClass['''self.p_val[3] = 11 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[3] = 11 '''] = 71
 
         self.__okExcepts['''self.p_val[3] = 11 '''] = ''''''
@@ -3339,6 +3588,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[3] = 12 ''',self.guard71,self.act71))
 
         self.__names['''self.p_val[3] = 12 '''] = ('''self.p_val[3] = 12 ''',self.guard71,self.act71)
+
+        self.__actionClass['''self.p_val[3] = 12 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[3] = 12 '''] = 72
 
@@ -3348,6 +3599,8 @@ class sut(object):
 
         self.__names['''self.p_val[3] = 13 '''] = ('''self.p_val[3] = 13 ''',self.guard72,self.act72)
 
+        self.__actionClass['''self.p_val[3] = 13 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[3] = 13 '''] = 73
 
         self.__okExcepts['''self.p_val[3] = 13 '''] = ''''''
@@ -3355,6 +3608,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[3] = 14 ''',self.guard73,self.act73))
 
         self.__names['''self.p_val[3] = 14 '''] = ('''self.p_val[3] = 14 ''',self.guard73,self.act73)
+
+        self.__actionClass['''self.p_val[3] = 14 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[3] = 14 '''] = 74
 
@@ -3364,6 +3619,8 @@ class sut(object):
 
         self.__names['''self.p_val[3] = 15 '''] = ('''self.p_val[3] = 15 ''',self.guard74,self.act74)
 
+        self.__actionClass['''self.p_val[3] = 15 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[3] = 15 '''] = 75
 
         self.__okExcepts['''self.p_val[3] = 15 '''] = ''''''
@@ -3371,6 +3628,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[3] = 16 ''',self.guard75,self.act75))
 
         self.__names['''self.p_val[3] = 16 '''] = ('''self.p_val[3] = 16 ''',self.guard75,self.act75)
+
+        self.__actionClass['''self.p_val[3] = 16 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[3] = 16 '''] = 76
 
@@ -3380,6 +3639,8 @@ class sut(object):
 
         self.__names['''self.p_val[3] = 17 '''] = ('''self.p_val[3] = 17 ''',self.guard76,self.act76)
 
+        self.__actionClass['''self.p_val[3] = 17 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[3] = 17 '''] = 77
 
         self.__okExcepts['''self.p_val[3] = 17 '''] = ''''''
@@ -3387,6 +3648,8 @@ class sut(object):
         self.__actions.append(('''self.p_val[3] = 18 ''',self.guard77,self.act77))
 
         self.__names['''self.p_val[3] = 18 '''] = ('''self.p_val[3] = 18 ''',self.guard77,self.act77)
+
+        self.__actionClass['''self.p_val[3] = 18 '''] = '''<val> := <[1..20]>'''
 
         self.__orderings['''self.p_val[3] = 18 '''] = 78
 
@@ -3396,6 +3659,8 @@ class sut(object):
 
         self.__names['''self.p_val[3] = 19 '''] = ('''self.p_val[3] = 19 ''',self.guard78,self.act78)
 
+        self.__actionClass['''self.p_val[3] = 19 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[3] = 19 '''] = 79
 
         self.__okExcepts['''self.p_val[3] = 19 '''] = ''''''
@@ -3404,6 +3669,8 @@ class sut(object):
 
         self.__names['''self.p_val[3] = 20 '''] = ('''self.p_val[3] = 20 ''',self.guard79,self.act79)
 
+        self.__actionClass['''self.p_val[3] = 20 '''] = '''<val> := <[1..20]>'''
+
         self.__orderings['''self.p_val[3] = 20 '''] = 80
 
         self.__okExcepts['''self.p_val[3] = 20 '''] = ''''''
@@ -3411,6 +3678,8 @@ class sut(object):
         self.__actions.append(('''self.p_avl[0] = avl.AVLTree() ''',self.guard80,self.act80))
 
         self.__names['''self.p_avl[0] = avl.AVLTree() '''] = ('''self.p_avl[0] = avl.AVLTree() ''',self.guard80,self.act80)
+
+        self.__actionClass['''self.p_avl[0] = avl.AVLTree() '''] = '''<avl> := avl.AVLTree()'''
 
         self.__orderings['''self.p_avl[0] = avl.AVLTree() '''] = 81
 
@@ -3424,6 +3693,8 @@ class sut(object):
 
         self.__names['''self.p_avl[1] = avl.AVLTree() '''] = ('''self.p_avl[1] = avl.AVLTree() ''',self.guard81,self.act81)
 
+        self.__actionClass['''self.p_avl[1] = avl.AVLTree() '''] = '''<avl> := avl.AVLTree()'''
+
         self.__orderings['''self.p_avl[1] = avl.AVLTree() '''] = 82
 
         self.__okExcepts['''self.p_avl[1] = avl.AVLTree() '''] = ''''''
@@ -3435,6 +3706,8 @@ class sut(object):
         self.__actions.append(('''self.p_avl[0].insert(self.p_val[0]) ''',self.guard82,self.act82))
 
         self.__names['''self.p_avl[0].insert(self.p_val[0]) '''] = ('''self.p_avl[0].insert(self.p_val[0]) ''',self.guard82,self.act82)
+
+        self.__actionClass['''self.p_avl[0].insert(self.p_val[0]) '''] = '''<avl>.insert(<val>)'''
 
         self.__orderings['''self.p_avl[0].insert(self.p_val[0]) '''] = 83
 
@@ -3448,6 +3721,8 @@ class sut(object):
 
         self.__names['''self.p_avl[0].insert(self.p_val[1]) '''] = ('''self.p_avl[0].insert(self.p_val[1]) ''',self.guard83,self.act83)
 
+        self.__actionClass['''self.p_avl[0].insert(self.p_val[1]) '''] = '''<avl>.insert(<val>)'''
+
         self.__orderings['''self.p_avl[0].insert(self.p_val[1]) '''] = 84
 
         self.__okExcepts['''self.p_avl[0].insert(self.p_val[1]) '''] = ''''''
@@ -3459,6 +3734,8 @@ class sut(object):
         self.__actions.append(('''self.p_avl[0].insert(self.p_val[2]) ''',self.guard84,self.act84))
 
         self.__names['''self.p_avl[0].insert(self.p_val[2]) '''] = ('''self.p_avl[0].insert(self.p_val[2]) ''',self.guard84,self.act84)
+
+        self.__actionClass['''self.p_avl[0].insert(self.p_val[2]) '''] = '''<avl>.insert(<val>)'''
 
         self.__orderings['''self.p_avl[0].insert(self.p_val[2]) '''] = 85
 
@@ -3472,6 +3749,8 @@ class sut(object):
 
         self.__names['''self.p_avl[0].insert(self.p_val[3]) '''] = ('''self.p_avl[0].insert(self.p_val[3]) ''',self.guard85,self.act85)
 
+        self.__actionClass['''self.p_avl[0].insert(self.p_val[3]) '''] = '''<avl>.insert(<val>)'''
+
         self.__orderings['''self.p_avl[0].insert(self.p_val[3]) '''] = 86
 
         self.__okExcepts['''self.p_avl[0].insert(self.p_val[3]) '''] = ''''''
@@ -3483,6 +3762,8 @@ class sut(object):
         self.__actions.append(('''self.p_avl[1].insert(self.p_val[0]) ''',self.guard86,self.act86))
 
         self.__names['''self.p_avl[1].insert(self.p_val[0]) '''] = ('''self.p_avl[1].insert(self.p_val[0]) ''',self.guard86,self.act86)
+
+        self.__actionClass['''self.p_avl[1].insert(self.p_val[0]) '''] = '''<avl>.insert(<val>)'''
 
         self.__orderings['''self.p_avl[1].insert(self.p_val[0]) '''] = 87
 
@@ -3496,6 +3777,8 @@ class sut(object):
 
         self.__names['''self.p_avl[1].insert(self.p_val[1]) '''] = ('''self.p_avl[1].insert(self.p_val[1]) ''',self.guard87,self.act87)
 
+        self.__actionClass['''self.p_avl[1].insert(self.p_val[1]) '''] = '''<avl>.insert(<val>)'''
+
         self.__orderings['''self.p_avl[1].insert(self.p_val[1]) '''] = 88
 
         self.__okExcepts['''self.p_avl[1].insert(self.p_val[1]) '''] = ''''''
@@ -3507,6 +3790,8 @@ class sut(object):
         self.__actions.append(('''self.p_avl[1].insert(self.p_val[2]) ''',self.guard88,self.act88))
 
         self.__names['''self.p_avl[1].insert(self.p_val[2]) '''] = ('''self.p_avl[1].insert(self.p_val[2]) ''',self.guard88,self.act88)
+
+        self.__actionClass['''self.p_avl[1].insert(self.p_val[2]) '''] = '''<avl>.insert(<val>)'''
 
         self.__orderings['''self.p_avl[1].insert(self.p_val[2]) '''] = 89
 
@@ -3520,6 +3805,8 @@ class sut(object):
 
         self.__names['''self.p_avl[1].insert(self.p_val[3]) '''] = ('''self.p_avl[1].insert(self.p_val[3]) ''',self.guard89,self.act89)
 
+        self.__actionClass['''self.p_avl[1].insert(self.p_val[3]) '''] = '''<avl>.insert(<val>)'''
+
         self.__orderings['''self.p_avl[1].insert(self.p_val[3]) '''] = 90
 
         self.__okExcepts['''self.p_avl[1].insert(self.p_val[3]) '''] = ''''''
@@ -3531,6 +3818,8 @@ class sut(object):
         self.__actions.append(('''self.p_avl[0].delete(self.p_val[0]) ''',self.guard90,self.act90))
 
         self.__names['''self.p_avl[0].delete(self.p_val[0]) '''] = ('''self.p_avl[0].delete(self.p_val[0]) ''',self.guard90,self.act90)
+
+        self.__actionClass['''self.p_avl[0].delete(self.p_val[0]) '''] = '''<avl>.delete(<val>)'''
 
         self.__orderings['''self.p_avl[0].delete(self.p_val[0]) '''] = 91
 
@@ -3544,6 +3833,8 @@ class sut(object):
 
         self.__names['''self.p_avl[0].delete(self.p_val[1]) '''] = ('''self.p_avl[0].delete(self.p_val[1]) ''',self.guard91,self.act91)
 
+        self.__actionClass['''self.p_avl[0].delete(self.p_val[1]) '''] = '''<avl>.delete(<val>)'''
+
         self.__orderings['''self.p_avl[0].delete(self.p_val[1]) '''] = 92
 
         self.__okExcepts['''self.p_avl[0].delete(self.p_val[1]) '''] = ''''''
@@ -3555,6 +3846,8 @@ class sut(object):
         self.__actions.append(('''self.p_avl[0].delete(self.p_val[2]) ''',self.guard92,self.act92))
 
         self.__names['''self.p_avl[0].delete(self.p_val[2]) '''] = ('''self.p_avl[0].delete(self.p_val[2]) ''',self.guard92,self.act92)
+
+        self.__actionClass['''self.p_avl[0].delete(self.p_val[2]) '''] = '''<avl>.delete(<val>)'''
 
         self.__orderings['''self.p_avl[0].delete(self.p_val[2]) '''] = 93
 
@@ -3568,6 +3861,8 @@ class sut(object):
 
         self.__names['''self.p_avl[0].delete(self.p_val[3]) '''] = ('''self.p_avl[0].delete(self.p_val[3]) ''',self.guard93,self.act93)
 
+        self.__actionClass['''self.p_avl[0].delete(self.p_val[3]) '''] = '''<avl>.delete(<val>)'''
+
         self.__orderings['''self.p_avl[0].delete(self.p_val[3]) '''] = 94
 
         self.__okExcepts['''self.p_avl[0].delete(self.p_val[3]) '''] = ''''''
@@ -3579,6 +3874,8 @@ class sut(object):
         self.__actions.append(('''self.p_avl[1].delete(self.p_val[0]) ''',self.guard94,self.act94))
 
         self.__names['''self.p_avl[1].delete(self.p_val[0]) '''] = ('''self.p_avl[1].delete(self.p_val[0]) ''',self.guard94,self.act94)
+
+        self.__actionClass['''self.p_avl[1].delete(self.p_val[0]) '''] = '''<avl>.delete(<val>)'''
 
         self.__orderings['''self.p_avl[1].delete(self.p_val[0]) '''] = 95
 
@@ -3592,6 +3889,8 @@ class sut(object):
 
         self.__names['''self.p_avl[1].delete(self.p_val[1]) '''] = ('''self.p_avl[1].delete(self.p_val[1]) ''',self.guard95,self.act95)
 
+        self.__actionClass['''self.p_avl[1].delete(self.p_val[1]) '''] = '''<avl>.delete(<val>)'''
+
         self.__orderings['''self.p_avl[1].delete(self.p_val[1]) '''] = 96
 
         self.__okExcepts['''self.p_avl[1].delete(self.p_val[1]) '''] = ''''''
@@ -3603,6 +3902,8 @@ class sut(object):
         self.__actions.append(('''self.p_avl[1].delete(self.p_val[2]) ''',self.guard96,self.act96))
 
         self.__names['''self.p_avl[1].delete(self.p_val[2]) '''] = ('''self.p_avl[1].delete(self.p_val[2]) ''',self.guard96,self.act96)
+
+        self.__actionClass['''self.p_avl[1].delete(self.p_val[2]) '''] = '''<avl>.delete(<val>)'''
 
         self.__orderings['''self.p_avl[1].delete(self.p_val[2]) '''] = 97
 
@@ -3616,6 +3917,8 @@ class sut(object):
 
         self.__names['''self.p_avl[1].delete(self.p_val[3]) '''] = ('''self.p_avl[1].delete(self.p_val[3]) ''',self.guard97,self.act97)
 
+        self.__actionClass['''self.p_avl[1].delete(self.p_val[3]) '''] = '''<avl>.delete(<val>)'''
+
         self.__orderings['''self.p_avl[1].delete(self.p_val[3]) '''] = 98
 
         self.__okExcepts['''self.p_avl[1].delete(self.p_val[3]) '''] = ''''''
@@ -3627,6 +3930,8 @@ class sut(object):
         self.__actions.append(('''__result = self.p_avl[0].find(self.p_val[0]) ''',self.guard98,self.act98))
 
         self.__names['''__result = self.p_avl[0].find(self.p_val[0]) '''] = ('''__result = self.p_avl[0].find(self.p_val[0]) ''',self.guard98,self.act98)
+
+        self.__actionClass['''__result = self.p_avl[0].find(self.p_val[0]) '''] = '''<avl>.find(<val>)'''
 
         self.__orderings['''__result = self.p_avl[0].find(self.p_val[0]) '''] = 99
 
@@ -3642,6 +3947,8 @@ class sut(object):
 
         self.__names['''__result = self.p_avl[0].find(self.p_val[1]) '''] = ('''__result = self.p_avl[0].find(self.p_val[1]) ''',self.guard99,self.act99)
 
+        self.__actionClass['''__result = self.p_avl[0].find(self.p_val[1]) '''] = '''<avl>.find(<val>)'''
+
         self.__orderings['''__result = self.p_avl[0].find(self.p_val[1]) '''] = 100
 
         self.__okExcepts['''__result = self.p_avl[0].find(self.p_val[1]) '''] = ''''''
@@ -3655,6 +3962,8 @@ class sut(object):
         self.__actions.append(('''__result = self.p_avl[0].find(self.p_val[2]) ''',self.guard100,self.act100))
 
         self.__names['''__result = self.p_avl[0].find(self.p_val[2]) '''] = ('''__result = self.p_avl[0].find(self.p_val[2]) ''',self.guard100,self.act100)
+
+        self.__actionClass['''__result = self.p_avl[0].find(self.p_val[2]) '''] = '''<avl>.find(<val>)'''
 
         self.__orderings['''__result = self.p_avl[0].find(self.p_val[2]) '''] = 101
 
@@ -3670,6 +3979,8 @@ class sut(object):
 
         self.__names['''__result = self.p_avl[0].find(self.p_val[3]) '''] = ('''__result = self.p_avl[0].find(self.p_val[3]) ''',self.guard101,self.act101)
 
+        self.__actionClass['''__result = self.p_avl[0].find(self.p_val[3]) '''] = '''<avl>.find(<val>)'''
+
         self.__orderings['''__result = self.p_avl[0].find(self.p_val[3]) '''] = 102
 
         self.__okExcepts['''__result = self.p_avl[0].find(self.p_val[3]) '''] = ''''''
@@ -3683,6 +3994,8 @@ class sut(object):
         self.__actions.append(('''__result = self.p_avl[1].find(self.p_val[0]) ''',self.guard102,self.act102))
 
         self.__names['''__result = self.p_avl[1].find(self.p_val[0]) '''] = ('''__result = self.p_avl[1].find(self.p_val[0]) ''',self.guard102,self.act102)
+
+        self.__actionClass['''__result = self.p_avl[1].find(self.p_val[0]) '''] = '''<avl>.find(<val>)'''
 
         self.__orderings['''__result = self.p_avl[1].find(self.p_val[0]) '''] = 103
 
@@ -3698,6 +4011,8 @@ class sut(object):
 
         self.__names['''__result = self.p_avl[1].find(self.p_val[1]) '''] = ('''__result = self.p_avl[1].find(self.p_val[1]) ''',self.guard103,self.act103)
 
+        self.__actionClass['''__result = self.p_avl[1].find(self.p_val[1]) '''] = '''<avl>.find(<val>)'''
+
         self.__orderings['''__result = self.p_avl[1].find(self.p_val[1]) '''] = 104
 
         self.__okExcepts['''__result = self.p_avl[1].find(self.p_val[1]) '''] = ''''''
@@ -3711,6 +4026,8 @@ class sut(object):
         self.__actions.append(('''__result = self.p_avl[1].find(self.p_val[2]) ''',self.guard104,self.act104))
 
         self.__names['''__result = self.p_avl[1].find(self.p_val[2]) '''] = ('''__result = self.p_avl[1].find(self.p_val[2]) ''',self.guard104,self.act104)
+
+        self.__actionClass['''__result = self.p_avl[1].find(self.p_val[2]) '''] = '''<avl>.find(<val>)'''
 
         self.__orderings['''__result = self.p_avl[1].find(self.p_val[2]) '''] = 105
 
@@ -3726,6 +4043,8 @@ class sut(object):
 
         self.__names['''__result = self.p_avl[1].find(self.p_val[3]) '''] = ('''__result = self.p_avl[1].find(self.p_val[3]) ''',self.guard105,self.act105)
 
+        self.__actionClass['''__result = self.p_avl[1].find(self.p_val[3]) '''] = '''<avl>.find(<val>)'''
+
         self.__orderings['''__result = self.p_avl[1].find(self.p_val[3]) '''] = 106
 
         self.__okExcepts['''__result = self.p_avl[1].find(self.p_val[3]) '''] = ''''''
@@ -3740,6 +4059,8 @@ class sut(object):
 
         self.__names['''self.p_avl[0].inorder() '''] = ('''self.p_avl[0].inorder() ''',self.guard106,self.act106)
 
+        self.__actionClass['''self.p_avl[0].inorder() '''] = '''<avl>.inorder()'''
+
         self.__orderings['''self.p_avl[0].inorder() '''] = 107
 
         self.__okExcepts['''self.p_avl[0].inorder() '''] = ''''''
@@ -3751,6 +4072,8 @@ class sut(object):
         self.__actions.append(('''self.p_avl[1].inorder() ''',self.guard107,self.act107))
 
         self.__names['''self.p_avl[1].inorder() '''] = ('''self.p_avl[1].inorder() ''',self.guard107,self.act107)
+
+        self.__actionClass['''self.p_avl[1].inorder() '''] = '''<avl>.inorder()'''
 
         self.__orderings['''self.p_avl[1].inorder() '''] = 108
 
@@ -3822,6 +4145,8 @@ class sut(object):
         if self.__replayBacktrack:
             return self.captureReplay(self.__test)
         return [ copy.deepcopy(self.p_avl),copy.deepcopy(self.p_avl_used),copy.deepcopy(self.p_val),copy.deepcopy(self.p_val_used),copy.deepcopy(self.p_avl_REF),copy.deepcopy(self.p_avl_REF_used),copy.copy(self.__test)]
+    def shallowState(self):
+        return [ ("self.p_avl",self.p_avl),("self.p_val",self.p_val),("self.p_avl_REF",self.p_avl_REF)]
     def abstract(self,state):
         if self.__replayBacktrack:
             return state
@@ -3851,13 +4176,15 @@ class sut(object):
                 assert self.p_avl[1].check_balanced()
 
             # END CHECK CODE
+        except KeyboardInterrupt as e:
+            raise e
         except:
             self.__failure = sys.exc_info()
             return False
         finally:
             if self.__collectCov:
                 self.__cov.stop()
-                self.__updateCov()
+                self.__updateCov(extendCov=True)
         return True
     """
     BOILERPLATE METHODS OF SUT
@@ -3901,7 +4228,12 @@ class sut(object):
         except:
             return None        
     
+    def actionClass(self,action):
+        return self.__actionClass[action[0]]
     
+    def dependencies(self,actClass):
+        return self.__dependencies[actClass]
+        
     def prettyName(self, name):
         newName = name
         for p in self.__pools:
@@ -4024,6 +4356,9 @@ class sut(object):
         """
         return self.__actions
     
+    def actionClasses(self):
+        return self.__actionClasses
+    
     def disable(self,f):
         """
         Disable an action by name.
@@ -4035,11 +4370,85 @@ class sut(object):
         self.__actions = newActions
     
     def enableAll(self):
+        
         """
         Enable all actions.
         """
+        self.__swarmConfig = None
         self.__actions = self.__actions_backup
     
+    def standardSwarm(self, rgen, P = 0.5, file = None):
+        """
+        Enables all actions, then sets a swarm configuration based on rgen, P = probability of enabling an action class,
+        file is a file (format action %%%% probability) giving probabilities for inclusion)
+        """
+        self.enableAll()
+        newEnabled = []
+    
+        if file != None:
+            classProb = {}
+            for l in open(file):
+                ls = l.split("%%%%")
+                c = ls[0][:-1]
+                prob = float(ls[1])
+                classProb[c] = prob
+                
+        for c in self.__actionClasses:
+            if file == None:
+                if rgen.random() < P:
+                    newEnabled.append(c)
+            else:
+                if rgen.random() < classProb[c]:
+                    newEnabled.append(c)
+        if newEnabled == []:
+            newEnabled.append(rgen.choice(self.__actionClasses))
+        changed = True
+        while changed:
+            changed = False
+            
+            forcedAdd = []
+            for c in newEnabled:
+                for d in self.dependencies(c):
+                    df = filter(lambda x:x in d, newEnabled) + filter(lambda x:x in d, forcedAdd)
+                    if df == []:
+                        forcedAdd.append(rgen.choice(d))
+                        changed = True
+            newEnabled.extend(forcedAdd)
+    
+            forcedAdd = []
+            for c in newEnabled:
+                if self.dependencies(c) == []:
+                    anyDepend = False
+                    for c2 in (newEnabled + forcedAdd):
+                        for d in self.dependencies(c2):
+                            if c in d:
+                                    anyDepend = True
+                                    break
+                        if anyDepend:
+                            break
+                    if not anyDepend:
+                        needsThis = []
+                        for c2 in self.__actionClasses:
+                            for d in self.dependencies(c2):
+                                if c in d:
+                                    needsThis.append(c2)
+                                    break
+                        if needsThis != []:
+                            forcedAdd.append(rgen.choice(needsThis))
+                            changed = True
+            newEnabled.extend(forcedAdd)
+                                
+        #print "SWARMING WITH CONFIGURATION:",newEnabled
+        self.__swarmConfig = newEnabled
+        enabledActions = []
+        for a in self.__actions:
+            if self.actionClass(a) in newEnabled:
+                enabledActions.append(a)
+        self.__actions = enabledActions
+    
+    def swarmConfig(self):
+        return self.__swarmConfig
+        
     def serializable(self, step):
         return step[0]
     
@@ -4052,7 +4461,7 @@ class sut(object):
     def loadTest(self, filename):
         test = []
         for l in open(filename):
-            test.append(playable(l[:-1]))
+            test.append(self.playable(l[:-1]))
         return test
     
     def playable(self, name):
@@ -4061,6 +4470,8 @@ class sut(object):
     def safely(self, act):
         try:
             act[2]()
+        except KeyboardInterrupt as e:
+            raise e
         except:
             self.__failure = sys.exc_info()
             return False
@@ -4874,9 +5285,10 @@ class sut(object):
     
     def stopRelax(self):
         self.__relaxUsedRestriction = False
-    def __updateCov(self):
-        self.__newBranches = set()
-        self.__newStatements = set()
+    def __updateCov(self,extendCov=False):
+        if not extendCov:
+            self.__newBranches = set()
+            self.__newStatements = set()
         newCov = self.__cov.get_data()
         if self.__oldCovData == None:
             self.__oldCovData = coverage.CoverageData()
