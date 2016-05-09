@@ -103,7 +103,9 @@ print "STARTING PHASE 1"
 
 start = time.time()
 ntests = 0
-while time.time() - start < timeout:
+while time.time() - start < timeout - 6:
+    if time.time() - start > timeout - 6:
+        break
     sut.restart()
     ntests += 1
     for s in xrange(0,depth):
@@ -117,7 +119,9 @@ while time.time() - start < timeout:
 print "STARTING PHASE 2"
 
 start = time.time()
-while time.time() - start < timeout:
+while time.time() - start < 4:
+    if time.time() - start > 4:
+        break
     buildActivePool()
     lastAddCoverage = set([])
     sut.restart()
