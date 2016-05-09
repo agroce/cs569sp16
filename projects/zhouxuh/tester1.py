@@ -82,7 +82,6 @@ while time.time()-start < timeout:
             break
     collectCoverage()    
 
-
 if (coverage == 1):
     sut.internalReport()
 
