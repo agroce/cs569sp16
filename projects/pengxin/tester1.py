@@ -77,7 +77,7 @@ def main():
             if running:
                 if sut.newBranches() != set([]):
                     for d in sut.newBranches():
-                        print time.time() - start, len(sut.allBranches()),"New Branches",d
+                        print time.time() - start, len(sut.allBranches()),"New branch",d
             if len(sut.newStatements()) > 0:
                 test = sut.state()
                 storedTest = True
