@@ -50,9 +50,10 @@ def expandNewState():
 
 def main():
     global start,BUDGET,sut,COVERAGE_REPORT,savedcoverage,rgen,storedTest,act,ok,savedcoverage,running,savedcoverage,Num,faults,foundbug,savedTestState
+    global elapsed
     while time.time()-start < BUDGET:
         sut.restart()
-        if (savedcoverage != None) and (rgen.random() > 0.7):
+        if (savedcoverage != None) and (rgen.random() > 0.3):
             print "Processing"
             sut.backtrack(savedcoverage)
         storedTest = False
@@ -62,8 +63,10 @@ def main():
             ok = sut.safely(act)
             if running:
                 if sut.newBranches() != set([]):
+                    ## print "ACTION:",a[0],tryStutter
                     for d in sut.newBranches():
-                        print time.time() - start,len(sut.allBranches()),"New Branches",d
+                        print time.time()-start,len(sut.allBranches()),"New branch",d
+        
 
             if len(sut.newStatements()) > 0:
                 savedcoverage = sut.state()
