@@ -23,14 +23,16 @@ fault    = int(sys.argv[5]) # 0
 coverage = int(sys.argv[6]) # 1
 running  = int(sys.argv[7]) # 1
 
+startprog = time.time()
+
 def main():
     global failCount,sut,config,reduceTime,quickCount,repeatCount,failures,cloudFailures,R,opTime,checkTime,guardTime,restartTime,nops,ntests
     
-    R = random.Random(seed)
+    rand = random.Random(seed)
 
     start = time.time()
-    elapsed = time.time()-start
-
+    #elapsed = time.time()-start
+    runningtime = time.time()-startprog
     sut = SUT.sut()
     tacts = sut.actions()
     a = None
@@ -50,15 +52,19 @@ def main():
     actiontime = 1
 
     
-    while elapsed < timeout:
+    while runningtime < timeout:
         sut.restart()
+        elapsed = time.time()-startprog
         for d in xrange(0,depth):
-            
+            elapsed = time.time()-startprog
+            if elapsed > timeout:
+                break
+            startaction = time.time()    
             for w in xrange(0,width):
-            
+                elapsed = time.time()-startprog
                 #a = sut.randomEnabled(R)  
-                a = sut.randomEnableds(R, naction)
-                actionelapsed = time.time() - start
+                a = sut.randomEnableds(rand, naction)
+                actionelapsed = time.time() - startaction
                 for i in xrange(0,naction):
                     if a[0] == None:
                         print "WARNING: DEADLOCK (NO ENABLED ACTIONS)"
@@ -84,15 +90,22 @@ def main():
                         print "REDUCING..."
                         R = sut.reduce(sut.test(), lambda x: sut.fails(x) or sut.failsCheck(x))
                         sut.prettyPrintTest(R)
-
-                        print "NORMALIZING..."
-                        N = sut.normalize(R, lambda x: sut.fails(x) or sut.failsCheck(x))
+                        print sut.failure()
+                        if fault:
+                            filename='failure'+str(bugs)+'.test'
+                            for i in range(len(R)):
+                                with open(filename,'w') as f:
+                                    f.write('\n'+'Bug no.'+str(bugs)+'\n')                          
+                                    f.write(str(sut.failure())+'\n')
+                                    f.write(str(R)+'\n')    
+                        #print "NORMALIZING..."
+                        #N = sut.normalize(R, lambda x: sut.fails(x) or sut.failsCheck(x))
                         #sut.prettyPrintTest(N)
-                        print "GENERALIZING..."
-                        sut.generalize(N, lambda x: sut.fails(x) or sut.failsCheck(x))
-                        break
-                        
-                    elapsed = time.time() - start
+                        #print "GENERALIZING..."
+                        #sut.generalize(N, lambda x: sut.fails(x) or sut.failsCheck(x))
+                        #break
+                
+                    elapsed = time.time() - startprog
                     if running:
                         if sut.newBranches() != set([]):
                             print "ACTION:",a[i]
@@ -116,10 +129,14 @@ def main():
                    if(naction < maxaction):
                         naction+=1    
 
+        if elapsed > timeout:
+            print "STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH",len(sut.test())
+            break 
+
     if coverage:
         sut.internalReport()
 
-    print time.time()-start, "TOTAL RUNTIME"
+    print time.time()-startprog, "TOTAL RUNTIME"
     print nops, "TOTAL TEST OPERATIONS"
     print opTime, "TIME SPENT EXECUTING TEST OPERATIONS"
     print bugs,"FAILED"
