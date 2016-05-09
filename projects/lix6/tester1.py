@@ -88,9 +88,11 @@ while time.time() - start < TIMEOUT :
     belowMedian = set([])
     sort = sorted(coveraged.keys(),key = lambda x : coveraged[x])
 
+    a = len(sort)/2
+
 
     for s in sort:
-        if coveraged[s] < belowMedian:
+        if coveraged[s] < sort[a]:
             belowMedian.add(s)
         else:
             break
