@@ -62,4 +62,4 @@ while(time.time()< start + TIME_OUT):
                         new = False  
 if (COVERAGE_REPORT):
     sut.internalReport()
-print "TOTAL NUMBER OF BUGS",bugs
+    print "TOTAL NUMBER OF BUGS",bugs
