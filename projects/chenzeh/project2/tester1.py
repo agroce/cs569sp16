@@ -12,6 +12,7 @@ COVERAGE_REPORT = int(sys.argv[6])
 RUNNING= int(sys.argv[7])
 
 rgen = random.Random()
+SEED +=2
 rgen.seed(SEED)
 MAX_DEPTH = DEPTH 
 
