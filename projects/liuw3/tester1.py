@@ -50,7 +50,6 @@ def expandNewState():
 
 def main():
     global start,BUDGET,sut,COVERAGE_REPORT,savedcoverage,rgen,storedTest,act,ok,savedcoverage,running,savedcoverage,Num,faults,foundbug,savedTestState
-    global elapsed
     while time.time()-start < BUDGET:
         sut.restart()
         if (savedcoverage != None) and (rgen.random() > 0.3):
