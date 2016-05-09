@@ -20,15 +20,16 @@ rand = random.Random()
 rand.seed(Seed)
 
 
+Num_Bug = 0
 Failure_Report = "Fail"
 def randomOperation():
 	global Time_Start
-	Num_Bug = 0
+	global Num_Bug
 	Operation = sut.randomEnabled(rand)
 	okay = sut.safely(Operation)
 	Runtime = time.time() - Time_Start
 
-	if (Running == 1):
+	if (Running):
 		if ((len(sut.newBranches())) > 0):
 			print "Operation: ", Operation[0]
 			for i in sut.newBranches():
@@ -43,7 +44,7 @@ def randomOperation():
 		print sut.failure()
 		print "=========================================================="
 
-		if (Faults == 1):
+		if (Faults):
 			file = open((Failure_Report + str(Num_Bug) + ".test"), "w")
 			print >> file, sut.failure()
 
@@ -54,7 +55,7 @@ def randomOperation():
 				i += 1
 			file.close()
 
-	return okay, Num_Bug
+	return okay
 
 
 def mian():
@@ -68,17 +69,16 @@ def mian():
 	print "=========================================================="
 
 	Time_Start = time.time()
-	Phase1_Time_Budget = TimeOut * 0.5
+	Phase1_Time_Budget = TimeOut * 0.33
 	while (time.time() < (Time_Start + Phase1_Time_Budget)):
 		sut.restart()
 		for d in xrange(0, Depth):
-			Good, bugNum = randomOperation()
+			Good = randomOperation()
 			if (len(sut.newStatements()) > 0):
 				NS.append(sut.state())
 				NSM.append(sut.newStatements())
 
 			if (not Good):
-				print bugNum, "BUGS FOUND!!!"
 				break
 
 		for s in sut.currStatements():
@@ -88,7 +88,7 @@ def mian():
 
 	sorted_Coverage = sorted(CoverageCount.keys(), key = lambda x: CoverageCount[x])
 
-	print bugNum, "BUGS FOUND!!!"
+	print Num_Bug, "BUGS FOUND!!!"
 
 	for s in sorted_Coverage:
 		print s, CoverageCount[s]
@@ -142,13 +142,12 @@ def mian():
 				sut.backtrack(s)
 
 				for d in xrange(0, Depth):
-					Good, bugNum = randomOperation()
+					Good = randomOperation()
 					if (len(sut.newStatements()) > 0):
 						print "FOUND New Statements!!!"
 						CS.insert(i, sut.state())
 
 					if (not Good):
-						print bugNum, "BUGS FOUND!!!"
 						break
 
 				for j in sut.currStatements():
@@ -158,7 +157,7 @@ def mian():
 
 			sorted_Coverage = sorted(CoverageCount.keys(), key = lambda x: CoverageCount[x])
 
-	print bugNum, "BUGS FOUND!!!"
+	print Num_Bug, "BUGS FOUND!!!"
 
 	for s in sorted_Coverage:
 		print s, CoverageCount[s]
