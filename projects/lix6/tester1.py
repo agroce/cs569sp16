@@ -34,7 +34,7 @@ def randomAction():
         if RUNNING:
             if sut.newBranches() != set([]):
                 for b in sut.newBranches():
-                    print "elapsed time: ", time.time() - start, "total branch", len(sut.allBranches()) ,"new branch", b
+                    print  time.time() - start, len(sut.allBranches()) ,"new branch", b
         if len(sut.newStatements()) != 0:
             visited.append((list(sut.test()), set(sut.currStatements())))
     return ok
