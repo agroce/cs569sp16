@@ -64,10 +64,10 @@ def isEnabledValue(sut):
 		flag or v
 	return flag
 
-def isFilters(newSeq, actionClassesCounts, depth, ok, propok):
-	isLessMax = max(actionClassesCounts.values()) <= 10
-	isLessDepth = len(newSeq) <= depth
-	return (ok and propok and isLessDepth and isLessMax)
+def isFilters(newSeq, classTable, depth, width, ok, propok):
+	notmany = max(classTable.values()) <= width
+	lessdepth = len(newSeq) <= depth
+	return (ok and propok and lessdepth and notmany)
 
 def isNotNewSeq(seq, seqs):
 	setSeq = set(seq)
@@ -108,10 +108,10 @@ start = time.time()
 while time.time() - start < timeout:
 	sut.restart()
 	newSeq = rgen.choice(nonErrorSeqs)[:]
-	actionClassesCounts = dict.fromkeys(sut.actionClasses(), 0)
+	classTable = dict.fromkeys(sut.actionClasses(), 0)
 	for s in newSeq:
 		s[2]()
-		actionClassesCounts[sut.actionClass(s)] += 1
+		classTable[sut.actionClass(s)] += 1
 
 	if rgen.randint(0, 9) == 0:
 		n = rgen.randint(2, 100)
@@ -121,27 +121,27 @@ while time.time() - start < timeout:
 			newSeq.append(a)
 			if isNotNewSeq(newSeq, errorSeqs) or isNotNewSeq(newSeq, nonErrorSeqs):
 				continue
-			if running:
-				argRunning(a, sut, start)
 			ok = sut.safely(a)
 			propok = sut.check()
+			if running:
+				argRunning(a, sut, start)
 			if isNotContracts(newSeq, ok, propok, sut, faults, failureCount, errorSeqs):
 				break
-			actionClassesCounts[sut.actionClass(a)] += 1
+			classTable[sut.actionClass(a)] += 1
 	else:
 		a = sut.randomEnabled(rgen)	
 		newSeq.append(a)
 		if isNotNewSeq(newSeq, errorSeqs) or isNotNewSeq(newSeq, nonErrorSeqs):
 			continue
-		if running:
-			argRunning(a, sut, start)
 		ok = sut.safely(a)
 		propok = sut.check()
+		if running:
+			argRunning(a, sut, start)
 		if isNotContracts(newSeq, ok, propok, sut, faults, failureCount, errorSeqs):
 			break
-		actionClassesCounts[sut.actionClass(a)] += 1
+		classTable[sut.actionClass(a)] += 1
 
-	if isFilters(newSeq, actionClassesCounts, depth, ok, propok):
+	if isFilters(newSeq, classTable, depth, width, ok, propok):
 		nonErrorSeqs.append(newSeq)
 
 	#printSeq(newSeq)
