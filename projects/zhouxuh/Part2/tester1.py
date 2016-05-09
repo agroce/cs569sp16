@@ -19,7 +19,7 @@ def action():
             if len(sut.newBranches()) > 0:
                 print "ACTION:", act[0]
                 for b in sut.newBranches():
-                    print time.time() - start, len(sut.allBranches()), "NEW BRANCH", b
+                    print time.time() - start, len(sut.allBranches()), "New branch", b
     if faults:
         if not ok:
             bugs += 1
