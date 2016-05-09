@@ -37,9 +37,10 @@ def avlfunction():
 		act = sut.randomEnabled(rgen)
 		ok = sut.safely(act)
 		if running:
-			if sut.newBranches() != set([]):
+			if len(sut.newBranches()) > 0:
+				print "ACTION:", act[0]
 				for d in sut.newBranches():
-					print time.time() - start, len(sut.allBranches()),"New Branches",d 	
+					print time.time() - start, len(sut.allBranches()),"New branch",d 	
 		if len(sut.newStatements()) > 0:
 				savecoverage_test = sut.state()
 				storedTest = True
