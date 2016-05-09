@@ -29,7 +29,6 @@ dis_weight = 0
 def backtrack():
 	if (collected_test != None) and (rgen.random() > 0.5):
 		sut.backtrack(collected_test)
-        storedTest = False
 
 def newState():
     global rgen,sut,collected_test,storedTest,action_cnt,bugfound
@@ -49,18 +48,18 @@ def newState():
             collected_test = sut.state()
             storedTest = True
         action_cnt += 1
-        if FAULTS:    
-            if not no_bug_found:
-                bugfound += 1
-                print "A failure happened here."
-                rds = sut.reduce(sut.test(),sut.fails, True, True)
-                sut.prettyPrintTest(rds)
-                print sut.failure()
-                break
+        if not no_bug_found:
+            bugfound += 1
+            print "A failure happened here."
+            rds = sut.reduce(sut.test(),sut.fails, True, True)
+            sut.prettyPrintTest(rds)
+            print sut.failure()
+            break
 
 while time.time()-start < BUDGET:
     sut.restart()
     backtrack()
+    storedTest = False
     newState()
     for i in sut.currStatements():
         if i not in coverage_cnt:
@@ -87,10 +86,6 @@ if COVERAGE:
     sut.internalReport()
 
 print bugfound,"FAILED FOUND"
-<<<<<<< HEAD
-print len(sut.allBranches()),"New Branches"
-=======
-print len(sut.allBranches()),"NEW BRANCHES"
->>>>>>> origin/master
+print len(sut.newBranches()),"New Branches"
 print "overall actions",action_cnt
 print "overall runtime",time.time()-start
