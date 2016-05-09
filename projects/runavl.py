@@ -15,7 +15,7 @@ for t in testers:
     student = t.split("/")[0]
     print student,t
     shutil.copyfile(t,"tester1.py")
-    r = subprocess.call(["ulimit -t " + timeout "; python tester1.py " + time + " " + seed + " 100 10 0 1 1 >& " + student + ".avl." + time + "s." + seed + ".tout"],shell=True)
+    r = subprocess.call(["ulimit -t " + timeout + "; python tester1.py " + time + " " + seed + " 100 10 0 1 1 >& " + student + ".avl." + time + "s." + seed + ".tout"],shell=True)
     if r == 152:
         print "TIMEOUT"
         subprocess.call(["echo !TIMEOUT! >> " + student + ".avl." + time + "s." +seed + ".tout"], shell=True)
