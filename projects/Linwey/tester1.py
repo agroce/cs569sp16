@@ -87,6 +87,10 @@ if COVERAGE:
     sut.internalReport()
 
 print bugfound,"FAILED FOUND"
+<<<<<<< HEAD
+print len(sut.allBranches()),"New Branches"
+=======
 print len(sut.allBranches()),"NEW BRANCHES"
+>>>>>>> origin/master
 print "overall actions",action_cnt
 print "overall runtime",time.time()-start
