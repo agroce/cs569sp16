@@ -1,4 +1,8 @@
-import os,sys,sut,time,random
+import os
+import sys
+import sut
+import time
+import random
 
 timeout = int(sys.argv[1])
 seed = int(sys.argv[2])
