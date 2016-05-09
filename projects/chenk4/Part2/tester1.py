@@ -61,7 +61,7 @@ def branchFun(running,possible,elapsed):
 
 print "START PHASE ONE ........\n"
 
-while (time.time() - startTM) <= (timeout/20):
+while (time.time() - startTM) <= (timeout/4):
     sut.restart()
     for s0 in xrange(0,depth):
         act = sut.randomEnabled(rgen)
@@ -132,10 +132,9 @@ while d <= depth:
             if len(sut.newStatements()) != 0:
                 print "NEW STATEMENTS DISCOVERED",sut.newStatements()   
             if len(sut.newBranches()) != 0:
-                print "NEW STATEMENTS DISCOVERED",sut.newStatements() 
-            branchFun(running,possible,1)                 
-                                
+                print "NEW STATEMENTS DISCOVERED",sut.newStatements()                                
             ok = sut.safely(act)
+            branchFun(running,act,1)  
 
             actCount += 1  #count all action excuted
             if not ok:
