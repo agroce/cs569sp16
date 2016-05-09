@@ -60,3 +60,6 @@ while(time.time()< start + TIME_OUT):
                         new = True
                     else:
                         new = False  
+if (COVERAGE_REPORT):
+    sut.internalReport()
+print "TOTAL NUMBER OF BUGS",bugs
