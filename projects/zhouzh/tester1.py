@@ -99,16 +99,17 @@ def main():
                     break
 
                 isGood = sut.safely(a)
+                elapsed = time.time() - start
 
                 if Config.running:
                     if sut.newBranches() != set([]):
                         print "Action:", a[0]
                         for b in sut.newBranches():
-                           print elapsed, len(sut.allBranches()), "New Branch", b
+                           print elapsed, len(sut.allBranches()), "New branch", b
                     if sut.newStatements() != set([]):
                         print "Action:", a[0]
                         for s in sut.newStatements():
-                            print elapsed, len(sut.allStatements()), "New Statement", s
+                            print elapsed, len(sut.allStatements()), "New statement", s
 
                 if not isGood:
                     nbugs += 1
@@ -125,9 +126,6 @@ def main():
                         f = open(faults_file + str(nbugs) + ".test", "w")
                         print >> f, sut.failure()
 
-
-
-                elapsed = time.time() - start
 
                 if elapsed >= Config.timeout:
                     break
