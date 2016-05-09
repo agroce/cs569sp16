@@ -15,6 +15,14 @@ faults = int(sys.argv[5])
 coverage = int(sys.argv[6])
 running  = int(sys.argv[7])
 
+#timeout = 30
+#seed = 1
+#depth = 100
+#width = 1
+#faults = 1
+#coverage = 1
+#running = 1
+
 def actionClassPools(sut):
 	dic = defaultdict(list)
 	for a in sut.actions():
@@ -40,15 +48,15 @@ def initComponents(acPools, sut):
 			components.extend(v)
 	return components
 
-def isContracts(s, isOk, isPropOk, sut, faults, failureCount, errorSeqs):
-	if (not isOk) or (not isPropOk):
+def isNotContracts(newSeq, ok, propok, sut, faults, failureCount, errorSeqs):
+	if (not ok) or (not propok):
 		print 'FIND BUGS!!'
 		if faults:
 			failureCount += 1
 			argFaults(failureCount, sut)
 			errorSeqs.append(newSeq)
-		return False
-	return True
+		return True
+	return False
 
 def isEnabledValue(sut):
 	flag = False
@@ -56,20 +64,26 @@ def isEnabledValue(sut):
 		flag or v
 	return flag
 
-def isFilters(newSeq, numActionClasses, isOk, isPropOk, depth):
-	isLessMax = max(numActionClasses.values()) <= 10
+def isFilters(newSeq, actionClassesCounts, depth, ok, propok):
+	isLessMax = max(actionClassesCounts.values()) <= 10
 	isLessDepth = len(newSeq) <= depth
-	return isLessMax and isOk and isPropOk and isLessDepth
+	return (ok and propok and isLessDepth and isLessMax)
 
-def isNewIn(newSeq, errorSeqs, nonErrorSeqs):
-	setNewSeq = set(newSeq)
-	for e in errorSeqs:
-		if setNewSeq < set(e):
-			return True
-	for n in nonErrorSeqs:
-		if setNewSeq < set(n):
+def isNotNewSeq(seq, seqs):
+	setSeq = set(seq)
+	for s in seqs:
+		if setSeq <= set(s):
 			return True
 	return False
+
+def isSeqsEqual(seqs):
+	flag = False
+	pre = set()
+	for l in seqs:
+		cur = set(l)
+		flag = cur == pre
+		pre = cur
+	return flag
 
 def printSeq(seq):
 	print "printing seq..."
@@ -77,44 +91,61 @@ def printSeq(seq):
 		print s[0]
 	print ""
 
+def printSeqs(seqs):
+	print "printing seqs..."
+	for l in seqs:
+		for s in l:
+			print s[0]
+		print ""
+
 sut = sut.sut()
 rgen = random.Random()
 rgen.seed(seed)
 failureCount = 0
 errorSeqs = []
-nonErrorSeqs = []
+nonErrorSeqs = [[]]
 start = time.time()
 while time.time() - start < timeout:
+	sut.restart()
+	newSeq = rgen.choice(nonErrorSeqs)[:]
+	actionClassesCounts = dict.fromkeys(sut.actionClasses(), 0)
+	for s in newSeq:
+		s[2]()
+		actionClassesCounts[sut.actionClass(s)] += 1
+
 	if rgen.randint(0, 9) == 0:
-		acts = sut.randomEnableds(rgen, 10)
+		n = rgen.randint(2, 100)
+		while n > 0:
+			n -= 1
+			a = sut.randomEnabled(rgen)	
+			newSeq.append(a)
+			if isNotNewSeq(newSeq, errorSeqs) or isNotNewSeq(newSeq, nonErrorSeqs):
+				continue
+			if running:
+				argRunning(a, sut, start)
+			ok = sut.safely(a)
+			propok = sut.check()
+			if isNotContracts(newSeq, ok, propok, sut, faults, failureCount, errorSeqs):
+				break
+			actionClassesCounts[sut.actionClass(a)] += 1
 	else:
-		acts = sut.randomEnableds(rgen, 1)
-
-	if nonErrorSeqs:
-		newSeq = rgen.choice(nonErrorSeqs)
-		newSeq.extend(acts)
-	else:
-		newSeq = acts
-
-	if isNewIn(newSeq, errorSeqs, nonErrorSeqs):
-		continue
-
-	numActionClasses = dict.fromkeys(sut.actionClasses(), 0)
-	for a in acts:
-		numActionClasses[sut.actionClass(a)] += 1
+		a = sut.randomEnabled(rgen)	
+		newSeq.append(a)
+		if isNotNewSeq(newSeq, errorSeqs) or isNotNewSeq(newSeq, nonErrorSeqs):
+			continue
 		if running:
 			argRunning(a, sut, start)
-	
-		isOk = sut.safely(a)
-		isPropOk = sut.check()
-
-		if not isContracts(a, isOk, isPropOk, sut, faults, failureCount, errorSeqs):
+		ok = sut.safely(a)
+		propok = sut.check()
+		if isNotContracts(newSeq, ok, propok, sut, faults, failureCount, errorSeqs):
 			break
+		actionClassesCounts[sut.actionClass(a)] += 1
 
-	if isFilters(newSeq, numActionClasses, isOk, isPropOk, depth):
+	if isFilters(newSeq, actionClassesCounts, depth, ok, propok):
 		nonErrorSeqs.append(newSeq)
 
 	#printSeq(newSeq)
+	#printSeqs(nonErrorSeqs)
 
 if coverage:
 	sut.internalReport()
