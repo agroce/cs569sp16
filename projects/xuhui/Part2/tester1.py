@@ -1,4 +1,8 @@
-import os,sys,sut,time,random
+import os
+import sys
+import sut
+import time
+import random
 
 timeout = int(sys.argv[1])
 seed = int(sys.argv[2])
@@ -34,14 +38,14 @@ def randomAction():
 		print "FOUND A FAILURE"
                 if faults:
 			print"Show Fault"
-			print sut.errorure()
+			print sut.failure()
                         error.append(sut.test())
                         collectCoverage()
                         R = sut.reduce(sut.test(),sut.errorpool, True, True)
                         sut.prettyPrintTest(R)
                         sut.restart()
 			
-                        print "FOUND A errorURE"
+                        print "FOUND A FAILURE"
                         fault = sut.failure()
                         failurename = 'failure' + str(bugs) + '.test'
                         wfile = open(failurename, 'w+')
@@ -69,13 +73,18 @@ actCount = 0
 bugs = 0
 ntests = 0
 
+
 print "STARTING PHASE 1: GATHER COVERAGE"
 start = time.time()
 while time.time()-start < timeout:
     for ts in xrange(0,width):
+        if (time.time() > start + timeout):
+            break
         sut.restart()
         ntests += 1
         for b in xrange(0,depth):
+            if (time.time() > start + timeout):
+                break
             if not randomAction():
                 break    
         collectCoverage()
@@ -83,10 +92,12 @@ while time.time()-start < timeout:
 print "STARTING PHASE 2: ANALYSIS COVERAGE"        
 start = time.time()
 while time.time()-start < timeout:
+    if (time.time() > start + timeout):
+        break
     sortedCoverage = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-    covSum = sum(coverageCount.values())
+    coverageSum = sum(coverageCount.values())
     try:
-        coverageMean = covSum / (1.0*(len(coverageCount)))
+        coverageMean = coverageSum / (1.0*(len(coverageCount)))
     
     except Zero_Division_Error:
         print ("NO BRANCHES COLLECTED")  
