@@ -9,7 +9,7 @@ import string
 
 from collections import namedtuple
 
-global depth, sut, gene, failCount, actionsCount
+global running, depth, sut, gene, failCount, actionsCount
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -31,8 +31,8 @@ def parse_args():
     return (parsed_args, parser)
 
 
-def make_config(pargs, parser):
-    pdict = pargs.__dict__
+def make_config(parsed_args, parser):
+    pdict = parsed_args.__dict__
     key_list = pdict.keys()
     arg_list = [pdict[k] for k in key_list]
     Config = namedtuple('Config', key_list)
@@ -52,6 +52,8 @@ calculateWei = 0
 allCoverage = 100
 TIMEBUDGET = int(sys.argv[1])
 start = time.time()
+
+elap = 0
 
 def func1():
     global sut,testSaving,testStored,srun,failCount,R,flag,actionsCount
@@ -74,8 +76,24 @@ def func1():
         sut.prettyPrintTest(R)            
         print sut.failure()
         flag = 1
+
+
+def func2(running,possible):
+	if (running):
+		if sut.newBranches() != set([]):
+			print "Action:", possible[0]
+			for d in sut.newBranches():
+				print elap,len(sut.allBranches()),"New branch", d
+			new1 = True
+		else:
+			new1 = False
+
 def main():
-    global start,TIMEBUDGET,sut,testSaving,gene,testStored,act,srun,flag,coverageCount,covrSort,calculateWei,allCoverage,cW,coverageWM,failCount,actionsCount,sd
+    global running,start,TIMEBUDGET,sut,testSaving,gene,testStored,act,srun,flag,coverageCount,covrSort,calculateWei,allCoverage,cW,coverageWM,failCount,actionsCount,sd
+    #global running,possible
+    global config
+    parsed_args, parser = parse_args()
+    config = make_config(parsed_args, parser)
     while time.time()-start < TIMEBUDGET:
         sut.restart()
         if (testSaving != None) and (gene.random() > 0.3):
@@ -85,6 +103,10 @@ def main():
         for s in xrange(0,100):
             act = sut.randomEnabled(gene)
             srun = sut.safely(act)
+            if config.running:
+            	if sut.newBranches() != set([]):
+            		for d in sut.newBranches():
+            			print time.time()-start,len(sut.allBranches()),"New branch",d
             func1()
             if flag == 1:
                 break
@@ -93,18 +115,16 @@ def main():
                 coverageCount[s] = 0
             coverageCount[s] = coverageCount[s] + 1
         covrSort = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-        print "Secondly calculate weight of the coverage"
         for st in covrSort:
-            calculateWei = (allCoverage - coverageCount[st])
-            cW = st*calculateWei
-            if cW > 25:
-                coverageWM.append(cW)
-                print "Now I have the statement below coverage:", st
-
+        	if st*(allCoverage - coverageCount[st]) >25:
+        		coverageWM.append(st*(allCoverage - coverageCount[st]))
+        		print "Now I have the statement below coverage:", st
+        
     for sd in covrSort:
         print sd,coverageCount[sd]
     sut.internalReport()    
     print failCount,"FAILED"
+    print len(sut.allBranches()),"BRANCH"
     print actionsCount,"TOTAL ACTIONS"
     print time.time()-start,"TOTAL RUNTIME"
 if __name__ == '__main__':

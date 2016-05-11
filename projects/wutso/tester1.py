@@ -78,10 +78,19 @@ while time.time() - start < BUDGET:
         sortActs = sorted(acts, key=lambda x:actionCount[abstract(x[0])])
         act      = sortActs[0]
         actCount += 1
+
+
         ok  = sut.safely(act)
-        if not ok:
-            notOK()
-            break
+        if RUNNING_DETAIL == 1:
+            if len(sut.newBranches()) > 0:
+                print "ACTION:", act[0]
+                for b in sut.newBranches():
+                    print time.time() - start, len(sut.allBranches()), "Newbranch", b
+
+        if FAULT_CHECK == 1:
+            if not ok:
+                notOK()
+                break
 
         collectCoverage()
 
@@ -89,11 +98,11 @@ while time.time() - start < BUDGET:
     leastCovered = sortedCov[0]
     print "LEAST COVERED STATEMENT IS",leastCovered,coverageCount[leastCovered]
 
-sut.internalReport()
-
-sortedCov = sorted(coverageCount.keys(), key = lambda x: coverageCount[x])
-for s in sortedCov:
-    print s, coverageCount[s] 
+if (COVERAGE_REPORT == 1):
+    sut.internalReport()
+    sortedCov = sorted(coverageCount.keys(), key = lambda x: coverageCount[x])
+    for s in sortedCov:
+        print s, coverageCount[s] 
 
 print bugs,"FAILED"
 print "TOTAL ACTIONS",actCount

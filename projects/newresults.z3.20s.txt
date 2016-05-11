@@ -1,0 +1,193 @@
+alizades alizades.z3.20s.4.tout RUNNING: 1269 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS  
+changti changti.z3.20s.4.tout RUNNING: 1565 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+chenzeh chenzeh.z3.20s.4.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+guohe guohe.z3.20s.4.tout RUNNING: 0 BRANCHES: 1876 STATEMENTS: 1691  
+guoru guoru.z3.20s.4.tout RUNNING: 2141 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+hanxia hanxia.z3.20s.4.tout RUNNING: 2104 BRANCHES: 2104 STATEMENTS: 1847  
+hoangmin hoangmin.z3.20s.4.tout RUNNING: 1735 BRANCHES: 1735 STATEMENTS: 1589  
+limsuwap limsuwap.z3.20s.4.tout RUNNING: 1634 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+lintzu lintzu.z3.20s.4.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+Linwey Linwey.z3.20s.4.tout RUNNING: 0 BRANCHES: 1889 STATEMENTS: 1700  
+liuh2 liuh2.z3.20s.4.tout RUNNING: 1768 BRANCHES: 1768 STATEMENTS: 1614  
+lix6 lix6.z3.20s.4.tout RUNNING: 0 BRANCHES: 1869 STATEMENTS: 1686  
+nelsonni nelsonni.z3.20s.4.tout RUNNING: 1768 BRANCHES: 1768 STATEMENTS: 1614  
+pengxin pengxin.z3.20s.4.tout RUNNING: 0 BRANCHES: 1883 STATEMENTS: 1696  
+shik shik.z3.20s.4.tout RUNNING: 1729 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+tangz tangz.z3.20s.4.tout RUNNING: 1464 BRANCHES: 1618 STATEMENTS: 1499  
+thakuro thakuro.z3.20s.4.tout RUNNING: 1755 BRANCHES: 1755 STATEMENTS: 1604  
+tsengyu tsengyu.z3.20s.4.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+wanghao wanghao.z3.20s.4.tout RUNNING: 1575 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+wangweny wangweny.z3.20s.4.tout RUNNING: 1728 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS  
+wutso wutso.z3.20s.4.tout RUNNING: 1691 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+xujing xujing.z3.20s.4.tout RUNNING: 1883 BRANCHES: 1883 STATEMENTS: 1696  
+zhangh7 zhangh7.z3.20s.4.tout RUNNING: 1768 BRANCHES: 1768 STATEMENTS: 1614  
+zhaozixu zhaozixu.z3.20s.4.tout RUNNING: 1742 BRANCHES: 1742 STATEMENTS: 1596  
+zhouzh zhouzh.z3.20s.4.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+alghamha alghamha.z3.20s.4.tout RUNNING: 1883 BRANCHES: 1883 STATEMENTS: 1696  
+almadhoe almadhoe.z3.20s.4.tout RUNNING: 1869 BRANCHES: 1869 STATEMENTS: 1686  
+bangashm bangashm.z3.20s.4.tout RUNNING: 2104 BRANCHES: 2104 STATEMENTS: 1847  
+chenk4 chenk4.z3.20s.4.tout RUNNING: 1645 BRANCHES: 1696 STATEMENTS: 1557  
+guoru guoru.z3.20s.4.tout RUNNING: 2141 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+hexu hexu.z3.20s.4.tout RUNNING: 1735 BRANCHES: 1735 STATEMENTS: 1589  
+kaneokak kaneokak.z3.20s.4.tout RUNNING: 1775 BRANCHES: 1775 STATEMENTS: 1619  
+lasharih lasharih.z3.20s.4.tout RUNNING: 1869 BRANCHES: 1869 STATEMENTS: 1686  
+Linwey Linwey.z3.20s.4.tout RUNNING: 0 BRANCHES: 1889 STATEMENTS: 1700  
+lix6 lix6.z3.20s.4.tout RUNNING: 0 BRANCHES: 1869 STATEMENTS: 1686  
+panju panju.z3.20s.4.tout RUNNING: 1433 BRANCHES: 1433 STATEMENTS: 1354  
+rayalas rayalas.z3.20s.4.tout RUNNING: 1869 BRANCHES: 1869 STATEMENTS: 1686  
+shenyif shenyif.z3.20s.4.tout RUNNING: 1367 BRANCHES: 1367 STATEMENTS: 1307  
+shik shik.z3.20s.4.tout RUNNING: 1729 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+wangq5 wangq5.z3.20s.4.tout RUNNING: 1774 BRANCHES: 1774 STATEMENTS: 1618  
+wangyans wangyans.z3.20s.4.tout RUNNING: 2104 BRANCHES: 2104 STATEMENTS: 1847  
+xuhui xuhui.z3.20s.4.tout RUNNING: 1869 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+xujing xujing.z3.20s.4.tout RUNNING: 1883 BRANCHES: 1883 STATEMENTS: 1696  
+yangyic yangyic.z3.20s.4.tout RUNNING: find BRANCHES: 1586 STATEMENTS: 1473  
+yub yub.z3.20s.4.tout RUNNING: 1889 BRANCHES: 1889 STATEMENTS: 1700  
+zhangcha zhangcha.z3.20s.4.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+zhengxu zhengxu.z3.20s.4.tout RUNNING: 1869 BRANCHES: 1869 STATEMENTS: 1686  
+zhouxuh zhouxuh.z3.20s.4.tout RUNNING: 1869 BRANCHES: 1869 STATEMENTS: 1686  
+
+
+SORTED BY BEST BRANCH COVERAGE RUNNING TOTAL
+yangyic.z3.20s.4.tout find
+hanxia.z3.20s.4.tout 2104
+bangashm.z3.20s.4.tout 2104
+wangyans.z3.20s.4.tout 2104
+yub.z3.20s.4.tout 1889
+xujing.z3.20s.4.tout 1883
+alghamha.z3.20s.4.tout 1883
+xujing.z3.20s.4.tout 1883
+almadhoe.z3.20s.4.tout 1869
+lasharih.z3.20s.4.tout 1869
+rayalas.z3.20s.4.tout 1869
+zhengxu.z3.20s.4.tout 1869
+zhouxuh.z3.20s.4.tout 1869
+kaneokak.z3.20s.4.tout 1775
+wangq5.z3.20s.4.tout 1774
+liuh2.z3.20s.4.tout 1768
+nelsonni.z3.20s.4.tout 1768
+zhangh7.z3.20s.4.tout 1768
+thakuro.z3.20s.4.tout 1755
+zhaozixu.z3.20s.4.tout 1742
+hoangmin.z3.20s.4.tout 1735
+hexu.z3.20s.4.tout 1735
+wangweny.z3.20s.4.tout 1728
+chenk4.z3.20s.4.tout 1645
+tangz.z3.20s.4.tout 1464
+panju.z3.20s.4.tout 1433
+shenyif.z3.20s.4.tout 1367
+alizades.z3.20s.4.tout 1269
+guohe.z3.20s.4.tout 0
+Linwey.z3.20s.4.tout 0
+lix6.z3.20s.4.tout 0
+pengxin.z3.20s.4.tout 0
+Linwey.z3.20s.4.tout 0
+lix6.z3.20s.4.tout 0
+
+
+SORTED BY BEST TOTAL STATEMENT COVERAGE
+hanxia.z3.20s.4.tout 1847
+bangashm.z3.20s.4.tout 1847
+wangyans.z3.20s.4.tout 1847
+Linwey.z3.20s.4.tout 1700
+Linwey.z3.20s.4.tout 1700
+yub.z3.20s.4.tout 1700
+pengxin.z3.20s.4.tout 1696
+xujing.z3.20s.4.tout 1696
+alghamha.z3.20s.4.tout 1696
+xujing.z3.20s.4.tout 1696
+guohe.z3.20s.4.tout 1691
+lix6.z3.20s.4.tout 1686
+almadhoe.z3.20s.4.tout 1686
+lasharih.z3.20s.4.tout 1686
+lix6.z3.20s.4.tout 1686
+rayalas.z3.20s.4.tout 1686
+zhengxu.z3.20s.4.tout 1686
+zhouxuh.z3.20s.4.tout 1686
+kaneokak.z3.20s.4.tout 1619
+wangq5.z3.20s.4.tout 1618
+liuh2.z3.20s.4.tout 1614
+nelsonni.z3.20s.4.tout 1614
+zhangh7.z3.20s.4.tout 1614
+thakuro.z3.20s.4.tout 1604
+zhaozixu.z3.20s.4.tout 1596
+hoangmin.z3.20s.4.tout 1589
+hexu.z3.20s.4.tout 1589
+chenk4.z3.20s.4.tout 1557
+tangz.z3.20s.4.tout 1499
+yangyic.z3.20s.4.tout 1473
+panju.z3.20s.4.tout 1354
+shenyif.z3.20s.4.tout 1307
+alizades.z3.20s.4.tout 0
+wangweny.z3.20s.4.tout 0
+
+
+SORTED BY EITHER BRANCH COVERAGE METHOD
+hanxia.z3.20s.4.tout 2104
+bangashm.z3.20s.4.tout 2104
+wangyans.z3.20s.4.tout 2104
+Linwey.z3.20s.4.tout 1889
+Linwey.z3.20s.4.tout 1889
+yub.z3.20s.4.tout 1889
+pengxin.z3.20s.4.tout 1883
+xujing.z3.20s.4.tout 1883
+alghamha.z3.20s.4.tout 1883
+xujing.z3.20s.4.tout 1883
+guohe.z3.20s.4.tout 1876
+lix6.z3.20s.4.tout 1869
+almadhoe.z3.20s.4.tout 1869
+lasharih.z3.20s.4.tout 1869
+lix6.z3.20s.4.tout 1869
+rayalas.z3.20s.4.tout 1869
+zhengxu.z3.20s.4.tout 1869
+zhouxuh.z3.20s.4.tout 1869
+kaneokak.z3.20s.4.tout 1775
+wangq5.z3.20s.4.tout 1774
+liuh2.z3.20s.4.tout 1768
+nelsonni.z3.20s.4.tout 1768
+zhangh7.z3.20s.4.tout 1768
+thakuro.z3.20s.4.tout 1755
+zhaozixu.z3.20s.4.tout 1742
+hoangmin.z3.20s.4.tout 1735
+hexu.z3.20s.4.tout 1735
+wangweny.z3.20s.4.tout 1728
+chenk4.z3.20s.4.tout 1696
+tangz.z3.20s.4.tout 1618
+yangyic.z3.20s.4.tout 1586
+panju.z3.20s.4.tout 1433
+shenyif.z3.20s.4.tout 1367
+alizades.z3.20s.4.tout 1269
+
+
+MEAN OVER ALL RUNS
+bangashm 2104.0 1 0.0
+hanxia 2104.0 1 0.0
+wangyans 2104.0 1 0.0
+Linwey 1889.0 2 0.0
+yub 1889.0 1 0.0
+xujing 1883.0 2 0.0
+alghamha 1883.0 1 0.0
+pengxin 1883.0 1 0.0
+guohe 1876.0 1 0.0
+zhengxu 1869.0 1 0.0
+zhouxuh 1869.0 1 0.0
+lasharih 1869.0 1 0.0
+lix6 1869.0 2 0.0
+rayalas 1869.0 1 0.0
+almadhoe 1869.0 1 0.0
+kaneokak 1775.0 1 0.0
+wangq5 1774.0 1 0.0
+zhangh7 1768.0 1 0.0
+nelsonni 1768.0 1 0.0
+liuh2 1768.0 1 0.0
+thakuro 1755.0 1 0.0
+zhaozixu 1742.0 1 0.0
+hexu 1735.0 1 0.0
+hoangmin 1735.0 1 0.0
+wangweny 1728.0 1 0.0
+chenk4 1696.0 1 0.0
+tangz 1618.0 1 0.0
+yangyic 1586.0 1 0.0
+panju 1433.0 1 0.0
+shenyif 1367.0 1 0.0
+alizades 1269.0 1 0.0

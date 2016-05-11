@@ -27,10 +27,59 @@ def make_config(parsed_args, parser):
 	nt_config = Config(*arg_list)
 	return nt_config
 
+def collectCoverage():
+    global coverageCount, branchCount, statementCount
+    for s in sut.currBranches():
+    	if s not in branchCount:
+    		branchCount[s] = 1
+    	else:
+    		branchCount[s] += 1
+
+    for s in sut.currStatements():
+        if s not in statementCount:
+            statementCount[s] = 1
+        else:
+        	statementCount[s] += 1
+
+def printCoverage():
+	sortedBran = sorted(branchCount.keys(), key = lambda x : branchCount[x]) 
+	branMean = sum(branchCount.values())
+	print "Mean Branches is", branMean
+	for s in sortedBran:
+		print s, branchCount[s]
+
+	sortedStat = sorted(statementCount.keys(), key = lambda x : statementCount[x])
+	stateMean = sum(statementCount.values())
+	print "Mean statements is", stateMean
+	for s in sortedStat:
+		print s, statementCount[s]
+
+def randomAct():
+	global actCount, bugs, R
+	act = None
+	act = sut.randomEnabled(R)
+	actCount += 1
+
+	ok = sut.safely(act)
+	propok = sut.check()
+
+	if ((not ok) or (not propok)):
+		bugs += 1
+		if config.faults == 1:
+			test_file.write(str(sut.failure()) + "\n")
+		R = sut.reduce(sut.test(), sut.fails, True, True)
+		sut.prettyPrintTest(R)
+		print sut.failure()
+		sut.restart()
+
+	return ok
+
 def main():
-	global config, R, sut, fails, actCount
+	global config, R, sut, bugs, actCount, coverageCount, branchCount, statementCount
+
 	parsed_args, parser = parse_args()
 	config = make_config(parsed_args, parser)
+	print('Testing using config={}'.format(config))
 
 	R = random.Random(config.seed)
 
@@ -38,8 +87,11 @@ def main():
 
 	sut.silenceCoverage()
 	
-	fails = 0
+	bugs = 0
 	actCount = 0
+	coverageCount = {}
+	branchCount = {}
+	statementCount = {}
 
 	if config.faults:
 		test_file = open("failure1.test", "w")
@@ -49,51 +101,40 @@ def main():
 	
 	for i in xrange(0, config.depth):
 		sut.restart()
+
 		for j in xrange(0, config.width):
-			act = None
-			
-			act = sut.randomEnabled(R)
-			actCount += 1
-			
-			if act == None:
-				print "No enabled actions"
-					
+			if not randomAct():
+				print "Function called randomAct() occurs error"
+				break
+
 			elapsed = time.time() - start
 			if config.running:
 				if sut.newBranches() != set([]):
 					for b in sut.newBranches():
 						print elapsed, len(sut.allBranches()), "New branch", b
-
 				if sut.newStatements() != set([]):
 					for s in sut.newStatements():
 						print elapsed, len(sut.allStatements()), "New statement", s
-	
+			
+			elapsed = time.time() - start
 			if elapsed > config.timeout:
 				print "Stopping test [TIMEOUT]"
 				break
-				
-			ok = sut.safely(act)
-			propok = sut.check()
-			if ((not ok) or (not propok)):
-				fails += 1
-				if config.faults == 1:
-					test_file.write(str(sut.failure()) + "\n")
-				R = sut.reduce(sut.test(), sut.fails, True, True)
-				sut.prettyPrintTest(R)
-				print sut.failure()
-				sut.restart()
-	
+			collectCoverage()
+
 	if config.faults:
 		test_file.close()
 	
 	if config.coverage:
 		sut.restart()
 		sut.report("coverage.out")
+		#printCoverage()
+		sut.internalReport()
+
+	#print "Covered", len(sut.allBranches()), "branches"
+	#print "Covered", len(sut.allStatements()), "statements"
 	
-	print "Covered", len(sut.allBranches()), "branches"
-	print "Covered", len(sut.allStatements()), "statements"
-	
-	print "Failed", fails, "times"
+	print "Failed", bugs, "times"
 	print "Total actions", actCount
 	print "Total runtime", time.time() - start
 

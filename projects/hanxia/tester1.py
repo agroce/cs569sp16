@@ -26,8 +26,9 @@ def make_config(pargs, parser):
     return nt_config
 
 def check_action():
-    global num
+    global num,actioncount
     action = sut.randomEnabled(R)
+    actioncount += 1
     ok = sut.safely(action)
     elapsed = time.time() - start
     if config.running:
@@ -53,7 +54,8 @@ def check_action():
     return ok 
 
 def main():
-    global start,config,sut,R,nonerror,error,file_name,num
+    global start,config,sut,R,nonerror,error,file_name,num,actioncount
+    actioncount = 0
     num = 0
     file_name = 'failurefile'
     parsed_args, parser = parse_args()
@@ -70,6 +72,8 @@ def main():
     
     while(time.time() < start + config.timeout):
         for s in states:
+            if (time.time() > start + config.timeout):
+                break
             sut.restart()
             sut.backtrack(s)
             for w in xrange(0, config.width):
@@ -89,6 +93,7 @@ def main():
 
     print "Bugs ",num
     print "Running time: ", time.time() - start
+    print "Actions: ", actioncount
 
 if __name__ == '__main__':
     main()
