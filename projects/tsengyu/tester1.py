@@ -33,14 +33,12 @@ def DropDups(newSeqs):
 def RandomSsVs(nonErrSeqs, n = 1):
 	if (nonErrSeqs == [] or n > len(nonErrSeqs)):
 		return []
-	return [random.choice(nonErrSeqs) for i in xrange(n)]
 
-def SetFlags(newSeqs):
-	pass
+	return [random.choice(nonErrSeqs) for i in xrange(n)]
 
 def RunningInfo(run, elapsed):
 	if sut.newBranches() != set([]):
-		print "ACTION: ", run[0]
+		print "ACTION:", run[0]
 		for b in sut.newBranches():
 			print elapsed, len(sut.allBranches()), "New Branch", b
 
@@ -53,7 +51,7 @@ def RecordFail():
 	records.write(str(sut.failure()))
 	records.close
 
-def Operation():
+def main():
 	rgen = random.Random()
 	rgen.seed(seed)
 	non_Errtemp = []
@@ -62,7 +60,7 @@ def Operation():
 	sTime = time.time()
 	while (time.time() - sTime) < timeout:
 		newSeqs = sut.randomEnableds(rgen, depth)
-		Seqs = RandomSsVs(non_Errtemp, n = 7)
+		Seqs = RandomSsVs(non_Errtemp, n = 9)
 		newSeqs.extend(Seqs)
 
 		if DropDups(newSeqs):
@@ -87,17 +85,15 @@ def Operation():
 			Errtemp += newSeqs
 		else:
 			non_Errtemp += newSeqs
-			SetFlags(newSeqs)
+			pass
 
 	return non_Errtemp, Errtemp
 
-def Report():
-	if coverage == 1:
-		sut.internalReport()
 
 if __name__ == '__main__':
 
-	Operation()
+	main()
 
-	Report()
+	if coverage == 1:
+		sut.internalReport()
 
