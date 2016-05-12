@@ -16,20 +16,21 @@ def mutate(test):
             sut.safely(s)
     tcopy = test[:i]+trest
     return tcopy
+
+print 'USAGE: <budget> <seed> <length> <initial_pop> <best#> <mode = best/worst/random>'
     
 BUDGET = int(sys.argv[1])
 SEED = int(sys.argv[2])
+LENGTH = int(sys.argv[3])
+INITIAL_POP = int(sys.argv[4])
+BEST = int(sys.argv[5])
+MODE = sys.argv[6] # either "best" "worst" or "random"
 start = time.time()
 
 sut = sut.sut()
 
 r = random.Random()
 r.seed(SEED)
-
-INITIAL_POP = 10 
-LENGTH = 10
-
-BEST = 5
 
 population = []
 
@@ -43,8 +44,11 @@ print "STARTING POP BRANCHCOV",len(sut.allBranches())
 print "STARTING POP STATEMENTCOV",len(sut.allStatements())
 
 while (time.time()-start) < BUDGET:
-    sortPop = sorted(population,key = lambda x: len(x[1]),reverse=("bad" in sys.argv))
-    (t,b) = r.choice(sortPop[:BEST])
+    if MODE != "random":
+        sortPop = sorted(population,key = lambda x: len(x[1]),reverse=(MODE=="best"))
+        (t,b) = r.choice(sortPop[:BEST])
+    else:
+        (t,b) = r.choice(population)
     m = mutate(t)
     population.append((m,sut.currBranches()))
 
