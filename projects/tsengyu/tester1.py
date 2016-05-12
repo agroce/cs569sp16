@@ -62,7 +62,7 @@ def Operation():
 	sTime = time.time()
 	while (time.time() - sTime) < timeout:
 		newSeqs = sut.randomEnableds(rgen, depth)
-		Seqs = RandomSsVs(non_Errtemp, n = 5)
+		Seqs = RandomSsVs(non_Errtemp, n = 7)
 		newSeqs.extend(Seqs)
 
 		if DropDups(newSeqs):
