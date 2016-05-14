@@ -18,27 +18,56 @@ def argRunning(a):
 		for b in sut.newBranches():
 			print time.time() - start, len(sut.allBranches()), "New branch", b
 	
-def contracts(seq, errorseqs, ok, propok):
+def contracts(seq, eseqs, ok, propok):
+	global fid
 	if (not ok) or (not propok):
 		print 'FIND BUGS!!'
 		if faults:
 			fid += 1
 			argFaults(fid)
-			errorseqs.append(seq)
+			eseqs.append(seq)
 		return True
 	return False
 
-def filters(seq, classTable, ok, propok):
-	notmany = max(classTable.values()) <= width
-	lessdepth = len(seq) <= depth
-	return (ok and propok and lessdepth and notmany)
-
-def oldseq(seq, seqs):
-	setSeq = set(seq)
+def equal(seq, seqs):
 	for s in seqs:
-		if setSeq <= set(s):
+		if seq == s:
 			return True
 	return False
+
+def genAndExeSeq(n, seq, eseqs, nseqs):
+	ok = False
+	propok = False
+	classTable = dict.fromkeys(sut.actionClasses(), 0)
+	timeover = False
+	while n > 0:
+		n -= 1
+		a = sut.randomEnabled(rgen)	
+		seq.append(a)
+		if equal(seq, eseqs) or equal(seq, nseqs):
+			continue
+		ok = sut.safely(a)
+		propok = sut.check()
+		if running:
+			argRunning(a)
+		if contracts(seq, eseqs, ok, propok):
+			break
+		classTable[sut.actionClass(a)] += 1
+		timeover = time.time() - start >= timeout
+		if timeover:
+			return (ok, propok, classTable, timeover)
+	return (ok, propok, classTable, timeover)
+
+def filters(seq, ok, propok, classTable):
+	lessdepth = len(seq) <= depth
+	notmany   = max(classTable.values()) <= width
+	return (ok and propok and lessdepth and notmany)
+
+def printClassTable(classTable):
+	print "printing classTable..."
+	for k, v in classTable.iteritems():
+		print k, v
+	print ""
 
 def printSeq(seq):
 	print "printing seq..."
@@ -53,60 +82,38 @@ def printSeqs(seqs):
 			print a[0]
 		print ""
 
-timeout = int(sys.argv[1])
-seed = int(sys.argv[2])
-depth = int(sys.argv[3])
-width = int(sys.argv[4])
-faults = int(sys.argv[5])
+timeout  = int(sys.argv[1])
+seed     = int(sys.argv[2])
+depth    = int(sys.argv[3])
+width    = int(sys.argv[4])
+faults   = int(sys.argv[5])
 coverage = int(sys.argv[6])
 running  = int(sys.argv[7])
 
-sut = sut.sut()
-rgen = random.Random()
+fid   = 0
+eseqs = []
+nseqs = [[]]
+sut   = sut.sut()
+rgen  = random.Random()
 rgen.seed(seed)
-fid = 0
-errorseqs = []
-nonerrorseqs = [[]]
 
 start = time.time()
 while time.time() - start < timeout:
-	sut.restart()
-	seq = rgen.choice(nonerrorseqs)[:]
-	classTable = dict.fromkeys(sut.actionClasses(), 0)
-	for a in seq:
-		a[2]()
-		classTable[sut.actionClass(a)] += 1
+	seq = rgen.choice(nseqs)[:]
+	sut.replay(seq)
 
 	if rgen.randint(0, 9) == 0:
 		n = rgen.randint(2, 100)
-		while n > 0:
-			n -= 1
-			a = sut.randomEnabled(rgen)	
-			seq.append(a)
-			if oldseq(seq, errorseqs) or oldseq(seq, nonerrorseqs):
-				continue
-			ok = sut.safely(a)
-			propok = sut.check()
-			if running:
-				argRunning(a)
-			if contracts(seq, errorseqs, ok, propok):
-				break
-			classTable[sut.actionClass(a)] += 1
-	else:
-		a = sut.randomEnabled(rgen)	
-		seq.append(a)
-		if oldseq(seq, errorseqs) or oldseq(seq, nonerrorseqs):
-			continue
-		ok = sut.safely(a)
-		propok = sut.check()
-		if running:
-			argRunning(a)
-		if contracts(seq, errorseqs, ok, propok):
+		ok, propok, classTable, timeover = genAndExeSeq(n, seq, eseqs, nseqs)
+		if timeover:
 			break
-		classTable[sut.actionClass(a)] += 1
+	else:
+		ok, propok, classTable, timeover = genAndExeSeq(1, seq, eseqs, nseqs)
+		if timeover:
+			break
 
-	if filters(seq, classTable, ok, propok):
-		nonerrorseqs.append(seq)
+	if filters(seq, ok, propok, classTable):
+		nseqs.append(seq)
 
 if coverage:
 	sut.internalReport()
