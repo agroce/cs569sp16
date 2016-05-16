@@ -15,6 +15,22 @@ def mutate(test):
             trest.append(s)
             sut.safely(s)
     tcopy = test[:i]+trest
+    if len(sut.newCurrBranches()) != 0:
+        print "NEW BRANCHES DUE TO MUTATION:",sut.newCurrBranches()
+    return tcopy
+
+def crossover(test,test2):
+    tcopy = list(test)
+    i = r.randint(0,len(tcopy))
+    sut.replay(tcopy[:i])
+    trest = []
+    for s in test2[i:]:
+        if s[1]():
+            trest.append(s)
+            sut.safely(s)
+    tcopy = test[:i]+trest
+    if len(sut.newCurrBranches()) != 0:
+        print "NEW BRANCHES DUE TO CROSSOVER:",sut.newCurrBranches()
     return tcopy
 
 print 'USAGE: <budget> <seed> <length> <initial_pop> <best#> <mode = best/worst/random>'
@@ -25,6 +41,7 @@ LENGTH = int(sys.argv[3])
 INITIAL_POP = int(sys.argv[4])
 BEST = int(sys.argv[5])
 MODE = sys.argv[6] # either "best" "worst" or "random"
+PCROSSOVER = float(sys.argv[7])
 start = time.time()
 
 sut = sut.sut()
@@ -49,7 +66,11 @@ while (time.time()-start) < BUDGET:
         (t,b) = r.choice(sortPop[:BEST])
     else:
         (t,b) = r.choice(population)
-    m = mutate(t)
+    if r.random() > PCROSSOVER:    
+        m = mutate(t)
+    else:
+        (t2,b) = r.choice(sortPop[:BEST])
+        m = crossover(t,t2)
     population.append((m,sut.currBranches()))
 
 #sut.internalReport()
