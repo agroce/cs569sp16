@@ -20,12 +20,15 @@ isRandomTest = 1
 
 Rlist=[]
 dfsDepth=5
-count=0
+BfsBugCount=0
 
 visited = []
 startTime=time.time()
 elapsed=0
+failureNum=0
 
+############write faults to one single file fault1.test (reduce)
+'''
 def writeFaults(faults,phase,R,f2,name):
 	global count 
 	if faults:
@@ -41,6 +44,14 @@ def writeFaults(faults,phase,R,f2,name):
 				f.write('\nFaults found in bfs test phase:\n')
 			f.write('\n'+str(count)+':-------\n'+str(f1)+'\n')
 			f.write(str(f2)+'\n')
+'''
+
+#################write faults to seperate file failure1.test failure2.test ..... (Not reduce)
+def newWriteFaults(f1,f2,name):
+	f_file = name
+	with open(f_file,'a') as f:
+		f.write(str(f1)+'\n')
+		f.write(str(f2)+'\n')
 
 def ifRunning(running,action):
 	if running:
@@ -81,6 +92,17 @@ while time.time()-start <= timeout:
 		if not ok:
 			print "FOUND A FAILURE"
 			print sut.failure()
+			
+			##########call newWriteFaults(), Not reduce
+			if faults:
+				failureNum+=1
+				name='failure'+str(failureNum)+'.test'
+				f1_random = sut.test()
+				f2_random = sut.failure()
+				newWriteFaults(f1_random,f2_random,name)
+			##########
+			'''
+			############## call writeFaults()
 			print "REDUCING"
 			R = sut.reduce(sut.test(),sut.fails, True, True)
 			if R not in Rlist:
@@ -89,13 +111,13 @@ while time.time()-start <= timeout:
 				writeFaults(faults,0,R,f2_random,'faults1.test')
 				print sut.failure()
 				Rlist.append(R)
-				
+			'''
 			expr = visited[-2]
 			queue = [startState]
 	
 			d=1
 			print '\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~`Start BFS test~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'
-			while d<=dfsDepth and depthNum + dfsDepth<= depth and time.time()-start <= timeout:
+			while d<=dfsDepth and depthNum + d <= depth and time.time()-start <= timeout:
 				print "DEPTH",d,"QUEUE SIZE",len(queue),"VISITED SET",len(visited)
 				d+=1
 				depthNum += 1
@@ -117,6 +139,18 @@ while time.time()-start <= timeout:
 								visited.append(sss)
 								frontier.append(sss)
 							if not ok:
+								print "FOUND A FAILURE"
+								print sut.failure()
+								##########Not reduce
+								if faults:
+									failureNum+=1
+									name='failure'+str(failureNum)+'.test'
+									f1_bfs = sut.test()
+									f2_bfs = sut.failure()
+									newWriteFaults(f1_bfs,f2_bfs,name)
+								##########
+								'''
+								############## call writeFaults()
 								R = sut.reduce(sut.test(),sut.fails, True, True)
 								if R not in Rlist:
 									print "FOUND A FAILURE"
@@ -126,6 +160,10 @@ while time.time()-start <= timeout:
 									writeFaults(faults,1,R,f2_bfs,'faults1.test')
 									print sut.failure()
 									Rlist.append(R)
+								'''
+								BfsBugCount+=1
+								if BfsBugCount==5:
+									BfsBugCount=0
 									break
 					else:			
 						sut.backtrack(s2)

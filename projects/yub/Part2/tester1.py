@@ -3,6 +3,7 @@ import random
 import sys
 import time
 
+
 timeout = int(sys.argv[1])
 seed = int(sys.argv[2])
 depth = int(sys.argv[3])
@@ -19,13 +20,17 @@ weight = 0
 test = None
 lCovered = None
 coverageNum = {}
-coverageWeightedBelowMean = []
+coverageWBM = []
 start = time.time()
 def tester():
     global sut,act,n,test,para,lCovered,actNum,bugs,M,flag
     act = sut.randomEnabled(rgen)
     flag = 0
     n = sut.safely(act)
+    if running:
+        if sut.newBranches() != set([]):
+            for d in sut.newBranches():
+                print time.time() - start, len(sut.allBranches()),"New branch",d
     if len(sut.newStatements()) > 0:
         test = sut.state()
         para = True
@@ -38,7 +43,7 @@ def tester():
     actNum += 1
     if (n == 0):
         bugs += 1
-        print "Emerge a bug!"
+        print "A failure has been found!"
         print sut.failure()
         M = sut.reduce(sut.test(),sut.fails, True, True)
         sut.prettyPrintTest(M)
@@ -46,15 +51,13 @@ def tester():
         flag = 1
     
 def main():
-    global flag,timeout,sut,test,para,currStatements,coverageNum,sortedCov,weight,weightedCov,coverageWeightedBelowMean,bugs,actNum,start
+    global flag,timeout,sut,test,para,currStatements,coverageNum,sortedCov,weight,weightedCov,coverageWBM,bugs,actNum,start
     while time.time()-start < timeout:
         sut.restart()
         if (test != None):
             if (rgen.random() > 0.4):
                 sut.backtrack(test)
         para = False
-
-        print "Testing"
         for s in xrange(0,100):
             tester()
             if flag == 1:
@@ -64,19 +67,17 @@ def main():
                 coverageNum[s] = 0
             coverageNum[s] += 1
         sortedCov = sorted(coverageNum.keys(), key=lambda x: coverageNum[x])
-        print "Coverage"
         for c in sortedCov:
-            weight = (100 - coverageNum[c])
-            weightedCov = c * weight
-            if weightedCov > 25:
-                coverageWeightedBelowMean.append(weightedCov)
+            weightedCov = c * (100 - coverageNum[c])
+            if weightedCov > 20:
+                coverageWBM.append(weightedCov)
                 print c
 
     sut.internalReport()
     for s in sortedCov:
         print s, coverageNum[s]
 
-    print bugs,"BUGS"
+    print bugs,"Failures have been found"
     print "TOTAL ACTIONS",actNum
     print "TOTAL RUNTIME",time.time()-start
 if __name__ == '__main__':
