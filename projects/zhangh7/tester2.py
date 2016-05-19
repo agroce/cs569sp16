@@ -211,6 +211,7 @@ while time.time()-start <= timeout/rtTimePara:
 						sut.backtrack(s2)
 						continue
 					break
+				rgen.shuffle(frontier)
 				queue = frontier
 			isRandomTest=1
 	population.append((list(sut.test()),set(sut.currBranches())))
