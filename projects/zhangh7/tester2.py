@@ -132,6 +132,7 @@ while time.time()-start <= timeout/rtTimePara:
 		if ss not in visited:
 			visited.append(ss)
 		if not ok:
+			currentTest=list(sut.test())
 			failureNum+=1
 			print "FIND " + str(failureNum) + " FAILURE"
 			#print sut.failure()
@@ -154,7 +155,9 @@ while time.time()-start <= timeout/rtTimePara:
 				print sut.failure()
 				Rlist.append(R)
 			'''
-			expr = visited[-2]
+			
+			sut.replay(currentTest,catchUncaught = True)
+			expr = sut.state()
 			queue = [expr]
 	
 			d=1
