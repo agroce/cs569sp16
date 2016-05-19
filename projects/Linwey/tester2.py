@@ -27,7 +27,7 @@ dis_weight = 0
 
 
 def backtrack():
-	if (collected_test != None) and (rgen.random() > 0.5):
+	if (collected_test != None) and (rgen.random() > 0.4):
 		sut.backtrack(collected_test)
 
 def newState():
