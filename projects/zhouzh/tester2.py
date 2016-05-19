@@ -38,21 +38,37 @@ def make_config(pargs, parser):
      nt_config = Config(*arg_list)
      return nt_config
 
+def saveFaults(sut,nbugs, Config, faults_file):
+    print "Found A Bug! number of bugs:", nbugs
+    print sut.failure()
+    print "Reducing......"
 
-def mutate(test, r):
+    reduction = sut.reduce(sut.test(), sut.fails, True, True)
+
+    sut.prettyPrintTest(reduction)
+    print sut.failure()
+
+    if Config.faults == 1:
+        f = open(faults_file + str(nbugs) + ".test", "w")
+        print >> f, sut.failure()
+
+
+def mutate(test, r, nbugs):
     tcopy = list(test)
     i = r.randint(0,len(tcopy))
-    sut.replay(tcopy[:i])
     e = sut.randomEnabled(r)
-    sut.safely(e)
-    trest = [e]
-    for s in tcopy[i+1:]:
-        if s[1]():
-            trest.append(s)
-            sut.safely(s)
-    tcopy = test[:i]+trest
-    if len(sut.newCurrBranches()) != 0:
-        print "New Branches in mutation:",sut.newCurrBranches()
+    isGood = sut.safely(e)
+    if not isGood:
+        nbugs += 1
+        saveFaults(sut)
+        sut.restart()
+    else:
+        trest = [e]
+        for s in tcopy[i+1:]:
+            if s[1]():
+                trest.append(s)
+                sut.safely(s)
+                tcopy = test[:i]+trest
     return tcopy
 
 def main():
@@ -106,50 +122,36 @@ def main():
                 isGood = sut.safely(a)
                 elapsed = time.time() - start
 
-                if len(sut.newStatements()) > 0:
-                    frontier.insert(0, sut.state())
-                    storedTest = True
-                if (not storedTest) and (leastCovered != None) and (leastCovered in sut.currStatements()):
-                    frontier.insert(0, sut.state())
-                    storedTest = True
-
-                if Config.running:
-                    if sut.newBranches() != set([]):
-                        print "Action:", a[0]
-                        for b in sut.newBranches():
-                           print elapsed, len(sut.allBranches()), "New branch", b
-                    if sut.newStatements() != set([]):
-                        print "Action:", a[0]
-                        for s in sut.newStatements():
-                            print elapsed, len(sut.allStatements()), "New statement", s
-
                 if not isGood:
                     nbugs += 1
-                    print "Found A Bug! number of bugs:", nbugs
-                    print sut.failure()
-                    print "Reducing......"
+                    saveFaults(sut, nbugs, Config, faults_file)
+                    sut.restart()
+                else:
+                    if len(sut.newStatements()) > 0:
+                        frontier.insert(0, sut.state())
+                        storedTest = True
+                    if (not storedTest) and (leastCovered != None) and (leastCovered in sut.currStatements()):
+                        frontier.insert(0, sut.state())
+                        storedTest = True
 
-                    reduction = sut.reduce(sut.test(), sut.fails, True, True)
+                    if Config.running:
+                        if sut.newBranches() != set([]):
+                            print "Action:", a[0]
+                            for b in sut.newBranches():
+                                print elapsed, len(sut.allBranches()), "New branch", b
+                        if sut.newStatements() != set([]):
+                            print "Action:", a[0]
+                            for s in sut.newStatements():
+                                print elapsed, len(sut.allStatements()), "New statement", s
 
-                    sut.prettyPrintTest(reduction)
-                    print sut.failure()
+                        s_next = sut.state()
 
-                    if Config.faults == 1:
-                        f = open(faults_file + str(nbugs) + ".test", "w")
-                        print >> f, sut.failure()
-
+                        if s_next not in visited:
+                            visited.append(s_next)
+                            frontier.append(s_next)
 
                 if elapsed >= Config.timeout:
                     break
-
-                s_next = sut.state()
-
-                if s_next not in visited:
-                    visited.append(s_next)
-                    frontier.append(s_next)
-
-
-
 
             if depth_time >= max_depth_time:
                 break
@@ -160,13 +162,15 @@ def main():
             else:
                 break
 
+
             population.append((list(sut.test()), set(sut.currBranches())));
 
 
         state_queue = frontier
+
         sortPop = sorted(population,key = lambda x: len(x[1]),reverse=True)
         (t,b) = R.choice(population)
-        m = mutate(t, R)
+        m = mutate(t, R, nbugs)
         population.append((m, sut.currBranches()))
 
 
