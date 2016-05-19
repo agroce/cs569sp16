@@ -60,7 +60,6 @@ while time.time()-start < timeout:
             #if faults=1, check for bugs and store them in files, if faults=0 don't check for bugs.
             if not ok or not propok:
                 if faults == 1:
-                    i = 0
                     print "FAILURE FOUND.....FAILURES ARE STORING IN FILES"
                     bugs += 1
                     saveCover()
@@ -115,7 +114,6 @@ while time.time()-start < timeout:
         #if faults=1, check for bugs and store them in files, if faults=0 don't check for bugs.    
         if not ok or not propok:
                 if faults == 1:
-                    i = 0
                     print "FAILURE FOUND.....FAILURES ARE STORING IN FILES"
                     bugs += 1
                     saveCover()
