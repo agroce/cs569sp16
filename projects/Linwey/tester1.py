@@ -56,7 +56,7 @@ def newState():
             print sut.failure()
             break
 
-while time.time()-start < BUDGET:
+while time.time()-start < BUDGET / 3:
     sut.restart()
     backtrack()
     storedTest = False
@@ -68,7 +68,7 @@ while time.time()-start < BUDGET:
     sorted_coverage = sorted(coverage_cnt.keys(), key=lambda x: coverage_cnt[x])
     print "Step 02: destribution the dis_weight"
 
-
+while time.time()-start < BUDGET:
     for i in sorted_coverage:
         dis_weight = (100 - coverage_cnt[i])
         dis_weightedCov = i * dis_weight
