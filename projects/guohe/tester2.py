@@ -29,11 +29,10 @@ Coverage_W = []
 Least = None
 weight = 0
 Coverage_all = 100
-v_bool = False
 # coverage tolerance
 start = time.time()
 def avlfunction():
-	global v_bool,storedTest,sortedCov,savecoverage_test,rgen,depth,explore,savecoverage_test,Number,sut,BUDGET,seed,width,faults,coverage,running,bugs_found,Cover_percent,Coverage_W,Least,weight,Coverage_all,start
+	global storedTest,sortedCov,savecoverage_test,rgen,depth,explore,savecoverage_test,Number,sut,BUDGET,seed,width,faults,coverage,running,bugs_found,Cover_percent,Coverage_W,Least,weight,Coverage_all,start
 	for s in xrange(0,depth):
 		act = sut.randomEnabled(rgen)
 		ok = sut.safely(act)
@@ -46,15 +45,17 @@ def avlfunction():
 				savecoverage_test = sut.state()
 				storedTest = True
 				print "New state",sut.newStatements()
+		#if len(sut.newStatements()) > 0:
+		#	savecoverage_test = sut.state()
+		#	storedTest = True
+		#	print "New state",sut.newStatements()
 		if (not storedTest) and (Least != None) and (Least in sut.currStatements()):
 			#print "SAW LEAST COVERED STATEMENT, STORING TEST"
 			savecoverage_test = sut.state()
 			storedTest = True
 		Number += 1
-		if sut.check() == False:
-			v_bool = True
 		if faults:
-			if ok == False or v_bool == True:
+			if not ok:
 				bugs_found += 1
 				print "FAILURE"
 				print sut.failure()
