@@ -51,16 +51,11 @@ coverCnt = {}
 coverLeast = None
 perfTest =[]
 
-pCheck = 0.3
-
+pCheck = 0.5
 goodTest = None
 
 coverCnt = {}
 minCoverage = None
-
-
-
-
 
 start = time.time()
 
@@ -80,10 +75,9 @@ while time.time() - start < TIMEOUT:
 		    boolTest = True
 		    print "FOUND NEW STATEMENTS",sut.newStatements()
 		
-		if (not boolTest) and (minCoverage != None) and (minCoverage in sut.currStatements()):
-		    #print "SAW LEAST COVERED STATEMENT, STORING TEST"
-		    goodTest = sut.state()
-	            perfTest.append(goodTest)
+		if (not boolTest) and (minCoverage!=None) and (minCoverage in sut.currStatements()):
+		    goodTest = sut.state()	 
+	            perfTest.append(goodTest) #save test to a set
 	
 		elapsed = time.time() - start
 
