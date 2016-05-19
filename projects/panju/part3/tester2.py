@@ -89,6 +89,41 @@ def block_rand_ids( n ):
 
     return ref_tb
 
+block_num = 20; # temporally set the block_Num = 20
+def block_shuffle(actions):
+    len_ = len(actions)
+    block_sz = int(len_/block_num)
+    last_blsz = len_ - block_sz *(len_-1);
+
+    a = range(block_num);
+    random.shuffle(a);
+    newActions = actions;
+
+    cnt = 0;
+    for i in a:
+        cnt += 1;
+        if cnt == block_num:
+            break;
+
+        start = i*block_sz;
+        end = (i+1)*block_sz;
+
+        nstart = (cnt-1)*block_sz;
+        nend = cnt*block_sz;
+
+        newActions[nstart:nend] = actions[start:end]
+
+
+    start  = a[block_num-1]*block_sz;
+    end = start + last_blsz;
+    nstart = (cnt - 1) * block_sz;
+    nend = nstart + last_blsz
+    newActions[nstart:nend] = actions[start:end]
+
+    return newActions
+
+
+
 def about_branch(running, action):
     if running:
         if sut.newBranches() != set([]):
@@ -129,7 +164,10 @@ while d <= GOAL_DEPTH:
 
         sut.backtrack(s)
         allEnabled = sut.enabled()
-        random.shuffle(allEnabled)
+        if len(allEnabled)<40:
+            random.shuffle(allEnabled)
+        else:
+            allEnabled = block_shuffle(allEnabled)
 
         # do a nest inside allEnabled
 
@@ -142,9 +180,11 @@ while d <= GOAL_DEPTH:
        # local_actcnt = 0;
         #if len(allEnabled)>1:
         #    ref_tb_act = block_rand_ids(len(allEnabled))
-        #    print "len of allenabled", len(allEnabled )
-
+       # print "len of allenabled", len(allEnabled )
+        local_cnt =0;
         for a in allEnabled:
+            #if local_cnt >20 and local_cnt >= 0.4*len(allEnabled):
+            #    continue;
 
             elapsed = time.time() - startLayer
             if elapsed >= LAYER_BUDGET:
