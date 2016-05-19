@@ -43,6 +43,8 @@ def expandNewState():
     for t in sortedCov:
         weight = (100 - Coverage[t])
         weightedCov = t*weight
+        if time.time()-start > BUDGET:
+            return
         if weightedCov > 20:
             BelowCoverage.append(weightedCov)
             print "Cov:", t
