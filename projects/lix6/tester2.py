@@ -29,7 +29,7 @@ def randomAction():
             f = open(file,'a')
             f.write(str(sut.failure()))
             f.close()
-            if COVERAGE:
+            if argv.COVERAGE:
                 collectCoverage()
             sut.restart()
     else:
