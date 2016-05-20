@@ -3,208 +3,493 @@ SWARM SWARM.sqlparse.16.tout RUNNING: 565 BRANCHES: 565 STATEMENTS: 406
 PURE PURE.sqlparse.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
 PURE PURE.sqlparse.16.tout RUNNING: 578 BRANCHES: 578 STATEMENTS: 414  
 alghamha alghamha.sqlparse.120s.15.tout RUNNING: 583 BRANCHES: 583 STATEMENTS: 415  
+alghamha alghamha.sqlparse.120s.16.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+alghamha alghamha.sqlparse.120s.17.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
 alizades alizades.sqlparse.120s.15.tout RUNNING: 577 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+alizades alizades.sqlparse.120s.16.tout RUNNING: 568 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+alizades alizades.sqlparse.120s.17.tout RUNNING: 559 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
 almadhoe almadhoe.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+almadhoe almadhoe.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+almadhoe almadhoe.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
 bangashm bangashm.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+bangashm bangashm.sqlparse.120s.16.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+bangashm bangashm.sqlparse.120s.17.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
 changti changti.sqlparse.120s.15.tout RUNNING: 590 BRANCHES: 591 STATEMENTS: 422  
-guohe guohe.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
-guoru guoru.sqlparse.120s.15.tout RUNNING: 574 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
-hanxia hanxia.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
-hexu hexu.sqlparse.120s.15.tout RUNNING: 590 BRANCHES: 590 STATEMENTS: 422  
-hoangmin hoangmin.sqlparse.120s.15.tout RUNNING: 573 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
-kaneokak kaneokak.sqlparse.120s.15.tout RUNNING: 583 BRANCHES: 583 STATEMENTS: 418  
-lasharih lasharih.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
-limsuwap limsuwap.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
-lintzu lintzu.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS  
-Linwey Linwey.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 583 STATEMENTS: 415  
-liuh2 liuh2.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 581 STATEMENTS: 415  
-liuw3 liuw3.sqlparse.120s.15.tout RUNNING: 557 BRANCHES: 557 STATEMENTS: 401  
-lix6 lix6.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
-nelsonni nelsonni.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
-pengxin pengxin.sqlparse.120s.15.tout RUNNING: 578 BRANCHES: 578 STATEMENTS: 414  
-rayalas rayalas.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
-shenyif shenyif.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
-shik shik.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
-tangz tangz.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
-thakuro thakuro.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
-tsengyu tsengyu.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 525 STATEMENTS: 383  
-wanghao wanghao.sqlparse.120s.15.tout RUNNING: 590 BRANCHES: 591 STATEMENTS: 422  
-wangq5 wangq5.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
-wangweny wangweny.sqlparse.120s.15.tout RUNNING: 593 BRANCHES: 593 STATEMENTS: 422  
-wangyans wangyans.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
-wangyi wangyi.sqlparse.120s.15.tout RUNNING: 591 BRANCHES: 591 STATEMENTS: 422  
-wutso wutso.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
-xuhui xuhui.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
-xujing xujing.sqlparse.120s.15.tout RUNNING: 562 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
-yangyic yangyic.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
-yub yub.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
-zhangcha zhangcha.sqlparse.120s.15.tout RUNNING: 480 BRANCHES: 480 STATEMENTS: 350  
-zhangh7 zhangh7.sqlparse.120s.15.tout RUNNING: New BRANCHES: 588 STATEMENTS: 421  
-zhaozixu zhaozixu.sqlparse.120s.15.tout RUNNING: 520 BRANCHES: 520 STATEMENTS: 381  
-zhengxu zhengxu.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 591 STATEMENTS: 422  
-zhouxuh zhouxuh.sqlparse.120s.15.tout RUNNING: 590 BRANCHES: 591 STATEMENTS: 422  
-zhouzh zhouzh.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+changti changti.sqlparse.120s.16.tout RUNNING: 588 BRANCHES: 588 STATEMENTS: 421  
+changti changti.sqlparse.120s.17.tout RUNNING: 591 BRANCHES: 591 STATEMENTS: 422  
 chenk4 chenk4.sqlparse.120s.15.tout RUNNING: 574 BRANCHES: 574 STATEMENTS: 413  
+chenk4 chenk4.sqlparse.120s.16.tout RUNNING: 567 BRANCHES: 567 STATEMENTS: 409  
+chenk4 chenk4.sqlparse.120s.17.tout RUNNING: 576 BRANCHES: 576 STATEMENTS: 414  
+guohe guohe.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+guohe guohe.sqlparse.120s.16.tout RUNNING: 583 BRANCHES: 583 STATEMENTS: 415  
+guohe guohe.sqlparse.120s.17.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+guoru guoru.sqlparse.120s.15.tout RUNNING: 574 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+guoru guoru.sqlparse.120s.16.tout RUNNING: 584 BRANCHES: 584 STATEMENTS: 419  
+guoru guoru.sqlparse.120s.17.tout RUNNING: 577 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+hanxia hanxia.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+hanxia hanxia.sqlparse.120s.16.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+hanxia hanxia.sqlparse.120s.17.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+hexu hexu.sqlparse.120s.15.tout RUNNING: 590 BRANCHES: 590 STATEMENTS: 422  
+hexu hexu.sqlparse.120s.16.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 418  
+hexu hexu.sqlparse.120s.17.tout RUNNING: 589 BRANCHES: 589 STATEMENTS: 422  
+hoangmin hoangmin.sqlparse.120s.15.tout RUNNING: 573 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+hoangmin hoangmin.sqlparse.120s.16.tout RUNNING: 577 BRANCHES: 577 STATEMENTS: 412  
+hoangmin hoangmin.sqlparse.120s.17.tout RUNNING: 579 BRANCHES: 579 STATEMENTS: 415  
+kaneokak kaneokak.sqlparse.120s.15.tout RUNNING: 583 BRANCHES: 583 STATEMENTS: 418  
+kaneokak kaneokak.sqlparse.120s.16.tout RUNNING: 587 BRANCHES: 587 STATEMENTS: 421  
+kaneokak kaneokak.sqlparse.120s.17.tout RUNNING: 588 BRANCHES: 588 STATEMENTS: 421  
+lasharih lasharih.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+lasharih lasharih.sqlparse.120s.16.tout RUNNING: 583 BRANCHES: 583 STATEMENTS: 415  
+lasharih lasharih.sqlparse.120s.17.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+limsuwap limsuwap.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+limsuwap limsuwap.sqlparse.120s.16.tout RUNNING: 527 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+limsuwap limsuwap.sqlparse.120s.17.tout RUNNING: 559 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+lintzu lintzu.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS  
+lintzu lintzu.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS  
+lintzu lintzu.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS  
+Linwey Linwey.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 583 STATEMENTS: 415  
+Linwey Linwey.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: 580 STATEMENTS: 415  
+Linwey Linwey.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: 578 STATEMENTS: 414  
+liuh2 liuh2.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 581 STATEMENTS: 415  
+liuh2 liuh2.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: 578 STATEMENTS: 414  
+liuh2 liuh2.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: 581 STATEMENTS: 415  
+liuw3 liuw3.sqlparse.120s.15.tout RUNNING: 557 BRANCHES: 557 STATEMENTS: 401  
+liuw3 liuw3.sqlparse.120s.16.tout RUNNING: 568 BRANCHES: 568 STATEMENTS: 410  
+liuw3 liuw3.sqlparse.120s.17.tout RUNNING: 571 BRANCHES: 571 STATEMENTS: 412  
+lix6 lix6.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+lix6 lix6.sqlparse.120s.16.tout RUNNING: 578 BRANCHES: 578 STATEMENTS: 414  
+lix6 lix6.sqlparse.120s.17.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+nelsonni nelsonni.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+nelsonni nelsonni.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+nelsonni nelsonni.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+pengxin pengxin.sqlparse.120s.15.tout RUNNING: 578 BRANCHES: 578 STATEMENTS: 414  
+pengxin pengxin.sqlparse.120s.16.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+pengxin pengxin.sqlparse.120s.17.tout RUNNING: 583 BRANCHES: 583 STATEMENTS: 415  
+rayalas rayalas.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+rayalas rayalas.sqlparse.120s.16.tout RUNNING: 578 BRANCHES: 578 STATEMENTS: 414  
+rayalas rayalas.sqlparse.120s.17.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+shenyif shenyif.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+shenyif shenyif.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+shenyif shenyif.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+shik shik.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+shik shik.sqlparse.120s.16.tout RUNNING: 578 BRANCHES: 578 STATEMENTS: 414  
+shik shik.sqlparse.120s.17.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+tangz tangz.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+tangz tangz.sqlparse.120s.16.tout RUNNING: 578 BRANCHES: 578 STATEMENTS: 414  
+tangz tangz.sqlparse.120s.17.tout RUNNING: 578 BRANCHES: 578 STATEMENTS: 414  
+thakuro thakuro.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+thakuro thakuro.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+thakuro thakuro.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+tsengyu tsengyu.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 525 STATEMENTS: 383  
+tsengyu tsengyu.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: 604 STATEMENTS: 432  
+tsengyu tsengyu.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: 595 STATEMENTS: 427  
+wanghao wanghao.sqlparse.120s.15.tout RUNNING: 590 BRANCHES: 591 STATEMENTS: 422  
+wanghao wanghao.sqlparse.120s.16.tout RUNNING: 588 BRANCHES: 588 STATEMENTS: 421  
+wanghao wanghao.sqlparse.120s.17.tout RUNNING: 591 BRANCHES: 591 STATEMENTS: 422  
+wangq5 wangq5.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+wangq5 wangq5.sqlparse.120s.16.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+wangq5 wangq5.sqlparse.120s.17.tout RUNNING: 580 BRANCHES: 580 STATEMENTS: 415  
+wangweny wangweny.sqlparse.120s.15.tout RUNNING: 593 BRANCHES: 593 STATEMENTS: 422  
+wangweny wangweny.sqlparse.120s.16.tout RUNNING: 593 BRANCHES: 593 STATEMENTS: 422  
+wangweny wangweny.sqlparse.120s.17.tout RUNNING: 575 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+wangyans wangyans.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+wangyans wangyans.sqlparse.120s.16.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+wangyans wangyans.sqlparse.120s.17.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+wangyi wangyi.sqlparse.120s.15.tout RUNNING: 591 BRANCHES: 591 STATEMENTS: 422  
+wangyi wangyi.sqlparse.120s.16.tout RUNNING: 469 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+wangyi wangyi.sqlparse.120s.17.tout RUNNING: 575 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+wutso wutso.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+wutso wutso.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+wutso wutso.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+xuhui xuhui.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+xuhui xuhui.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+xuhui xuhui.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+xujing xujing.sqlparse.120s.15.tout RUNNING: 562 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+xujing xujing.sqlparse.120s.16.tout RUNNING: 572 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+xujing xujing.sqlparse.120s.17.tout RUNNING: 581 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+yangyic yangyic.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+yangyic yangyic.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+yangyic yangyic.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+yub yub.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+yub yub.sqlparse.120s.16.tout RUNNING: 581 BRANCHES: 581 STATEMENTS: 415  
+yub yub.sqlparse.120s.17.tout RUNNING: 578 BRANCHES: 578 STATEMENTS: 414  
+zhangcha zhangcha.sqlparse.120s.15.tout RUNNING: 480 BRANCHES: 480 STATEMENTS: 350  
+zhangcha zhangcha.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+zhangcha zhangcha.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+zhangh7 zhangh7.sqlparse.120s.15.tout RUNNING: New BRANCHES: 588 STATEMENTS: 421  
+zhangh7 zhangh7.sqlparse.120s.16.tout RUNNING: elapsed,len(sut.allBranches()),"New BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+zhangh7 zhangh7.sqlparse.120s.17.tout RUNNING: elapsed,len(sut.allBranches()),"New BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+zhaozixu zhaozixu.sqlparse.120s.15.tout RUNNING: 520 BRANCHES: 520 STATEMENTS: 381  
+zhaozixu zhaozixu.sqlparse.120s.16.tout RUNNING: 477 BRANCHES: 477 STATEMENTS: 353  
+zhaozixu zhaozixu.sqlparse.120s.17.tout RUNNING: 526 BRANCHES: 526 STATEMENTS: 384  
+zhengxu zhengxu.sqlparse.120s.15.tout RUNNING: 581 BRANCHES: 591 STATEMENTS: 422  
+zhengxu zhengxu.sqlparse.120s.16.tout RUNNING: 591 BRANCHES: 591 STATEMENTS: 422  
+zhengxu zhengxu.sqlparse.120s.17.tout RUNNING: 581 BRANCHES: 591 STATEMENTS: 422  
+zhouxuh zhouxuh.sqlparse.120s.15.tout RUNNING: 590 BRANCHES: 591 STATEMENTS: 422  
+zhouxuh zhouxuh.sqlparse.120s.16.tout RUNNING: 588 BRANCHES: 588 STATEMENTS: 421  
+zhouxuh zhouxuh.sqlparse.120s.17.tout RUNNING: 591 BRANCHES: 591 STATEMENTS: 422  
+zhouzh zhouzh.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+zhouzh zhouzh.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+zhouzh zhouzh.sqlparse.120s.17.tout RUNNING: 480 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
 panju panju.sqlparse.120s.15.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+panju panju.sqlparse.120s.16.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
+panju panju.sqlparse.120s.17.tout RUNNING: 0 BRANCHES: 0 STATEMENTS: 0  
 
 
 SORTED BY BEST BRANCH COVERAGE RUNNING TOTAL
 zhangh7.sqlparse.120s.15.tout New
 wangweny.sqlparse.120s.15.tout 593
+wangweny.sqlparse.120s.16.tout 593
+changti.sqlparse.120s.17.tout 591
+wanghao.sqlparse.120s.17.tout 591
 wangyi.sqlparse.120s.15.tout 591
+zhengxu.sqlparse.120s.16.tout 591
+zhouxuh.sqlparse.120s.17.tout 591
 changti.sqlparse.120s.15.tout 590
 hexu.sqlparse.120s.15.tout 590
 wanghao.sqlparse.120s.15.tout 590
 zhouxuh.sqlparse.120s.15.tout 590
+hexu.sqlparse.120s.17.tout 589
+changti.sqlparse.120s.16.tout 588
+kaneokak.sqlparse.120s.17.tout 588
+wanghao.sqlparse.120s.16.tout 588
+zhouxuh.sqlparse.120s.16.tout 588
+kaneokak.sqlparse.120s.16.tout 587
+guoru.sqlparse.120s.16.tout 584
 alghamha.sqlparse.120s.15.tout 583
+guohe.sqlparse.120s.16.tout 583
 kaneokak.sqlparse.120s.15.tout 583
+lasharih.sqlparse.120s.16.tout 583
+pengxin.sqlparse.120s.17.tout 583
 PURE.sqlparse.15.tout 581
+alghamha.sqlparse.120s.16.tout 581
+alghamha.sqlparse.120s.17.tout 581
 bangashm.sqlparse.120s.15.tout 581
+bangashm.sqlparse.120s.16.tout 581
+bangashm.sqlparse.120s.17.tout 581
 guohe.sqlparse.120s.15.tout 581
+guohe.sqlparse.120s.17.tout 581
 hanxia.sqlparse.120s.15.tout 581
+hanxia.sqlparse.120s.16.tout 581
+hanxia.sqlparse.120s.17.tout 581
+hexu.sqlparse.120s.16.tout 581
 lasharih.sqlparse.120s.15.tout 581
+lasharih.sqlparse.120s.17.tout 581
 lix6.sqlparse.120s.15.tout 581
+lix6.sqlparse.120s.17.tout 581
+pengxin.sqlparse.120s.16.tout 581
 rayalas.sqlparse.120s.15.tout 581
+rayalas.sqlparse.120s.17.tout 581
 shik.sqlparse.120s.15.tout 581
+shik.sqlparse.120s.17.tout 581
 tangz.sqlparse.120s.15.tout 581
 wangq5.sqlparse.120s.15.tout 581
+wangq5.sqlparse.120s.16.tout 581
 wangyans.sqlparse.120s.15.tout 581
+wangyans.sqlparse.120s.16.tout 581
+wangyans.sqlparse.120s.17.tout 581
 yub.sqlparse.120s.15.tout 581
+yub.sqlparse.120s.16.tout 581
 zhengxu.sqlparse.120s.15.tout 581
+zhengxu.sqlparse.120s.17.tout 581
+wangq5.sqlparse.120s.17.tout 580
+hoangmin.sqlparse.120s.17.tout 579
 PURE.sqlparse.16.tout 578
+lix6.sqlparse.120s.16.tout 578
 pengxin.sqlparse.120s.15.tout 578
+rayalas.sqlparse.120s.16.tout 578
+shik.sqlparse.120s.16.tout 578
+tangz.sqlparse.120s.16.tout 578
+tangz.sqlparse.120s.17.tout 578
+yub.sqlparse.120s.17.tout 578
+hoangmin.sqlparse.120s.16.tout 577
+chenk4.sqlparse.120s.17.tout 576
 chenk4.sqlparse.120s.15.tout 574
 SWARM.sqlparse.15.tout 571
+liuw3.sqlparse.120s.17.tout 571
+liuw3.sqlparse.120s.16.tout 568
+chenk4.sqlparse.120s.16.tout 567
 SWARM.sqlparse.16.tout 565
 liuw3.sqlparse.120s.15.tout 557
+zhaozixu.sqlparse.120s.17.tout 526
 zhaozixu.sqlparse.120s.15.tout 520
 zhangcha.sqlparse.120s.15.tout 480
+zhaozixu.sqlparse.120s.16.tout 477
 lintzu.sqlparse.120s.15.tout 0
+lintzu.sqlparse.120s.16.tout 0
+lintzu.sqlparse.120s.17.tout 0
 Linwey.sqlparse.120s.15.tout 0
+Linwey.sqlparse.120s.16.tout 0
+Linwey.sqlparse.120s.17.tout 0
 liuh2.sqlparse.120s.15.tout 0
+liuh2.sqlparse.120s.16.tout 0
+liuh2.sqlparse.120s.17.tout 0
 shenyif.sqlparse.120s.15.tout 0
+shenyif.sqlparse.120s.16.tout 0
+shenyif.sqlparse.120s.17.tout 0
 tsengyu.sqlparse.120s.15.tout 0
+tsengyu.sqlparse.120s.16.tout 0
+tsengyu.sqlparse.120s.17.tout 0
 yangyic.sqlparse.120s.15.tout 0
+yangyic.sqlparse.120s.16.tout 0
+yangyic.sqlparse.120s.17.tout 0
+zhangcha.sqlparse.120s.16.tout 0
+zhangcha.sqlparse.120s.17.tout 0
 zhouzh.sqlparse.120s.15.tout 0
+zhouzh.sqlparse.120s.16.tout 0
 panju.sqlparse.120s.15.tout 0
+panju.sqlparse.120s.16.tout 0
+panju.sqlparse.120s.17.tout 0
 
 
 SORTED BY BEST TOTAL STATEMENT COVERAGE
+tsengyu.sqlparse.120s.16.tout 432
+tsengyu.sqlparse.120s.17.tout 427
 changti.sqlparse.120s.15.tout 422
+changti.sqlparse.120s.17.tout 422
 hexu.sqlparse.120s.15.tout 422
+hexu.sqlparse.120s.17.tout 422
 wanghao.sqlparse.120s.15.tout 422
+wanghao.sqlparse.120s.17.tout 422
 wangweny.sqlparse.120s.15.tout 422
+wangweny.sqlparse.120s.16.tout 422
 wangyi.sqlparse.120s.15.tout 422
 zhengxu.sqlparse.120s.15.tout 422
+zhengxu.sqlparse.120s.16.tout 422
+zhengxu.sqlparse.120s.17.tout 422
 zhouxuh.sqlparse.120s.15.tout 422
+zhouxuh.sqlparse.120s.17.tout 422
+changti.sqlparse.120s.16.tout 421
+kaneokak.sqlparse.120s.16.tout 421
+kaneokak.sqlparse.120s.17.tout 421
+wanghao.sqlparse.120s.16.tout 421
 zhangh7.sqlparse.120s.15.tout 421
+zhouxuh.sqlparse.120s.16.tout 421
+guoru.sqlparse.120s.16.tout 419
+hexu.sqlparse.120s.16.tout 418
 kaneokak.sqlparse.120s.15.tout 418
 PURE.sqlparse.15.tout 415
 alghamha.sqlparse.120s.15.tout 415
+alghamha.sqlparse.120s.16.tout 415
+alghamha.sqlparse.120s.17.tout 415
 bangashm.sqlparse.120s.15.tout 415
+bangashm.sqlparse.120s.16.tout 415
+bangashm.sqlparse.120s.17.tout 415
 guohe.sqlparse.120s.15.tout 415
+guohe.sqlparse.120s.16.tout 415
+guohe.sqlparse.120s.17.tout 415
 hanxia.sqlparse.120s.15.tout 415
+hanxia.sqlparse.120s.16.tout 415
+hanxia.sqlparse.120s.17.tout 415
+hoangmin.sqlparse.120s.17.tout 415
 lasharih.sqlparse.120s.15.tout 415
+lasharih.sqlparse.120s.16.tout 415
+lasharih.sqlparse.120s.17.tout 415
 Linwey.sqlparse.120s.15.tout 415
+Linwey.sqlparse.120s.16.tout 415
 liuh2.sqlparse.120s.15.tout 415
+liuh2.sqlparse.120s.17.tout 415
 lix6.sqlparse.120s.15.tout 415
+lix6.sqlparse.120s.17.tout 415
+pengxin.sqlparse.120s.16.tout 415
+pengxin.sqlparse.120s.17.tout 415
 rayalas.sqlparse.120s.15.tout 415
+rayalas.sqlparse.120s.17.tout 415
 shik.sqlparse.120s.15.tout 415
+shik.sqlparse.120s.17.tout 415
 tangz.sqlparse.120s.15.tout 415
 wangq5.sqlparse.120s.15.tout 415
+wangq5.sqlparse.120s.16.tout 415
+wangq5.sqlparse.120s.17.tout 415
 wangyans.sqlparse.120s.15.tout 415
+wangyans.sqlparse.120s.16.tout 415
+wangyans.sqlparse.120s.17.tout 415
 yub.sqlparse.120s.15.tout 415
+yub.sqlparse.120s.16.tout 415
 PURE.sqlparse.16.tout 414
+chenk4.sqlparse.120s.17.tout 414
+Linwey.sqlparse.120s.17.tout 414
+liuh2.sqlparse.120s.16.tout 414
+lix6.sqlparse.120s.16.tout 414
 pengxin.sqlparse.120s.15.tout 414
+rayalas.sqlparse.120s.16.tout 414
+shik.sqlparse.120s.16.tout 414
+tangz.sqlparse.120s.16.tout 414
+tangz.sqlparse.120s.17.tout 414
+yub.sqlparse.120s.17.tout 414
 chenk4.sqlparse.120s.15.tout 413
+hoangmin.sqlparse.120s.16.tout 412
+liuw3.sqlparse.120s.17.tout 412
 SWARM.sqlparse.15.tout 411
+liuw3.sqlparse.120s.16.tout 410
+chenk4.sqlparse.120s.16.tout 409
 SWARM.sqlparse.16.tout 406
 liuw3.sqlparse.120s.15.tout 401
+zhaozixu.sqlparse.120s.17.tout 384
 tsengyu.sqlparse.120s.15.tout 383
 zhaozixu.sqlparse.120s.15.tout 381
+zhaozixu.sqlparse.120s.16.tout 353
 zhangcha.sqlparse.120s.15.tout 350
 lintzu.sqlparse.120s.15.tout 0
+lintzu.sqlparse.120s.16.tout 0
+lintzu.sqlparse.120s.17.tout 0
 shenyif.sqlparse.120s.15.tout 0
+shenyif.sqlparse.120s.16.tout 0
+shenyif.sqlparse.120s.17.tout 0
 yangyic.sqlparse.120s.15.tout 0
+yangyic.sqlparse.120s.16.tout 0
+yangyic.sqlparse.120s.17.tout 0
+zhangcha.sqlparse.120s.16.tout 0
+zhangcha.sqlparse.120s.17.tout 0
 zhouzh.sqlparse.120s.15.tout 0
+zhouzh.sqlparse.120s.16.tout 0
 panju.sqlparse.120s.15.tout 0
+panju.sqlparse.120s.16.tout 0
+panju.sqlparse.120s.17.tout 0
 
 
 SORTED BY EITHER BRANCH COVERAGE METHOD
+tsengyu.sqlparse.120s.16.tout 604
+tsengyu.sqlparse.120s.17.tout 595
 wangweny.sqlparse.120s.15.tout 593
+wangweny.sqlparse.120s.16.tout 593
 changti.sqlparse.120s.15.tout 591
+changti.sqlparse.120s.17.tout 591
 wanghao.sqlparse.120s.15.tout 591
+wanghao.sqlparse.120s.17.tout 591
 wangyi.sqlparse.120s.15.tout 591
 zhengxu.sqlparse.120s.15.tout 591
+zhengxu.sqlparse.120s.16.tout 591
+zhengxu.sqlparse.120s.17.tout 591
 zhouxuh.sqlparse.120s.15.tout 591
+zhouxuh.sqlparse.120s.17.tout 591
 hexu.sqlparse.120s.15.tout 590
+hexu.sqlparse.120s.17.tout 589
+changti.sqlparse.120s.16.tout 588
+kaneokak.sqlparse.120s.17.tout 588
+wanghao.sqlparse.120s.16.tout 588
 zhangh7.sqlparse.120s.15.tout 588
+zhouxuh.sqlparse.120s.16.tout 588
+kaneokak.sqlparse.120s.16.tout 587
+guoru.sqlparse.120s.16.tout 584
 alghamha.sqlparse.120s.15.tout 583
+guohe.sqlparse.120s.16.tout 583
 kaneokak.sqlparse.120s.15.tout 583
+lasharih.sqlparse.120s.16.tout 583
 Linwey.sqlparse.120s.15.tout 583
+pengxin.sqlparse.120s.17.tout 583
 PURE.sqlparse.15.tout 581
+alghamha.sqlparse.120s.16.tout 581
+alghamha.sqlparse.120s.17.tout 581
 bangashm.sqlparse.120s.15.tout 581
+bangashm.sqlparse.120s.16.tout 581
+bangashm.sqlparse.120s.17.tout 581
 guohe.sqlparse.120s.15.tout 581
+guohe.sqlparse.120s.17.tout 581
 hanxia.sqlparse.120s.15.tout 581
+hanxia.sqlparse.120s.16.tout 581
+hanxia.sqlparse.120s.17.tout 581
+hexu.sqlparse.120s.16.tout 581
 lasharih.sqlparse.120s.15.tout 581
+lasharih.sqlparse.120s.17.tout 581
 liuh2.sqlparse.120s.15.tout 581
+liuh2.sqlparse.120s.17.tout 581
 lix6.sqlparse.120s.15.tout 581
+lix6.sqlparse.120s.17.tout 581
+pengxin.sqlparse.120s.16.tout 581
 rayalas.sqlparse.120s.15.tout 581
+rayalas.sqlparse.120s.17.tout 581
 shik.sqlparse.120s.15.tout 581
+shik.sqlparse.120s.17.tout 581
 tangz.sqlparse.120s.15.tout 581
 wangq5.sqlparse.120s.15.tout 581
+wangq5.sqlparse.120s.16.tout 581
 wangyans.sqlparse.120s.15.tout 581
+wangyans.sqlparse.120s.16.tout 581
+wangyans.sqlparse.120s.17.tout 581
 yub.sqlparse.120s.15.tout 581
+yub.sqlparse.120s.16.tout 581
+Linwey.sqlparse.120s.16.tout 580
+wangq5.sqlparse.120s.17.tout 580
+hoangmin.sqlparse.120s.17.tout 579
 PURE.sqlparse.16.tout 578
+Linwey.sqlparse.120s.17.tout 578
+liuh2.sqlparse.120s.16.tout 578
+lix6.sqlparse.120s.16.tout 578
 pengxin.sqlparse.120s.15.tout 578
+rayalas.sqlparse.120s.16.tout 578
+shik.sqlparse.120s.16.tout 578
+tangz.sqlparse.120s.16.tout 578
+tangz.sqlparse.120s.17.tout 578
+yub.sqlparse.120s.17.tout 578
+hoangmin.sqlparse.120s.16.tout 577
+chenk4.sqlparse.120s.17.tout 576
 chenk4.sqlparse.120s.15.tout 574
 SWARM.sqlparse.15.tout 571
+liuw3.sqlparse.120s.17.tout 571
+liuw3.sqlparse.120s.16.tout 568
+chenk4.sqlparse.120s.16.tout 567
 SWARM.sqlparse.16.tout 565
 liuw3.sqlparse.120s.15.tout 557
+zhaozixu.sqlparse.120s.17.tout 526
 tsengyu.sqlparse.120s.15.tout 525
 zhaozixu.sqlparse.120s.15.tout 520
 zhangcha.sqlparse.120s.15.tout 480
+zhaozixu.sqlparse.120s.16.tout 477
 lintzu.sqlparse.120s.15.tout 0
+lintzu.sqlparse.120s.16.tout 0
+lintzu.sqlparse.120s.17.tout 0
 shenyif.sqlparse.120s.15.tout 0
+shenyif.sqlparse.120s.16.tout 0
+shenyif.sqlparse.120s.17.tout 0
 yangyic.sqlparse.120s.15.tout 0
+yangyic.sqlparse.120s.16.tout 0
+yangyic.sqlparse.120s.17.tout 0
+zhangcha.sqlparse.120s.16.tout 0
+zhangcha.sqlparse.120s.17.tout 0
 zhouzh.sqlparse.120s.15.tout 0
+zhouzh.sqlparse.120s.16.tout 0
 panju.sqlparse.120s.15.tout 0
+panju.sqlparse.120s.16.tout 0
+panju.sqlparse.120s.17.tout 0
 
 
 MEAN OVER ALL RUNS
-wangweny 593.0 1 0.0
-wanghao 591.0 1 0.0
-zhengxu 591.0 1 0.0
+wangweny 593.0 2 0.0
+zhengxu 591.0 3 0.0
 wangyi 591.0 1 0.0
-zhouxuh 591.0 1 0.0
-changti 591.0 1 0.0
-hexu 590.0 1 0.0
+wanghao 590.0 3 1.41
+zhouxuh 590.0 3 1.41
+changti 590.0 3 1.41
 zhangh7 588.0 1 0.0
-Linwey 583.0 1 0.0
-kaneokak 583.0 1 0.0
-alghamha 583.0 1 0.0
-shik 581.0 1 0.0
-guohe 581.0 1 0.0
-bangashm 581.0 1 0.0
-wangq5 581.0 1 0.0
-tangz 581.0 1 0.0
-lasharih 581.0 1 0.0
-liuh2 581.0 1 0.0
-lix6 581.0 1 0.0
-rayalas 581.0 1 0.0
-hanxia 581.0 1 0.0
-wangyans 581.0 1 0.0
-yub 581.0 1 0.0
+hexu 586.67 3 4.03
+kaneokak 586.0 3 2.16
+guoru 584.0 1 0.0
+guohe 581.67 3 0.94
+lasharih 581.67 3 0.94
+alghamha 581.67 3 0.94
+bangashm 581.0 3 0.0
+hanxia 581.0 3 0.0
+wangyans 581.0 3 0.0
+wangq5 580.67 3 0.47
+pengxin 580.67 3 2.05
+Linwey 580.33 3 2.05
+shik 580.0 3 1.41
+liuh2 580.0 3 1.41
+lix6 580.0 3 1.41
+rayalas 580.0 3 1.41
+yub 580.0 3 1.41
 PURE 579.5 2 1.5
-pengxin 578.0 1 0.0
-chenk4 574.0 1 0.0
+tangz 579.0 3 1.41
+hoangmin 578.0 2 1.0
+tsengyu 574.67 3 35.31
+chenk4 572.33 3 3.86
 SWARM 568.0 2 3.0
-liuw3 557.0 1 0.0
-tsengyu 525.0 1 0.0
-zhaozixu 520.0 1 0.0
-zhangcha 480.0 1 0.0
-shenyif 0.0 1 0.0
-lintzu 0.0 1 0.0
-yangyic 0.0 1 0.0
-zhouzh 0.0 1 0.0
-panju 0.0 1 0.0
+liuw3 565.33 3 6.02
+zhaozixu 507.67 3 21.82
+zhangcha 160.0 3 226.27
+shenyif 0.0 3 0.0
+lintzu 0.0 3 0.0
+yangyic 0.0 3 0.0
+zhouzh 0.0 2 0.0
+panju 0.0 3 0.0
