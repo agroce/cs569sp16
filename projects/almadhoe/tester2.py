@@ -66,15 +66,13 @@ while time.time()-start < timeout:
                     fault = sut.failure()
                     saveFault = 'failure' + str(bugs) + '.test'
                     file = open(saveFault, 'w')
-                    print >> file, "Faults:", fault,"\n"	
-                    print >> file, "********************************* Test Cases: ******************************************"
+                    print >> file, "Faults: ", fault,"\n"	
+                    print >> file, "Test Cases: "
 	            for t in sut.test():
 	                print >> file, sut.serializable(t)
 	            file.close()
 	            sut.restart()
-	            
-            if (time.time() - start > timeout):
-			    break     
+        
      
             #Store new branches in tests pool            
             else:
@@ -82,7 +80,8 @@ while time.time()-start < timeout:
                     test = sut.state()
                     tests.append((list(sut.test()), set(sut.currBranches())))    
     
-            
+            if (time.time() - start > timeout):
+                break
         saveCover()
         # Sort coverage dictionary   
         sortedCov = sorted(covCount.keys(), key=lambda x: covCount[x])
@@ -102,13 +101,14 @@ while time.time()-start < timeout:
             
             else:
                 break
+
         saveCover()
         sut.restart()
         
         #For probability  
-        exp = 1 - (len(belowMean) / len(covCount))
+        #exp = 1 - (len(belowMean) / len(covCount))
         
-        if rgen.random() > exp:
+        if rgen.random() > 0.8:
             sut.backtrack(test)
     
         #if faults=1, check for bugs and store them in files, if faults=0 don't check for bugs.    
@@ -120,22 +120,23 @@ while time.time()-start < timeout:
                     fault = sut.failure()
                     saveFault = 'failure' + str(bugs) + '.test'
                     file = open(saveFault, 'w')
-                    print >> file, "Faults:", fault,"\n"	
-                    print >> file, "********************************* Test Cases: ******************************************"
+                    print >> file, "Faults: ", fault,"\n"	
+                    print >> file, "Test Cases: "
 	            for t in sut.test():
 	                print >> file, sut.serializable(t)
 	            file.close()
 	            sut.restart()
-	            
-        if (time.time() - start > timeout):
-			break     
+
      
         #Store new branches in tests pool            
         else:
-                if len(sut.newBranches()) != 0:
+            if len(sut.newBranches()) != 0:
                     tests.append((list(sut.test()), set(sut.currBranches())))     
-                
-        saveCover()     
+        saveCover()
+
+        if (time.time() - start > timeout):
+            break
+
     
             
 # if coverage = 1, print internal report            
