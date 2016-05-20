@@ -77,9 +77,10 @@ while time.time()-start < timeout:
             #Store new branches in tests pool            
             else:
                 if len(sut.newBranches()) != 0:
-                    test = sut.state()
+                    #test = sut.state()
                     tests.append((list(sut.test()), set(sut.currBranches())))    
-    
+
+            saveCover()
             if (time.time() - start > timeout):
                 break
         saveCover()
@@ -88,11 +89,11 @@ while time.time()-start < timeout:
         covSum = sum(covCount.values())
         
         #Calculate the mean for coverage
-        try:
-            covMean = covSum / (float(len(covCount)))
+        #try:
+        #   covMean = covSum / (float(len(covCount)))
     
-        except ZeroDivisionError:
-            print ("WARNING: NO BRANCHES COLLECTED")  
+        #except ZeroDivisionError:
+        #       print ("WARNING: NO BRANCHES COLLECTED")
     
     
         for b in sortedCov:
@@ -108,8 +109,8 @@ while time.time()-start < timeout:
         #For probability  
         #exp = 1 - (len(belowMean) / len(covCount))
         
-        if rgen.random() > 0.8:
-            sut.backtrack(test)
+        #if rgen.random() > 0.8:
+        #    sut.backtrack(test)
     
         #if faults=1, check for bugs and store them in files, if faults=0 don't check for bugs.    
         if not ok or not propok:
@@ -144,6 +145,6 @@ if coverage == 1:
     sut.internalReport()
 
 print "TOTAL NUMBER OF BUGS",bugs
-print "TOTAL NUMBER OF TESTS",no_tests
-print "TOTAL NUMBER OF ACTIONS",actCount
+#print "TOTAL NUMBER OF TESTS",no_tests
+#print "TOTAL NUMBER OF ACTIONS",actCount
 print "TOTAL NUMBER OF RUNTIME",time.time()-start
