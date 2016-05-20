@@ -77,11 +77,11 @@ def running_oh():
 	if len(sut.newStatements())> 0:
 		print "ACTION:", list_actions[0]
 		for s in sut.newStatements():
-			print "***NEW STATEMENT :", elapsed, len(sut.allStatements()), s
+			print elapsed,len(sut.allStatements()),"New statement",s
 	if len(sut.newBranches())> 0:
 		print "ACTION:", list_actions[0]
 		for s in sut.newBranches():
-			print elapsed, len(sut.allBranches()),"*** NEW branch: ",s
+			print elapsed,len(sut.allBranches()),"New branch",s
 
 def record_failures():
 	global string,failure
