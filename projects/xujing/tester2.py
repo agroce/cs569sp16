@@ -16,19 +16,23 @@ actCount = 0
 sut = sut.sut()
 bugs = 0
 coverageCount = {}
-fullPool = []
 error=[]
 noerror=[]
 belowMean = set([])
 start = time.time()
 ntests = 0
 newseq = []
+states = [sut.state()]
+R = random.Random(seed)
+
+
+num=0
 
 print "STARTING PHASE 1"
 def randomAction():
-    global actCount, bugs, coverageCount, belowMean,lastAddCoverage
+    global actCount, bugs, coverageCount
 
-    act = sut.randomEnabled(random.Random())
+    act = sut.randomEnabled(R)
     actCount += 1
     ok = sut.safely(act)
 
@@ -46,60 +50,36 @@ def randomAction():
         error.append(sut.currStatements())
         if faults:
             print("SHOW FAULT")
-            R = sut.reduce(sut.test(), sut.fails, True, True)
-            sut.prettyPrintTest(R)
+            f = sut.reduce(sut.test(), sut.fails, True, True)
+            sut.prettyPrintTest(f)
             print sut.failure()
+
     return ok
 
-while time.time()-start < timeout:
-    sut.restart()
-    ntests += 1
-    for s in xrange(0,depth):
-        if not randomAction():
-           break
-    for s in sut.currStatements():
-        newseq = sut.allStatements()
-        if s not in coverageCount:
-            coverageCount[s] = 0
-
-        if not ((newseq in error)or(newseq in noerror)):
-            noerror.append(sut.currStatements())
-
-        coverageCount[s] += 1
-
-print "STARTING PHASE 2"
-start = time.time()
-
-def belowMeans():
-    sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-    coverSum = sum(coverageCount.values())
-    coverMean = coverSum / (1.0*len(coverageCount))
-    for s in sortedCov:
-        if coverageCount[s] < coverMean:
-            belowMean.add(s)
-        else:
-            break
-while time.time()-start < seed:
-    ntests += 1
-    belowMeans()
-    for s in xrange(0,depth):
-        if not randomAction():
-            break
-    if time.time()-start > timeout:
-        break
-
-if  not error ==[]:
+while(time.time() < start + timeout):
+        for st in states:
+            ntests += 1
+            if (time.time() > start + timeout):
+                break
+            sut.restart()
+            sut.backtrack(st)
+            for s in xrange(0, depth):
+                if (time.time() > start + timeout):
+                    break
+                newseq = sut.newStatements()
+                if not randomAction():
+                    break
+                if(not ((newseq in error) or (newseq in noerror))):
+                    states.insert(ntests-1,sut.state())
+                    noerror.append(sut.currStatements())
+if not error ==[]:
     print "SHOW ERROR SEQUENCE"
-    print error
+#    print error
     f = open(("error" + str(actCount) + ".out"), 'w')
     f.write(str(error))
     f.close()
-
 else:
     print "Data in noerror sequence"
- #   f = open(("noerror" + str(actCount) + ".out"), 'w')
- #   f.write(str(noerror))
- #   f.close()
 
 if coverage:
     print "SHOW COVERAGE"
