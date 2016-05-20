@@ -29,6 +29,7 @@ population = []
 rtTimePara=2
 bestNum=10
 BfsBugNum=3
+elapsed=0
 
 ############write faults to one single file fault1.test (reduce)
 '''
