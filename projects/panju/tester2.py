@@ -164,17 +164,15 @@ while d <= GOAL_DEPTH:
 
         sut.backtrack(s)
         allEnabled = sut.enabled()
-        if len(allEnabled)<40:
-            random.shuffle(allEnabled)
-        else:
-            allEnabled = block_shuffle(allEnabled)
+        #if len(allEnabled)<40:
+        random.shuffle(allEnabled)
+        #else:
+        #    allEnabled = block_shuffle(allEnabled)
 
         # do a nest inside allEnabled
 
 
-        if ref_tb[scount - 1] == 0:
-            #break_count += 1
-            continue
+
 
        # ref_tb_act = [1]
        # local_actcnt = 0;
@@ -185,7 +183,9 @@ while d <= GOAL_DEPTH:
         for a in allEnabled:
             #if local_cnt >20 and local_cnt >= 0.4*len(allEnabled):
             #    continue;
-
+            if ref_tb[scount - 1] == 0:
+                # break_count += 1
+                break
             elapsed = time.time() - startLayer
             if elapsed >= LAYER_BUDGET:
                 #print 'breaking .....'
