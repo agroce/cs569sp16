@@ -66,17 +66,17 @@ def check(S):
                         bugs += 1
 
                         if(FAULT_CHECK):
-                            #print "use"+str(time.time()-startAll)
-                            #print "FOUND A FAILURE"
-                            #print sut.failure()
-                            #print "REDUCING"
-                           # R = sut.reduce(sut.test(),sut.fails, True, True)
-                            #sut.prettyPrintTest(R)
-                            #print "this is fault:"+ str(sut.failure())
+                            print "use"+str(time.time()-startAll)
+                            print "FOUND A FAILURE"
+                            print sut.failure()
+                            print "REDUCING"
+                            R = sut.reduce(sut.test(),sut.fails, True, True)
+                            sut.prettyPrintTest(R)
+                            print "this is fault:"+ str(sut.failure())
                             fname = 'failure'+str(bugs)+'.test'
                             with open(fname,'w+') as f:
                                 f.write(str(sut.failure())+'\n')
-                                #f.write(str(R)+'\n')
+                                f.write(str(R)+'\n')
 
                     S.append((sut.state(),test))
                     record.append((sut.state(),test))

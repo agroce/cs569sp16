@@ -6,39 +6,37 @@ import sys
 import time
 
 
-def mutate(test):
-    tcopy = list(test)
-    i = r.randint(0,len(tcopy))
-    sut.replay(tcopy[:i])
-    e = sut.randomEnabled(r)
-    sut.safely(e)
-    trest = [e]
-    for s in tcopy[i+1:]:
-        if s[1]():
-            trest.append(s)
-            sut.safely(s)
-    tcopy = test[:i]+trest
-    if len(sut.newCurrBranches()) != 0:
-        print "NEW BRANCHES DUE TO MUTATION:",sut.newCurrBranches()
-    return tcopy
+#def mutate(test):
+   # tcopy = list(test)
+   # i = r.randint(0,len(tcopy))
+   # sut.replay(tcopy[:i])
+    #e = sut.randomEnabled(r)
+   # sut.safely(e)
+    #trest = [e]
+   # for s in tcopy[i+1:]:
+    #    if s[1]():
+     #       trest.append(s)
+      #      sut.safely(s)
+    #tcopy = test[:i]+trest
+#if len(sut.newCurrBranches()) != 0:
+     #   print "NEW BRANCHES DUE TO MUTATION:",sut.newCurrBranches()
+    #return tcopy
 
 
-def check_action():
-    global num,actioncount
-    action = sut.randomEnabled(R)
-    actioncount += 1
-    ok = sut.safely(action)
-    elapsed = time.time() - start
-    if config.running:
-        if len(sut.newBranches()) > 0:
-            print "ACTION:", action[0]
-            for b in sut.newBranches():
-                print elapsed, len(sut.allBranches()),"New branch",b
+# check_action():
+ ##   global num,actioncount
+  #  action = sut.randomEnabled(R)
+  #  actioncount += 1
+  #  ok = sut.safely(action)
+  ##  elapsed = time.time() - start
+#if config.running:
+   ##     if len(sut.newBranches()) > 0:
+    ##        print "ACTION:", action[0]
+     #       for b in sut.newBranches():
+      #          print elapsed, len(sut.allBranches()),"New branch",b
     
 
-def again_mutate(test):
-    mutate(mutate(test))
-    return test
+
 
 
 parser = argparse.ArgumentParser()
@@ -49,7 +47,7 @@ parser.add_argument("WIDTH", type=int, default=100)                    #this wil
 parser.add_argument("FAULT_CHECK", type=int, default=0)                #this will take fault check
 parser.add_argument("COVERAGE_REPORT", type=int, default=0)            #this will take coverage report
 parser.add_argument("DETAIL_OF_RUNNING", type=int, default=0)          #this will take detail of running
-parser.add_argument("INITIAL_POP", type=int, default=0)
+#parser.add_argument("INITIAL_POP", type=int, default=0)
 X= None
 savedTest = None
 failureCount = 0

@@ -29,6 +29,7 @@ population = []
 rtTimePara=2
 bestNum=10
 BfsBugNum=3
+elapsed=0
 
 ############write faults to one single file fault1.test (reduce)
 '''
@@ -61,14 +62,14 @@ def ifRunning(running,action):
 		if sut.newBranches() != set([]):
 			print "ACTION:",action[0]
 			for b in sut.newBranches():
-				print len(sut.allBranches()),"New branch",b
+				print elapsed,len(sut.allBranches()),"New branch",b
 			sawNew = True
 		else:
 			sawNew = False
 		if sut.newStatements() != set([]):
 			print "ACTION:",action[0]
 			for s in sut.newStatements():
-				print len(sut.allStatements()),"New statement",s
+				print elapsed,len(sut.allStatements()),"New statement",s
 			sawNew = True
 		else:
 			sawNew = False
