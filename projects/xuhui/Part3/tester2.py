@@ -37,19 +37,22 @@ def randomAction():
 		bugs += 1
 		print "FOUND A FAILURE"
                 if faults:
-			print"Show Fault"
-			print sut.failure()
+		        print"Show Fault"
+		        print sut.failure()
                         error.append(sut.test())
                         collectCoverage()
-                        R = sut.reduce(sut.test(),sut.errorpool, True, True)
+		        R = sut.reduce(sut.test(),sut.errorpool, True, True)
                         sut.prettyPrintTest(R)
                         sut.restart()
 			
                         print "FOUND A FAILURE"
                         fault = sut.failure()
                         failurename = 'failure' + str(bugs) + '.test'
-                        wfile = open(failurename, 'w+')
-                        wfile.write(str(fault))
+                        wfile = open(failurename, 'w')
+                        print >> wfile, "Faults: ", fault, "\n"
+			print >> wfile, "Test: "
+			for t in sut.test():
+			    print >> wfile, sut.serializable(t)
                         wfile.close() 
                         sut.restart() 
                 
@@ -62,11 +65,7 @@ def randomAction():
 def belowmean():
 	global belowMean
 	sortedCoverage = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-	coverageSum = sum(coverageCount.values())
-	try:
-		coverageMean = coverageSum / (1.0*(len(coverageCount)))
-	except Zero_Division_Error:
-		print ("NO BRANCHES COLLECTED")  
+	coverageSum = sum(coverageCount.values())  
 	for b1 in sortedCoverage:
 		if coverageCount[b1] < coverageMean:
 				belowMean.add(b1)
@@ -102,13 +101,45 @@ while time.time()-start < timeout:
             if not randomAction():
                 break    
         collectCoverage()
+	if (time.time()-start > timeout):
+	    break
 		
 print "STARTING PHASE 2: ANALYSIS COVERAGE"        
 start = time.time()
 while time.time()-start < timeout:
     if (time.time() > start + timeout):
         break
-	belowmean()                  
+	belowmean()
+    if not ok:
+		bugs += 1
+		print "FOUND A FAILURE"
+                if faults:
+			print"Show Fault"
+			print sut.failure()
+                        error.append(sut.test())
+                        collectCoverage()
+			R = sut.reduce(sut.test(),sut.errorpool, True, True)
+                        sut.prettyPrintTest(R)
+                        sut.restart()
+			
+                        print "FOUND A FAILURE"
+                        fault = sut.failure()
+                        failurename = 'failure' + str(bugs) + '.test'
+                        wfile = open(failurename, 'w')
+                        print >> wfile, "Faults: ", fault, "\n"
+			print >> wfile, "Test: "
+			for t in sut.test():
+			    print >> wfile, sut.serializable(t)
+                        wfile.close() 
+                        sut.restart() 
+                
+                else:
+                    if len(sut.newBranches()) > 0:
+                        print "FOUND NEW BRANCHES",sut.newBranches()
+                        tests.append((list(sut.test()), set(sut.currBranches())))    
+                
+	        collectCoverage()
+	
     if time.time()-start > timeout:
         print "THE TEST IS STOPPED SINCE TIMEOUT"
         break 
