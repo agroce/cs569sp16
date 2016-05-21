@@ -6,10 +6,16 @@ import sut
 import sys
 import time
 
-def argFaults(fid):
-	filename = 'failure' + `fid` + '.test'
-	f = open(filename, 'w')
-	f.write(str(sut.failure()))
+def argFaults(fid, seq, t):
+	name = 'failure' + `fid` + '.test'
+	info = "time: " + str(t) + " len: " + str(len(seq)) + "\n"
+	fail = str(sut.failure()) + "\n"
+	f = open(name, 'w')
+	f.write(info)
+	f.write(fail)
+	for a in seq:
+		act = str(a[0]) + "\n"
+		f.write(act)
 	f.close
 
 def argRunning(a):
@@ -21,12 +27,13 @@ def argRunning(a):
 def contracts(seq, eseqs, ok, propok):
 	global fid
 	if (not ok) or (not propok):
-		print "FIND BUG!!", "time:", time.time() - start
+		t = time.time() - start
+		print "FIND BUG!!", "time:", t
 		printSeq(seq)
 		eseqs.append(seq)
 		fid += 1
 		if faults:
-			argFaults(fid)
+			argFaults(fid, seq, t)
 		return True
 	return False
 
@@ -61,8 +68,8 @@ def genAndExeSeq(n, seq, eseqs, nseqs):
 		classTable[sut.actionClass(a)] += 1
 		timeover = time.time() - start >= timeout
 		if timeover:
-			return (ok, propok, classTable, timeover)
-	return (ok, propok, classTable, timeover)
+			return (seq, ok, propok, classTable, timeover)
+	return (seq, ok, propok, classTable, timeover)
 
 def printSeq(seq):
 	print "len:", len(seq)
@@ -100,9 +107,9 @@ while time.time() - start < timeout:
 
 	if rgen.randint(0, 9) == 0:
 		n = rgen.randint(2, 100)
-		ok, propok, classTable, timeover = genAndExeSeq(n, seq, eseqs, nseqs)
+		seq, ok, propok, classTable, timeover = genAndExeSeq(n, seq, eseqs, nseqs)
 	else:
-		ok, propok, classTable, timeover = genAndExeSeq(1, seq, eseqs, nseqs)
+		seq, ok, propok, classTable, timeover = genAndExeSeq(1, seq, eseqs, nseqs)
 
 	if timeover:
 		break
