@@ -1,4 +1,4 @@
-#******** Some code has taken from newCover.py which written by Pro. Alex *********
+#******** This code is based on the code writing by Pro. Alex in the class *********
 
 import os
 import sut
@@ -7,36 +7,41 @@ import sys
 import time
 
 
-# To save the current branches
-def saveCover():
-    global covCount
-    for b in sut.currBranches():
-        if b not in covCount:
-            covCount[b] = 0
-        covCount[b] += 1
-
+def mutate(test):
+    tcopy = list(test)
+    i = rgen.randint(0,len(tcopy))
+    sut.replay(tcopy[:i])
+    e = sut.randomEnabled(rgen)
+    sut.safely(e)
+    trest = [e]
+    for s in tcopy[i+1:]:
+        if s[1]():
+            trest.append(s)
+            sut.safely(s)
+    tcopy = test[:i]+trest
+    if len(sut.newCurrBranches()) != 0:
+        print "NEW BRANCHES DUE TO MUTATION:",sut.newCurrBranches()
+    return tcopy
+    
 # For run the code on the command line
 timeout = int(sys.argv[1])
-seed = int(sys.argv[2])
+Seed = int(sys.argv[2])
 depth = int(sys.argv[3])
 width = int(sys.argv[4])
 faults = int(sys.argv[5])
 coverage = int(sys.argv[6])
 running = int(sys.argv[7])
 
-rgen = random.Random(seed)
+rgen = random.Random()
+rgen.seed(Seed)
 
 sut = sut.sut()
 
-covCount = {}
-tests = []
-belowMean = set([])
-Exp = set([])
-fail = []
 
 actCount = 0
 bugs = 0
 no_tests = 0
+tests = []
         
 start = time.time()
 
@@ -62,7 +67,6 @@ while time.time()-start < timeout:
                 if faults == 1:
                     print "FAILURE FOUND.....FAILURES ARE STORING IN FILES"
                     bugs += 1
-                    saveCover()
                     fault = sut.failure()
                     saveFault = 'failure' + str(bugs) + '.test'
                     file = open(saveFault, 'w')
@@ -72,74 +76,22 @@ while time.time()-start < timeout:
 	                print >> file, sut.serializable(t)
 	            file.close()
 	            sut.restart()
-        
-     
-            #Store new branches in tests pool            
+	        
+	       
+	        #Store new branches in tests pool            
             else:
                 if len(sut.newBranches()) != 0:
-                    #test = sut.state()
-                    tests.append((list(sut.test()), set(sut.currBranches())))    
-
-            saveCover()
+                    tests.append((list(sut.test()), set(sut.currBranches())))
+                    
+            if rgen.random() > 0.6:    
+                m = mutate(sut.test())
+                
+            else :
+                rgen.choice(sut.test()) 
+                   
             if (time.time() - start > timeout):
-                break
-        saveCover()
-        # Sort coverage dictionary   
-        sortedCov = sorted(covCount.keys(), key=lambda x: covCount[x])
-        covSum = sum(covCount.values())
-        
-        #Calculate the mean for coverage
-        #try:
-        #   covMean = covSum / (float(len(covCount)))
-    
-        #except ZeroDivisionError:
-        #       print ("WARNING: NO BRANCHES COLLECTED")
-    
-    
-        for b in sortedCov:
-            if covCount[b] < covMean:
-                belowMean.add(b)
-            
-            else:
-                break
+                break                
 
-        saveCover()
-        sut.restart()
-        
-        #For probability  
-        #exp = 1 - (len(belowMean) / len(covCount))
-        
-        #if rgen.random() > 0.8:
-        #    sut.backtrack(test)
-    
-        #if faults=1, check for bugs and store them in files, if faults=0 don't check for bugs.    
-        if not ok or not propok:
-                if faults == 1:
-                    print "FAILURE FOUND.....FAILURES ARE STORING IN FILES"
-                    bugs += 1
-                    saveCover()
-                    fault = sut.failure()
-                    saveFault = 'failure' + str(bugs) + '.test'
-                    file = open(saveFault, 'w')
-                    print >> file, "Faults: ", fault,"\n"	
-                    print >> file, "Test Cases: "
-	            for t in sut.test():
-	                print >> file, sut.serializable(t)
-	            file.close()
-	            sut.restart()
-
-     
-        #Store new branches in tests pool            
-        else:
-            if len(sut.newBranches()) != 0:
-                    tests.append((list(sut.test()), set(sut.currBranches())))     
-        saveCover()
-
-        if (time.time() - start > timeout):
-            break
-
-    
-            
 # if coverage = 1, print internal report            
 if coverage == 1:
     sut.internalReport()
