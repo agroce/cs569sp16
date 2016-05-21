@@ -55,7 +55,7 @@ def	saveFaults(bug, testCase):
 for act in sut.enabled():
 	seq = sut.safely(act)
 	if (not seq) and (FaultsEnabled == 1):
-		Sequential = "Discovered By Sequential Algorithm" 
+		#Sequential = "Discovered By Sequential Algorithm" 
 		elapsedFailure = time.time() - startTime
 		bugs += 1
 		print "FOUND A FAILURE"
@@ -66,7 +66,7 @@ for act in sut.enabled():
 		sut.restart()
 			# Print the new discovered branches	
 	if (len(sut.newBranches()) > 0) and (RunningEnabled == 1):
-		print "sequential found this branch"
+		#print "sequential found this branch"
 		print "ACTION:",act[0]
 		elapsed1 = time.time() - startTime
 		for b in sut.newBranches():
@@ -110,6 +110,8 @@ while (time.time() - startTime <= timeout):
 			sut.restart()
 		if (time.time() - startTime >= timeout):
 			break
+		# This part is for checking the property 
+		'''
 		checkResult = sut.check()
 		if (not checkResult):
 			bugs += 1
@@ -123,6 +125,7 @@ while (time.time() - startTime <= timeout):
 			sut.restart()
 		if (time.time() - startTime >= timeout):
 			break
+		'''
 		# Print the new discovered branches	
 		if (len(sut.newBranches()) > 0) and (RunningEnabled == 1):
 			#print "Random Found this branches"
@@ -147,7 +150,7 @@ while (time.time() - startTime <= timeout):
 elapsed = time.time() - startTime
 print "\n                  ############ The Final Report ############# \n"
 print elapsed, "Total Running Time"
-print bugs, " Bugs Found"
+print bugs, " Failures Found"
 if CoverageEnabled == 1:
 	print len(sut.allBranches()),"BRANCHES COVERED"
 	print len(sut.allStatements()),"STATEMENTS COVERED"

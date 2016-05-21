@@ -1,0 +1,6 @@
+WARNING: NO BRANCHES COLLECTED
+Traceback (most recent call last):
+  File "tester2.py", line 109, in <module>
+    exp = 1 - (len(belowMean) / len(covCount))
+ZeroDivisionError: integer division or modulo by zero
+!CRASHED!

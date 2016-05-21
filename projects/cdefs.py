@@ -1,0 +1,5 @@
+cspace = ' '
+cquote = '"'
+ctab = '\t'
+cnewline = '\n'
+creturn = '\r'

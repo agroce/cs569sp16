@@ -1,0 +1,139 @@
+# this file defines a test harness for sqlparse
+# NOTE: detailed instructions on installing sqlparse are given in README.md
+
+@from cdefs import *
+@import sqlparse
+@from sqlparse import tokens
+@from sqlparse import compat
+
+# helper python code
+<@
+# pretty print string for parse tree
+def pretty(parsed):
+  def helper(parsed, i = 0):
+    result = '%s%s \'%s\'\n' % (' ' * (2 * i), parsed._get_repr_name(), parsed._get_repr_value())
+    if parsed.is_group():
+      for t in filter(lambda t: not t.is_whitespace(), parsed.tokens):
+        result += helper(t, i + 1)
+    return result
+  return '\n' + helper(parsed)
+
+# set logging level after reduce
+def test_after_reduce(sut): 
+  sut.setLog(1)
+
+@>
+
+
+# common pools
+pool: <space> 3
+pool: <name1> 3
+pool: <name2> 3
+
+# DDL pools
+pool: <type> 1
+pool: <const> 1
+pool: <defcol1> 3
+pool: <defcol2> 3
+pool: <def> 1
+pool: <ddl> 1
+
+# DML pools
+pool: <num> 3
+pool: <str> 3
+pool: <bool> 1
+pool: <rowop> 1
+pool: <predop> 1
+pool: <row> 3
+pool: <rel> 3
+pool: <pred> 3
+pool: <selcol> 3
+pool: <tab> 3
+pool: <where> 1
+pool: <sel> 3
+pool: <dml> 1
+
+# properties
+property: <ddl>.get_type() == 'CREATE' 
+property: <dml>.get_type() == 'SELECT' 
+
+# logging
+log: POST 1 pretty(<def>)
+log: POST 1 pretty(<sel>)
+
+# actions
+<space> := <[cspace, ctab, cnewline, creturn]> 
+<space> := '/*' + <space> + '*/' 
+~<space> += <space>
+
+<name1> := <['a'..'d']> 
+<name1> := <['A'..'D']> 
+~<name1> += <name1>
+
+<name2> := <name1>
+<name2> := <name1> + '.' + <name1>
+
+<num> := <['0'..'9']> 
+<num,1> [0] != '0' -> ~<num> += <num>
+
+<type> := 'VARCHAR(' + <num> + ')' 
+<type> := 'INT' 
+<type> := 'FLOAT' 
+
+<const> := <['NOT NULL', 'UNIQUE', 'PRIMARY KEY']> 
+
+<defcol1> := <name1>
+<defcol1> := <name1> + <space> + <type>
+<defcol1> := <name1> + <space> + <type> + <space> + <const>
+
+<defcol2> := <defcol1>
+~<defcol2> += ',' + <space> + <defcol2>
+
+<def> := 'CREATE TABLE' + <space> + <name2> + <space> + '(' + <space> + <defcol2> + <space> + ')'
+# removing this guard can lead to an assertion error
+<def,1> [-1] != ';' -> ~<def> += <space> + ';' 
+
+<str> := cquote + <name1> + cquote  
+
+<row> := <name2>
+<row> := <num>
+<row> := <str>
+
+<bool> := <['TRUE', 'FALSE', 'UNKNOWN']> 
+
+<rowop> := '=' 
+<rowop> := '<>' 
+
+<predop> := 'AND' 
+<predop> := 'OR' 
+
+<rel> := 'IS' 
+<rel> := 'IS' + <space> + 'NOT' 
+
+<pred> := <row> + <space> + <rowop> + <space> + <row>
+<pred> := <row> + <space> + <rel> + <space> + 'NULL' 
+<pred> = <pred> + <space> + <rel> + <space> + <bool>
+<pred> = <pred> + <space> + <predop> + <space> + <pred>
+<pred> = 'NOT' + <space> + <pred>
+<pred> = '(' + <space> + <pred> + <space> + ')' 
+
+<where> := ''
+<where> := 'WHERE' + <space> + <pred>
+
+<selcol> := '*' 
+<selcol> := <name2>
+<selcol,1> != '*' and <selcol,2> != '*' -> ~<selcol> += ',' + <space> + <selcol>
+
+<tab> := <name2>
+# removing this guard can lead to an assertion error
+<sel,1> [-1] != ';' -> <tab> := '(' + <space> + <sel> + <space> + ')' 
+
+<sel> := 'SELECT' + <space> + <selcol> + <space> + 'FROM' + <space> + <tab> + <space> + <where>
+# removing this guard can lead to an assertion error
+<sel,1> [-1] != ';' -> ~<sel> += <space> + ';' 
+
+# after action, check that parse tree equals statement string
+<ddl> := sqlparse.parse(<def>)[0] => compat.u(<ddl,1>) == <def,1>
+
+# after action, check that parse tree equals statement string
+<dml> := sqlparse.parse(<sel>)[0] => compat.u(<dml,1>) == <sel,1>

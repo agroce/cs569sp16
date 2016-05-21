@@ -38,6 +38,7 @@ def make_config(pargs, parser):
      nt_config = Config(*arg_list)
      return nt_config
 
+
 def saveFaults(sut,nbugs, Config, faults_file):
     print "Found A Bug! number of bugs:", nbugs
     print sut.failure()
@@ -56,6 +57,7 @@ def saveFaults(sut,nbugs, Config, faults_file):
 def mutate(test, r, nbugs):
     tcopy = list(test)
     i = r.randint(0,len(tcopy))
+    sut.replay(tcopy[:i])
     e = sut.randomEnabled(r)
     isGood = sut.safely(e)
     if not isGood:
@@ -71,11 +73,10 @@ def mutate(test, r, nbugs):
                 tcopy = test[:i]+trest
     return tcopy
 
+
+
 def main():
 
-    '''
-    Phase one: BFS
-    '''
     parsed_args, parser = parse_args()
     Config = make_config(parsed_args, parser)
 
@@ -84,111 +85,76 @@ def main():
     sut.silenceCoverage()
     sut.restart()
 
-    R = random.Random(Config.seed)
+    R = random.Random()
+    R.seed(Config.seed)
 
-    state_queue = [sut.state()]
-    visited = []
+    start = time.time()
 
-    max_depth_time = 30
-
-    d = 1
     ntests = 0
     nbugs = 0
-    faults_file = "failure"
     coverageCount = {}
-    leastCovered = None
+    faults_file = "failure"
+
     population = []
-    start = time.time()
-    elapsed = time.time() - start
 
-    while d <= Config.depth:
-        print "Depth", d, "Queue size", len(state_queue), "Visited set", len(visited)
-        w = 1
-        len_queue = len(state_queue)
+    population_time = Config.timeout / 3
+
+    while time.time() - start < population_time:
+
         ntests += 1
+        sut.restart()
+        for d in xrange(0, Config.depth):
+            act = sut.randomEnabled(R)
 
-        frontier = []
-        depth_start = time.time()
-        random.shuffle(state_queue)
-        storedTest = False
-        for s in state_queue:
-            sut.backtrack(s)
-            for a in sut.enabled():
-                depth_time = time.time() - depth_start
+            isGood = sut.safely(act)
+            elapsed = time.time() - start
+            population.append((list(sut.test()), set(sut.currStatements())))
 
-                if depth_time >= max_depth_time:
-                    break
+            if Config.running:
+                if sut.newBranches() != set([]):
+                    print "ACTION:", act[0]
+                    for b in sut.newBranches():
+                        print time.time()-start, len(sut.allBranches()), "New branch", b
+                if sut.newStatements() != set([]):
+                    print "ACTION:", act[0]
+                    for s in sut.newStatements():
+                        print time.time()-start, len(sut.allStatements()),"New statement",s
 
-                isGood = sut.safely(a)
-                elapsed = time.time() - start
+            if not isGood:
+                nbugs += 1
+                saveFaults(sut, nbugs, Config, faults_file)
+                sut.restart()
 
-                if not isGood:
-                    nbugs += 1
-                    saveFaults(sut, nbugs, Config, faults_file)
-                    sut.restart()
-                else:
-                    if len(sut.newStatements()) > 0:
-                        frontier.insert(0, sut.state())
-                        storedTest = True
-                    if (not storedTest) and (leastCovered != None) and (leastCovered in sut.currStatements()):
-                        frontier.insert(0, sut.state())
-                        storedTest = True
-
-                    if Config.running:
-                        if sut.newBranches() != set([]):
-                            print "Action:", a[0]
-                            for b in sut.newBranches():
-                                print elapsed, len(sut.allBranches()), "New branch", b
-                        if sut.newStatements() != set([]):
-                            print "Action:", a[0]
-                            for s in sut.newStatements():
-                                print elapsed, len(sut.allStatements()), "New statement", s
-
-                        s_next = sut.state()
-
-                        if s_next not in visited:
-                            visited.append(s_next)
-                            frontier.append(s_next)
-
-                if elapsed >= Config.timeout:
-                    break
-
-            if depth_time >= max_depth_time:
-                break
-            if elapsed >= Config.timeout:
-                break
-            if w <= Config.width:
-                w += 1
-            else:
+            if elapsed >= Config.timeout / 3:
+                print "Stopping Test Due To Timeout, Terminated at Length", len(sut.test())
+                print time.time()-start, "TOTAL RUNTIME"
+                print ntests, "EXECUTED"
                 break
 
-
-            population.append((list(sut.test()), set(sut.currBranches())));
-
-
-        state_queue = frontier
-
+    mutate_start = time.time()
+    while time.time() - mutate_start < Config.timeout - population_time:
         sortPop = sorted(population,key = lambda x: len(x[1]),reverse=True)
-        (t,b) = R.choice(population)
+        (t,s) = R.choice(population)
         m = mutate(t, R, nbugs)
-        population.append((m, sut.currBranches()))
+        elapsed = time.time() - mutate_start
+        population.append((m, sut.currStatements()))
 
+        if Config.running:
+            if sut.newBranches() != set([]):
+                print "ACTION:", act[0]
+                for b in sut.newBranches():
+                    print time.time()-start, len(sut.allBranches()), "New branch", b
+            if sut.newStatements() != set([]):
+                print "ACTION:", act[0]
+                for s in sut.newStatements():
+                    print time.time()-start, len(sut.allStatements()),"New statement",s
 
-        if elapsed >= Config.timeout:
+        if elapsed >= Config.timeout / 3:
             print "Stopping Test Due To Timeout, Terminated at Length", len(sut.test())
             print time.time()-start, "TOTAL RUNTIME"
             print ntests, "EXECUTED"
             break
 
-        for s in sut.currStatements():
-            if s not in coverageCount:
-                coverageCount[s] = 0
-            coverageCount[s] += 1
-        sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-        if len(sortedCov) != 0:
-            leastCovered = sortedCov[0]
-
-        d += 1
 
     if Config.coverage == 1:
         sut.internalReport()

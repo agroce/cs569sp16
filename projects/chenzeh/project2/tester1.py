@@ -2,7 +2,7 @@ import sut
 import random
 import sys
 import time
-
+#The input variables
 timeout = int(sys.argv[1])
 SEED = int(sys.argv[2])
 DEPTH = int(sys.argv[3])
@@ -54,7 +54,7 @@ while S != []  :
                 ok = sut.safely((name, guard, act))
                 propok = sut.check()
 
-                
+                #The judgement statement
                 if not ok or not propok:
                     
                     bugs += 1
@@ -84,7 +84,7 @@ while S != []  :
                     else:
                         new = False
 
-
+#calculate the coverage in that specific case
 
 if (COVERAGE_REPORT):
     sut.internalReport()
