@@ -18,7 +18,6 @@ running = int(sys.argv[7]) #print the branch
 random.seed(seed)
 
 GOAL_DEPTH = depth
-#BUDGET = 5.0
 
 LAYER_BUDGET = width#BUDGET/GOAL_DEPTH
 
@@ -47,8 +46,7 @@ len_dep = int(GOAL_DEPTH * s_dep);
 selected_d = [random.randint(0, GOAL_DEPTH) for i in range(1, len_dep)]
 
 fix_blocks = 10;
-blk_sparse = 3;
-lg_blk_sparse = 5;
+
 def binary_srand(len, s_level, min_num): # minimum number: min_num, sparseity level: s_level
 
     arr = [0]*len;
@@ -65,64 +63,24 @@ def binary_srand(len, s_level, min_num): # minimum number: min_num, sparseity le
 
     return arr # return binary arry, in which the non-zero elements corresponding to the state need to take action
 
-def block_rand_ids( n ):
+def block_rand_ids( n, blk_sparse ):
     block_sz = 0;
     ref_tb = [0]*n; #reference table
-    if n>= 30:
+    if n>= 20:
         block_sz = int(n/fix_blocks)
 
         a= range(fix_blocks);
         random.shuffle(a);
-
-        # when block size is not big enough >30 < 80
-        block_ids = a[0:lg_blk_sparse]
-        if n>= 99:
-            block_ids = a[0:blk_sparse]
+        block_ids = a[0:blk_sparse]
 
         for i in  block_ids:
             start = i*block_sz
             end = (i+1)*block_sz
             ref_tb[start:end] = binary_srand(end - start, 0.5, 2);
-
-    else:# when n< 30
+    else:# when n< 20
         ref_tb = binary_srand(n,0.5, 1);
 
     return ref_tb
-
-block_num = 20; # temporally set the block_Num = 20
-def block_shuffle(actions):
-    len_ = len(actions)
-    block_sz = int(len_/block_num)
-    last_blsz = len_ - block_sz *(len_-1);
-
-    a = range(block_num);
-    random.shuffle(a);
-    newActions = actions;
-
-    cnt = 0;
-    for i in a:
-        cnt += 1;
-        if cnt == block_num:
-            break;
-
-        start = i*block_sz;
-        end = (i+1)*block_sz;
-
-        nstart = (cnt-1)*block_sz;
-        nend = cnt*block_sz;
-
-        newActions[nstart:nend] = actions[start:end]
-
-
-    start  = a[block_num-1]*block_sz;
-    end = start + last_blsz;
-    nstart = (cnt - 1) * block_sz;
-    nend = nstart + last_blsz
-    newActions[nstart:nend] = actions[start:end]
-
-    return newActions
-
-
 
 def about_branch(running, action):
     if running:
@@ -140,7 +98,10 @@ def about_branch(running, action):
         else:
             sawNew = False
 
+
+
 break_count = 0;
+fact_cnt =0;
 while d <= GOAL_DEPTH:
     elapsedALL = time.time() - startALL
     if elapsedALL >= timeout:
@@ -154,41 +115,25 @@ while d <= GOAL_DEPTH:
 
     ref_tb =[1]
     if len(queue)> 1:
-        ref_tb = block_rand_ids(len(queue))
+        ref_tb = block_rand_ids(len(queue), 3)
     for s in queue:
         elapsedALL = time.time() - startALL
         if elapsedALL >= timeout:
             break
 
         scount += 1
-
         sut.backtrack(s)
         allEnabled = sut.enabled()
-        #if len(allEnabled)<40:
         random.shuffle(allEnabled)
-        #else:
-        #    allEnabled = block_shuffle(allEnabled)
 
-        # do a nest inside allEnabled
-
-
-
-
-       # ref_tb_act = [1]
-       # local_actcnt = 0;
-        #if len(allEnabled)>1:
-        #    ref_tb_act = block_rand_ids(len(allEnabled))
-       # print "len of allenabled", len(allEnabled )
-        local_cnt =0;
         for a in allEnabled:
-            #if local_cnt >20 and local_cnt >= 0.4*len(allEnabled):
-            #    continue;
+            fact_cnt += 1
             if ref_tb[scount - 1] == 0:
-                # break_count += 1
+                break_count += 1
                 break
+
             elapsed = time.time() - startLayer
             if elapsed >= LAYER_BUDGET:
-                #print 'breaking .....'
                 break
 
             elapsedALL = time.time() - startALL
