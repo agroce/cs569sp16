@@ -17,10 +17,10 @@ sut = sut.sut()
 BUDGET = int(sys.argv[1])
 SEED = int(sys.argv[2])
 depth = int(sys.argv[3])
-width = int(sys.argv[3])
-faults = int(sys.argv[4])
-coverage_report = int(sys.argv[5])
-running = int(sys.argv[6])
+width = int(sys.argv[4])
+faults = int(sys.argv[5])
+coverage_report = int(sys.argv[6])
+running = int(sys.argv[7])
 
 bugs = 0
 
@@ -51,6 +51,14 @@ while time.time()-start < BUDGET:
         act = sut.randomEnabled(rgen)
 
         ok = sut.safely(act)
+        elapsed = time.time() - start
+
+        if(running == 1):
+            if len(sut.newBranches()) > 0:
+                print "Action", act[0]
+                for b in sut.newBranches():
+                    print elapsed, len(sut.allBranches()), "New branch", b
+
         if len(sut.newStatements()) > 0:
             savedTest = sut.state()
             storedTest = True
@@ -62,21 +70,18 @@ while time.time()-start < BUDGET:
             storedTest = True
         actCount += 1
 
-        if(faults == 1):
-            if not ok:
-                bugs += 1
-                print "FOUND A FAILURE"
-                #sut.prettyPrintTest(sut.test())
-                print sut.failure()
-                print "REDUCING"
-                #R = sut.reduce(sut.test(),sut.fails, True, True)
-                #sut.prettyPrintTest(R)
-                print sut.failure()
+        if not ok:
+            bugs += 1
+            print "FOUND A FAILURE"
+            #sut.prettyPrintTest(sut.test())
+            print sut.failure()
+            print "REDUCING"
+            R = sut.reduce(sut.test(),sut.fails, True, True)
+            #sut.prettyPrintTest(R)
+            print sut.failure()
+            if(faults == 1):
                 filename = "failure" +  str(bugs) + ".test"
                 sut.saveTest(sut.test(), filename)
-
-                break
-
     savedTestState = sut.state()
     for s in sut.currStatements():
         if s not in coverageCount:
@@ -102,11 +107,11 @@ while time.time()-start < BUDGET:
             # back track the statement below certain coverage
             sut.backtrack(sut.state())
 
+sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
+for s in sortedCov:
+    print s, coverageCount[s]
 if(coverage_report == 1):
     sut.internalReport()
-    sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-    for s in sortedCov:
-        print s, coverageCount[s]
 
 print bugs,"FAILED"
 print "TOTAL ACTIONS",actCount

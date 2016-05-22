@@ -304,7 +304,7 @@ def parse_options(argv):
         help="produce a final coverage report")
     parser.add_option('-r', '--running', action="store_true", dest="running", default=False, 
         help="produce running info on branch coverage")
-    parser.add_option('-p', '--progress', action="store_true", dest="progress", default=True,
+    parser.add_option('-p', '--progress', action="store_true", dest="progress", default=False,
         help="provide a progress bar on the console while running")
     parser.add_option('--nuke', action="store_true", dest="nuke")
     (opts, args) = parser.parse_args()

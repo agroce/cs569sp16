@@ -7,7 +7,7 @@ from optparse import OptionParser
 from itertools import compress
 
 def main():
-    global sut, coverageCount, nbugs, ntest
+    global sut, coverageCount, nbugs, ntest, start
     sut = sut.sut()
     rgen = random.Random(opts.seed)
     coverageCount = {}
@@ -193,7 +193,7 @@ def parse_options(argv):
         help="produce a final coverage report")
     parser.add_option('-r', '--running', action="store_true", dest="running", default=False, 
         help="produce running info on branch coverage")
-    parser.add_option('-p', '--progress', action="store_true", dest="progress", default=True,
+    parser.add_option('-p', '--progress', action="store_true", dest="progress", default=False,
         help="provide a progress bar on the console while running")
     (opts, args) = parser.parse_args()
 

@@ -6,6 +6,21 @@ import sut
 import sys
 import time
 
+timeout  = int(sys.argv[1])
+seed     = int(sys.argv[2])
+depth    = int(sys.argv[3])
+width    = int(sys.argv[4])
+faults   = int(sys.argv[5])
+coverage = int(sys.argv[6])
+running  = int(sys.argv[7])
+
+fid   = 0
+eseqs = []
+nseqs = [[]]
+sut   = sut.sut()
+rgen  = random.Random()
+rgen.seed(seed)
+
 def argFaults(fid, seq, t):
 	name = 'failure' + `fid` + '.test'
 	info = "time: " + str(t) + " len: " + str(len(seq)) + "\n"
@@ -43,10 +58,9 @@ def equal(seq, seqs):
 			return True
 	return False
 
-def filters(seq, ok, propok, classTable):
-	lessdepth = len(seq) <= depth
-	notmany   = max(classTable.values()) <= width
-	return (ok and propok and lessdepth and notmany)
+def filters(ok, propok, classTable):
+	balanceok = max(classTable.values()) <= width
+	return (ok and propok and balanceok)
 
 def genAndExeSeq(n, seq, eseqs, nseqs):
 	ok = False
@@ -85,21 +99,6 @@ def printSeqs(seqs):
 			print a[0]
 		print ""
 
-timeout  = int(sys.argv[1])
-seed     = int(sys.argv[2])
-depth    = int(sys.argv[3])
-width    = int(sys.argv[4])
-faults   = int(sys.argv[5])
-coverage = int(sys.argv[6])
-running  = int(sys.argv[7])
-
-fid   = 0
-eseqs = []
-nseqs = [[]]
-sut   = sut.sut()
-rgen  = random.Random()
-rgen.seed(seed)
-
 start = time.time()
 while time.time() - start < timeout:
 	seq = rgen.choice(nseqs)[:]
@@ -114,7 +113,7 @@ while time.time() - start < timeout:
 	if timeover:
 		break
 
-	if filters(seq, ok, propok, classTable):
+	if filters(ok, propok, classTable):
 		nseqs.append(seq)
 
 if coverage:
