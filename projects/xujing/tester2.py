@@ -40,18 +40,19 @@ def randomAction():
 
 
 def main():
-    global start,config,sut,R,nonerror,error,file_name,num,actCount
+    global start,sut,R,noerror,error,actCount
     actCount = 0
-    num = 0
-    sut = sut.sut()
-    R = random.Random(seed)
     start = time.time()
-    states = [sut.state()]
-    nonerror = []
+    noerror = []
     error = []
     newseq = []
+    belowMean = set([])
     ntest = 0
-    
+    coverageCount = {}
+    sut = sut.sut()
+    R = random.Random(seed)
+    states = [sut.state()]
+    print "STARTING PHASE 1"
     while(time.time() < start + timeout):
         for st in states:
             ntest += 1
@@ -66,9 +67,10 @@ def main():
                 ok = randomAction()
                 if not ok:
                     break
-                if(not ((newseq in error) or (newseq in nonerror))):
+                if(not ((newseq in error) or (newseq in noerror))):
                     states.insert(ntest-1,sut.state())
-                    nonerror.append(sut.currStatements())
+                    noerror.append(sut.currStatements())
+
 
     if not error ==[]:
         print "SHOW ERROR SEQUENCE"
@@ -79,13 +81,13 @@ def main():
     else:
         print "Data in noerror sequence"
 
-
-
     if coverage:
         sut.internalReport()
 
+
     print "TOTAL ACTIONS",actCount
     print "TOTAL RUNTIME",time.time()-start
+
 if __name__ == '__main__':
     main()
 
