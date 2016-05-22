@@ -51,6 +51,14 @@ while time.time()-start < BUDGET:
         act = sut.randomEnabled(rgen)
 
         ok = sut.safely(act)
+        elapsed = time.time() - start
+
+        if(running == 1):
+            if len(sut.newBranches()) > 0:
+                print "Action", act[0]
+                for b in sut.newBranches():
+                    print elapsed, len(sut.allBranches()), "New branch", b
+
         if len(sut.newStatements()) > 0:
             savedTest = sut.state()
             storedTest = True
