@@ -16,6 +16,8 @@ coverage= int(sys.argv[6]) #print internal report
 running = int(sys.argv[7]) #print the branch
 
 random.seed(seed)
+rgen = random.Random()
+rgen.seed(seed)
 
 GOAL_DEPTH = depth
 
@@ -102,9 +104,10 @@ def about_branch(running, action):
 
 break_count = 0;
 fact_cnt =0;
+timeout0 = timeout*0.8
 while d <= GOAL_DEPTH:
     elapsedALL = time.time() - startALL
-    if elapsedALL >= timeout:
+    if elapsedALL >= timeout0:
         break
 
     print "DEPTH",d,"QUEUE SIZE",len(queue),"VISITED SET",len(visited)
@@ -118,7 +121,7 @@ while d <= GOAL_DEPTH:
         ref_tb = block_rand_ids(len(queue), 3)
     for s in queue:
         elapsedALL = time.time() - startALL
-        if elapsedALL >= timeout:
+        if elapsedALL >= timeout0:
             break
 
         scount += 1
@@ -137,7 +140,7 @@ while d <= GOAL_DEPTH:
                 break
 
             elapsedALL = time.time() - startALL
-            if elapsedALL >= timeout:
+            if elapsedALL >= timeout0:
                 break
 
             sut.backtrack(s)
@@ -169,6 +172,34 @@ while d <= GOAL_DEPTH:
         LAYER_BUDGET = LAYER_BUDGET+slack/(GOAL_DEPTH-d)
         print "NEW LAYER BUDGET",LAYER_BUDGET
     queue = frontier
+
+while (time.time() - startALL) <= (timeout):
+    sut.restart()
+    cnt=1
+    for s in xrange(0,depth):
+        act = sut.randomEnabled(rgen)
+        ok = sut.safely(act)
+        cur_state=sut.state()
+        actCount+=1
+        cnt += 1
+        about_branch(running,act)  #print the branch
+        if cur_state not in visited:
+            visited.append(cur_state)
+        if not ok:
+            tuplelist.append((cur_state,cnt))
+            print "Note:: There is a Failure"
+            print "Start Reducing"
+            Rdc = sut.reduce(sut.test(),sut.fails, True, True) # find a bug, min size sequence
+            sut.prettyPrintTest(Rdc)
+            print sut.failure()
+            if faults:
+                bugs+=1
+                failname='failure'+str(bugs)+'.test'
+                for i in range(len(Rdc)):
+                    with open(failname,'w') as f:
+                        f.write('\n'+'This is a bug'+str(bugs)+'\n')
+                        f.write(str(sut.failure())+'\n')
+                        f.write(str(Rdc)+'\n')
 
 if (coverage):
     sut.internalReport()
