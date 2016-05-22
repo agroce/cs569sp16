@@ -1,0 +1,220 @@
+alghamha alghamha.avl.120s.42.tout RUNNING: 212 BRANCHES: 212 STATEMENTS: 158  
+alizades alizades.avl.120s.42.tout RUNNING: 92 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS CRASHED! 
+almadhoe almadhoe.avl.120s.42.tout RUNNING: 215 BRANCHES: 219 STATEMENTS: 164  
+bangashm bangashm.avl.120s.42.tout RUNNING: 209 BRANCHES: 209 STATEMENTS: 156  
+changti changti.avl.120s.42.tout RUNNING: 224 BRANCHES: 224 STATEMENTS: 167  
+chenk4 chenk4.avl.120s.42.tout RUNNING: 204 BRANCHES: 204 STATEMENTS: 153  
+guohe guohe.avl.120s.42.tout RUNNING: 209 BRANCHES: 209 STATEMENTS: 156  
+guoru guoru.avl.120s.42.tout RUNNING: 221 BRANCHES: 221 STATEMENTS: 165  
+hanxia hanxia.avl.120s.42.tout RUNNING: 209 BRANCHES: 209 STATEMENTS: 156  
+hexu hexu.avl.120s.42.tout RUNNING: 204 BRANCHES: 219 STATEMENTS: 164  
+hoangmin hoangmin.avl.120s.42.tout RUNNING: 215 BRANCHES: 215 STATEMENTS: 160  
+kaneokak kaneokak.avl.120s.42.tout RUNNING: 221 BRANCHES: 221 STATEMENTS: 165  
+lasharih lasharih.avl.120s.42.tout RUNNING: 215 BRANCHES: 215 STATEMENTS: 160  
+limsuwap limsuwap.avl.120s.42.tout RUNNING: 222 BRANCHES: 222 STATEMENTS: 166  
+lintzu lintzu.avl.120s.42.tout RUNNING: 215 BRANCHES: 215 STATEMENTS: 160  
+Linwey Linwey.avl.120s.42.tout RUNNING: branch BRANCHES: 215 STATEMENTS: 160  
+liuh2 liuh2.avl.120s.42.tout RUNNING: 0 BRANCHES: 215 STATEMENTS: 160  
+liuw3 liuw3.avl.120s.42.tout RUNNING: 215 BRANCHES: 215 STATEMENTS: 160  
+lix6 lix6.avl.120s.42.tout RUNNING: 209 BRANCHES: 209 STATEMENTS: 156  
+nelsonni nelsonni.avl.120s.42.tout RUNNING: 209 BRANCHES: 209 STATEMENTS: 156  
+panju panju.avl.120s.42.tout RUNNING: 202 BRANCHES: 202 STATEMENTS: 152  
+pengxin pengxin.avl.120s.42.tout RUNNING: 206 BRANCHES: 206 STATEMENTS: 154  
+rayalas rayalas.avl.120s.42.tout RUNNING: 209 BRANCHES: 209 STATEMENTS: 156  
+shenyif shenyif.avl.120s.42.tout RUNNING: 212 BRANCHES: 212 STATEMENTS: 158  
+shik shik.avl.120s.42.tout RUNNING: 209 BRANCHES: 209 STATEMENTS: 156  
+tangz tangz.avl.120s.42.tout RUNNING: 209 BRANCHES: 209 STATEMENTS: 156  
+thakuro thakuro.avl.120s.42.tout RUNNING: 204 BRANCHES: 204 STATEMENTS: 153  
+tsengyu tsengyu.avl.120s.42.tout RUNNING: 0 BRANCHES: 224 STATEMENTS: 167  
+wanghao wanghao.avl.120s.42.tout RUNNING: 221 BRANCHES: 221 STATEMENTS: 165  
+wangq5 wangq5.avl.120s.42.tout RUNNING: 215 BRANCHES: 215 STATEMENTS: 160  
+wangweny wangweny.avl.120s.42.tout RUNNING: 224 BRANCHES: 224 STATEMENTS: 167  
+wangyans wangyans.avl.120s.42.tout RUNNING: 209 BRANCHES: 209 STATEMENTS: 156  
+wangyi wangyi.avl.120s.42.tout RUNNING: 224 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+wutso wutso.avl.120s.42.tout RUNNING: 215 BRANCHES: 215 STATEMENTS: 160  
+xuhui xuhui.avl.120s.42.tout RUNNING: 0 BRANCHES: NOBRANCHES STATEMENTS: NOSTATEMENTS TIMEOUT! 
+xujing xujing.avl.120s.42.tout RUNNING: 206 BRANCHES: 206 STATEMENTS: 154  
+yangyic yangyic.avl.120s.42.tout RUNNING: 209 BRANCHES: 209 STATEMENTS: 156  
+yub yub.avl.120s.42.tout RUNNING: 215 BRANCHES: 215 STATEMENTS: 160  
+zhangcha zhangcha.avl.120s.42.tout RUNNING: 200 BRANCHES: 200 STATEMENTS: 151  
+zhangh7 zhangh7.avl.120s.42.tout RUNNING: 204 BRANCHES: 219 STATEMENTS: 164  
+zhaozixu zhaozixu.avl.120s.42.tout RUNNING: 224 BRANCHES: 224 STATEMENTS: 167  
+zhengxu zhengxu.avl.120s.42.tout RUNNING: 227 BRANCHES: 227 STATEMENTS: 169  
+zhouxuh zhouxuh.avl.120s.42.tout RUNNING: 221 BRANCHES: 221 STATEMENTS: 165  
+zhouzh zhouzh.avl.120s.42.tout RUNNING: 206 BRANCHES: 221 STATEMENTS: 165  
+
+
+SORTED BY BEST BRANCH COVERAGE RUNNING TOTAL
+Linwey.avl.120s.42.tout branch
+zhengxu.avl.120s.42.tout 227
+changti.avl.120s.42.tout 224
+wangweny.avl.120s.42.tout 224
+zhaozixu.avl.120s.42.tout 224
+limsuwap.avl.120s.42.tout 222
+guoru.avl.120s.42.tout 221
+kaneokak.avl.120s.42.tout 221
+wanghao.avl.120s.42.tout 221
+zhouxuh.avl.120s.42.tout 221
+almadhoe.avl.120s.42.tout 215
+hoangmin.avl.120s.42.tout 215
+lasharih.avl.120s.42.tout 215
+lintzu.avl.120s.42.tout 215
+liuw3.avl.120s.42.tout 215
+wangq5.avl.120s.42.tout 215
+wutso.avl.120s.42.tout 215
+yub.avl.120s.42.tout 215
+alghamha.avl.120s.42.tout 212
+shenyif.avl.120s.42.tout 212
+bangashm.avl.120s.42.tout 209
+guohe.avl.120s.42.tout 209
+hanxia.avl.120s.42.tout 209
+lix6.avl.120s.42.tout 209
+nelsonni.avl.120s.42.tout 209
+rayalas.avl.120s.42.tout 209
+shik.avl.120s.42.tout 209
+tangz.avl.120s.42.tout 209
+wangyans.avl.120s.42.tout 209
+yangyic.avl.120s.42.tout 209
+pengxin.avl.120s.42.tout 206
+xujing.avl.120s.42.tout 206
+zhouzh.avl.120s.42.tout 206
+chenk4.avl.120s.42.tout 204
+hexu.avl.120s.42.tout 204
+thakuro.avl.120s.42.tout 204
+zhangh7.avl.120s.42.tout 204
+panju.avl.120s.42.tout 202
+zhangcha.avl.120s.42.tout 200
+liuh2.avl.120s.42.tout 0
+tsengyu.avl.120s.42.tout 0
+
+
+SORTED BY BEST TOTAL STATEMENT COVERAGE
+zhengxu.avl.120s.42.tout 169
+changti.avl.120s.42.tout 167
+tsengyu.avl.120s.42.tout 167
+wangweny.avl.120s.42.tout 167
+zhaozixu.avl.120s.42.tout 167
+limsuwap.avl.120s.42.tout 166
+guoru.avl.120s.42.tout 165
+kaneokak.avl.120s.42.tout 165
+wanghao.avl.120s.42.tout 165
+zhouxuh.avl.120s.42.tout 165
+zhouzh.avl.120s.42.tout 165
+almadhoe.avl.120s.42.tout 164
+hexu.avl.120s.42.tout 164
+zhangh7.avl.120s.42.tout 164
+hoangmin.avl.120s.42.tout 160
+lasharih.avl.120s.42.tout 160
+lintzu.avl.120s.42.tout 160
+Linwey.avl.120s.42.tout 160
+liuh2.avl.120s.42.tout 160
+liuw3.avl.120s.42.tout 160
+wangq5.avl.120s.42.tout 160
+wutso.avl.120s.42.tout 160
+yub.avl.120s.42.tout 160
+alghamha.avl.120s.42.tout 158
+shenyif.avl.120s.42.tout 158
+bangashm.avl.120s.42.tout 156
+guohe.avl.120s.42.tout 156
+hanxia.avl.120s.42.tout 156
+lix6.avl.120s.42.tout 156
+nelsonni.avl.120s.42.tout 156
+rayalas.avl.120s.42.tout 156
+shik.avl.120s.42.tout 156
+tangz.avl.120s.42.tout 156
+wangyans.avl.120s.42.tout 156
+yangyic.avl.120s.42.tout 156
+pengxin.avl.120s.42.tout 154
+xujing.avl.120s.42.tout 154
+chenk4.avl.120s.42.tout 153
+thakuro.avl.120s.42.tout 153
+panju.avl.120s.42.tout 152
+zhangcha.avl.120s.42.tout 151
+
+
+SORTED BY EITHER BRANCH COVERAGE METHOD
+zhengxu.avl.120s.42.tout 227
+changti.avl.120s.42.tout 224
+tsengyu.avl.120s.42.tout 224
+wangweny.avl.120s.42.tout 224
+zhaozixu.avl.120s.42.tout 224
+limsuwap.avl.120s.42.tout 222
+guoru.avl.120s.42.tout 221
+kaneokak.avl.120s.42.tout 221
+wanghao.avl.120s.42.tout 221
+zhouxuh.avl.120s.42.tout 221
+zhouzh.avl.120s.42.tout 221
+almadhoe.avl.120s.42.tout 219
+hexu.avl.120s.42.tout 219
+zhangh7.avl.120s.42.tout 219
+hoangmin.avl.120s.42.tout 215
+lasharih.avl.120s.42.tout 215
+lintzu.avl.120s.42.tout 215
+Linwey.avl.120s.42.tout 215
+liuh2.avl.120s.42.tout 215
+liuw3.avl.120s.42.tout 215
+wangq5.avl.120s.42.tout 215
+wutso.avl.120s.42.tout 215
+yub.avl.120s.42.tout 215
+alghamha.avl.120s.42.tout 212
+shenyif.avl.120s.42.tout 212
+bangashm.avl.120s.42.tout 209
+guohe.avl.120s.42.tout 209
+hanxia.avl.120s.42.tout 209
+lix6.avl.120s.42.tout 209
+nelsonni.avl.120s.42.tout 209
+rayalas.avl.120s.42.tout 209
+shik.avl.120s.42.tout 209
+tangz.avl.120s.42.tout 209
+wangyans.avl.120s.42.tout 209
+yangyic.avl.120s.42.tout 209
+pengxin.avl.120s.42.tout 206
+xujing.avl.120s.42.tout 206
+chenk4.avl.120s.42.tout 204
+thakuro.avl.120s.42.tout 204
+panju.avl.120s.42.tout 202
+zhangcha.avl.120s.42.tout 200
+
+
+MEAN OVER ALL RUNS
+zhengxu 227.0 1 0.0
+zhaozixu 224.0 1 0.0
+tsengyu 224.0 1 0.0
+changti 224.0 1 0.0
+wangweny 224.0 1 0.0
+limsuwap 222.0 1 0.0
+wanghao 221.0 1 0.0
+zhouxuh 221.0 1 0.0
+guoru 221.0 1 0.0
+kaneokak 221.0 1 0.0
+zhouzh 221.0 1 0.0
+zhangh7 219.0 1 0.0
+hexu 219.0 1 0.0
+almadhoe 219.0 1 0.0
+Linwey 215.0 1 0.0
+wangq5 215.0 1 0.0
+lintzu 215.0 1 0.0
+lasharih 215.0 1 0.0
+liuh2 215.0 1 0.0
+liuw3 215.0 1 0.0
+wutso 215.0 1 0.0
+hoangmin 215.0 1 0.0
+yub 215.0 1 0.0
+shenyif 212.0 1 0.0
+alghamha 212.0 1 0.0
+shik 209.0 1 0.0
+lix6 209.0 1 0.0
+guohe 209.0 1 0.0
+bangashm 209.0 1 0.0
+tangz 209.0 1 0.0
+nelsonni 209.0 1 0.0
+yangyic 209.0 1 0.0
+rayalas 209.0 1 0.0
+hanxia 209.0 1 0.0
+wangyans 209.0 1 0.0
+xujing 206.0 1 0.0
+pengxin 206.0 1 0.0
+thakuro 204.0 1 0.0
+chenk4 204.0 1 0.0
+panju 202.0 1 0.0
+zhangcha 200.0 1 0.0
