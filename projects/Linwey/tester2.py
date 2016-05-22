@@ -38,7 +38,7 @@ def newState():
         if RUNNING:
             if sut.newBranches() != set([]):
                 for d in sut.newBranches():
-                    print time.time() - start,len(sut.allBranches()),"New Branches",d
+                    print time.time() - start,len(sut.allBranches()),"new branch",d
         if len(sut.newStatements()) > 0:
             collected_test = sut.state()
             storedTest = True
@@ -86,6 +86,6 @@ if COVERAGE:
     sut.internalReport()
 
 print bugfound,"FAILED FOUND"
-print len(sut.allBranches()),"New Branches"
+print len(sut.allBranches()),"branch"
 print "overall actions",action_cnt
 print "overall runtime",time.time()-start
