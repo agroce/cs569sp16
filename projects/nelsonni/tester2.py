@@ -46,7 +46,7 @@ def updateCov():
         coverageCount[s] += 1
 
 def captureFault():
-    'Print failure state and reduction'
+    'Print failure state and reduction, save to file'
     print "FAILURE LOCATED:"
     print sut.failure()
     print "REDUCING FAILURE:"
@@ -54,10 +54,8 @@ def captureFault():
     sut.prettyPrintTest(R)
     print sut.failure()
     # output to file for each fault
-    fname = 'failure%d.test' % nbugs
-    fo = open(fname, "wb")
-    fo.write(sut.failure())
-    fo.close()
+    filename = 'failure%d.test' % nbugs
+    sut.saveTest(R, filename)
 
 def executeAction(act):
     'Execute action, collect coverage and faults'
