@@ -43,11 +43,7 @@ startTime = time.time()
 # Function To Save The Faults
 def	saveFaults(bug, testCase):
 	FileName = 'failure'+str(bug)+'.test'
-	file = open(FileName, 'w+')
-	for s in testCase:
-		print >> file, sut.serializable(s)
-	file.close()
-	#print sut.loadTest(FileName)
+	sut.saveTest(testCase,FileName)
 
 
 # Sequntial algorithm that will traverse over all actions and execute them one by one
