@@ -1,59 +1,52 @@
-#******** This code is based on the code writing by Pro. Alex in the class *********
+#******** This code is based on the code writing by Pro. Alex in the class and randomtester.py *********
 
-import os
 import sut
 import random
 import sys
 import time
 
-
-def mutate(test):
-    tcopy = list(test)
-    i = rgen.randint(0,len(tcopy))
-    sut.replay(tcopy[:i])
-    e = sut.randomEnabled(rgen)
-    sut.safely(e)
-    trest = [e]
-    for s in tcopy[i+1:]:
-        if s[1]():
-            trest.append(s)
-            sut.safely(s)
-    tcopy = test[:i]+trest
-    if len(sut.newCurrBranches()) != 0:
-        print "NEW BRANCHES DUE TO MUTATION:",sut.newCurrBranches()
-    return tcopy
-    
-# For run the code on the command line
 timeout = int(sys.argv[1])
-Seed = int(sys.argv[2])
+seed = int(sys.argv[2])
 depth = int(sys.argv[3])
 width = int(sys.argv[4])
 faults = int(sys.argv[5])
 coverage = int(sys.argv[6])
-running = int(sys.argv[7])
-
-rgen = random.Random()
-rgen.seed(Seed)
-
-sut = sut.sut()
-
+running = int(sys.argv[7])    
 
 actCount = 0
 bugs = 0
 no_tests = 0
-tests = []
-        
-start = time.time()
+i = 0
 
-while time.time()-start < timeout:  
+covCount = {}
+leastCov = None
+savedTest = None
+
+sut = sut.sut()
+
+rgen = random.Random(seed)
+
+start = time.time()
+while time.time()-start < timeout:
     for ts in xrange(0,width):
         sut.restart()
         no_tests += 1
-        for b in xrange(0,depth): 
+        if (savedTest != None) and (rgen.random() > 0.6):
+            sut.backtrack(savedTest)
+          
+        test = False    
+        for s in xrange(0,depth):
             act = sut.randomEnabled(rgen)
-            actCount += 1
             ok = sut.safely(act)
-            propok = sut.check()
+            propok = sut.check()   
+            if len(sut.newBranches()) > 0:
+                savedTest = sut.state()
+                test = True
+                
+            if (not test) and (leastCov != None) and (leastCov in sut.currBranches()):
+                savedTest = sut.state()
+                test = True
+            actCount += 1
             
             #if running=1, print elapsed time, total brach count, new branch if running=0 don't print
             if running == 1:
@@ -63,9 +56,10 @@ while time.time()-start < timeout:
                         print time.time() - start,len(sut.allBranches()),"New branch",b
             
             #if faults=1, check for bugs and store them in files, if faults=0 don't check for bugs.
-            if not ok or not propok:
-                if faults == 1:
+            if faults == 1:
+                if not ok or not propok:
                     print "FAILURE FOUND.....FAILURES ARE STORING IN FILES"
+                    i += 1
                     bugs += 1
                     fault = sut.failure()
                     saveFault = 'failure' + str(bugs) + '.test'
@@ -75,28 +69,27 @@ while time.time()-start < timeout:
 	            for t in sut.test():
 	                print >> file, sut.serializable(t)
 	            file.close()
+	            print "Number bugs found is" ,i
 	            sut.restart()
-	        
-	       
-	        #Store new branches in tests pool            
-            else:
-                if len(sut.newBranches()) != 0:
-                    tests.append((list(sut.test()), set(sut.currBranches())))
-                    
-            if rgen.random() > 0.6:    
-                m = mutate(sut.test())
-                
-            else :
-                rgen.choice(sut.test()) 
-                   
-            if (time.time() - start > timeout):
-                break                
+          
+        for s in sut.currBranches():
+            if s not in covCount:
+                covCount[s] = 0
+            covCount[s] += 1    
+            sortedCov = sorted(covCount.keys(), key=lambda x: covCount[x])
+            leastCov = sortedCov[0]
+        
+        if (time.time() - start > timeout):
+            break    
+
+#Take the name of all actions and sort them by their action count
+sortedCov = sorted(covCount.keys(), key=lambda x: covCount[x])
 
 # if coverage = 1, print internal report            
 if coverage == 1:
     sut.internalReport()
-
+    
 print "TOTAL NUMBER OF BUGS",bugs
-#print "TOTAL NUMBER OF TESTS",no_tests
-#print "TOTAL NUMBER OF ACTIONS",actCount
+print "TOTAL NUMBER OF TESTS",no_tests
+print "TOTAL NUMBER OF ACTIONS",actCount
 print "TOTAL NUMBER OF RUNTIME",time.time()-start
