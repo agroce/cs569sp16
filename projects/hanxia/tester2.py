@@ -46,17 +46,15 @@ def check_action():
         sut.prettyPrintTest(test)
         print(sut.failure())
         if config.fault:
-            f = open((file_name + str(num) + ".test"),"w")
-            f.writelines(str(sut.failure())) 
-            f.writelines('\nReduced test has ' + str(len(test)) + ' steps')
-            f.close()
+            f = file_name + str(num) + ".test"
+            sut.saveTest(test,f) 
     return ok 
 
 def main():
     global start,config,sut,R,nonerror,error,file_name,num,actioncount
     actioncount = 0
     num = 0
-    file_name = 'failurefile'
+    file_name = 'failure'
     parsed_args, parser = parse_args()
     config = make_config(parsed_args, parser)
     print('Random testing using config={}'.format(config))
