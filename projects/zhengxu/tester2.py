@@ -69,12 +69,6 @@ def expandPool():
 	if len(sut.newStatements()) != 0:
 		firstPool.append((list(sut.test()), set(sut.currStatements())))
 
-def saveTests(failCount):
-	filename = 'failure' + `failCount` + '.test'
-	ft = open(filename, 'a')
-	ft.write(str(sut.failure()))
-	ft.close()
-
 sut = sut.sut()
 
 def main():
@@ -112,11 +106,12 @@ def main():
 
 			if not ok:
 				failCount += 1
-				if config.faults:
-					saveTests(failCount)
 				print "FOUND A FAILURE"
 				R = sut.reduce(sut.test(),sut.fails, True, True)
 				sut.prettyPrintTest(R)
+				if config.faults:
+					filename = 'failure' + `failCount` + '.test'
+					sut.saveTest(R,filename)
 				print sut.failure()
 				sut.restart()
 				break
@@ -151,11 +146,12 @@ def main():
 
 			if not ok:
 				failCount += 1
-				if config.faults:
-					saveTests(failCount)
 				print "FOUND A FAILURE"
 				R = sut.reduce(sut.test(),sut.fails, True, True)
 				sut.prettyPrintTest(R)
+				if config.faults:
+					filename = 'failure' + `failCount` + '.test'
+					sut.saveTest(R,filename)
 				print sut.failure()
 				sut.restart()
 				break
