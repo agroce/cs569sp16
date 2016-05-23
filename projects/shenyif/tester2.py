@@ -54,10 +54,11 @@ def fault_collection():
         
         print "this is fault:"+ str(sut.failure())
         fname = 'failure'+str(bugs)+'.test'
+        sut.saveTest(R,fname)
         
-        with open(fname,'w+') as f:
-            f.write(str(sut.failure())+'\n')
-            f.write(str(R)+'\n')
+        # with open(fname,'w+') as f:
+        #     f.write(str(sut.failure())+'\n')
+        #     f.write(str(R)+'\n')
 
 
 MAX_DEPTH = DEPTH
@@ -102,6 +103,7 @@ while time.time()-startAll<timeout -2:
                 news = sut.newStatements()
 
                 if not ok:
+                    bugs = bugs+1
                     errors.append(sut.currStatements())
                     fault_collection()
                     
