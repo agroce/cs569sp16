@@ -56,7 +56,7 @@ start = time.time()
 elap = 0
 
 def findFail():
-    global sut,testSaving,testStored,srun,failCount,R,flag,actionsCount
+    global sut,testSaving,testStored,srun,failCount,R,flag,actionsCount,filename
     flag = 0
     if len(sut.newStatements()) > 0:
         testSaving = sut.state()
@@ -69,12 +69,14 @@ def findFail():
     actionsCount = actionsCount + 1
     if (srun == 0):
         failCount = failCount + 1
-        print "This is failure"
+        print "This is failure",failCount
         print sut.failure()
         print "Now reducing..."
         R = sut.reduce(sut.test(),sut.fails, True, True)
         sut.prettyPrintTest(R)            
         print sut.failure()
+        filename ='failure%d.test'%failCount
+        sut.saveTest(R,filename)
         flag = 1
 
 
