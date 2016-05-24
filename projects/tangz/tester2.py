@@ -94,7 +94,7 @@ def main():
                      failCount+=1
                      if config.faults == 1:
                              f = open("failure" + str(failCount) + ".test", "w")
-                             print >> f, sut.failure()
+                             t.saveTest(t.test(),f) 
                      break      
               
               if config.running:
