@@ -91,9 +91,9 @@ def main():
                         sut.prettyPrintTest(r)
                         print(sut.failure())
                         if config.fault:
-                            f = open((fail_name + str(bug) + ".test"),"w")
-                            f.writelines(str(sut.failure())+ "\n") 
-                            f.close()
+                            filename = 'failure%d.test' % bug
+                            sut.saveTest(r, filename) 
+                            
                         ErrorSeq.append(sut.currStatements())
 
                     newSeq = sut.newStatements()
