@@ -140,8 +140,7 @@ def main():
                 if not isGood:
                     failures(sut, bugs, Config, faults_file)
                     if Config.faults == 1:
-                        f = open(faults_file, "w")
-                        print >> f, sut.failure()
+                        sut.saveTest(R, faults_file + str(bugs) + ".test")
                         sut.restart()
 
                 if len(sut.newStatements()) > 0:
