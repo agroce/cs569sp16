@@ -65,7 +65,7 @@ while time.time()-start < timeout:
                     saveFault = 'failure' + str(bugs) + '.test' 
                     sut.saveTest(sut.test(), saveFault)
                     print "Number bugs found is" ,i
-	            sut.restart()
+                    sut.restart()
 	            
                 """     
                     saveFault = 'failure' + str(bugs) + '.test'
