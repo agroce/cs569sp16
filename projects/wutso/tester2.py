@@ -6,7 +6,6 @@ import time
 
 def notOK():
     global bugs, sut
-    print "============FOUND=============="
     bugs += 1
     print "FOUND A FAILURE"
     print sut.failure()
@@ -18,7 +17,6 @@ def notOK():
     # save test
     name = "failure" + str(bugs) + ".test"
     f    = sut.test()
-    print "============SAVE=============="
     sut.saveTest(f, name)
 
 
