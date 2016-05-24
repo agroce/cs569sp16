@@ -62,6 +62,12 @@ while time.time()-start < timeout:
                     i += 1
                     bugs += 1
                     fault = sut.failure()
+                    saveFault = 'failure' + str(bugs) + '.test' 
+                    sut.saveTest(sut.test(), saveFault)
+                    print "Number bugs found is" ,i
+	            sut.restart()
+	            
+                """     
                     saveFault = 'failure' + str(bugs) + '.test'
                     file = open(saveFault, 'w')
                     print >> file, "Faults: ", fault,"\n"	
@@ -69,8 +75,7 @@ while time.time()-start < timeout:
 	            for t in sut.test():
 	                print >> file, sut.serializable(t)
 	            file.close()
-	            print "Number bugs found is" ,i
-	            sut.restart()
+	            """ 
           
         for s in sut.currBranches():
             if s not in covCount:
