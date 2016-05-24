@@ -51,13 +51,14 @@ def writeFaults(faults,phase,R,f2,name):
 '''
 
 #################write faults to seperate file failure1.test failure2.test ..... (Not reduce)
-def newWriteFaults(f1,f2,name):
-	f_file = name
-	with open(f_file,'a') as f:
-		f.write(str(f1)+'\n')
-		f.write(str(f2)+'\n')
+#def newWriteFaults(f1,name):
+	#f_file = name
+	#sut.saveTest()
+	#with open(f_file,'a') as f:
+	#	f.write(str(f1)+'\n')
+	#	f.write(str(f2)+'\n')
 
-def ifRunning(running,action):
+def ifRunning(elapsed,running,action):
 	if running:
 		if sut.newBranches() != set([]):
 			print "ACTION:",action[0]
@@ -80,7 +81,7 @@ def mutate(test,failureNum,start,timeout,running):
 	sut.replay(tcopy[:i],catchUncaught = True)
 	e = sut.randomEnabled(rgen)
 	ok = sut.safely(e)
-	ifRunning(running,e)
+	ifRunning((time.time()-start),running,e)
 	if not ok:
 		failureNum+=1
 		print "FIND " + str(failureNum) + " FAILURE"
@@ -89,8 +90,9 @@ def mutate(test,failureNum,start,timeout,running):
 		if faults:
 			name='failure'+str(failureNum)+'.test'
 			f1_mutate = sut.test()
-			f2_mutate = sut.failure()
-			newWriteFaults(f1_mutate,f2_mutate,name)
+			#f2_mutate = sut.failure()
+			sut.saveTest(f1_mutate,name)
+			#newWriteFaults(f1_mutate,f2_mutate,name)
 		##########
 	trest = [e]
 	for s in tcopy[i+1:]:
@@ -99,7 +101,7 @@ def mutate(test,failureNum,start,timeout,running):
 		if s[1]():
 			trest.append(s)
 			ok=sut.safely(s)
-			ifRunning(running,s)
+			ifRunning((time.time()-start),running,s)
 			if not ok:
 				failureNum+=1
 				print "FIND " + str(failureNum) + " FAILURE"
@@ -108,8 +110,9 @@ def mutate(test,failureNum,start,timeout,running):
 				if faults:
 					name='failure'+str(failureNum)+'.test'
 					f1_mutate = sut.test()
-					f2_mutate = sut.failure()
-					newWriteFaults(f1_mutate,f2_mutate,name)
+					#f2_mutate = sut.failure()
+					sut.saveTest(f1_mutate,name)
+					#newWriteFaults(f1_mutate,f2_mutate,name)
 				##########
 	tcopy = test[:i]+trest
 	return tcopy,failureNum
@@ -128,7 +131,7 @@ while time.time()-start <= timeout/rtTimePara:
 		#startState=sut.state()
 		action = sut.randomEnabled(rgen)
 		ok = sut.safely(action)
-		ifRunning(running,action)
+		ifRunning((time.time()-start),running,action)
 		ss = sut.state()
 		if ss not in visited:
 			visited.append(ss)
@@ -142,8 +145,9 @@ while time.time()-start <= timeout/rtTimePara:
 			if faults:
 				name='failure'+str(failureNum)+'.test'
 				f1_random = sut.test()
-				f2_random = sut.failure()
-				newWriteFaults(f1_random,f2_random,name)
+				#f2_random = sut.failure()
+				#newWriteFaults(f1_random,name)
+				sut.saveTest(f1_random,name)
 			##########
 			'''
 			############## call writeFaults()
@@ -178,7 +182,7 @@ while time.time()-start <= timeout/rtTimePara:
 						if time.time()-start > timeout/rtTimePara:
 							break
 						ok = sut.safely(a)
-						ifRunning(running,a)
+						ifRunning((time.time()-start),running,a)
 						sss = sut.state()
 						if  sss!=ss and sss!=expr:
 							if sss not in visited:
@@ -192,8 +196,9 @@ while time.time()-start <= timeout/rtTimePara:
 								if faults:
 									name='failure'+str(failureNum)+'.test'
 									f1_bfs = sut.test()
-									f2_bfs = sut.failure()
-									newWriteFaults(f1_bfs,f2_bfs,name)
+									#f2_bfs = sut.failure()
+									sut.saveTest(f1_bfs,name)
+									#newWriteFaults(f1_bfs,f2_bfs,name)
 								##########
 								'''
 								############## call writeFaults()
