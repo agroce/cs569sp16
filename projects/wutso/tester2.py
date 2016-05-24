@@ -6,6 +6,7 @@ import time
 
 def notOK():
     global bugs, sut
+    print "============FOUND=============="
     bugs += 1
     print "FOUND A FAILURE"
     print sut.failure()
@@ -13,6 +14,12 @@ def notOK():
     R = sut.reduce(sut.test(), sut.fails, True, True)
     sut.prettyPrintTest(R)
     print sut.failure()
+
+    # save test
+    name = "failure" + str(bugs) + ".test"
+    f    = sut.test()
+    print "============SAVE=============="
+    sut.saveTest(f, name)
 
 
 def collectCoverage():
