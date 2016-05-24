@@ -44,6 +44,7 @@ startTime = time.time()
 def	saveFaults(bug, testCase):
 	FileName = 'failure'+str(bug)+'.test'
 	sut.saveTest(testCase,FileName)
+	
 
 
 # Sequntial algorithm that will traverse over all actions and execute them one by one
@@ -55,9 +56,10 @@ for act in sut.enabled():
 		elapsedFailure = time.time() - startTime
 		bugs += 1
 		print "FOUND A FAILURE"
+		print sut.failure()
 		sut.prettyPrintTest(sut.test())
 		test = sut.test()
-		Fault = sut.failure()
+		#Fault = sut.failure()
 		saveFaults( bugs, test)
 		sut.restart()
 			# Print the new discovered branches	
