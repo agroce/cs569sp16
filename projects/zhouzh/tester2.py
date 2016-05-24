@@ -39,7 +39,7 @@ def make_config(pargs, parser):
      return nt_config
 
 
-def saveFaults(sut,nbugs, Config, faults_file):
+def saveFaults(sut, nbugs, Config, faults_file):
     print "Found A Bug! number of bugs:", nbugs
     print sut.failure()
     print "Reducing......"
@@ -50,8 +50,7 @@ def saveFaults(sut,nbugs, Config, faults_file):
     print sut.failure()
 
     if Config.faults == 1:
-        f = open(faults_file + str(nbugs) + ".test", "w")
-        print >> f, sut.failure()
+        sut.saveTest(reduction, faults_file + str(nbugs) + ".test")
 
 
 def mutate(test, r, nbugs):
