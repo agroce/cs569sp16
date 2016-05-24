@@ -25,7 +25,7 @@ coverageNum = {}
 coverageWBM = []
 start = time.time()
 def tester():
-    global sut,act,n,test,para,lCovered,actNum,bugs,M,flag
+    global sut,act,n,test,para,lCovered,actNum,bugs,M,flag, filename
     act = sut.randomEnabled(rgen)
     flag = 0
     n = sut.safely(act)
@@ -45,11 +45,13 @@ def tester():
     actNum += 1
     if (n == 0):
         bugs += 1
-        print "A failure has been found!"
+        print "A failure has been found!", bugs
         print sut.failure()
         M = sut.reduce(sut.test(),sut.fails, True, True)
         sut.prettyPrintTest(M)
         print sut.failure()
+        filename ='bugs%d.test'%bugs
+        sut.saveTest(M,filename)
         flag = 1
     
 
