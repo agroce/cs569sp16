@@ -21,48 +21,7 @@ sut   = sut.sut()
 rgen  = random.Random()
 rgen.seed(seed)
 
-def argFaults(fid, seq, t):
-	name = 'failure' + `fid` + '.test'
-	info = "time: " + str(t) + " len: " + str(len(seq)) + "\n"
-	fail = str(sut.failure()) + "\n"
-	f = open(name, 'w')
-	f.write(info)
-	f.write(fail)
-	for a in seq:
-		act = str(a[0]) + "\n"
-		f.write(act)
-	f.close
-
-def argRunning(a):
-	if sut.newBranches() != set([]):
-		print "ACTION:", a[0]
-		for b in sut.newBranches():
-			print time.time() - start, len(sut.allBranches()), "New branch", b
-	
-def contracts(seq, eseqs, ok, propok):
-	global fid
-	if (not ok) or (not propok):
-		t = time.time() - start
-		print "FIND BUG!!", "time:", t
-		printSeq(seq)
-		eseqs.append(seq)
-		fid += 1
-		if faults:
-			argFaults(fid, seq, t)
-		return True
-	return False
-
-def equal(seq, seqs):
-	for s in seqs:
-		if seq == s:
-			return True
-	return False
-
-def filters(ok, propok, classTable):
-	balanceok = max(classTable.values()) <= width
-	return (ok and propok and balanceok)
-
-def genAndExeSeq(n, seq, eseqs, nseqs):
+def appendAndExecuteSeq(n, seq, eseqs, nseqs):
 	ok = False
 	propok = False
 	classTable = dict.fromkeys(sut.actionClasses(), 0)
@@ -82,8 +41,42 @@ def genAndExeSeq(n, seq, eseqs, nseqs):
 		classTable[sut.actionClass(a)] += 1
 		timeover = time.time() - start >= timeout
 		if timeover:
-			return (seq, ok, propok, classTable, timeover)
-	return (seq, ok, propok, classTable, timeover)
+			return (ok, propok, classTable, timeover)
+	return (ok, propok, classTable, timeover)
+
+def argFaults(fid):
+	filename = 'failure' + `fid` + '.test'
+	#r = sut.reduce(sut.test(), sut.fails, True, True)
+	sut.saveTest(sut.test(), filename)
+
+def argRunning(a):
+	if sut.newBranches() != set([]):
+		print "ACTION:", a[0]
+		for b in sut.newBranches():
+			print time.time() - start, len(sut.allBranches()), "New branch", b
+	
+def contracts(seq, eseqs, ok, propok):
+	global fid
+	if (not ok) or (not propok):
+		t = time.time() - start
+		print "FIND BUG!!", "time:", t
+		printSeq(seq)
+		eseqs.append(seq)
+		fid += 1
+		if faults:
+			argFaults(fid)
+		return True
+	return False
+
+def equal(seq, seqs):
+	for s in seqs:
+		if seq == s:
+			return True
+	return False
+
+def filters(ok, propok, classTable):
+	widthok = max(classTable.values()) <= width
+	return (ok and propok and widthok)
 
 def printSeq(seq):
 	print "len:", len(seq)
@@ -106,9 +99,9 @@ while time.time() - start < timeout:
 
 	if rgen.randint(0, 9) == 0:
 		n = rgen.randint(2, 100)
-		seq, ok, propok, classTable, timeover = genAndExeSeq(n, seq, eseqs, nseqs)
+		ok, propok, classTable, timeover = appendAndExecuteSeq(n, seq, eseqs, nseqs)
 	else:
-		seq, ok, propok, classTable, timeover = genAndExeSeq(1, seq, eseqs, nseqs)
+		ok, propok, classTable, timeover = appendAndExecuteSeq(1, seq, eseqs, nseqs)
 
 	if timeover:
 		break
