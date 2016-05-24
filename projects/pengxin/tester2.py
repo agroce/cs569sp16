@@ -98,6 +98,8 @@ def main():
                     R = sut.reduce(sut.test(),sut.fails, True, True)
                     sut.prettyPrintTest(R)
                     print sut.failure()
+                    filename ='failure%d.test'%bug
+                    sut.saveTest(R,filename)
 #flag = 1
 
             
