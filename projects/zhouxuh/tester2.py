@@ -35,7 +35,7 @@ def action():
             sut.prettyPrintTest(R)
             print sut.failure()
             fname="failure" + str(bugs) + ".test"
-            sut.saveTest(sut.test(),fname)
+            sut.saveTest(R,fname)
             errorSeqs.append(sut.currStatements())
             sut.restart()
     else: 
