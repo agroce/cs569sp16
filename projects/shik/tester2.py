@@ -29,13 +29,9 @@ def randomAction():
     if not ok:
         bugs += 1
         if FAULTS:
-            with open("failure"+str(bugs)+".test",'w') as f:
-                f.write('\n'+str(bugs)+' bugs found:\n')
-                f.write(str(sut.failure())+'\n')
-                f.close()
-            if COVERAGE:
-                collectCoverage()
-            sut.restart()
+            name = "failure"+str(bugs)+".test"
+            f = sut.test()
+            sut.saveTest(f,name)
     else:
         if RUNNING:
             if sut.newBranches() != set([]):
@@ -153,10 +149,3 @@ if COVERAGE:
 print bugs,"FAILED"
 print "TOTAL ACTIONS", actCount
 print "TOTAL RUNTIME", time.time()-start
-
-
-
-
-
-        
-
