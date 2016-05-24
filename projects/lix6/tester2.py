@@ -26,9 +26,8 @@ def randomAction():
         bugs += 1
         if argv.FAULTS:
             file = "failure"+str(bugs)+".test"
-            f = open(file,'a')
-            f.write(str(sut.failure()))
-            f.close()
+            fault = sut.test()
+            sut.saveTest(fault,name)
             if argv.COVERAGE:
                 collectCoverage()
             sut.restart()
