@@ -34,11 +34,8 @@ def action():
             R = sut.reduce(sut.test(),sut.fails, True, True)
             sut.prettyPrintTest(R)
             print sut.failure()
-            
-            f = open(("failure" + str(bugs) + ".test"),"w")
-            f.writelines(str(sut.failure()))
-            f.close()
-            
+            fname="failure" + str(bugs) + ".test"
+            sut.saveTest(sut.test(),fname)
             errorSeqs.append(sut.currStatements())
             sut.restart()
     else: 
@@ -53,7 +50,8 @@ def expand():
         print "NEW STATEMENTS DISCOVERED",sut.newStatements()
         newSeq = sut.newStatements()
         if (newSeq in nonErrorSeqs or newSeq in errorSeqs):
-           action() 
+           action()
+           #sut.restart() 
         else:
             oldTest = list(sut.test())
             storeTest = sut.reduce(oldTest,sut.coversStatements(newSeq))
