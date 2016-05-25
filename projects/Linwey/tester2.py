@@ -27,7 +27,7 @@ dis_weight = 0
 
 
 def backtrack():
-	if (collected_test != None) and (rgen.random() > 0.4):
+	if (collected_test != None) and (rgen.random() > 0.5):
 		sut.backtrack(collected_test)
 
 def newState():
@@ -38,7 +38,7 @@ def newState():
         if RUNNING:
             if sut.newBranches() != set([]):
                 for d in sut.newBranches():
-                    print time.time() - start,len(sut.allBranches()),"new branch",d
+                    print time.time() - start,len(sut.allBranches()),"New branch",d
         if len(sut.newStatements()) > 0:
             collected_test = sut.state()
             storedTest = True
@@ -51,9 +51,11 @@ def newState():
         if not no_bug_found:
             bugfound += 1
             print "A failure happened here."
-            rds = sut.reduce(sut.test(),sut.fails, True, True)
-            sut.prettyPrintTest(rds)
+            R = sut.reduce(sut.test(),sut.fails, True, True)
+            sut.prettyPrintTest(R)
             print sut.failure()
+            filename ='failure%d.test'%bugfound
+            sut.saveTest(R,filename)
             break
 
 while time.time()-start < BUDGET:
