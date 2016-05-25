@@ -75,16 +75,19 @@ while time.time() - start < Timeout/5 :
 		if not ok :
 			bugs += 1
 			if Faults :
-				R = sut.reduce(sut.test(),sut.fails, True, True)
-				i = 0
-				result = ""
-				for (s,_,_) in R :
-					steps  = "# STEP " + str(i)
-					result +=  sut.prettyName(s).ljust(80 - len(steps),' ') + steps + "\n"
-					i += 1
-				output = open("failure" + str(bugs) + ".test",'w')
-				output.write("FOUND A FAILURE \n " + str(sut.failure()) + "\nREDUCING \n" + result + str(sut.failure()) + "\n" )
-				output.close
+				#R = sut.reduce(sut.test(),sut.fails, True, True)
+				print "Found Faults",bugs, ": \n", sut.failure()
+				filename = "failure" + str(bugs) + ".test"
+				sut.saveTest(sut.test(),filename)
+				# i = 0
+				# result = ""
+				# for (s,_,_) in R :
+				# 	steps  = "# STEP " + str(i)
+				# 	result +=  sut.prettyName(s).ljust(80 - len(steps),' ') + steps + "\n"
+				# 	i += 1
+				# output = open("failure" + str(bugs) + ".test",'w')
+				# output.write("FOUND A FAILURE \n " + str(sut.failure()) + "\nREDUCING \n" + result + str(sut.failure()) + "\n" )
+				# output.close
 			break
 		if Running :
 
@@ -122,16 +125,19 @@ while time.time() - start < Timeout :
 			bugs += 1
 			
 			if Faults :
-				R = sut.reduce(sut.test(),sut.fails, True, True)
-				i = 0
-				result = ""
-				for (s,_,_) in R :
-					steps  = "# STEP " + str(i)
-					result +=  sut.prettyName(s).ljust(80 - len(steps),' ') + steps + "\n"
-					i += 1
-				output = open("failure" + str(bugs) + ".test",'w')
-				output.write("FOUND A FAILURE \n " + str(sut.failure()) + "\nREDUCING \n" + result + str(sut.failure()) + "\n" )
-				output.close
+				#R = sut.reduce(sut.test(),sut.fails, True, True)
+				print "Found Faults",bugs, ": \n", sut.failure()
+				filename = "failure" + str(bugs) + ".test"
+				sut.saveTest(sut.test(),filename)
+				# i = 0
+				# result = ""
+				# for (s,_,_) in R :
+				# 	steps  = "# STEP " + str(i)
+				# 	result +=  sut.prettyName(s).ljust(80 - len(steps),' ') + steps + "\n"
+				# 	i += 1
+				# output = open("failure" + str(bugs) + ".test",'w')
+				# output.write("FOUND A FAILURE \n " + str(sut.failure()) + "\nREDUCING \n" + result + str(sut.failure()) + "\n" )
+				# output.close
 			break
 		
 	collectCoverage()

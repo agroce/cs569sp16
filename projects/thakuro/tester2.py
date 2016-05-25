@@ -22,7 +22,6 @@ import time
      #   print "NEW BRANCHES DUE TO MUTATION:",sut.newCurrBranches()
     #return tcopy
 
-
 # check_action():
  ##   global num,actioncount
   #  action = sut.randomEnabled(R)
@@ -88,21 +87,24 @@ while time.time()-start < TIMEOUT:
 						print elapsed,len(sut.allBranches()),"This is a branch",b   #this will go through all the new branches and print them
 		ok = sut.safely(action)
 		if not ok:
+                        F = sut.reduce(sut.test(), lambda x: sut.fails(x) or sut.failsCheck(x))
+		        Test = prettyListTest(F)				
+		        if Test not in testsCovered:
+				testsCovered.append(Test)	
 
-			X = sut.reduce(sut.test())			
-			if X not in testsCovered:
-
-				testsCovered.append(X)		
+		
 
 				print " This is a Reduced Test"
 
-				sut.prettyPrintTest(X)
+				sut.prettyPrintTest(F)
 
 				failureCount = failureCount + 1       #the failure count will go on increasing
 
-				if (FAULT_CHECK):                     # this will check for the faults
-				    f = open("failure_file" + str(failureCount) + ".test", "w")
-				    j = 0
+				if (FAULT_CHECK):                              # this will check for the faults
+				    name = "failure" + str(failureCount) + ".test"
+                                    f = sut.test()
+                                    sut.saveTest(F,filename)
+
 
 				    for (s_reduces) in S:
 
@@ -117,7 +119,7 @@ while time.time()-start < TIMEOUT:
                                 print ""/n
 				print "This is the same test"
 
-				sut.prettyPrintTest(S)
+				sut.prettyPrintTest(F)
 
 				break;
 
