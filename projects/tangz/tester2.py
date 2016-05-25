@@ -93,7 +93,7 @@ def main():
                      print "STOPPING TESTING DUE TO FAILED TEST"
                      failCount+=1
                      if config.faults == 1:
-                             f = open("failure" + str(failCount) + ".test", "w")
+                             f = "failure" + str(failCount) + ".test", "w"
                              t.saveTest(t.test(),f) 
                      break      
               
