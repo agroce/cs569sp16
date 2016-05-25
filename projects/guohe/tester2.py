@@ -62,6 +62,8 @@ def avlfunction():
 				R = sut.reduce(sut.test(),sut.fails, True, True)
 				sut.prettyPrintTest(R)
 				print sut.failure()
+				filename = 'failure%d.test'%bugs_found
+				sut.saveTest(R,filename)
 				break
 		
 	for s in sut.currStatements():
