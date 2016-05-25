@@ -33,6 +33,10 @@ CovWeight = []
 startT = time.time()
 mincover = None
 
+
+      
+
+
 while time.time()-startT < BUDGET:
     sut.restart()
     if (savedTest != None) and (rgen.random() > explore):
@@ -42,17 +46,13 @@ while time.time()-startT < BUDGET:
 
     for s in xrange(0,depth):
         act = sut.randomEnabled(rgen)
-
         ok = sut.safely(act)
-        if len(sut.newStatements()) > 0:
-            savedTest = sut.state()
-            storedTest = True
-            if(running):
-                print "FOUND NEW STATEMENTS",sut.newStatements()
-        if (not storedTest) and (mincover != None) and (mincover in sut.currStatements()):
-            savedTest = sut.state()
-            storedTest = True
         actCount += 1
+        if (running == 1):
+            if len(sut.newBranches()) > 0:
+                print "ACTION:", act[0]
+                for b in sut.newBranches():
+                    print time.time() - startT, len(sut.allBranches()), "New branch", b
 
         if(faults):
             if not ok:
@@ -64,6 +64,8 @@ while time.time()-startT < BUDGET:
                 R = sut.reduce(sut.test(),sut.fails, True, True)
                 sut.prettyPrintTest(R)
                 print sut.failure()
+				fname = 'failure'+str(bugs)+'.test'
+				sut.saveTest(R,fname)
                 break
             else:
                if len(sut.newStatements()) > 0:
