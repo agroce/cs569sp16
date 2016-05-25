@@ -15,15 +15,15 @@ RUNNING = int(sys.argv[7])
 def Find_bugs(list_actions):
 	# print "Find_bugs"
 	global coverage_counter
-	global bugs
-	bugs = 0	
+	global bugs	
 	global Record
 	global string
 	safe = sut.safely(list_actions)
 	running_oh()
 	if not safe:
-		print " *** find a bug: "
 		bugs = bugs + 1
+		print " *** find a bug: ",bugs
+		# bugs = bugs + 1
 		for t in sut.currStatements():
 			if t not in coverage_counter:
 				coverage_counter[t]=0
@@ -31,11 +31,19 @@ def Find_bugs(list_actions):
 		# Collect_coverage()
 		print sut.failure()
 		# string = str(sut.failure)
-		record_failures()
 		Record = True
-		# R = sut.reduce(sut.test(),sut.fails, True, True)
-		# sut.prettyPrintTest(R)	
-		sut.restart()
+		print "reducing..."
+		R = sut.reduce(sut.test(),sut.fails, True, True)
+		sut.prettyPrintTest(R)	
+		# record_failures(R)
+		if FAULTS:
+			print"create file"
+			# for x in xrange(1,bugs):
+				# print "save"
+			sut.saveTest(R, failure + str(bugs)+ ".test")
+			# filename = "failure" +  str(bugs) + ".test"
+			# sut.saveTest(sut.test(), filename)
+		# sut.restart()
 	return safe
 
 def divide_coverage():
@@ -84,11 +92,15 @@ def running_oh():
 		for s in sut.newBranches():
 			print elapsed,len(sut.allBranches()),"New branch",s
 
-def record_failures():
-	global string,failure
-	for x in xrange(1,bugs):
-		file = open((failure + str(x) + ".test"),"w")
-		file.write(str(sut.failure()))
+# def record_failures(R):
+# 	global string,failure
+
+# 	if FAULTS:
+# 		for x in xrange(1,bugs):
+# 			sut.saveTest(R, failure + str(x)+ ".test")
+	# for x in xrange(1,bugs):
+	# 	file = open((failure + str(x) + ".test"),"w")
+	# 	file.write(str(sut.failure()))
 	# file.write(string)
 
 
@@ -148,10 +160,11 @@ while time.time() - start_time_1 < (TIMEOUT*0.87):
 			# regn.shuffle(list_actions)	
 			# Find_bugs(list_actions)
 			# for a in list_actions:
+			Find_bugs(list_actions)	
 			divide_coverage()
 			if time.time() - inside_time >= 3:
 				break
-			Find_bugs(list_actions)	
+			# Find_bugs(list_actions)	
 			s2 = sut.state()
 			if s2 not in ran_queue:	
 				ran_queue.append(s2)
@@ -171,10 +184,9 @@ if COVERAGE:
 if RUNNING:
 	running_oh()
 
-if FAULTS:
-	record_failures()	
-	if Record == False:
-		print"no bugs into record file... "
+
+if Record == False:
+	print"no bugs into record file... "
 
 
 print "depth:", dep

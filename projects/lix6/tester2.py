@@ -27,10 +27,10 @@ def randomAction():
         if argv.FAULTS:
             file = "failure"+str(bugs)+".test"
             fault = sut.test()
-            sut.saveTest(fault,name)
-            if argv.COVERAGE:
-                collectCoverage()
-            sut.restart()
+            sut.saveTest(fault,file)
+            # if argv.COVERAGE:
+            #     collectCoverage()
+            # sut.restart()
     else:
         if argv.RUNNING:
             if sut.newBranches() != set([]):
