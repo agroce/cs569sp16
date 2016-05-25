@@ -98,7 +98,7 @@ while time.time() - start < TIMEOUT:
 			print sut.failure()
 			
 			if FAULT:	#save test to a file if FAULT is enabled
-				filename = "failed_" + str(elapsed) + "_" + str(bugs) + ".test"
+				filename = "failure" + str(bugs) + ".test"
 				
 				sut.saveTest(R,filename)
 				
