@@ -93,6 +93,7 @@ def main():
                         print sut.failure()
                         if fault:
                             filename='failure'+str(bugs)+'.test'
+                            sut.saveTest(sut.test(),filename)
                             for i in range(len(R)):
                                 with open(filename,'w') as f:
                                     f.write('\n'+'Bug no.'+str(bugs)+'\n')                          
