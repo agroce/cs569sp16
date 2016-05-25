@@ -99,8 +99,9 @@ while time.time() - start < TIMEOUT:
 			
 			if FAULT:	#save test to a file if FAULT is enabled
 				filename = "failed_" + str(elapsed) + "_" + str(bugs) + ".test"
-				file_desc = open(filename, 'w')
-				file_desc.write(str(sut.failure()))
+				
+				sut.saveTest(R,filename)
+				
 
 	for s in sut.currStatements():
 		if s not in coverCnt:
