@@ -1,12 +1,20 @@
 @import fsm
 
-pool: <m> 1
-pool: <i> 1
-pool: <s> 1
+pool: <m> 3
+pool: <i> 3
+pool: <s> 3
+pool: <gs> 3
 
 <m> := fsm.Machine()
 
 <i> := <['a','b','c']>
+
+<s> := ""
+<s> += <i>
+
+filter (lambda x: x[1] == 0, <m>.specinputs(<s>)) == [] -> <gs> := <s>
+
+<m>.inputs(<gs>)
 
 print "<m,1>", <i,1>, <m>.input(<i>)
 
