@@ -29,9 +29,7 @@ def ExecutingInfo(run, elapsed):
 	if sut.newBranches() != set([]):
 		print "ACTION:", run[0]
 		for b in sut.newBranches():
-			print "Runtime:", elapsed, "||", "branch Count:", len(sut.allBranches())
-			print "New branch:", b
-			print "========================================================================================"
+			print elapsed, len(sut.allBranches()), "New branch", b
 
 def RecordFail():
 	BUG = 0
