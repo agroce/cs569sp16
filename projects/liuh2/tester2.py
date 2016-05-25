@@ -1,94 +1,138 @@
-import sut
-import random
 import sys
+import random
+import sut
 import time
 
 
 
-depth = 100
-
-explore = 0.7
-
-savedTest = None
-
-actCount = 0
-sut = sut.sut()
-BUDGET = int(sys.argv[1])
-SEED = int(sys.argv[2])
-depth = int(sys.argv[3])
-width = int(sys.argv[4])
-faults = int(sys.argv[5])
+BUDGET  = int(sys.argv[1])
+SEED 	 = int(sys.argv[2])
+Depth 	 = int(sys.argv[3])
+Width  	 = int(sys.argv[4])
+faults   = int(sys.argv[5])
 coverage_report = int(sys.argv[6])
-running = int(sys.argv[7])
+Running  = int(sys.argv[7])
 
 
-collectedstatementNum = 400
-bugs = 0
 
 rgen = random.Random()
 rgen.seed(SEED)
-CovW = []
-coverageCount = {}
-CovWeight = []
-startT = time.time()
-mincover = None
+
+sut = sut.sut()
+
+start = time.time()
 
 
-      
+bugs = 0
+
+acts = 0
+
+coverage_reportCount = {}
+activePool = []
+fullPool = []
+belowMean = set([])
+explore = 0.7
 
 
-while time.time()-startT < BUDGET:
-    sut.restart()
-    if (savedTest != None) and (rgen.random() > explore):
-        print "EXPLOITING"
-        sut.backtrack(savedTest)
-    storedTest = False
 
-    for s in xrange(0,depth):
-        act = sut.randomEnabled(rgen)
-        ok = sut.safely(act)
-        actCount += 1
-        if (running == 1):
-            if len(sut.newBranches()) > 0:
-                print "ACTION:", act[0]
-                for b in sut.newBranches():
-                    print time.time() - startT, len(sut.allBranches()), "New branch", b
-
-        if(faults):
-            if not ok:
-                bugs += 1
-                print "FOUND A FAILURE"
-              
-                print sut.failure()
-                print "REDUCING"
-                R = sut.reduce(sut.test(),sut.fails, True, True)
-                sut.prettyPrintTest(R)
-                print sut.failure()
-				fname = 'failure'+str(bugs)+'.test'
-				sut.saveTest(R,fname)
-                break
-            else:
-               if len(sut.newStatements()) > 0:
-                savedTest  = sut.state()
-                storedTest = True
-                print "FOUND NEW STATEMENTS", sut.newStatements()
-
-
+def collectcoverage_report():
+    global coverage_reportCount
     for s in sut.currStatements():
-        if s not in coverageCount:
-            coverageCount[s] = 0
-        coverageCount[s] += 1
-    sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
+        if s not in coverage_reportCount:
+            coverage_reportCount[s] = 0
+        coverage_reportCount[s] += 1 
 
-    for t in sortedCov:
-        print t, coverageCount[t]
+def findBelowMean():
+    global belowMean
 
-if(coverage_report):
-    sut.internalReport()
-    sortedCov = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-    for s in sortedCov:
-        print s, coverageCount[s]
+    belowMean = set([])
+    sortedCov = sorted(coverage_reportCount.keys(), key=lambda x: coverage_reportCount[x])
 
-print bugs,"FAILED"
-print "TOTAL ACTIONS",actCount
-print "TOTAL RUNTIME",time.time()-startT
+    coverSum = sum(coverage_reportCount.values())
+    coverMean = coverSum / (1.0*len(coverage_reportCount))
+  
+    for s in sortedCov:   	
+        if coverage_reportCount[s] < coverMean:
+            belowMean.add(s)
+        else:
+            break
+
+def buildActivePool():
+    global activePool
+    findBelowMean()
+    activePool = []
+    for (t,c) in fullPool:
+        for s in c:
+            if s in belowMean:
+                activePool.append((t,c))
+                break 
+
+
+
+while time.time() - start < BUDGET/5 :
+	sut.restart()
+	for t in xrange(0,Depth):
+		if time.time() - start > BUDGET:
+			break
+		act = sut.randomEnabled(rgen)
+		ok  = sut.safely(act)
+		collectcoverage_report()
+		if len(sut.newStatements()) != 0:
+			fullPool.append((list(sut.test()), set(sut.currStatements())))
+		if not ok :
+			bugs += 1
+			if faults :
+				
+				print "Found faults",bugs, ": \n", sut.failure()
+				filename = "failure" + str(bugs) + ".test"
+				sut.saveTest(sut.test(),filename)
+				
+			break
+		if Running :
+
+			if sut.newBranches() != set([]):
+				print "ACTION:", act[0]
+				elapsed = time.time() - start
+				for b in sut.newBranches():
+					print elapsed,len(sut.allBranches()),"New branch",b
+	collectcoverage_report()
+
+ 
+while time.time() - start < BUDGET :
+	if time.time() - start > BUDGET:
+		break
+	buildActivePool()
+	sut.restart()
+	for t in xrange(0,Depth):
+		if time.time() - start > BUDGET:
+			break
+		act = sut.randomEnabled(rgen)
+		ok  = sut.safely(act)
+		if rgen.random() > explore:
+			sut.replay(rgen.choice(activePool)[0])
+		if Running :
+			if sut.newBranches() != set([]):
+				print "ACTION:", act[0]
+				elapsed = time.time() - start
+				for b in sut.newBranches():
+					print elapsed,len(sut.allBranches()),"New branch",b
+		
+		acts += 1
+		collectcoverage_report()
+		if not ok :
+			bugs += 1
+			
+			if faults :
+				
+				print "Found faults",bugs, ": \n", sut.failure()
+				filename = "failure" + str(bugs) + ".test"
+				sut.saveTest(sut.test(),filename)
+				
+			break
+		
+	collectcoverage_report()
+if coverage_report :
+	sut.internalReport()
+print  bugs, "FAILED"
+print "ACTIONS  : ", acts
+print "RUN TIME : ", time.time() - start
