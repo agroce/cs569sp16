@@ -12,7 +12,7 @@ faults          = int(sys.argv[5])
 coverage_report = int(sys.argv[6])
 running         = int(sys.argv[7])
 
-factor          = 0.5
+factor          = 1.0
 
 def collectCoverage():
     global coverageCount
@@ -40,8 +40,8 @@ def expandPool():
             return
 
 def randomAction():
-    global actCount, bugs, failPool, faults, start
-    restored = sys.stdout
+    global actCount, bugs, failPool, faults, start, failureFiles
+    # restored = sys.stdout
     act = sut.randomEnabled(rgen)
     actCount += 1
     ok = sut.safely(act)
@@ -61,10 +61,13 @@ def randomAction():
 
         if faults:
             print "SAVING INTO FILE NAMED failurefile"+str(bugs)
-            sys.stdout = open(("failurefile" + str(actCount) + ".test"), 'w')
-            sut.prettyPrintTest(R)
-            sys.stdout.close()
-            sys.stdout = restored
+            # sys.stdout = open(("failurefile" + str(bugs) + ".test"), 'w')
+            # sut.prettyPrintTest(R)
+            # sys.stdout.close()
+            # sys.stdout = restored
+            failureFile = "failurefile" + str(bugs) + ".out"
+            sut.saveTest(sut.test(), failureFile)
+            failureFiles.append(failureFile)
 
         sut.restart()
     else:
@@ -145,6 +148,7 @@ coverageCount = {}
 activePool = []
 fullPool = []
 failPool = []
+failureFiles = []
 
 belowMean = set([])
 
@@ -156,8 +160,10 @@ while time.time()-start < BUDGET / 2:
     sut.restart()
     ntests += 1
     for w in xrange(0, width):
+        if time.time() - start >= BUDGET / 2:
+            break
         for s in xrange(0,depth):
-            if not randomAction():
+            if time.time() - start >= BUDGET / 2 or not randomAction():
                 break
     collectCoverage()
 
@@ -174,8 +180,10 @@ while time.time()-start < BUDGET / 2:
         lastAddCoverage = set(sut.currStatements())
     ntests += 1
     for w in xrange(0, width):
+        if time.time() - start >= BUDGET / 2:
+            break
         for s in xrange(0,depth):
-            if not randomAction():
+            if time.time() - start >= BUDGET / 2 or not randomAction():
                 break
     collectCoverage()
 
@@ -184,7 +192,7 @@ if coverage_report:
     sut.report("coverage_report.txt")
     if not os.path.isdir("html"):
         os.mkdir("html")
-    
+
     sut.htmlReport("./html")
 
 
@@ -193,6 +201,17 @@ print ntests,"TESTS"
 
 for (t,s) in fullPool:
     print len(t),len(s)
+
+# collects all failed tests into one file named "failCollection"
+with open('failCollection', 'w') as outfile:
+    i = 1
+    for fname in failureFiles:
+        with open(fname) as infile:
+            outfile.write("FOUND failure "+str(i)+"\n")
+            for line in infile:
+                outfile.write(line)
+            outfile.write("\n")
+            i += 1
 
 
 print bugs,"FAILED"
