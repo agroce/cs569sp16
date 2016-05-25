@@ -11,7 +11,6 @@ width = int(sys.argv[4])
 faults = int(sys.argv[5])
 coverage = int(sys.argv[6])
 running = int(sys.argv[7])
-
 r = random.Random(seed)
 sut = sut.sut()
 covCount = {}
@@ -21,10 +20,9 @@ actCount = 0
 ntests = 0
 bugs = 0
 j = 0
-
 start = time.time()
 def randomAction():   
-	global actCount,bugs,j,running,actCount
+	global actCount,bugs,j,running,actCount,r
     
 	test = False
 	for b in xrange(0,depth):
@@ -41,35 +39,30 @@ def randomAction():
 			test = True
 		actCount += 1
 		
-		if running:
+		if running == 1:
 	        	if sut.newBranches() != set([]):
 				print "ACTIONS:", act[0]
             			for b in sut.newBranches():
                 			print time.time()-start,len(sut.allBranches()),"New branch",b
 				
-                    
-		if not ok or not Scheck and faults:
-			print "FOUND A FAILURE"
-			j += 1
-			bugs += 1
-		        print"Show Fault"
-			print "FOUND A FAILURE"
-			fault = sut.failure()
-			failurename = 'failure' + str(bugs) + '.test'
-			sut.saveTest(sut.test(), failurename)
-			sut.restart()
+                if faults == 1:    
+			if not ok: 
+				print "FOUND A FAILURE"
+				j += 1
+				bugs += 1
+				fault = sut.failure()
+				failurename = 'failure' + str(bugs) + '.test'
+				sut.saveTest(sut.test(), failurename)
+				print"the bugs is ",j
+				sut.restart()
 def main():				
 	global ntests,start
-        
-	
 	while time.time()-start < timeout:
-    		if (time.time() > start + timeout):
-			break
 		
 		for ts in xrange(0,width):
 			sut.restart()
 			ntests += 1
-			if (Stest != None ) and (r.random() > 0.7):
+			if (Stest != None ) and (r.random() > 0.6):
 				sut.backtrack(Stest)
 		
 			randomAction()
