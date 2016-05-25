@@ -50,7 +50,7 @@ def tester():
         M = sut.reduce(sut.test(),sut.fails, True, True)
         sut.prettyPrintTest(M)
         print sut.failure()
-        filename ='bugs%d.test'%bugs
+        filename ='failure%d.test'%bugs
         sut.saveTest(M,filename)
         flag = 1
     
