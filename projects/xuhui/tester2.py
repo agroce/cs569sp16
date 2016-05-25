@@ -1,4 +1,4 @@
-import os
+#import os
 import sys
 import sut
 import time
@@ -12,113 +12,88 @@ faults = int(sys.argv[5])
 coverage = int(sys.argv[6])
 running = int(sys.argv[7])
 
-def collectCoverage():
-    global coverageCount
-    for b in sut.currBranches():
-        if b not in coverageCount:
-            coverageCount[b] = 0
-        coverageCount[b] = coverageCount[b] + 1
-
-def randomAction():   
-    global actCount, bugs, errorpool
-    sawNew = False
-    act = sut.randomEnabled(rgen)   
-    actCount += 1
-    ok = sut.safely(act)
-    if running:
-        if sut.newBranches() != set([]):
-            for b in sut.newBranches():
-                print time.time()-start,len(sut.allBranches()),"New branch",b
-            sawNew = True
-        else:
-            sawNew = False    
-                    
-    if not ok:
-		bugs += 1
-		print "FOUND A FAILURE"
-                if faults:
-			print"Show Fault"
-			print sut.failure()
-                        error.append(sut.test())
-                        collectCoverage()
-                        R = sut.reduce(sut.test(),sut.errorpool, True, True)
-                        sut.prettyPrintTest(R)
-                        sut.restart()
-			
-                        print "FOUND A FAILURE"
-                        fault = sut.failure()
-                        failurename = 'failure' + str(bugs) + '.test'
-                        wfile = open(failurename, 'w+')
-                        wfile.write(str(fault))
-                        wfile.close() 
-                        sut.restart() 
-                
-                else:
-                    if len(sut.newBranches()) > 0:
-                        print "FOUND NEW BRANCHES",sut.newBranches()
-                        tests.append((list(sut.test()), set(sut.currBranches())))    
-                return ok 
-
-
-rgen = random.Random(seed)
-
+r = random.Random(seed)
 sut = sut.sut()
-coverageCount = {}
-tests = []
-collect = []
-error = []
-belowMean = set([])
-
+covCount = {}
+LCov = None
+Stest = None
 actCount = 0
-bugs = 0
 ntests = 0
+bugs = 0
+j = 0
 
-
-print "STARTING PHASE 1: GATHER COVERAGE"
 start = time.time()
-while time.time()-start < timeout:
-    for ts in xrange(0,width):
-        if (time.time() > start + timeout):
-            break
-        sut.restart()
-        ntests += 1
-        for b in xrange(0,depth):
-            if (time.time() > start + timeout):
-                break
-            if not randomAction():
-                break    
-        collectCoverage()
-		
-print "STARTING PHASE 2: ANALYSIS COVERAGE"        
-start = time.time()
-while time.time()-start < timeout:
-    if (time.time() > start + timeout):
-        break
-    sortedCoverage = sorted(coverageCount.keys(), key=lambda x: coverageCount[x])
-    coverageSum = sum(coverageCount.values())
-    try:
-        coverageMean = coverageSum / (1.0*(len(coverageCount)))
+def randomAction():   
+	global actCount,bugs,j,running,actCount
     
-    except Zero_Division_Error:
-        print ("NO BRANCHES COLLECTED")  
-          
-    for b1 in sortedCoverage:
-        if coverageCount[b1] < coverageMean:
-                belowMean.add(b1)
-        else:
-            break            
-        print len(belowMean),"Branches BELOW MEAN COVERAGE OUT OF",len(coverageCount) 
-                  
-    if time.time()-start > timeout:
-        print "THE TEST IS STOPPED SINCE TIMEOUT"
-        break 
-                           
-if coverage:
-	print"Show Coverage"
-        sut.internalReport()
+	test = False
+	for b in xrange(0,depth):
+		act = sut.randomEnabled(r)   
+#		actCount += 1
+		ok = sut.safely(act)
+		Scheck = sut.check()
+		if len(sut.newBranches()) > 0:
+			Stest = sut.state()
+			test = True
+			
+		if (not test) and (LCov != None) and (LCov in sut.currBranches()):
+			Stest = sut.start()
+			test = True
+		actCount += 1
+		
+		if running:
+	        	if sut.newBranches() != set([]):
+				print "ACTIONS:", act[0]
+            			for b in sut.newBranches():
+                			print time.time()-start,len(sut.allBranches()),"New branch",b
+				
+                    
+		if not ok or not Scheck and faults:
+			print "FOUND A FAILURE"
+			j += 1
+			bugs += 1
+		        print"Show Fault"
+			print "FOUND A FAILURE"
+			fault = sut.failure()
+			failurename = 'failure' + str(bugs) + '.test'
+			sut.saveTest(sut.test(), failurename)
+			sut.restart()
+def main():				
+	global ntests,start
+        
 	
-print ntests,"TOTAL TESTS"    
-print "TOTAL BUGS",bugs
-print "TOTAL ACTIONS",actCount
-print "TOTAL RUNTIME",time.time()-start
-          
+	while time.time()-start < timeout:
+    		if (time.time() > start + timeout):
+			break
+		
+		for ts in xrange(0,width):
+			sut.restart()
+			ntests += 1
+			if (Stest != None ) and (r.random() > 0.7):
+				sut.backtrack(Stest)
+		
+			randomAction()
+		
+		for b in sut.currBranches():
+			if b not in covCount:
+				covCount[b] = 0
+			covCount[b] += 1
+			sortedCov = sorted(covCount.keys(), key = lambda x: covCount[x]) 
+			LCov = sortedCov[0]
+		
+    		if time.time()-start > timeout:
+        		print "THE TEST IS STOPPED SINCE TIMEOUT"
+        		break 
+
+	sortedCov = sorted(covCount.keys(), key = lambda x: covCount[x])		
+
+	if coverage:
+		print"Show Coverage"
+        	sut.internalReport()
+	
+	print ntests,"TOTAL TESTS"    
+	print "TOTAL BUGS",bugs
+	print "TOTAL ACTIONS",actCount
+	print "TOTAL RUNTIME",time.time()-start
+if __name__ == '__main__':
+	main()
