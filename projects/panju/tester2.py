@@ -203,11 +203,11 @@ while (time.time() - startALL) <= (timeout):
             if faults:
                 bugs+=1
                 failname='failure'+str(bugs)+'.test'
-                for i in range(len(R)):
+                for i in range(len(Rdc)):
                     with open(failname, 'w') as f:
                         f.write('\n' + 'This is a bug' + str(bugs) + '\n')
                         f.write(str(sut.failure()) + '\n')
-                        f.write(str(R) + '\n')
+                        f.write(str(Rdc) + '\n')
 if (coverage):
     sut.internalReport()
 
