@@ -87,13 +87,8 @@ while time.time()-start < TIME_BUDGET:
 				print "\n" '''
 			failureCount += 1
 			if (FAULT_CHECK):
-			    f = open("failure_file" + str(failureCount) + ".test", "w")
-			    j = 0
-		       	    for (s_reduces, _, _) in S:
-				    steps_reduce = "# STEP " + str(j)
-				    print >> f, sut.prettyName(s_reduces).ljust(80 - len(steps_reduce), ' '), steps_reduce
-				    j += 1
-			    f.close()
+			    filename = "failure" + str(failureCount) + ".test"
+			    sut.saveTest(S, filename)
 		else:
 			'''print "------------------------------------------"+ "\n"	
 			print "Same test"
