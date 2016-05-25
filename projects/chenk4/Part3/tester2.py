@@ -85,11 +85,12 @@ while (time.time() - startTM) <= (timeout/4):
             if faults:
                 bugs+=1
                 failname='failure'+str(bugs)+'.test'
-                for i in range(len(R)):
-                    with open(failname,'w') as f:
-                        f.write('\n'+'This is a bug'+str(bugs)+'\n')                          
-                        f.write(str(sut.failure())+'\n')
-                        f.write(str(R)+'\n')   
+                sut.saveTest(R,failname)
+                # for i in range(len(R)):
+                #     with open(failname,'w') as f:
+                #         f.write('\n'+'This is a bug'+str(bugs)+'\n')                          
+                #         f.write(str(sut.failure())+'\n')
+                #         f.write(str(R)+'\n')   
 
 print "TOTAL RUNTIME Phase 1",time.time()-startTM
 
@@ -166,11 +167,12 @@ for tl in xrange (0,len(tuplelistnew)):
                         if faults:
                             bugs+=1
                             failname='failure'+str(bugs)+'.test'
-                            for i in range(len(R)):
-                                with open(failname,'w') as f:
-                                    f.write('\n'+'This is a bug'+str(bugs)+'\n')                          
-                                    f.write(str(sut.failure())+'\n')
-                                    f.write(str(R)+'\n')    
+                            sut.saveTest(R,failname)
+                            # for i in range(len(R)):
+                            #     with open(failname,'w') as f:
+                            #         f.write('\n'+'This is a bug'+str(bugs)+'\n')                          
+                            #         f.write(str(sut.failure())+'\n')
+                            #         f.write(str(R)+'\n')    
                         #sys.exit(1)  # quit the program
                     ss = sut.state()
                     if ss not in visited:
