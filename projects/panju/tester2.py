@@ -104,7 +104,8 @@ def about_branch(running, action):
 
 break_count = 0;
 fact_cnt =0;
-timeout0 = timeout*0.8
+timeout0 = timeout*0.9
+
 while d <= GOAL_DEPTH:
     elapsedALL = time.time() - startALL
     if elapsedALL >= timeout0:
@@ -118,7 +119,7 @@ while d <= GOAL_DEPTH:
 
     ref_tb =[1]
     if len(queue)> 1:
-        ref_tb = block_rand_ids(len(queue), 3)
+        ref_tb = block_rand_ids(len(queue),3)
     for s in queue:
         elapsedALL = time.time() - startALL
         if elapsedALL >= timeout0:
@@ -128,6 +129,8 @@ while d <= GOAL_DEPTH:
         sut.backtrack(s)
         allEnabled = sut.enabled()
         random.shuffle(allEnabled)
+        #print 'all enabled len', len(allEnabled)
+        #print "scount", scount, "len", len(queue)
 
         for a in allEnabled:
             fact_cnt += 1
@@ -137,6 +140,7 @@ while d <= GOAL_DEPTH:
 
             elapsed = time.time() - startLayer
             if elapsed >= LAYER_BUDGET:
+                #print 'breaking .....'
                 break
 
             elapsedALL = time.time() - startALL
@@ -177,6 +181,9 @@ while (time.time() - startALL) <= (timeout):
     sut.restart()
     cnt=1
     for s in xrange(0,depth):
+        if (time.time() - startALL) >= (timeout):
+            break;
+
         act = sut.randomEnabled(rgen)
         ok = sut.safely(act)
         cur_state=sut.state()
@@ -192,15 +199,15 @@ while (time.time() - startALL) <= (timeout):
             Rdc = sut.reduce(sut.test(),sut.fails, True, True) # find a bug, min size sequence
             sut.prettyPrintTest(Rdc)
             print sut.failure()
+
             if faults:
                 bugs+=1
                 failname='failure'+str(bugs)+'.test'
-                for i in range(len(Rdc)):
-                    with open(failname,'w') as f:
-                        f.write('\n'+'This is a bug'+str(bugs)+'\n')
-                        f.write(str(sut.failure())+'\n')
-                        f.write(str(Rdc)+'\n')
-
+                for i in range(len(R)):
+                    with open(failname, 'w') as f:
+                        f.write('\n' + 'This is a bug' + str(bugs) + '\n')
+                        f.write(str(sut.failure()) + '\n')
+                        f.write(str(R) + '\n')
 if (coverage):
     sut.internalReport()
 
