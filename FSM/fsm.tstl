@@ -1,0 +1,13 @@
+@import fsm
+
+pool: <m> 1
+pool: <i> 1
+pool: <s> 1
+
+<m> := fsm.Machine()
+
+<i> := <['a','b','c']>
+
+print "<m,1>", <i,1>, <m>.input(<i>)
+
+property: <m>.specinputs('abc') != [('a',1),('b',1),('c',1)]

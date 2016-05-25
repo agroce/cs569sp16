@@ -1,0 +1,10 @@
+self.p_i[2] = 'c' 
+self.p_i[1] = 'a' 
+self.p_m[1] = fsm.Machine() 
+print "self.p_m[1]", self.p_i[1], self.p_m[1].input(self.p_i[1]) 
+self.p_i[1] = 'b' 
+self.p_m[2] = fsm.Machine() 
+self.p_i[0] = 'b' 
+print "self.p_m[1]", self.p_i[1], self.p_m[1].input(self.p_i[1]) 
+print "self.p_m[1]", self.p_i[2], self.p_m[1].input(self.p_i[2]) 
+self.p_m[0] = fsm.Machine() 
