@@ -35,9 +35,9 @@ class FBDR_Tester():
 		return False # no duplicate
 
 	def RandomSeqsAndVals(self, nonErrorSeqs, n=1):
-		if nonErrorSeqs == [] or n > len(nonErrorSeqs):
+		if self.nonErrorSeqs == [] or n > len(self.nonErrorSeqs):
 			return []
-		return [random.choice(nonErrorSeqs) for i in xrange(n)]
+		return [random.choice(self.nonErrorSeqs) for i in xrange(n)]
 
 	def SetExtensibleFlags(self, newSequence):
 		pass
@@ -52,23 +52,25 @@ class FBDR_Tester():
 		count = 0
 		while os.path.exists('failure' +str(count) + '.test') == True:
 			count += 1
-		recoder = open('failure' +str(count) + '.test', 'w')
-		recoder.write(str(self.sut.failure())) 
-		recoder.close
+		#recoder = open('failure' +str(count) + '.test', 'w')
+		#recoder.write(str(self.sut.failure())) 
+		#recoder.close
+		filename = 'failure' +str(count) + '.test'
+		self.sut.saveTest(self.sut.test(),filename) 
+		
 
 	def Generation(self):
 		# random seed
-		rgen = random.Random()
-		rgen.seed(self.seed)
+		rgen = random.Random(self.seed)
 
 		# Testing loop
 		startTime = time.time()
 		while (time.time()-startTime) < self.timeout:
-			print (time.time()-startTime)
+			#print (time.time()-startTime)
 
 			# Generate a sequence of n actions
-			newSequence = self.sut.randomEnableds(rgen, self.depth) 
-			seqs = self.RandomSeqsAndVals(self.nonErrorSeqs,n=20)
+			newSequence = self.sut.randomEnableds(rgen, self.depth * self.width) 
+			seqs = self.RandomSeqsAndVals(self.nonErrorSeqs,n=1)
 			newSequence.extend(seqs)
 
 			# Discard duplicates
@@ -82,18 +84,18 @@ class FBDR_Tester():
 					self.ProduceRunningInfo(act, elapsed=(time.time() - startTime))
 				# Check if violated
 				stepOK = self.sut.safely(act)
-				if self.sut.check() != True:
-					violated = True
-
-				#if stepOK != True or violated == True:
-				#	print (time.time()-startTime), stepOK, violated
+				
 
 				# Failure check and record
 				if self.faults == True:
-				 	if stepOK != True or violated == True:
+				 	if stepOK != True:#or violated == True:
 						self.RecordFailure()
 						print (time.time()-startTime), 'Failure found. Program is terminated'
-						return self.nonErrorSeqs, self.errorSeqs
+						#return self.nonErrorSeqs, self.errorSeqs
+						continue
+						
+				if self.sut.check() != True:
+					violated = True
 
 			if violated == True:
 				self.errorSeqs += newSequence
