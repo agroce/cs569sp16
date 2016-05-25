@@ -26,7 +26,7 @@ LAYER_BUDGET = width#BUDGET/GOAL_DEPTH
 print "LAYER BUDGET:",LAYER_BUDGET
 
 slack = 0.0
-
+bugs = 0
 sut = sut.sut()
 sut.silenceCoverage()
 
@@ -160,6 +160,10 @@ while d <= GOAL_DEPTH:
                 R = sut.reduce(sut.test(),sut.fails, True, True)
                 sut.prettyPrintTest(R)
                 print sut.failure()
+                if faults:
+                    bugs +=1;
+                    failname = 'failure' + str(bugs) + '.test'
+                    sut.saveTest(R, failname)
                 #sys.exit(1)
             s2 = sut.state()
 
@@ -203,11 +207,12 @@ while (time.time() - startALL) <= (timeout):
             if faults:
                 bugs+=1
                 failname='failure'+str(bugs)+'.test'
-                for i in range(len(Rdc)):
-                    with open(failname, 'w') as f:
-                        f.write('\n' + 'This is a bug' + str(bugs) + '\n')
-                        f.write(str(sut.failure()) + '\n')
-                        f.write(str(Rdc) + '\n')
+                sut.saveTest(Rdc, failname);
+                #for i in range(len(Rdc)):
+                #    with open(failname, 'w') as f:
+                #        f.write('\n' + 'This is a bug' + str(bugs) + '\n')
+                #        f.write(str(sut.failure()) + '\n')
+                  #      f.write(str(Rdc) + '\n')
 if (coverage):
     sut.internalReport()
 
