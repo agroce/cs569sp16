@@ -61,16 +61,16 @@ def randomAct():
 	actCount += 1
 
 	ok = sut.safely(act)
-	propok = sut.check()
 
-	if ((not ok) or (not propok)):
+	if (not ok):
 		bugs += 1
-		if config.faults == 1:
-			test_file.write(str(sut.failure()) + "\n")
 		collectCoverage()
 		R = sut.reduce(sut.test(), sut.fails, True, True)
+		if config.faults :
+			filename = 'failure%d.test'%bugs
+			sut.saveTest(sut.test(), filename)
 		sut.prettyPrintTest(R)
-		print sut.failure()
+
 		sut.restart()
 
 	return ok
@@ -93,9 +93,6 @@ def main():
 	branchCount = {}
 	statementCount = {}
 	ntest = 0
-
-	if config.faults:
-		test_file = open("failure1.test", "w")
 	
 	start = time.time()
 	elapsed = time.time() - start
@@ -105,8 +102,10 @@ def main():
 		ntest += 1
 		for i in xrange(0, config.depth):
 			for j in xrange(0, config.width):
-				if not randomAct():
-					break
+				if randomAct():
+					preTest = sut.state()
+				else:
+					sut.backtrack(preTest)
 
 				elapsed = time.time() - start
 				if config.running:
@@ -130,9 +129,6 @@ def main():
 
 	printCoverage()
 
-	if config.faults:
-		test_file.close()
-	
 	if config.coverage:
 		sut.internalReport()
 
