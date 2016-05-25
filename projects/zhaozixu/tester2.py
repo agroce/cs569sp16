@@ -70,17 +70,20 @@ def handle_failure(sut, fault_pool):
         sut.failsCheck(f[size-1])
         sut.reduce(sut.test(), sut.fails)
         
-        f = open("failure.test", 'a')
-        f.write("\\\\\\\\\\FAILURE NO." + str(k) + "\\\\\\\\\\\n")
-        f.write("FAILURE INFO:\n")
-        f.write(str(sut.failure()) + "\n")
-        f.write("WARNING INFO:\n")
-        f.write(str(sut.warning()) + "\n")
-        f.write("STEPS TRACE:\n")
-        for t in sut.test():
-            f.write(sut.serializable(t) + "\n")
-        f.write("\\\\\\\\\\END FAILURE NO." + str(k) + "\\\\\\\\\\\n\n\n\n\n")
-        f.close()
+        filename = 'failure'+str(k)+'.test'
+        sut.saveTest(sut.test(), filename)
+        
+#        f = open("failure.test", 'a')
+#        f.write("\\\\\\\\\\FAILURE NO." + str(k) + "\\\\\\\\\\\n")
+#        f.write("FAILURE INFO:\n")
+#        f.write(str(sut.failure()) + "\n")
+#        f.write("WARNING INFO:\n")
+#        f.write(str(sut.warning()) + "\n")
+#        f.write("STEPS TRACE:\n")
+#        for t in sut.test():
+#            f.write(sut.serializable(t) + "\n")
+#        f.write("\\\\\\\\\\END FAILURE NO." + str(k) + "\\\\\\\\\\\n\n\n\n\n")
+#        f.close()
         
 
 
@@ -106,8 +109,8 @@ while time.time() - start < args['timeout']:
     size = len(pass_pool)
     
     #pick up proper sequence
-    depthOK = True
-    while depthOK:
+    depthNotOK = True
+    while depthNotOK:
         if size > 0:
             test = random.choice(pass_pool)
             if len(test[len(test)-1]) < args['depth']:
