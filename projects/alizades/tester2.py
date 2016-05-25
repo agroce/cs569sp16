@@ -90,10 +90,11 @@ while(time.time()< start + TIME_OUT):
                         sut.restart()
                 else:
                     if len(sut.newBranches()) != 0:
-                        test = sut.state()
+                        test = sut.test()
+                        mut = mutate(test)
                         print "NEW BRANCHES FOUND",sut.newBranches()
                         tests.append((list(sut.test()), set(sut.currBranches()))) 
-                        mut = mutate(tests)
+                        
                         population.append((mut,sut.currBranches()))
 
 if COVERAGE:
