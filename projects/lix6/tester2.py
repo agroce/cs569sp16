@@ -27,7 +27,7 @@ def randomAction():
         if argv.FAULTS:
             file = "failure"+str(bugs)+".test"
             fault = sut.test()
-            sut.saveTest(fault,name)
+            sut.saveTest(fault,file)
             # if argv.COVERAGE:
             #     collectCoverage()
             # sut.restart()
