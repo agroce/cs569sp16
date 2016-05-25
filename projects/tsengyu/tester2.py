@@ -29,8 +29,8 @@ def ExecutingInfo(run, elapsed):
 	if sut.newBranches() != set([]):
 		print "ACTION:", run[0]
 		for b in sut.newBranches():
-			print "Runtime:", elapsed, "||", "Branche Count:", len(sut.allBranches())
-			print "New Branch:", b
+			print "Runtime:", elapsed, "||", "branch Count:", len(sut.allBranches())
+			print "New branch:", b
 			print "========================================================================================"
 
 def RecordFail():
@@ -77,6 +77,8 @@ def main():
 					R = sut.reduce(sut.test(), sut.fails, True, True)
 					sut.prettyPrintTest(R)
 					print sut.failure()
+					filename = 'failure%d.test' % Num_BUG
+					sut.saveTest(R , filename)
 					break
 
 		if not_okay == True:
