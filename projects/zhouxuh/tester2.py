@@ -23,7 +23,7 @@ def action():
                 for s in sut.newStatements():
                     print time.time() - start, len(sut.allStatements()),"New statement",s
     
-    if not ok or not sut.check():
+    if not ok:
         if faults:
             bugs += 1
             print "FOUND A FAILURE"
@@ -35,7 +35,7 @@ def action():
             sut.prettyPrintTest(R)
             print sut.failure()
             fname="failure" + str(bugs) + ".test"
-            sut.saveTest(R,fname)
+            sut.saveTest(sut.test(),fname)
             errorSeqs.append(sut.currStatements())
             sut.restart()
     else: 
