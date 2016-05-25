@@ -22,7 +22,6 @@ import time
      #   print "NEW BRANCHES DUE TO MUTATION:",sut.newCurrBranches()
     #return tcopy
 
-
 # check_action():
  ##   global num,actioncount
   #  action = sut.randomEnabled(R)
@@ -100,9 +99,11 @@ while time.time()-start < TIMEOUT:
 
 				failureCount = failureCount + 1       #the failure count will go on increasing
 
-				if (FAULT_CHECK):                     # this will check for the faults
-				    f = open("failure_file" + str(failureCount) + ".test", "w")
-				    j = 0
+				if (FAULT_CHECK):                              # this will check for the faults
+				    name = "failure"+str(failureCount)+".test"
+                                    f = sut.test()
+                                    sut.saveTest(f,name)
+
 
 				    for (s_reduces) in S:
 
