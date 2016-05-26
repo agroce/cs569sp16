@@ -38,7 +38,7 @@ while time.time()-start < timeout:
         for s in xrange(0,depth):
             act = sut.randomEnabled(rgen)
             ok = sut.safely(act)
-            propok = sut.check()   
+            #propok = sut.check()   
             if len(sut.newBranches()) > 0:
                 savedTest = sut.state()
                 test = True
@@ -57,7 +57,8 @@ while time.time()-start < timeout:
             
             #if faults=1, check for bugs and store them in files, if faults=0 don't check for bugs.
             if faults == 1:
-                if not ok or not propok:
+                #if not ok or not propok:
+                if not ok:
                     print "FAILURE FOUND.....FAILURES ARE STORING IN FILES"
                     i += 1
                     bugs += 1
