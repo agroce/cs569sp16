@@ -59,6 +59,7 @@ def captureFault():
 
 def executeAction(act):
     'Execute action, collect coverage and faults'
+    global nbug
     ok = sut.safely(act)
     if not ok:
         nbug += 1
