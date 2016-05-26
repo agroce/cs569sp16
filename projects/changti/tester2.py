@@ -21,6 +21,10 @@ def failure():
     R = sut.reduce(sut.test(),sut.fails, True, True)
     sut.prettyPrintTest(R)
     print sut.failure()
+
+    fname="failure" + str(bugs) + ".test"
+    sut.saveTest(sut.test(), fname)
+
     sut.restart()
     return     
 
