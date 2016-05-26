@@ -59,10 +59,10 @@ def captureFault():
 
 def executeAction(act):
     'Execute action, collect coverage and faults'
-    global nbug
+    global nbugs
     ok = sut.safely(act)
     if not ok:
-        nbug += 1
+        nbugs += 1
         if (opts.fault):
             captureFault()
         else:
@@ -78,7 +78,7 @@ class Pool:
 
     def __init__(self, seed, pool=None):
         self.rgen = random.Random(seed)
-        self.nbug = 0
+        self.nbugs = 0
         if not pool:
             self.pool = []
         else:
