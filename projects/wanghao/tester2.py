@@ -81,9 +81,7 @@ def randomAction():
             errCount += 1
             fault = sut.failure()
             fname = 'failure' + str(bugs) + '.test'
-            wfile = open(fname, 'w+')
-            wfile.write(str(fault))
-            wfile.close() 
+            sut.saveTest(sut.test(), fname)
             sut.restart() 
 
     else:
