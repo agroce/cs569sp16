@@ -110,12 +110,12 @@ SUTs.  doc2.pdf is revised documentation for changes to your algorithm.
 
 Part 4:  FINAL SUBMISSION
 Due:     June 6 (first day of finals)
-File(s): finaltester.py final.pdf mytester.py
+File(s): finaltester.py final.pdf
 Points:  45
 
 The tester submission is the same as last time.  However, this time
 you may also submit a more-flexible verison of your algorithm as
-mytester.py, which takes more parameters, or has a nicer configuration
+finaltester.py, which takes more parameters, or has a nicer configuration
 interface, like the TSTL randomtester and other generators.  final.pdf
 should, in at least 1,000 words, document (include graphs) some effort
 to evaluate your algorithm, describe related work, etc.  Basically
