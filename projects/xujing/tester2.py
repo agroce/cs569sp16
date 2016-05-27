@@ -13,7 +13,7 @@ running = int(sys.argv[7])
 
 
 def randomAction():
-    global actCount
+    global actCount, bugs
     act = sut.randomEnabled(R)
     actCount += 1
     ok = sut.safely(act)
@@ -27,6 +27,7 @@ def randomAction():
                 print time.time() - start, len(sut.allStatements()),"New statement",s1
 
     if not ok:
+        bugs += 1
         print "FOUND A FAILURE"
         error.append(sut.currStatements())
         if faults:
@@ -39,8 +40,9 @@ def randomAction():
 
 
 def main():
-    global start,sut,R,noerror,error,actCount
+    global start,sut,R,noerror,error,actCount, bugs
     actCount = 0
+    bugs = 0
     start = time.time()
     noerror = []
     error = []
