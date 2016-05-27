@@ -34,9 +34,9 @@ def check_action():
         sut.prettyPrintTest(Z)
         print(sut.failure())
         if config.fault:
-            Z = 'failure'+str(num)+'.test'
+            FileName = 'failure'+str(num)+'.test'
 	    sut.saveTest(Z,FileName)
-            f.close()
+           
    
     return ok
  
