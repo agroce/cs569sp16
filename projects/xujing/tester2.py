@@ -76,16 +76,19 @@ def main():
     if not error ==[]:
         print "SHOW ERROR SEQUENCE"
         #    print error
-        f = open(("error" + str(actCount) + ".out"), 'w')
-        f.write(str(error))
-        f.close()
+        #f = open(("failure" + str(actCount) + ".test"), 'w')
+        # f.write(str(error))
+        f = 'failure' + str(actCount) + '.test'
+        sut.saveTest(sut.test(), f)
+        sut.restart()
+        # f.close()
     else:
         print "Data in noerror sequence"
 
     if coverage:
         sut.internalReport()
 
-
+    print "TOTAL BUGS", bugs
     print "TOTAL ACTIONS",actCount
     print "TOTAL RUNTIME",time.time()-start
 
