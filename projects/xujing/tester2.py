@@ -13,7 +13,7 @@ running = int(sys.argv[7])
 
 
 def randomAction():
-    global actCount, bugs
+    global actCount, bugs,newseq
     act = sut.randomEnabled(R)
     actCount += 1
     ok = sut.safely(act)
@@ -29,15 +29,29 @@ def randomAction():
     if not ok:
         bugs += 1
         print "FOUND A FAILURE"
-        error.append(sut.currStatements())
+        error.append(newseq)
         if faults:
             print("SHOW FAULT")
             f = sut.reduce(sut.test(), sut.fails, True, True)
             sut.prettyPrintTest(f)
+            f = 'failure' + str(actCount) + '.test'
+            sut.saveTest(sut.test(), f)
+            sut.restart()
             print sut.failure()
 
     return ok
 
+def checkAlg():
+    global error, noerror
+    if not error ==[]:
+        print "SHOW ERROR SEQUENCE"
+        #    print error
+        #f = open(("failure" + str(actCount) + ".test"), 'w')
+        #f.write(str(error))
+        #f.close()
+    else:
+        print "Data in noerror sequence"
+        # print noerror
 
 def main():
     global start,sut,R,noerror,error,actCount, bugs
@@ -47,7 +61,6 @@ def main():
     noerror = []
     error = []
     newseq = []
-    belowMean = set([])
     ntest = 0
     coverageCount = {}
     sut = sut.sut()
@@ -64,26 +77,14 @@ def main():
             for s in xrange(0, depth):
                 if (time.time() > start + timeout):
                     break
-                newseq = sut.newStatements()
+                newseq = sut.randomEnableds(R, depth)
                 ok = randomAction()
                 if not ok:
                     break
                 if(not ((newseq in error) or (newseq in noerror))):
-                    states.insert(ntest-1,sut.state())
-                    noerror.append(sut.currStatements())
+                    noerror.append(newseq)
 
-
-    if not error ==[]:
-        print "SHOW ERROR SEQUENCE"
-        #    print error
-        #f = open(("failure" + str(actCount) + ".test"), 'w')
-        # f.write(str(error))
-        f = 'failure' + str(actCount) + '.test'
-        sut.saveTest(sut.test(), f)
-        sut.restart()
-        # f.close()
-    else:
-        print "Data in noerror sequence"
+    checkAlg()
 
     if coverage:
         sut.internalReport()
