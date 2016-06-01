@@ -1,0 +1,8 @@
+self.p_avl[0] = avl.AVLTree() 
+self.p_val[0] = 1 
+self.p_avl[0].insert(self.p_val[0]) 
+self.p_val[0] = 2 
+self.p_avl[0].insert(self.p_val[0]) 
+self.p_val[3] = 3 
+self.p_avl[0].insert(self.p_val[3]) 
+self.p_avl[0].insert(self.p_val[3]) 
