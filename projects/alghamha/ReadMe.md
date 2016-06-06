@@ -48,8 +48,8 @@ For this project we are using:
 ### References ###
  
 ```
-1- [TSTL: the Template Scripting Testing Language]
-[TSTL: the Template Scripting Testing Language]: https://github.com/agroce/tstl
-2- [cs569sp16 Repo]
+1- TSTL: the Template Scripting Testing Language [URL]
+[URL]: https://github.com/agroce/tstl
+2- [cs569sp16 Repo] [URL]
 [URL]: https://github.com/agroce/cs569sp16/blob/master/readings.txt
 ```
