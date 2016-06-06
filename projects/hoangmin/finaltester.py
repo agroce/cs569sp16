@@ -187,7 +187,7 @@ i = 0;
 time_start2 = time.time()
 time_out = 0
 
-while (time.time() < time_start2 + TIME_PHASE2):
+while (time.time() < time_start2 + TIME_PHASE2 and time_out==0):
     for i in xrange(0, len(selected_state) - 1):
         cur_state_1 = selected_state[i]
         sut.restart()
@@ -209,10 +209,16 @@ while (time.time() < time_start2 + TIME_PHASE2):
         else:
             t1 = sut.test()
             if (rand.random() < 0.75):
+                if (time.time() > time_start2 + TIME_PHASE2):
+                    time_out = 1
+                    break
                 mutation(t1)
                 selected_state[i] = sut.state()
             else:
                 for j in xrange(1, len(selected_state)):
+                    if (time.time() > time_start2 + TIME_PHASE2):
+                        time_out = 1
+                        break
                     if j == i:
                         continue
                     cur_state_2 = selected_state[j]
@@ -221,6 +227,10 @@ while (time.time() < time_start2 + TIME_PHASE2):
                     t2 = sut.test()
                     crossover(t1, t2)
                     selected_state[j] = sut.state()
+                if time_out==1:
+                    break
+        if time_out==1:
+            break
     if (time_out == 1):
         break
 
