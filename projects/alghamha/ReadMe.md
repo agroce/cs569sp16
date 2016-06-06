@@ -61,4 +61,4 @@ Here are a description of each parameter along with its default value:
 1- [TSTL: the Template Scripting Testing Language]
 [TSTL: the Template Scripting Testing Language]: https://github.com/agroce/tstl
 2- [cs569sp16 Repo]
-[cs569sp16 Repo]: https://github.com/agroce/cs569sp16/blob/master/readings.txt
+[CS569sp16 Repository]: https://github.com/agroce/cs569sp16/blob/master/readings.txt
