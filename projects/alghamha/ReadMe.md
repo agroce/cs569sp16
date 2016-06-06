@@ -29,26 +29,29 @@ Here are a description of each parameter along with its default value:
                         The depth of each test case. The default is 100
   -l [LENGTH], --length [LENGTH]
                         The length/Memory. The default value is 100
-  -f [FAULTSENABLED], --FaultsEnabled [FAULTSENABLED]
+  -f [{True,False}], --FaultsEnabled [{True,False}]
                         Save Test Case when Failure is discovered. The default
                         value is False
-  -c [COVERAGEENABLED], --CoverageEnabled [COVERAGEENABLED]
+  -c [{True,False}], --CoverageEnabled [{True,False}]
                         Report Code coverage. The default value is False
-  -r [RUNNINGENABLED], --RunningEnabled [RUNNINGENABLED]
+  -r [{True,False}], --RunningEnabled [{True,False}]
                         Check Coverage on the fly while running. The default
                         value is False
-  -a [ALGORITHM], --algorithm [ALGORITHM]
-                        There are 2 Algorithms. [prop] is a Random algorithm
-                        based on sepcified propability and [grouping] is
-                        random algorithm concentrate on a group of actions for
-                        automatically assigned depths based on the length of
-                        enabled actions. The default algorithm is prop
-  -p [PROPERTYCHECK], --propertyCheck [PROPERTYCHECK]
+  -a [{prop,grouping}], --algorithm [{prop,grouping}]
+                        There are 2 Algorithms implemented here. The first is
+                        called [prop] that uses Random selections based on
+                        sepcified propability. The second Algorithm is called
+                        [grouping] that selects a group of actions and
+                        concentrate on this group using automatically assigned
+                        depths based on the length of enabled actions. The
+                        default algorithm is [prop]
+  -p [{True,False}], --propertyCheck [{True,False}]
                         Check All properties defined in the SUT. The default
                         Value is False
   -P [PROP], --Prop [PROP]
                         Assign the propability that can be used for both
                         algorithms. The default value is 0.5
+
 ```
 
 
