@@ -31,12 +31,12 @@ Here are a description of each parameter along with its default value:
                         The length/Memory. The default value is 100
   -f [{True,False}], --FaultsEnabled [{True,False}]
                         Save Test Case when Failure is discovered. The default
-                        value is False
+                        value is True
   -c [{True,False}], --CoverageEnabled [{True,False}]
-                        Report Code coverage. The default value is False
+                        Report Code coverage. The default value is True
   -r [{True,False}], --RunningEnabled [{True,False}]
                         Check Coverage on the fly while running. The default
-                        value is False
+                        value is True
   -a [{prop,grouping}], --algorithm [{prop,grouping}]
                         There are 2 Algorithms implemented here. The first is
                         called [prop] that uses Random selections based on
