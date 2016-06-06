@@ -14,7 +14,9 @@ The software can be used in TSTL under generator folder as follows:
 
 ` python mytester.py -t 3 -s 2 -d 100 -l 100 -f True -c True -r True -a prop -p True -P 0.5`
 
-For this project we are using:
+#### Description of each parameter ####
+
+Here are a description of each parameter along with its default value:
 
 ```bash
   -h, --help            show this help message and exit
@@ -45,11 +47,12 @@ For this project we are using:
 
 ```
 
+
 ### References ###
  
 ```
 1- TSTL: the Template Scripting Testing Language [URL]
 [URL]: https://github.com/agroce/tstl
-2- [cs569sp16 Repo] [URL]
+2- cs569sp16 Repo [URL]
 [URL]: https://github.com/agroce/cs569sp16/blob/master/readings.txt
 ```
