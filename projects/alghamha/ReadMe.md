@@ -42,7 +42,7 @@ Here are a description of each parameter along with its default value:
   -p [P], -propertyCheck [P]
                         Check All properties defined in the SUT. The default
                         Value is False
-  -P [P], -Prop [P]     Assign the propability that can used for both
+  -P [P], -Prop [P]     Assign the propability that can be used for both
                         algorithms. The default value is 0.5
 
 ```
