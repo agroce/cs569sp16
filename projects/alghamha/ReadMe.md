@@ -6,9 +6,9 @@
 
 #### Introduction ####
 
+Generating test cases for a Software Under Test (SUT) is not an easy task as there are many approaches and techniques that can be adopted depending on the SUT and the main objective behind its testing. Moreover, it is more challenging to generalize the test generator on deferent SUTs. The most easiest and effective approach is Random Testing for its easy implementation, its efficiency in SUT exploration and its great results. Therefore, in this project these are two algorithms have been implemented. The first algorithm’s called “PROP” that combines both sequential and random tester techniques based on randomly selected probability to replay back good tests those are saved whenever new branches got discovered. The aim of this algorithm is searching for faults as quickly as possible by taking advantage of simple random generator speed. The second algorithm have the same idea of selecting random probabilities but instead of using the sequential algorithm we make the algorithm focus on randomly selected group of actions. These algorithms can be used through an easy interface that will be described in “How to Use The Test Generator Algorithm” section.
 
-
-#### Using The Tester Algorithm Parameters ####
+#### How to Use The Test Generator Algorithm ####
 
 The software can be used in TSTL under generator folder as follows:
 
