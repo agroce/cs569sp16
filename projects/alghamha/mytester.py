@@ -6,16 +6,16 @@ import os
 import argparse
 
 parser = argparse.ArgumentParser(description='My Tester, the argument must be specified in this order: "python mytester.py timeout seeds depth length FaultsEnabled CoverageEnabled RunningEnabled"')
-parser.add_argument('-t','-timeout', type=int, nargs='?', default=60, help='Timeout will be parsed in seconds - The default is 60 seconds')
-parser.add_argument('-s','-seeds', type=int, nargs='?', default=0, help=' The number of seeds required. The default is 0')
+parser.add_argument('-t','-timeout', type=int, nargs='?', default=60, help='Timeout will be parsed in seconds - The default value is 60 seconds')
+parser.add_argument('-s','-seeds', type=int, nargs='?', default=0, help=' The number of seeds required. The default value is 0')
 parser.add_argument('-d','-depth', type=int, nargs='?', default=100, help='The depth of each test case. The default is 100')
-parser.add_argument('-l','-length', type=int, nargs='?', default=100, help='The length/Memory. The default is 100')
-parser.add_argument('-f','-FaultsEnabled', type=bool, nargs='?', default=True, help='Save Test Case when Failure is discovered. The default value is True')
-parser.add_argument('-c','-CoverageEnabled', type=bool, nargs='?', default=True, help='Report Code coverage. The default value is 1 = True')
-parser.add_argument('-r','-RunningEnabled', type=bool, nargs='?', default=True, help='Check Coverage on the fly while running. The default value is True')
-parser.add_argument('-a','-algorithm', type=str, nargs='?', default='prop', help='There are 2 Algorithms. [prop] is a Random algorithm based on sepcified propability and [grouping] is random algorithm concentrate on a group of actions for automatically assigned depths based on the length of enabled actions. The default is prop algorithm')
-parser.add_argument('-p','-propertyCheck', type=bool, nargs='?', default=False, help='Check All properties defined in the SUT')
-parser.add_argument('-P','-Prop', type=float, nargs='?', default=0.5, help='Assign the propability that can used for both algorithms')
+parser.add_argument('-l','-length', type=int, nargs='?', default=100, help='The length/Memory. The default value is 100')
+parser.add_argument('-f','-FaultsEnabled', type=bool, nargs='?', default=False, help='Save Test Case when Failure is discovered. The default value is False')
+parser.add_argument('-c','-CoverageEnabled', type=bool, nargs='?', default=False, help='Report Code coverage. The default value is False')
+parser.add_argument('-r','-RunningEnabled', type=bool, nargs='?', default=False, help='Check Coverage on the fly while running. The default value is False')
+parser.add_argument('-a','-algorithm', type=str, nargs='?', default='prop', help='There are 2 Algorithms. [prop] is a Random algorithm based on sepcified propability and [grouping] is random algorithm concentrate on a group of actions for automatically assigned depths based on the length of enabled actions. The default algorithm is prop')
+parser.add_argument('-p','-propertyCheck', type=bool, nargs='?', default=False, help='Check All properties defined in the SUT. The default Value is False')
+parser.add_argument('-P','-Prop', type=float, nargs='?', default=0.5, help='Assign the propability that can used for both algorithms. The default value is 0.5')
 
 arguments = parser.parse_args()
 
@@ -80,7 +80,7 @@ def	saveFaults(bug, testCase):
 if (algorithm == 'prop'):
 	for act in sut.enabled():
 		seq = sut.safely(act)
-		if (not seq) and (FaultsEnabled == 1):
+		if (not seq) and (FaultsEnabled == True):
 			#Sequential = "Discovered By Sequential Algorithm" 
 			elapsedFailure = time.time() - startTime
 			bugs += 1
@@ -92,7 +92,7 @@ if (algorithm == 'prop'):
 			saveFaults( bugs, test)
 			sut.restart()
 				# Print the new discovered branches	
-		if (len(sut.newBranches()) > 0) and (RunningEnabled == 1):
+		if (len(sut.newBranches()) > 0) and (RunningEnabled == True):
 			#print "sequential found this branch"
 			print "ACTION:",act[0]
 			elapsed1 = time.time() - startTime
@@ -123,7 +123,7 @@ if (algorithm == 'prop'):
 				break
 			r = sut.safely(action)
 			# Start saving discovered fault on Disk
-			if (not r) and (FaultsEnabled == 1):
+			if (not r) and (FaultsEnabled == True):
 				#RandomAlgorithm = "Discovered By Random Algorithm" 
 				elapsedFailure = time.time() - startTime
 				bugs += 1
@@ -138,7 +138,7 @@ if (algorithm == 'prop'):
 			if (time.time() - startTime >= timeout):
 				break
 			# This part is for checking the property 
-			if (propertyCheck == 1):
+			if (propertyCheck == True):
 				checkResult = sut.check()
 				if (not checkResult):
 					bugs += 1
@@ -153,7 +153,7 @@ if (algorithm == 'prop'):
 				if (time.time() - startTime >= timeout):
 					break
 			# Print the new discovered branches	
-			if (len(sut.newBranches()) > 0) and (RunningEnabled == 1):
+			if (len(sut.newBranches()) > 0) and (RunningEnabled == True):
 				#print "Random Found this branches"
 				print "ACTION:",action[0]
 				elapsed1 = time.time() - startTime
@@ -197,7 +197,7 @@ elif (algorithm == 'grouping'):
 					break
 				r = sut.safely(action)
 				# Start saving discovered fault on Disk
-				if (not r) and (FaultsEnabled == 1):
+				if (not r) and (FaultsEnabled == True):
 					print r
 					#RandomAlgorithm = "Discovered By Random Algorithm" 
 					elapsedFailure = time.time() - startTime
@@ -213,7 +213,7 @@ elif (algorithm == 'grouping'):
 				if (time.time() - startTime >= timeout):
 					break
 				# This part is for checking the property 
-				if (propertyCheck == 1):
+				if (propertyCheck == True):
 					checkResult = sut.check()
 					if (not checkResult):
 						bugs += 1
@@ -228,7 +228,7 @@ elif (algorithm == 'grouping'):
 					if (time.time() - startTime >= timeout):
 						break
 				# Print the new discovered branches	
-				if (len(sut.newBranches()) > 0) and (RunningEnabled == 1):
+				if (len(sut.newBranches()) > 0) and (RunningEnabled == True):
 					#print "Random Found this branches"
 					print "ACTION:",action[0]
 					elapsed1 = time.time() - startTime
@@ -260,7 +260,7 @@ elif (algorithm == 'grouping'):
 					break
 				r = sut.safely(action)
 				# Start saving discovered fault on Disk
-				if (not r) and (FaultsEnabled == 1):
+				if (not r) and (FaultsEnabled == True):
 					print r
 					#RandomAlgorithm = "Discovered By Random Algorithm" 
 					elapsedFailure = time.time() - startTime
@@ -291,7 +291,7 @@ elif (algorithm == 'grouping'):
 					if (time.time() - startTime >= timeout):
 						break
 				# Print the new discovered branches	
-				if (len(sut.newBranches()) > 0) and (RunningEnabled == 1):
+				if (len(sut.newBranches()) > 0) and (RunningEnabled == True):
 					#print "Random Found this branches"
 					print "ACTION:",action[0]
 					elapsed1 = time.time() - startTime
@@ -314,7 +314,7 @@ elapsed = time.time() - startTime
 print "\n                  ############ The Final Report ############# \n"
 print elapsed, "Total Running Time"
 print bugs, " Failures Found"
-if CoverageEnabled == 1:
+if (CoverageEnabled == True):
 	print len(sut.allBranches()),"BRANCHES COVERED"
 	print len(sut.allStatements()),"STATEMENTS COVERED"
 	sut.internalReport()
