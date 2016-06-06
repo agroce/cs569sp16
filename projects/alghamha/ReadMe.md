@@ -49,7 +49,7 @@ For this project we are using:
  
 ```
 1- [TSTL: the Template Scripting Testing Language]
-[URL]: https://github.com/agroce/tstl
+[TSTL: the Template Scripting Testing Language]: https://github.com/agroce/tstl
 2- [cs569sp16 Repo]
 [URL]: https://github.com/agroce/cs569sp16/blob/master/readings.txt
 ```
