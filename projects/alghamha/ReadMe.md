@@ -14,37 +14,41 @@ The software can be used in TSTL under generator folder as follows:
 
 ` python mytester.py -t 3 -s 2 -d 100 -l 100 -f True -c True -r True -a prop -p True -P 0.5`
 
-#### Description of each parameter ####
+#### Description of Each Parameter ####
 
 Here are a description of each parameter along with its default value:
 
 ```bash
   -h, --help            show this help message and exit
-  -t [T], -timeout [T]  Timeout will be parsed in seconds - The default value
+  -t [TIMEOUT], --timeout [TIMEOUT]
+                        Timeout will be parsed in seconds - The default value
                         is 60 seconds
-  -s [S], -seeds [S]    The number of seeds required. The default value is 0
-  -d [D], -depth [D]    The depth of each test case. The default is 100
-  -l [L], -length [L]   The length/Memory. The default value is 100
-  -f [F], -FaultsEnabled [F]
+  -s [SEEDS], --seeds [SEEDS]
+                        The number of seeds required. The default value is 0
+  -d [DEPTH], --depth [DEPTH]
+                        The depth of each test case. The default is 100
+  -l [LENGTH], --length [LENGTH]
+                        The length/Memory. The default value is 100
+  -f [FAULTSENABLED], --FaultsEnabled [FAULTSENABLED]
                         Save Test Case when Failure is discovered. The default
                         value is False
-  -c [C], -CoverageEnabled [C]
+  -c [COVERAGEENABLED], --CoverageEnabled [COVERAGEENABLED]
                         Report Code coverage. The default value is False
-  -r [R], -RunningEnabled [R]
+  -r [RUNNINGENABLED], --RunningEnabled [RUNNINGENABLED]
                         Check Coverage on the fly while running. The default
                         value is False
-  -a [A], -algorithm [A]
+  -a [ALGORITHM], --algorithm [ALGORITHM]
                         There are 2 Algorithms. [prop] is a Random algorithm
                         based on sepcified propability and [grouping] is
                         random algorithm concentrate on a group of actions for
                         automatically assigned depths based on the length of
                         enabled actions. The default algorithm is prop
-  -p [P], -propertyCheck [P]
+  -p [PROPERTYCHECK], --propertyCheck [PROPERTYCHECK]
                         Check All properties defined in the SUT. The default
                         Value is False
-  -P [P], -Prop [P]     Assign the propability that can be used for both
+  -P [PROP], --Prop [PROP]
+                        Assign the propability that can be used for both
                         algorithms. The default value is 0.5
-
 ```
 
 

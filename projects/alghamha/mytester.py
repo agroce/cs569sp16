@@ -6,61 +6,61 @@ import os
 import argparse
 
 parser = argparse.ArgumentParser(description='My Tester, the argument must be specified in this order: "python mytester.py timeout seeds depth length FaultsEnabled CoverageEnabled RunningEnabled"')
-parser.add_argument('-t','-timeout', type=int, nargs='?', default=60, help='Timeout will be parsed in seconds - The default value is 60 seconds')
-parser.add_argument('-s','-seeds', type=int, nargs='?', default=0, help=' The number of seeds required. The default value is 0')
-parser.add_argument('-d','-depth', type=int, nargs='?', default=100, help='The depth of each test case. The default is 100')
-parser.add_argument('-l','-length', type=int, nargs='?', default=100, help='The length/Memory. The default value is 100')
-parser.add_argument('-f','-FaultsEnabled', type=bool, nargs='?', default=False, help='Save Test Case when Failure is discovered. The default value is False')
-parser.add_argument('-c','-CoverageEnabled', type=bool, nargs='?', default=False, help='Report Code coverage. The default value is False')
-parser.add_argument('-r','-RunningEnabled', type=bool, nargs='?', default=False, help='Check Coverage on the fly while running. The default value is False')
-parser.add_argument('-a','-algorithm', type=str, nargs='?', default='prop', help='There are 2 Algorithms. [prop] is a Random algorithm based on sepcified propability and [grouping] is random algorithm concentrate on a group of actions for automatically assigned depths based on the length of enabled actions. The default algorithm is prop')
-parser.add_argument('-p','-propertyCheck', type=bool, nargs='?', default=False, help='Check All properties defined in the SUT. The default Value is False')
-parser.add_argument('-P','-Prop', type=float, nargs='?', default=0.5, help='Assign the propability that can used for both algorithms. The default value is 0.5')
+parser.add_argument('-t','--timeout', type=int, nargs='?', default=60, help='Timeout will be parsed in seconds - The default value is 60 seconds')
+parser.add_argument('-s','--seeds', type=int, nargs='?', default=0, help=' The number of seeds required. The default value is 0')
+parser.add_argument('-d','--depth', type=int, nargs='?', default=100, help='The depth of each test case. The default is 100')
+parser.add_argument('-l','--length', type=int, nargs='?', default=100, help='The length/Memory. The default value is 100')
+parser.add_argument('-f','--FaultsEnabled', type=bool, nargs='?', default=False, help='Save Test Case when Failure is discovered. The default value is False')
+parser.add_argument('-c','--CoverageEnabled', type=bool, nargs='?', default=False, help='Report Code coverage. The default value is False')
+parser.add_argument('-r','--RunningEnabled', type=bool, nargs='?', default=False, help='Check Coverage on the fly while running. The default value is False')
+parser.add_argument('-a','--algorithm', type=str, nargs='?', default='prop', help='There are 2 Algorithms. [prop] is a Random algorithm based on sepcified propability and [grouping] is random algorithm concentrate on a group of actions for automatically assigned depths based on the length of enabled actions. The default algorithm is prop')
+parser.add_argument('-p','--propertyCheck', type=bool, nargs='?', default=False, help='Check All properties defined in the SUT. The default Value is False')
+parser.add_argument('-P','--Prop', type=float, nargs='?', default=0.5, help='Assign the propability that can be used for both algorithms. The default value is 0.5')
 
 arguments = parser.parse_args()
 
 
 # Terminate the program with time
 # You can use 60 as a default Value
-timeout = arguments.t
+timeout = arguments.timeout
 
 # Determines the random seed for testing. This should be assigned 0 when using the MEMORY/WIDTH
 # You can use 12 as a default Value
-seeds = arguments.s
+seeds = arguments.seeds
 
 # TEST_LENGTH or Depth
 # You can use 100 as a default Value
-depth = arguments.d
+depth = arguments.depth
 
 # MEMORY or Width, the number of "good" tests to store
 # You can use a 100 as a default Value when testing combination lock faults
-length = arguments.l
+length = arguments.length
 
 # Enable/Disable Faults
 # You can use 1 as a default Value
-FaultsEnabled = arguments.f
+FaultsEnabled = arguments.FaultsEnabled
 
 # Enable/Disable Coverage
 # You can use 1 as a default Value
-CoverageEnabled = arguments.c
+CoverageEnabled = arguments.CoverageEnabled
 
 # Enable/Disable Running
 # You can use 1 as a default Value
-RunningEnabled = arguments.r
+RunningEnabled = arguments.RunningEnabled
 
 
 # Type of Algorithm to be used in this testing
 # You can use 0 for the radnom testing and 1 for the Group Random Testing
-algorithm = arguments.a
+algorithm = arguments.algorithm
 
 # Check the properties
 # You can use 1 to enable this feature
-propertyCheck = arguments.p
+propertyCheck = arguments.propertyCheck
 
 
 # Check the properties
 # You can use 1 to enable this feature
-Prop = arguments.P
+Prop = arguments.Prop
 
 # gloable variables initilization
 sut = sut.sut()
