@@ -76,7 +76,7 @@ def runAct(action):
                 print elapsed, len(sut.allBranches()), "New branch", b
     if not ok:  # found a bug
         bug_no += 1
-        print "FOUND A BUG! #", bug_no
+        print "FOUND A BUG in runAct! #", bug_no
         print sut.failure()
         # write the bug to file if FAULT_ARGUMENT is enabled
         if (FAULT_CHECK):
@@ -195,13 +195,12 @@ while (time.time() < time_start2 + TIME_PHASE2):
         if(rand.random()>0.3):
             for d in xrange(0, DEPTH):
                 ok = randomAction()
-                if not ok:
-                    break
                 if (len(sut.newStatements()) > 0):  # we found some new statements. Of course such statement coverages are least, so save it for later use
                     print "Found new statement!"
                     d = 0
-                    cur_state_1 = sut.state()
-                    selected_state[i] = sut.state()
+                    if ok:
+                        cur_state_1 = sut.state()
+                        selected_state[i] = sut.state()
                 if (time.time() > time_start2 + TIME_PHASE2):
                     time_out = 1
                     break
