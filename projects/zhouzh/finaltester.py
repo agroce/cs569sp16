@@ -4,6 +4,7 @@ import sys
 current_working_dir = os.getcwd()
 sys.path.append(current_working_dir)
 
+
 from collections import namedtuple
 import sut as SUT
 import random
@@ -12,7 +13,7 @@ import traceback
 import argparse
 
 sut  = SUT.sut()
-
+nbugs = 0
 
 def parse_args():
      parser = argparse.ArgumentParser()
@@ -39,7 +40,8 @@ def make_config(pargs, parser):
      return nt_config
 
 
-def saveFaults(sut, nbugs, Config, faults_file):
+def saveFaults(sut, Config, faults_file):
+    global nbugs
     print "Found A Bug! number of bugs:", nbugs
     print sut.failure()
     print "Reducing......"
@@ -53,7 +55,8 @@ def saveFaults(sut, nbugs, Config, faults_file):
         sut.saveTest(reduction, faults_file + str(nbugs) + ".test")
 
 
-def mutate(test, r, nbugs, sut, Config):
+def mutate(test, r, Config, faults_file):
+    global nbugs
     tcopy = list(test)
     i = r.randint(0,len(tcopy))
     sut.replay(tcopy[:i])
@@ -61,17 +64,8 @@ def mutate(test, r, nbugs, sut, Config):
     isGood = sut.safely(e)
     if not isGood:
         nbugs += 1
-        saveFaults(sut)
+        saveFaults(sut, Config, faults_file)
         sut.restart()
-    if Config.running:
-        if sut.newBranches() != set([]):
-            print "ACTION:", act[0]
-            for b in sut.newBranches():
-                print time.time()-start, len(sut.allBranches()), "New branch", b
-        if sut.newStatements() != set([]):
-            print "ACTION:", act[0]
-            for s in sut.newStatements():
-                print time.time()-start, len(sut.allStatements()),"New statement",s
     else:
         trest = [e]
         for s in tcopy[i+1:]:
@@ -80,22 +74,14 @@ def mutate(test, r, nbugs, sut, Config):
                 isGood = sut.safely(s)
                 if not isGood:
                     nbugs += 1
-                    saveFaults(sut)
+                    saveFaults(sut, Config, faults_file)
                     sut.restart()
-                if Config.running:
-                    if sut.newBranches() != set([]):
-                        print "ACTION:", act[0]
-                        for b in sut.newBranches():
-                            print time.time()-start, len(sut.allBranches()), "New branch", b
-                    if sut.newStatements() != set([]):
-                        print "ACTION:", act[0]
-                        for s in sut.newStatements():
-                            print time.time()-start, len(sut.allStatements()),"New statement",s
                 tcopy = test[:i]+trest
     return tcopy
 
 
-def crossover(test, test2, r, nbugs, sut, Config):
+def crossover(test, test2, r, Config, faults_file):
+    global nbugs
     tcopy = list(test)
     i = r.randint(0,len(tcopy))
     sut.replay(tcopy[:i])
@@ -104,18 +90,9 @@ def crossover(test, test2, r, nbugs, sut, Config):
         if s[1]():
             trest.append(s)
             isGood = sut.safely(s)
-            if Config.running:
-                if sut.newBranches() != set([]):
-                    print "ACTION:", act[0]
-                    for b in sut.newBranches():
-                        print time.time()-start, len(sut.allBranches()), "New branch", b
-                if sut.newStatements() != set([]):
-                    print "ACTION:", act[0]
-                    for s in sut.newStatements():
-                        print time.time()-start, len(sut.allStatements()),"New statement",s
             if not isGood:
                 nbugs += 1
-                saveFaults(sut)
+                saveFaults(sut, Config, faults_file)
                 sut.restart()
     tcopy = test[:i]+trest
 
@@ -124,7 +101,7 @@ def crossover(test, test2, r, nbugs, sut, Config):
 
 
 def main():
-
+    global nbugs
     parsed_args, parser = parse_args()
     Config = make_config(parsed_args, parser)
 
@@ -139,7 +116,7 @@ def main():
     start = time.time()
 
     ntests = 0
-    nbugs = 0
+
     faults_file = "failure"
 
     population = []
@@ -169,7 +146,7 @@ def main():
 
             if not isGood:
                 nbugs += 1
-                saveFaults(sut, nbugs, Config, faults_file)
+                saveFaults(sut, Config, faults_file)
                 sut.restart()
 
             if elapsed >= Config.timeout / 3:
@@ -183,8 +160,8 @@ def main():
         sortPop = sorted(population,key = lambda x: len(x[1]),reverse=True)
         (t,s) = R.choice(population)
         (t2,s) = R.choice(population)
-        c = crossover(t, t2, R, nbugs, sut, Config)
-        m = mutate(t, R, nbugs, sut, Config)
+        c = crossover(t, t2, R, Config, faults_file)
+        m = mutate(t, R, Config, faults_file)
         elapsed = time.time() - mutate_start
         population.append((m, sut.currStatements()))
         population.append((c, sut.currStatements()))
