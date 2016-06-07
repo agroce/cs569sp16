@@ -134,18 +134,23 @@ curDepth = 1
 state_queue = [sut.state()]
 
 # Phase 1 : run random test in TIME_BUDGET/4 seconds with depth = DEPTH to find out k statements that we rarely cover
-
+time_out  = 0
 TIME_PHASE1 = TIME_BUDGET / 2
 print "PHASE 1..."
 while(time.time()< time_start + TIME_PHASE1):
     sut.restart()
     for d in xrange(0,DEPTH):
         ok = randomAction()
+        if (time.time() > time_start + TIME_PHASE1):
+            time_out = 1
+            break
         if not ok:
             break
         if(len(sut.newStatements())>0): # we found some new statements. Of course such statement coverages are least, so save its state for later use
             new_state.append(sut.state())
             new_statement_by_state.append(sut.newStatements())
+    if time_out ==1:
+        break
     for s in sut.currStatements():
         if s not in coverageCount:
             coverageCount[s]=0
