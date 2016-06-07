@@ -15,10 +15,9 @@ def parse_args():
     parser.add_argument('-s', '--seed', type = int, default = 0, help = 'Random seed.')
     parser.add_argument('-d', '--depth', type = int, default = 100, help = 'Search depth.')                                                
     parser.add_argument('-w', '--width', type = int, default = 10, help = 'Width.')
-    parser.add_argument('-f', '--faults',  action = 'store_true', help = 'To chech for action faults')
+    parser.add_argument('-f', '--faults',  action = 'store_true', help = 'To chech for faults')
     parser.add_argument('-c', '--coverage', action = 'store_true', help = 'To show coverage report')
-    parser.add_argument('-r', '--running', action = 'store_true', help = 'To show running branch coverage report')
-    parser.add_argument('-p', '--checkProp', action = 'store_true', help = 'To check for property faults')                    
+    parser.add_argument('-r', '--running', action = 'store_true', help = 'To show running branch coverage report')                    
     parsed_args = parser.parse_args(sys.argv[1:])
     return (parsed_args, parser)
 
@@ -43,6 +42,7 @@ sut = sut.sut()
 
 parsed_args, parser = parse_args()
 config = make_config(parsed_args, parser)
+print('My tester using config={}'.format(config))
 
 rgen = random.Random(config.seed)
 
@@ -69,33 +69,24 @@ while time.time()-start < config.timeout:
                 test = True
             actCount += 1
             
-            #if running=1, print elapsed time, total brach count, new branch if running=0 don't print
+            #Produce branch running report
             if config.running:
                 if sut.newBranches() != set([]):
                     print "ACTION:",act[0]
                     for b in sut.newBranches():
                         print time.time() - start,len(sut.allBranches()),"new branch",b
             
-            #if faults=1, check for bugs and store them in files, if faults=0 don't check for bugs.
-            if (not ok) and (config.faults):
-                print "FAILURE FOUND.....FAILURES ARE STORING IN FILES"
-                i += 1
-                bugs += 1
-                saveFault = 'failure' + str(bugs) + '.test' 
-                sut.saveTest(sut.test(), saveFault)
-                print "Number bugs found is" ,i
-                sut.restart() 
-             
-                 
-            if (not propok) and (config.checkProp):
-                print "FAILURE FOUND.....FAILURES ARE STORING IN FILES"
-                i += 1
-                bugs += 1
-                saveFault = 'failure' + str(bugs) + '.test' 
-                sut.saveTest(sut.test(), saveFault)
-                print "Number bugs found is" ,i
-                sut.restart()       
-                 
+            #Check for bugs
+            if  (config.faults):
+                if (not ok) or (not propok):
+                    print "FAILURE FOUND.....FAILURES ARE STORING IN FILES"
+                    i += 1
+                    bugs += 1
+                    saveFault = 'failure' + str(bugs) + '.test' 
+                    sut.saveTest(sut.test(), saveFault)
+                    print "Number bugs found is" ,i
+                    sut.restart() 
+                  
         #To see what is the least covered branch to do experiments on them  
         for s in sut.currBranches():
             if s not in covCount:
@@ -111,7 +102,7 @@ while time.time()-start < config.timeout:
 sortedCov = sorted(covCount.keys(), key=lambda x: covCount[x])
  
 
-# if coverage = 1, print internal report            
+# Produce coverage report          
 if config.coverage:
     sut.internalReport()
     
