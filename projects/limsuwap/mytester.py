@@ -35,12 +35,12 @@ def parse_args():
                         help="Produce failure file." )  
     parser.add_argument('-r', '--running', action='store_false', default = True,
                         help="Produce running branch coverage report.")
-    parser.add_argument('-n', '--naction', type=int, default=3,
+    parser.add_argument('-n', '--naction', type=int, default=1,
                         help='Number of initial actions (3 default).')
-    parser.add_argument('-m', '--maxaction', type=int, default=50,
-                        help='Number of Maximum (50 default).')
-    parser.add_argument('-a', '--actiontime', type=float, default=0.5,
-                        help='Tolerance time of action (0.5 default).')
+    parser.add_argument('-m', '--maxaction', type=int, default=20,
+                        help='Number of Maximum actions (20 default).')
+    parser.add_argument('-a', '--actiontime', type=float, default=0.7,
+                        help='Tolerance time of action (0.7 default).')
 
     parsed_args = parser.parse_args(sys.argv[1:])
     return (parsed_args, parser)

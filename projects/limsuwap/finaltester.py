@@ -48,9 +48,9 @@ def main():
     restartTime = 0.0
     bugs = 0
     checkResult = True
-    naction = 3    # Optimum initial set size 
-    maxaction = 50 # Maximum set size
-    actiontime = 0.4 # Action time tolerance 1 second
+    naction = 1    # Optimum initial set size 
+    maxaction = 20 # Maximum set size
+    actiontime = 0.7 # Action time tolerance 1 second
     elasped = 0.0
     
     while time.time()-startprog < timeout:
@@ -96,7 +96,7 @@ def main():
                         print "TEST FAILED"
                         print "REDUCING..."
                         R = sut.reduce(sut.test(),sut.fails, True, True)
-                        #sut.prettyPrintTest(R)
+                        sut.prettyPrintTest(R)
                         print sut.failure()
                         if fault:
                             filename='failure'+str(bugs)+'.test'
