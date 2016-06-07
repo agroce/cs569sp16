@@ -1,3 +1,4 @@
+#******** This code is based on the code writing by Pro. Alex in the class and randomtester.py *********
 import os
 import sut
 import random
@@ -11,13 +12,13 @@ from collections import namedtuple
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-t', '--timeout', type = int, default = 60, help = 'Timeout in seconds.')
-    parser.add_argument('-s', '--seed', type = int, default = None, help = 'Random seed.')
-    parser.add_argument('-d', '--depth', type = int, default = 100, help = 'For search depth.')                                                
-    parser.add_argument('-w', '--width', type = int, default = 100, help = 'For the Width.')
-    parser.add_argument('-f', '--faults', action = 'store_true', help = 'To chech for faults')
+    parser.add_argument('-s', '--seed', type = int, default = 0, help = 'Random seed.')
+    parser.add_argument('-d', '--depth', type = int, default = 100, help = 'Search depth.')                                                
+    parser.add_argument('-w', '--width', type = int, default = 10, help = 'Width.')
+    parser.add_argument('-f', '--faults',  action = 'store_true', help = 'To chech for action faults')
     parser.add_argument('-c', '--coverage', action = 'store_true', help = 'To show coverage report')
     parser.add_argument('-r', '--running', action = 'store_true', help = 'To show running branch coverage report')
-    parser.add_argument('-p', '--checkProp', action = 'store_true', help = 'To check for property')                    
+    parser.add_argument('-p', '--checkProp', action = 'store_true', help = 'To check for property faults')                    
     parsed_args = parser.parse_args(sys.argv[1:])
     return (parsed_args, parser)
 
@@ -40,9 +41,10 @@ savedTest = None
 
 sut = sut.sut()
 
+global config
+
 parsed_args, parser = parse_args()
 config = make_config(parsed_args, parser)
-print('My tester using config={}'.format(config))
 
 rgen = random.Random(config.seed)
 
@@ -53,7 +55,8 @@ while time.time()-start < config.timeout:
         no_tests += 1
         if (savedTest != None) and (rgen.random() > 0.8):
            sut.backtrack(savedTest)
-                 
+        
+   
         test = False    
         for s in xrange(0,config.depth):
             act = sut.randomEnabled(rgen)
@@ -94,8 +97,7 @@ while time.time()-start < config.timeout:
                 sut.saveTest(sut.test(), saveFault)
                 print "Number bugs found is" ,i
                 sut.restart()       
-                
-	            
+                 
         #To see what is the least covered branch to do experiments on them  
         for s in sut.currBranches():
             if s not in covCount:
@@ -109,7 +111,7 @@ while time.time()-start < config.timeout:
 
 #Take the name of all actions and sort them by their action count
 sortedCov = sorted(covCount.keys(), key=lambda x: covCount[x])
-
+ 
 
 # if coverage = 1, print internal report            
 if config.coverage:
