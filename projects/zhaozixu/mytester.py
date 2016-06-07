@@ -73,7 +73,7 @@ passPool.append(sut.state())
 
 faultPool = []
 
-b = 0
+it = 0
 start = time.time()
 while time.time() - start < config.timeout:
     sut.restart()
@@ -122,9 +122,9 @@ while time.time() - start < config.timeout:
         
     if safe and prop:    
         passPool.append(sut.state())
-        #filename = 'case'+str(b)+'.test'
+        #filename = 'case'+str(it)+'.test'
         #sut.saveTest(sut.test(), filename)
-        #b += 1
+        #it += 1
         
 duration = (time.time() - start)
 print "\n\n\nProducing Report...\n\n\n"
