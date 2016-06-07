@@ -11,6 +11,16 @@ width           = int(sys.argv[4])
 faults          = int(sys.argv[5])
 coverage_report = int(sys.argv[6])
 running         = int(sys.argv[7])
+factor          = float(sys.argv[8])
+
+if factor < 0.1:
+    print "The factor you input is too small! Default value is 1.0"
+    print "Please consider a float between 0.1 and 2.0"
+    factor = 1.0
+elif factor > 2.0:
+    print "The factor you input is too big! Default value is 1.0"
+    print "Please consider a float between 0.1 and 2.0"
+    factor = 1.0    
 
 def collectCoverage():
     global coverageCount
@@ -78,7 +88,7 @@ def findBelowMean():
     if len(coverageCount) == 0:
         coverMean = coverSum
     else:
-        coverMean = coverSum / (1.0*len(coverageCount))  
+        coverMean = coverSum / (factor*len(coverageCount))  
     for s in sortedCov:
         if coverageCount[s] < coverMean:
             belowMean.add(s)
@@ -90,7 +100,7 @@ def findBelowMean():
     if len(coverageCount) == 0:
         coverMean = coverSum
     else:
-        coverMean = coverSum / (1.0*len(coverageCount))  
+        coverMean = coverSum / (factor*len(coverageCount))  
     for s in belowMean:
         if coverageCount[s] < coverMean:
             newBelowMean.add(s)
@@ -104,7 +114,7 @@ def printCoverage():
     if len(coverageCount) == 0:
         coverMean = coverSum
     else:
-        coverMean = coverSum / (1.0*len(coverageCount))  
+        coverMean = coverSum / (factor*len(coverageCount))  
     print "MEAN COVERAGE IS",coverMean
     for s in sortedCov:
         print s, coverageCount[s]
@@ -196,7 +206,21 @@ print ntests,"TESTS"
 for (t,s) in fullPool:
     print len(t),len(s)
 
+# collects all failed tests into one file named "failureCollection"
+with open('failureCollection.out', 'w') as outfile:
+    i = 1
+    for fname in failureFiles:
+        with open(fname) as infile:
+            outfile.write("FOUND failure "+str(i)+"\n")
+            for line in infile:
+                outfile.write(line)
+            outfile.write("\n")
+            i += 1
+
+
 print bugs,"FAILED"
 print "TOTAL ACTIONS",actCount
+print "TOTAL COVERED", len(sut.allBranches()), "BRANCHES"
+print "TOTAL COVERED", len(sut.allStatements()), "STATEMENTS"
 print "TOTAL RUNTIME",time.time()-start
 
