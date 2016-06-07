@@ -53,13 +53,6 @@ while time.time()-start < config.timeout:
         no_tests += 1
         if (savedTest != None) and (rgen.random() > 0.8):
            sut.backtrack(savedTest)
-        
-        """
-        if (savedTest != None) and (rgen.random() > 0.5):    
-            mutate(sut.test())                       
-            if (time.time() - start > timeout):
-                break  
-         """
                  
         test = False    
         for s in xrange(0,config.depth):
@@ -103,15 +96,6 @@ while time.time()-start < config.timeout:
                 sut.restart()       
                 
 	            
-                """     
-                    saveFault = 'failure' + str(bugs) + '.test'
-                    file = open(saveFault, 'w')
-                    print >> file, "Faults: ", fault,"\n"	
-                    print >> file, "Test Cases: "
-	            for t in sut.test():
-	                print >> file, sut.serializable(t)
-	            file.close()
-	            """ 
         #To see what is the least covered branch to do experiments on them  
         for s in sut.currBranches():
             if s not in covCount:
@@ -126,16 +110,6 @@ while time.time()-start < config.timeout:
 #Take the name of all actions and sort them by their action count
 sortedCov = sorted(covCount.keys(), key=lambda x: covCount[x])
 
-"""
-graph = open('covCount.data','w')
-n=0
-for s in sortedCov:
-    print s, covCount[s]
-    graph.write(str(n)+"  " + str(covCount[s])+"\n")
-    n += 1
-graph.close
-
-""" 
 
 # if coverage = 1, print internal report            
 if config.coverage:
