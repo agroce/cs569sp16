@@ -185,6 +185,7 @@ def crossover(test1, test2):
 
 def captureFault():
     'Print failure state and reduction, save to file'
+    global nbugs
     nbugs += 1
     print "FAILURE LOCATED:"
     print sut.failure()
