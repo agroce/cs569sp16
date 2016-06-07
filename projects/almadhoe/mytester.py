@@ -41,8 +41,6 @@ savedTest = None
 
 sut = sut.sut()
 
-global config
-
 parsed_args, parser = parse_args()
 config = make_config(parsed_args, parser)
 
