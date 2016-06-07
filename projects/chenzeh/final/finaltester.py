@@ -1,3 +1,10 @@
+
+## This version is my last result demons, This version 
+## based on last two projects and add mutation function
+## and crosscover
+
+## Zehuan Chen
+
 import sut
 import random
 import sys
@@ -140,7 +147,7 @@ def crossover(test,test2):
 
 #init variables
 rgen = random.Random()
-rgen.seed(SEED)
+rgen.seed(SEED+1)
 sut = sut.sut()
 sut.silenceCoverage()
 sut.restart()
