@@ -1,0 +1,1858 @@
+ACTION: self.p_AVL[0]=avl.AVLTree() 
+0.00836706161499 5 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (37, 39))
+0.00838398933411 5 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 35))
+0.00838804244995 5 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (39, -34))
+0.00839114189148 5 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (35, 36))
+0.00839519500732 5 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (36, 37))
+ACTION: self.p_AVL[0].insert(self.p_INT[0]) 
+0.0105760097504 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (259, 262))
+0.0105841159821 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (16, 17))
+0.0105881690979 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 159))
+0.0105910301208 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (255, -253))
+0.0105941295624 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (166, -158))
+0.0105981826782 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (172, 178))
+0.0106010437012 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (93, 104))
+0.0106041431427 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (85, 87))
+0.0106070041656 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (112, 113))
+0.0106542110443 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (268, -253))
+0.0106630325317 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (178, -170))
+0.0106670856476 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (12, 13))
+0.0106701850891 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 254))
+0.0106730461121 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (257, 258))
+0.0106761455536 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (171, 172))
+0.0106801986694 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (262, 264))
+0.0106830596924 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (258, 259))
+0.0106861591339 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (72, 73))
+0.0106890201569 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (87, 89))
+0.0106921195984 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (90, 91))
+0.0106952190399 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (111, 112))
+0.0106980800629 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (254, 257))
+0.0107011795044 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (159, 160))
+0.0107040405273 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (13, -10))
+0.0107071399689 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 6))
+0.0107111930847 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (113, -106))
+0.0107140541077 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (6, -5))
+0.0107221603394 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (104, -84))
+0.0107250213623 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (89, 90))
+0.0107281208038 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (70, 72))
+0.0107312202454 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (265, 268))
+0.0107340812683 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 171))
+0.0107381343842 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (17, -15))
+0.0107409954071 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (91, 92))
+0.0107440948486 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 16))
+0.0107471942902 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 85))
+0.0107500553131 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (254, 255))
+0.0107531547546 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (160, 166))
+0.0107820034027 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 11))
+0.0107851028442 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 70))
+0.0107891559601 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 111))
+0.010792016983 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (264, 265))
+0.0107951164246 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (73, -69))
+0.0107982158661 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (92, 93))
+0.0108020305634 50 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (11, 12))
+ACTION: self.p_AVL[0].insert(self.p_INT[2]) 
+0.0119161605835 61 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (75, 78))
+0.011922121048 61 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (81, -69))
+0.0119261741638 61 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (80, 81))
+0.0119290351868 61 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (95, 98))
+0.0119321346283 61 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (265, 266))
+0.0119361877441 61 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (98, 99))
+0.0119390487671 61 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (89, 95))
+0.0119421482086 61 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (99, 104))
+0.0119450092316 61 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (78, 80))
+0.0119481086731 61 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (72, 75))
+0.0119521617889 61 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (266, 265))
+ACTION: self.p_AVL[0].delete(self.p_INT[2]) 
+0.0135250091553 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (79, -69))
+0.0135312080383 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (31, -30))
+0.0135340690613 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (214, -182))
+0.0135371685028 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (209, 210))
+0.0135412216187 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (78, 79))
+0.0135440826416 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (184, 214))
+0.0135471820831 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 184))
+0.0135500431061 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 31))
+0.0135540962219 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (212, -182))
+0.0135571956635 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (184, 185))
+0.0135600566864 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (208, 212))
+0.0135631561279 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (207, 209))
+0.0135660171509 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (210, 212))
+0.0135700702667 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (185, 207))
+0.0135731697083 76 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (207, 208))
+ACTION: self.p_AVL[0].insert(self.p_INT[3]) 
+0.0180270671844 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 44))
+0.0180342197418 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (113, 114))
+0.0180370807648 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (171, 180))
+0.0180411338806 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (159, 168))
+0.0180439949036 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 55))
+0.0180470943451 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (160, 161))
+0.0180501937866 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (164, 166))
+0.0180530548096 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (143, -134))
+0.0180571079254 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (44, 45))
+0.0180780887604 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (259, 260))
+0.0180821418762 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (96, 104))
+0.0180850028992 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (172, 173))
+0.0180881023407 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (128, 129))
+0.0180912017822 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (174, 175))
+0.0180950164795 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (129, 130))
+0.018098115921 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (55, -54))
+0.0181012153625 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (141, 142))
+0.0181040763855 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (136, 137))
+0.0181081295013 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (139, 141))
+0.0181109905243 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (154, 155))
+0.0181140899658 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 148))
+0.0181171894073 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (124, 125))
+0.0181200504303 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (176, 178))
+0.0181231498718 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (127, 128))
+0.0181260108948 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (260, 259))
+0.0181300640106 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (149, 150))
+0.0181331634521 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (161, 162))
+0.0181360244751 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (151, 153))
+0.0181391239166 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (163, 164))
+0.0181422233582 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (148, 149))
+0.0181450843811 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (123, 124))
+0.0181481838226 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (114, 123))
+0.0181510448456 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (155, -146))
+0.0181550979614 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (153, 154))
+0.018158197403 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (126, 127))
+0.0181610584259 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (150, 151))
+0.0181641578674 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (130, 113))
+0.0181670188904 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (173, 174))
+0.0181701183319 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (175, 176))
+0.0181732177734 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (125, 126))
+0.0181770324707 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (142, 143))
+0.0181801319122 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (45, -43))
+0.0181829929352 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (162, 163))
+0.0181860923767 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 136))
+0.0181891918182 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (137, 138))
+0.0181920528412 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (168, -158))
+0.0181951522827 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (180, -170))
+0.0181980133057 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (95, 96))
+0.0182020664215 125 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (138, 139))
+ACTION: self.p_AVL[0] == self.p_AVL[0] 
+0.0204880237579 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (29, -15))
+0.0204930305481 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (20, 21))
+0.0204970836639 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (48, 50))
+0.0205130577087 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (25, 27))
+0.0205161571503 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (16, 18))
+0.0205190181732 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (50, 52))
+0.0205221176147 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (21, 23))
+0.0205261707306 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (24, 25))
+0.0205290317535 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (44, 46))
+0.0205321311951 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (27, 29))
+0.020534992218 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (46, 48))
+0.0205390453339 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (52, -43))
+0.0205421447754 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (18, 20))
+0.0205450057983 139 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (23, 24))
+ACTION: self.p_AVL[2]=avl.AVLTree(self.p_LIST[0]) 
+0.0360782146454 143 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (40, -34))
+0.0360841751099 143 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (40, 41))
+0.0360879898071 143 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (41, 40))
+0.0360910892487 143 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (39, 40))
+ACTION: __result = self.p_AVL[0].find(self.p_INT[1]) 
+0.0392792224884 145 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (76, -69))
+0.03928399086 145 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (75, 76))
+ACTION: self.p_AVL[2] == self.p_AVL[0] 
+0.0453791618347 147 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (47, -43))
+0.0453851222992 147 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (46, 47))
+ACTION: self.p_AVL[0].insert(self.p_INT[1]) 
+0.0485410690308 149 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (98, 102))
+0.0485470294952 149 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (102, 104))
+ACTION: self.p_AVL[1].delete(self.p_INT[0]) 
+0.0616900920868 157 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (187, 190))
+0.0616981983185 157 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (192, 193))
+0.0617010593414 157 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (185, 186))
+0.061704158783 157 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (190, 192))
+0.0617082118988 157 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (186, 187))
+0.0617110729218 157 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (193, 205))
+0.0617141723633 157 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (206, -182))
+0.0617182254791 157 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (205, 206))
+ACTION: self.p_AVL[2].insert(self.p_INT[1]) 
+0.0663111209869 163 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (114, 115))
+0.0663180351257 163 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (115, 119))
+0.0663211345673 163 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (121, 123))
+0.0663251876831 163 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (120, 121))
+0.0663280487061 163 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (123, 113))
+0.0663311481476 163 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (119, 120))
+ACTION: self.p_AVL[0].delete(self.p_INT[2]) 
+0.146841049194 165 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (188, 205))
+0.1468501091 165 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (187, 188))
+ACTION: self.p_AVL[0] == self.p_AVL[1] 
+0.166021108627 167 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (49, -43))
+0.166030168533 167 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (48, 49))
+ACTION: self.p_AVL[0].insert(self.p_INT[2]) 
+0.173591136932 171 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (116, -106))
+0.173598051071 171 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (139, -134))
+0.173602104187 171 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (96, -84))
+0.173605203629 171 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (115, 116))
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107a12f80>)
+ACTION: self.p_AVL[1].insert(self.p_INT[2]) 
+0.244343042374 172 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (124, 128))
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107a2cea8>)
+ACTION: self.p_AVL[2].delete(self.p_INT[0]) 
+0.686783075333 174 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (191, 205))
+0.686792135239 174 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (190, 191))
+ACTION: self.p_AVL[0] == self.p_AVL[1] 
+0.837877988815 178 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (19, -15))
+0.837887048721 178 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (50, 51))
+0.837891101837 178 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (51, -43))
+0.837894201279 178 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (18, 19))
+ACTION: self.p_AVL[0].delete(self.p_INT[0]) 
+0.861769199371 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (239, -229))
+0.861778020859 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (237, 238))
+0.861782073975 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (192, 197))
+0.861785173416 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (238, 239))
+0.861788034439 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (234, 236))
+0.861791133881 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (-1, 233))
+0.861793994904 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (233, 234))
+0.861798048019 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (200, 203))
+0.861801147461 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (203, 205))
+0.861804008484 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (198, 199))
+0.861807107925 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (197, 198))
+0.861810207367 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (236, 237))
+0.86181306839 191 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (199, 200))
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107a4acf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107a4ccf8>)
+ACTION: self.p_AVL[0].insert(self.p_INT[3]) 
+1.11049103737 192 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (99, -84))
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107a535f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107a5a440>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107a65fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107a6bef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107a77c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107a82b00>)
+ACTION: self.p_AVL[1].insert(self.p_INT[0]) 
+1.81378412247 195 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (116, 117))
+1.81379413605 195 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (117, 118))
+1.81379699707 195 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (118, 119))
+ACTION: self.p_AVL[1].delete(self.p_INT[0]) 
+1.83247804642 197 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (241, 236))
+1.83248519897 197 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (238, 241))
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107a95c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107aaf5a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107ac7d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107ad19e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107ad78c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107ade638>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107ad8ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107af4b48>)
+ACTION: self.p_AVL[1]=avl.AVLTree(self.p_LIST[0]) 
+3.55521702766 198 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (41, -34))
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107afc908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b077e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b12f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b1def0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b21170>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b3ab90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b48c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b5dfc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b604d0>)
+ACTION: self.p_AVL[0].delete(self.p_INT[0]) 
+5.2157330513 199 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (205, -182))
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b69d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b6def0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b72050>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b73170>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b7bc68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b80dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b81ab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b85cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b9ecf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b8e5a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107baaa28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107bb7ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107bbbf38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107bc2b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107bd4c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107bded40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107be3908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107be80e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107bece18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107beebd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b9bd88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107b9abd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107bf5d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107bfaa28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107bfd5f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c098c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c0fb00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c1ae18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c25bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c33cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c38c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c3bd88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c05d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c5eb00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c64998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c6f170>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c7ab90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c87e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c8afc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c8e7e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107c91e60>)
+ACTION: self.p_AVL[2] == self.p_AVL[1] 
+10.0673120022 201 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (28, -15))
+10.0673210621 201 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (27, 28))
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107cb7680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107cba6c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107cc2950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107cce710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107cd6680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107cf2f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d039e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d14878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d1fcb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d3cf38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d40fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d49ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d53638>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d6a998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d6da70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d70f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d1cea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d788c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d966c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107d95cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107dbe8c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107dcf758>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107dd3830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107dd9a70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107ddee18>)
+ACTION: self.p_AVL[1] == self.p_AVL[0] 
+14.6719770432 203 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (26, -15))
+14.6719851494 203 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (25, 26))
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e11440>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e14cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e16cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e36710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e2bb90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e3dfc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e58b00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e60e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e72ab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e79e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e79ef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e7eea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e83560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e97dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107e9cd40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107ea2e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107ebb5a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107fb1560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107fc37e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107fc7170>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107fddbd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107ff7fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108006d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x107ff9c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108009c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108016f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10801d5a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108027998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10802c950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1080293b0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10802f6c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1080314d0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108035e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108022b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108040c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108051908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108051e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10805ee60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108057cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10806f440>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108076f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108078e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10807b368>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1080e1560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1080d83f8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1080eadd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1080eeef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1080fc7e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108105a28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108108710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108136b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108132e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108148830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108153638>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10815e7a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108165710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108165ab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1081c9488>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1081d1d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1081f4680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1081f5ef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1081f8878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108203950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108219a70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108223f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108229d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108231cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082488c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108250e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082549e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10826acf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10826bd88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108268d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082b3bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082bf950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082c3f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082c7950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082cac20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082d9fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082d1d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082eef38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082eb5a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1082fa560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1083089e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10832bcf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10840ffc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10841d998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10842c878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10842bf80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108447dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108493c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108498908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084aac68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084b7560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084b9d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084bda28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084c8b00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084cdea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108517518>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108517d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108521d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108524d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10852a7a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108532b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10853d758>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10854d5f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108560680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108561f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108586b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10858bb00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10858d2d8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108593b00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10859efc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1085a4d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1085a7cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1085b0998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1085b53f8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1085c17e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1085d1518>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10844c7e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10844ee60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10844b290>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108465560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108472fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10847c5f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10847fea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084d55f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084d3248>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084e3f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084efb90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084f14d0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084ddb00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084f2638>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084f5b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1084fb998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108501b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10868b878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086967e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108686710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086a27e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086aa290>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086afef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086ba8c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086bec68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086bdef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086c65a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086d47e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086c8e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086f0a28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086fbfc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1087065a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108708170>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10870da28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10870fd88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1086cfbd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10870e7a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10871ecf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1087216c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108727d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1085d6b00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1085d8290>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1085e9e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1085fdd40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10861fe60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108630758>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10862f908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108634cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108651680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1087fac68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1087fc2d8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108806b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10880a9e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10881aef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10883ccb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108840f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1088598c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10885e5f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108862cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1088645a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108872a70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108882950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10886b200>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108890b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10888ffc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108896f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108899cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108734cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10873df38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1087435a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108754d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108758c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10875c200>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108777cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108783cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108799f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1087a2bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1087a1d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1087b0d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108978e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108975f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108986518>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1089899e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108997dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1089a1ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1089b6ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1089b9680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1089dedd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1089e3ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1089e6dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a00ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a076c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a096c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a11950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a39ef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a47f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a4de60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a677a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a6bb90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1088ac3f8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1088b1170>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1088b5c20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1088bfdd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1088e3a28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1088ee908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1088f5e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108900758>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108905710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108918c20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108919290>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10891fb48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10892be18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108949bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10894c098>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108958b00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108959f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10895fb00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10895bc20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b62680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b6fc20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b6efc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b70dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b764d0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b78fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b82d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b8a710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b91a70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ba2c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ba6e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ba9950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108bb76c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108bb9758>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108bb9f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108bc2830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108bceea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108bd87a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108bedc68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108bf8c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108bfbf80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c03a28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a70950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a735f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a74c20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a75ef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a77dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a87878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a94758>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a99a28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108a9ee60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108aa6a70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108aafd40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ab8488>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ad0b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ae17a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ae27e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108afb5f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b06050>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b0af38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b15fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b196c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b20998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b20d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108b22f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d096c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d13c20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d16b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d28680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d35e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d48cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d49b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d52dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d5e710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d64cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d6da70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d78d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d7b440>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d7cb00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d85e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d86f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d8acf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d93cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d7f7a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108d9bf80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108db5c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108dc0a28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108dc47e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108dcd3f8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108dcbf80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108dd0290>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108dbdd40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108dde830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108de1cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ddd7e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108de5560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108de48c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108df0fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108df4bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c1b3f8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c31518>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c46908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c55248>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c60cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c65fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c73998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c776c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c79f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c85638>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c87638>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c8af80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c91cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108c9df38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ca14d0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108caaa70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f2b878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f356c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f36cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f46fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f5eab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f6a878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f76a28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f80ab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f85cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f909e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f93d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f97908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f9f488>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108fa5b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108fad488>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108fb3c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108fb97a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108fc1dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108fc2878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108fc67e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108fd1710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108fd3f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109006680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10900a638>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109011fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10901a638>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109025e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10902fc68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109042320>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109055c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109061e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e0c6c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e10830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e15b00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e1cd40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e1fd40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e25e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e28680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e31908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e36830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e42e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e446c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e5a7a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e62a70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e64ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e6a518>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e85a70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e85cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e8ec20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e936c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e94f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e9ad40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108e9ecb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108eb2ab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ebd830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ec3758>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ec6b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ed4cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ed6e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ee7758>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108eebb00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108efda28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108f06a28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091a8ef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091b5368>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091b8cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091c24d0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091ca8c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091cf518>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ecf710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x108ecf5f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091ee7e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091fa5a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109207b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10920f710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109219758>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10921d2d8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10921e830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109225b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091d5ab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109236e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109241560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1092475f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109253d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10925cf80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10926f830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109275b00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10922b7e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109270998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10927def0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10927fea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109285f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109287fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109294440>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10929e908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1092c3f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1092c4638>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1092daef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1092e1ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109064e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109069ab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10906add0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1090668c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109079f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10907d8c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10906cb48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109089830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1090908c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1090b1dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1090b9b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1090be7a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1090bfd88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1092df3b0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109110dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109114d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091185f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109127950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10912ae18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091487e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10914aef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10914c8c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10914d440>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10915eea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109160cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109169560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10917bcb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109195320>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109193878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1091a3830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109455d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109459fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109451248>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10945e758>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109463c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10947d8c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10947ff38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109485d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109487c20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10948e680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109486d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109491f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109496f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1094aabd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1094aec20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1094c9f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1094d2ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1094df6c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1094e2d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1094ecbd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1094f1cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1094f37a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109505950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10950cef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109518998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109515638>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10951ac68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10951e950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109535d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10953ab00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10953dcf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10954d7e8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109552fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109574488>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109579878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1095865a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109589dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1092e9b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1092ff8c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109306cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1092fce60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109313290>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109319ef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10931bea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109328ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10932eb00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109333e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10933fd40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10934ad88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10934e5a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109352560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109361c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1093709e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109374758>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10937fcb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109390680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1093c0bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1093c5f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1093d1e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1093feb00>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1094028c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109406518>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10940ac20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10940fdd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1097258c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109726b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1097294d0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10972bfc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109734878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109736f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109737bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1097435f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109748710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109754e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109746950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109770b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1097747a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109791488>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10979d518>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10979fab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1097a3e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1097b3e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1097b7998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1097c2518>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1097c8bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109814998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098170e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10981d7a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10983d3f8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109859b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10985bdd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109869e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10986be60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10987ab90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10988bb48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109891ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10989d9e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098a1c20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098ae998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098b8dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098aad88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098cdc20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098cfc20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098d0f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098d5c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10958a4d0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1095a5a28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1095b70e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1095b3710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1095c2cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1095c6830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1095d5e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1095daef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1095e1cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1095f0cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1095fb710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109609a70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10960d908>)
+ACTION: self.p_AVL[1].delete(self.p_INT[1]) 
+99.8005311489 204 New branch (u'/Users/louis/cs569/runtester/finaltester/avl.py', (210, -182))
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109623fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10962ae60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10962ea70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109630bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109655b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109659998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10965fbd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109663098>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10966acb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109667dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109678ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10969dd88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1096a79e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1096a3e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1096c1b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1096cf950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1096d1d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1096e1cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1096ea950>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1096f75f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1096fedd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1097015f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109ab4ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109ac5878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109ad6680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109af0b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109b02638>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109b02f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109b0ce18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109b20b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109b24bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109b22248>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109b377a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109b41560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109b79e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109b7d3b0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109b90dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109bc9cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109bcf488>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109bd5f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109befb90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109bf7a70>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109bfab90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109bfc9e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109bfff80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109bfde18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109c05878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109c0eea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109c10c68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109c16908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109c44ab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109c47878>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098dffc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109c17cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098ea6c8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098f4908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109903e18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109909518>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1098f8f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10990be18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109927f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10992bab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109931dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109941c20>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109944cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10995c7a0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10995def0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109960bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10996b830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109979cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x10998eea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109992bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1099949e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109995b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109997f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109998d40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1099b3f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1099b4170>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1099c3560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1099c8d88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1099e4710>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1099f8560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x1099ea998>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a08908>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a0cc68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a0dfc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a1cc68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a23fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a229e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a2edd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a375a8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a3be18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a3dcf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a43ab8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a49ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a4f4d0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a54cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a57560>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a63e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a71f38>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a755f0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a80e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a89cf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a83a28>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a8cd40>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a8d8c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a9ddd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109a9de18>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109e72ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109e75830>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109e7e8c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109e80488>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109e859e0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109e8ae60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109e92bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109eabef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109eb68c0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109eb3e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109e99fc8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109ebdc68>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109ec9b90>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109eceea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109ed4bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109ed9f80>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109ee4bd8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f05ea8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f09e60>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f10cb0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f0dd88>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f1a3f8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f2ccf8>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f2e680>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f2f050>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f34dd0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f36b48>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f3eef0>)
+FOUND A FAILURE
+(<type 'exceptions.AttributeError'>, AttributeError("'NoneType' object has no attribute 'right'",), <traceback object at 0x109f4ecf8>)
+TSTL INTERNAL COVERAGE REPORT:
+/Users/louis/cs569/runtester/finaltester/avl.py ARCS: 204 [(-1, 6), (-1, 11), (-1, 16), (-1, 31), (-1, 35), (-1, 44), (-1, 55), (-1, 70), (-1, 85), (-1, 111), (-1, 136), (-1, 148), (-1, 159), (-1, 171), (-1, 184), (-1, 233), (-1, 254), (6, -5), (11, 12), (12, 13), (13, -10), (16, 17), (16, 18), (17, -15), (18, 19), (18, 20), (19, -15), (20, 21), (21, 23), (23, 24), (24, 25), (25, 26), (25, 27), (26, -15), (27, 28), (27, 29), (28, -15), (29, -15), (31, -30), (35, 36), (36, 37), (37, 39), (39, -34), (39, 40), (40, -34), (40, 41), (41, -34), (41, 40), (44, 45), (44, 46), (45, -43), (46, 47), (46, 48), (47, -43), (48, 49), (48, 50), (49, -43), (50, 51), (50, 52), (51, -43), (52, -43), (55, -54), (70, 72), (72, 73), (72, 75), (73, -69), (75, 76), (75, 78), (76, -69), (78, 79), (78, 80), (79, -69), (80, 81), (81, -69), (85, 87), (87, 89), (89, 90), (89, 95), (90, 91), (91, 92), (92, 93), (93, 104), (95, 96), (95, 98), (96, -84), (96, 104), (98, 99), (98, 102), (99, -84), (99, 104), (102, 104), (104, -84), (111, 112), (112, 113), (113, -106), (113, 114), (114, 115), (114, 123), (115, 116), (115, 119), (116, -106), (116, 117), (117, 118), (118, 119), (119, 120), (120, 121), (121, 123), (123, 113), (123, 124), (124, 125), (124, 128), (125, 126), (126, 127), (127, 128), (128, 129), (129, 130), (130, 113), (136, 137), (137, 138), (138, 139), (139, -134), (139, 141), (141, 142), (142, 143), (143, -134), (148, 149), (149, 150), (150, 151), (151, 153), (153, 154), (154, 155), (155, -146), (159, 160), (159, 168), (160, 161), (160, 166), (161, 162), (162, 163), (163, 164), (164, 166), (166, -158), (168, -158), (171, 172), (171, 180), (172, 173), (172, 178), (173, 174), (174, 175), (175, 176), (176, 178), (178, -170), (180, -170), (184, 185), (184, 214), (185, 186), (185, 207), (186, 187), (187, 188), (187, 190), (188, 205), (190, 191), (190, 192), (191, 205), (192, 193), (192, 197), (193, 205), (197, 198), (198, 199), (199, 200), (200, 203), (203, 205), (205, -182), (205, 206), (206, -182), (207, 208), (207, 209), (208, 212), (209, 210), (210, -182), (210, 212), (212, -182), (214, -182), (233, 234), (234, 236), (236, 237), (237, 238), (238, 239), (238, 241), (239, -229), (241, 236), (254, 255), (254, 257), (255, -253), (257, 258), (258, 259), (259, 260), (259, 262), (260, 259), (262, 264), (264, 265), (265, 266), (265, 268), (266, 265), (268, -253)]
+/Users/louis/cs569/runtester/finaltester/avl.py LINES: 145 [6, 11, 12, 13, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 31, 35, 36, 37, 39, 40, 41, 44, 45, 46, 47, 48, 49, 50, 51, 52, 55, 70, 72, 73, 75, 76, 78, 79, 80, 81, 85, 87, 89, 90, 91, 92, 93, 95, 96, 98, 99, 102, 104, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 123, 124, 125, 126, 127, 128, 129, 130, 136, 137, 138, 139, 141, 142, 143, 148, 149, 150, 151, 153, 154, 155, 159, 160, 161, 162, 163, 164, 166, 168, 171, 172, 173, 174, 175, 176, 178, 180, 184, 185, 186, 187, 188, 190, 191, 192, 193, 197, 198, 199, 200, 203, 205, 206, 207, 208, 209, 210, 212, 214, 233, 234, 236, 237, 238, 239, 241, 254, 255, 257, 258, 259, 260, 262, 264, 265, 266, 268]
+TSTL BRANCH COUNT: 204
+TSTL STATEMENT COUNT: 145
+1615 TESTS
+809 FAILED
+TOTAL ACTIONS 127755
+TOTAL RUNTIME 120.001804113
