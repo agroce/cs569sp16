@@ -3,6 +3,7 @@ import random
 import sys
 import time
 
+#  python2.7 SYFtester1.py 30 1 100 5 0 1 0
 # Terminate the program with time
 timeout = int(sys.argv[1])
 # Determines the random seed for testing. This should be assigned 0 when using the MEMORY/WIDTH
