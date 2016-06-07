@@ -6,11 +6,13 @@ import random
 
 class FBDR_Tester():
 	def __init__(self):
-		self.errorSeqs = []
+		#initiialize lists
+		self.errorSeqs = [] 
 		self.nonErrorSeqs = []
 		self.sut = sut.sut()
 		
 	def CheckArguments(self):
+		#check if all arguments are input correctly
 		if len(sys.argv) == 8:
 			self.timeout 	= int(sys.argv[1])
 			self.seed 		= int(sys.argv[2])
@@ -26,6 +28,7 @@ class FBDR_Tester():
 			return False
 
 	def DiscardDuplicates(self, newSequence):
+		# remove the actions that has been in the sequence
 		for nes in self.nonErrorSeqs:
 			if set(newSequence) < set(nes):
 				return True
@@ -35,6 +38,7 @@ class FBDR_Tester():
 		return False # no duplicate
 
 	def RandomSeqsAndVals(self, nonErrorSeqs, n=1):
+		# Randomly pick actions from none-error sequences. n, number for picking up
 		if self.nonErrorSeqs == [] or n > len(self.nonErrorSeqs):
 			return []
 		return [random.choice(self.nonErrorSeqs) for i in xrange(n)]
@@ -49,6 +53,7 @@ class FBDR_Tester():
 				print elapsed,len(self.sut.allBranches()),"New branch",b
 	
 	def RecordFailure(self):
+		# Record if there is any failure occured
 		count = 0
 		while os.path.exists('failure' +str(count) + '.test') == True:
 			count += 1
@@ -60,6 +65,8 @@ class FBDR_Tester():
 		
 
 	def Generation(self):
+		# Main testing loop funtion
+		
 		# random seed
 		rgen = random.Random(self.seed)
 
