@@ -84,7 +84,7 @@ while(time.time()< start + TIME_OUT):
                         bugs += 1
                         fault = sut.failure();
                         fname = 'fault'+str(bugs)+'.test'
-                        sut.saveTest(sut.test(), saveFault)
+                        sut.saveTest(sut.test(), fname)
                         sut.restart()
                 else:
                     if len(sut.newBranches()) != 0:
