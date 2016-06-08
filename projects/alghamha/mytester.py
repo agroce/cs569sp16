@@ -176,7 +176,7 @@ if (algorithm == 'prop'):
 			# When getting new branches, save the test case into goodTest list to be re-executed based on random propability
 			if ((length != 0) and ((len(sut.newBranches()) > 0) or (len(sut.newStatements()) > 0))):
 				goodTests.append((sut.currBranches(), sut.state()))
-				goodTests = sorted(goodTests, reverse=True)[:length]
+				goodTests = sorted(goodTests, reverse=True, key = lambda x: len(x[0]))
 			# Cleanup goodTest list based on the length of the goodTests
 			if (length != 0) and (len(sut.newBranches()) == 0) and (len(goodTests) >= length):
 				RandomMemebersSelection = random.sample(goodTests,int(float((len(goodTests))*.20)))
@@ -251,7 +251,7 @@ elif (algorithm == 'grouping'):
 				# When getting new branches, save the test case into goodTest list to be re-executed based on random propability
 				if ((length != 0) and ((len(sut.newBranches()) > 0) or (len(sut.newStatements()) > 0))):
 					goodTests.append((sut.currBranches(), sut.state()))
-					goodTests = sorted(goodTests, reverse=True)[:length]
+					goodTests = sorted(goodTests, reverse=True, key = lambda x: len(x[0]))
 				# Cleanup goodTest list based on the length of the goodTests
 				if (length != 0) and (len(sut.newBranches()) == 0) and (len(goodTests) >= length):
 					RandomMemebersSelection = random.sample(goodTests,int(float((len(goodTests))*.20)))
@@ -319,7 +319,7 @@ elif (algorithm == 'grouping'):
 				# When getting new branches, save the test case into goodTest list to be re-executed based on random propability
 				if ((length != 0) and ((len(sut.newBranches()) > 0) or (len(sut.newStatements()) > 0))):
 					goodTests.append((sut.currBranches(), sut.state()))
-					goodTests = sorted(goodTests, reverse=True)[:length]
+					goodTests = sorted(goodTests, reverse=True, key = lambda x: len(x[0]))
 				# Cleanup goodTest list based on the length of the goodTests
 				if (length != 0) and (len(sut.newBranches()) == 0) and (len(goodTests) >= length):
 					RandomMemebersSelection = random.sample(goodTests,int(float((len(goodTests))*.20)))
