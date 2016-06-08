@@ -3,24 +3,18 @@ import random
 import sys
 import time
 import os
+import argparse as arg
 
-BUDGET          = int(sys.argv[1])
-SEED            = int(sys.argv[2])
-depth           = int(sys.argv[3])
-width           = int(sys.argv[4])
-faults          = int(sys.argv[5])
-coverage_report = int(sys.argv[6])
-running         = int(sys.argv[7])
-factor          = float(sys.argv[8])
-
-if factor < 0.1:
-    print "The factor you input is too small! Default value is 1.0"
-    print "Please consider a float between 0.1 and 2.0"
-    factor = 1.0
-elif factor > 2.0:
-    print "The factor you input is too big! Default value is 1.0"
-    print "Please consider a float between 0.1 and 2.0"
-    factor = 1.0    
+parser = arg.ArgumentParser()
+parser.add_argument('timeout', type=int, default=30, help='Maximum testing time.')
+parser.add_argument('seed', type=int, nargs='?', default=7, help='Randomization seed.')
+parser.add_argument('depth', type=int, nargs='?', default=100, help='Maximum length.')
+parser.add_argument('width', type=int, nargs='?', default=10, help='Maximum memory/BFS queue/other parameter.')
+parser.add_argument('fault', type=int, nargs='?', default=0, help='Whether the tester checks for faults.')
+parser.add_argument('coverage', type=int, nargs='?', default=0, help='Whether a final coverage report produces.')
+parser.add_argument('running', type=int, nargs='?', default=0, help='Whether running info on branch coverage should be produced.')
+parser.add_argument('factor', type=float, nargs='?', default=1.0, help="Control how much test instances in active pool.")
+parsed_args = parser.parse_args(sys.argv[1:])
 
 def collectCoverage():
     global coverageCount
@@ -136,6 +130,24 @@ def exploitPool():
     else:
         sut.replay(rgen.choice(fullPool)[0])
 
+
+BUDGET          = vars(parsed_args)['timeout']
+SEED            = vars(parsed_args)['seed']
+depth           = vars(parsed_args)['depth']
+width           = vars(parsed_args)['width']
+faults          = vars(parsed_args)['fault']
+coverage_report = vars(parsed_args)['coverage']
+running         = vars(parsed_args)['running']
+factor          = vars(parsed_args)['factor']
+
+if factor < 0.1:
+    print "The factor you input is too small! Default value is 1.0"
+    print "Please consider a float between 0.1 and 2.0"
+    factor = 1.0
+elif factor > 2.0:
+    print "The factor you input is too big! Default value is 1.0"
+    print "Please consider a float between 0.1 and 2.0"
+    factor = 1.0
 
 rgen = random.Random()
 rgen.seed(SEED)
