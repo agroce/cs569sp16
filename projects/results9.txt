@@ -13,7 +13,6 @@ nelsonni 10841.33 9 1755.86
 zhouzh 10757.22 9 1629.7
 chenk4 10653.56 9 1156.61
 alizades 10605.78 9 3125.88
-SAHARFIX 10600.89 9 3078.35
 zhengxu 10578.0 9 1576.0
 hexu 10531.44 9 1525.2
 almadhoe 10492.0 9 700.27
@@ -75,7 +74,7 @@ FOUND BY 3 STUDENTS set(['zhouxuh', 'hexu', 'pengxin'])
 ==================================================
 BUG: (<type 'exceptions.TypeError'>, TypeError("'exp' object is not callable",), 
 FOUND 4 TIMES
-FOUND BY 3 STUDENTS set(['SAHARFIX', 'zhangh7', 'panju'])
+FOUND BY 2 STUDENTS set(['zhangh7', 'panju'])
 ==================================================
 BUG: (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded while calling a Python object',), 
 FOUND 4 TIMES
@@ -91,32 +90,31 @@ FOUND BY 6 STUDENTS set(['zhouxuh', 'wangq5', 'pengxin', 'guohe', 'kaneokak', 'a
 ==================================================
 BUG: (<type 'exceptions.AssertionError'>, AssertionError(), 
 FOUND 10 TIMES
-FOUND BY 8 STUDENTS set(['zhouxuh', 'alghamha', 'pengxin', 'zhaozixu', 'SAHARFIX', 'xuhui', 'zhangh7', 'zhangcha'])
+FOUND BY 7 STUDENTS set(['zhouxuh', 'alghamha', 'pengxin', 'zhaozixu', 'xuhui', 'zhangh7', 'zhangcha'])
 ==================================================
 BUG: (<type 'exceptions.AttributeError'>, AttributeError("'NaN' object has no attribute '_mpf_'",), 
 FOUND 26 TIMES
-FOUND BY 10 STUDENTS set(['shik', 'zhouxuh', 'alghamha', 'liuh2', 'chenk4', 'SAHARFIX', 'xuhui', 'hoangmin', 'zhangcha', 'almadhoe'])
+FOUND BY 9 STUDENTS set(['shik', 'zhouxuh', 'alghamha', 'liuh2', 'chenk4', 'xuhui', 'hoangmin', 'zhangcha', 'almadhoe'])
 ==================================================
 BUG: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison 
 FOUND 11 TIMES
-FOUND BY 10 STUDENTS set(['shik', 'alghamha', 'zhangcha', 'liuh2', 'lix6', 'kaneokak', 'SAHARFIX', 'xuhui', 'Linwey', 'almadhoe'])
+FOUND BY 9 STUDENTS set(['shik', 'alghamha', 'zhangcha', 'liuh2', 'lix6', 'kaneokak', 'xuhui', 'Linwey', 'almadhoe'])
 ==================================================
 BUG: (<type 'exceptions.ValueError'>, ValueError('Invalid limits 
 FOUND 42 TIMES
-FOUND BY 19 STUDENTS set(['shik', 'chenzeh', 'hanxia', 'zhouzh', 'alghamha', 'wangq5', 'wutso', 'wangyans', 'lix6', 'thakuro', 'kaneokak', 'SAHARFIX', 'yangyic', 'bangashm', 'zhangh7', 'shenyif', 'zhangcha', 'tsengyu', 'almadhoe'])
+FOUND BY 18 STUDENTS set(['shik', 'chenzeh', 'hanxia', 'zhouzh', 'alghamha', 'wangq5', 'wutso', 'wangyans', 'lix6', 'thakuro', 'kaneokak', 'yangyic', 'bangashm', 'zhangh7', 'shenyif', 'zhangcha', 'tsengyu', 'almadhoe'])
 ==================================================
 BUG: (<type 'exceptions.TypeError'>, TypeError('Invalid NaN comparison',), 
 FOUND 38 TIMES
-FOUND BY 20 STUDENTS set(['shik', 'zhouxuh', 'nelsonni', 'almadhoe', 'chenk4', 'panju', 'rayalas', 'lasharih', 'zhengxu', 'liuh2', 'lix6', 'hoangmin', 'kaneokak', 'SAHARFIX', 'xuhui', 'liuw3', 'zhangcha', 'zhouzh', 'guohe', 'hexu'])
+FOUND BY 19 STUDENTS set(['shik', 'zhouxuh', 'nelsonni', 'almadhoe', 'chenk4', 'panju', 'rayalas', 'lasharih', 'zhengxu', 'liuh2', 'lix6', 'hoangmin', 'kaneokak', 'xuhui', 'liuw3', 'zhangcha', 'zhouzh', 'guohe', 'hexu'])
 ==================================================
 BUG: (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded in cmp',), 
 FOUND 355 TIMES
-FOUND BY 40 STUDENTS set(['shik', 'zhengxu', 'guohe', 'bangashm', 'thakuro', 'Linwey', 'shenyif', 'almadhoe', 'SAHARFIX', 'xuhui', 'lintzu', 'zhangh7', 'tangz', 'hexu', 'xujing', 'zhouxuh', 'nelsonni', 'chenk4', 'lasharih', 'liuh2', 'guoru', 'kaneokak', 'yangyic', 'liuw3', 'zhouzh', 'lix6', 'rayalas', 'limsuwap', 'wangq5', 'chenzeh', 'hanxia', 'alghamha', 'pengxin', 'panju', 'hoangmin', 'tsengyu', 'wangyans', 'yub', 'zhangcha', 'wangweny'])
+FOUND BY 39 STUDENTS set(['shik', 'zhengxu', 'guohe', 'bangashm', 'thakuro', 'Linwey', 'shenyif', 'almadhoe', 'xuhui', 'lintzu', 'zhangh7', 'tangz', 'hexu', 'xujing', 'zhouxuh', 'nelsonni', 'chenk4', 'lasharih', 'liuh2', 'guoru', 'kaneokak', 'yangyic', 'liuw3', 'zhouzh', 'lix6', 'rayalas', 'limsuwap', 'wangq5', 'chenzeh', 'hanxia', 'alghamha', 'pengxin', 'panju', 'hoangmin', 'tsengyu', 'wangyans', 'yub', 'zhangcha', 'wangweny'])
 **********************************************************************
 STUDENT: zhouxuh 25 FAILURES 9 BUGS
 STUDENT: alghamha 26 FAILURES 8 BUGS
 STUDENT: zhangcha 21 FAILURES 8 BUGS
-STUDENT: SAHARFIX 26 FAILURES 7 BUGS
 STUDENT: zhangh7 63 FAILURES 6 BUGS
 STUDENT: kaneokak 24 FAILURES 6 BUGS
 STUDENT: xuhui 9 FAILURES 6 BUGS
