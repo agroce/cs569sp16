@@ -1,0 +1,206 @@
+MEAN BRANCH COVERGE OVER 11 RUNS
+#1: kaneokak BRANCHES MEAN 12404.27 SD 2183.16 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN hoangmin (#16) p-value = 0.0385979306546
+#2: zhangcha BRANCHES MEAN 11970.82 SD 1085.8 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN lintzu (#15) p-value = 0.0452006037476
+#3: lix6 BRANCHES MEAN 11807.73 SD 1668.64 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN almadhoe (#17) p-value = 0.0328335442435
+#4: zhouxuh BRANCHES MEAN 11630.36 SD 2572.01 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN almadhoe (#17) p-value = 0.0385979306546
+#5: zhangh7 BRANCHES MEAN 11510.0 SD 1370.49 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN almadhoe (#17) p-value = 0.0137996066178
+#6: zhaozixu BRANCHES MEAN 11328.18 SD 2640.82 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guoru (#33) p-value = 0.0452006037476
+#7: shik BRANCHES MEAN 11320.55 SD 1847.22 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN thakuro (#32) p-value = 0.0452006037476
+#8: alghamha BRANCHES MEAN 10997.45 SD 3097.34 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing (#37) p-value = 0.0278226594647
+#9: wangweny BRANCHES MEAN 10953.64 SD 1740.43 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guoru (#33) p-value = 0.0328335442435
+#10: zhengxu BRANCHES MEAN 10912.18 SD 1595.56 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guoru (#33) p-value = 0.0278226594647
+#11: chenk4 BRANCHES MEAN 10884.36 SD 1205.87 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guoru (#33) p-value = 0.0234855160003
+#12: nelsonni BRANCHES MEAN 10834.45 SD 1597.32 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing (#37) p-value = 0.00949305414536
+#13: tangz BRANCHES MEAN 10792.09 SD 1892.62 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing (#37) p-value = 0.0197476717606
+#14: hexu BRANCHES MEAN 10779.55 SD 1805.57 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing (#37) p-value = 0.0255746499009
+#15: lintzu BRANCHES MEAN 10741.73 SD 1505.75 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing (#37) p-value = 0.016540171856
+#16: hoangmin BRANCHES MEAN 10627.18 SD 1692.25 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing (#37) p-value = 0.0278226594647
+#17: almadhoe BRANCHES MEAN 10606.55 SD 678.45 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN wangq5 (#35) p-value = 0.041788996803
+#18: alizades BRANCHES MEAN 10560.27 SD 2911.74 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN yangyic (#41) p-value = 0.0452006037476
+#19: liuh2 BRANCHES MEAN 10550.27 SD 1448.6 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing (#37) p-value = 0.016540171856
+#20: rayalas BRANCHES MEAN 10467.27 SD 1680.37 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN panju (#38) p-value = 0.0452006037476
+#21: xuhui BRANCHES MEAN 10210.64 SD 965.76 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing (#37) p-value = 0.0234855160003
+#22: zhouzh BRANCHES MEAN 10091.64 SD 2621.46 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN panju (#38) p-value = 0.0452006037476
+#23: lasharih BRANCHES MEAN 10024.18 SD 1211.24 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN panju (#38) p-value = 0.0356163640998
+#24: wangyans BRANCHES MEAN 9802.55 SD 2230.49 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN changti (#43) p-value = 0.0452006037476
+#25: guohe BRANCHES MEAN 9788.27 SD 1997.44 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN wanghao (#44) p-value = 0.0385979306546
+#26: bangashm BRANCHES MEAN 9784.55 SD 2206.15 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN changti (#43) p-value = 0.0452006037476
+#27: hanxia BRANCHES MEAN 9782.82 SD 2222.99 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN wanghao (#44) p-value = 0.0385979306546
+#28: shenyif BRANCHES MEAN 9705.55 SD 2155.17 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN wanghao (#44) p-value = 0.0452006037476
+#29: pengxin BRANCHES MEAN 9704.82 SD 2572.29 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN changti (#43) p-value = 0.0452006037476
+#30: chenzeh BRANCHES MEAN 9688.36 SD 2147.36 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN wanghao (#44) p-value = 0.0328335442435
+#31: yub BRANCHES MEAN 9566.18 SD 2338.64 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN wanghao (#44) p-value = 0.0197476717606
+#32: thakuro BRANCHES MEAN 9546.27 SD 2017.57 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN wanghao (#44) p-value = 0.0385979306546
+#33: guoru BRANCHES MEAN 9529.64 SD 1191.22 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN changti (#43) p-value = 0.0234855160003
+#34: wangyi BRANCHES MEAN 9238.18 SD 1637.86 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN wanghao (#44) p-value = 0.0278226594647
+#35: wangq5 BRANCHES MEAN 9087.36 SD 2118.38 11 EXPERIMENTS
+#36: wutso BRANCHES MEAN 9020.45 SD 2347.58 11 EXPERIMENTS
+#37: xujing BRANCHES MEAN 8901.73 SD 1230.81 11 EXPERIMENTS
+#38: panju BRANCHES MEAN 8840.36 SD 948.37 11 EXPERIMENTS
+#39: Linwey BRANCHES MEAN 8753.09 SD 1779.2 11 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN wanghao (#44) p-value = 0.0452006037476
+#40: liuw3 BRANCHES MEAN 8621.45 SD 995.17 11 EXPERIMENTS
+#41: yangyic BRANCHES MEAN 8342.55 SD 1743.89 11 EXPERIMENTS
+#42: limsuwap BRANCHES MEAN 8242.73 SD 1500.61 11 EXPERIMENTS
+#43: changti BRANCHES MEAN 7948.09 SD 1589.54 11 EXPERIMENTS
+#44: wanghao BRANCHES MEAN 7730.18 SD 1111.07 11 EXPERIMENTS
+#45: tsengyu BRANCHES MEAN 7271.82 SD 2575.58 11 EXPERIMENTS
+**********************************************************************
+==================================================
+FAULT #1: (<type 'exceptions.ValueError'>, ValueError('negative shift count',), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['zhouxuh']
+==================================================
+FAULT #2: (<type 'exceptions.TypeError'>, TypeError("'factorial' object is not callable",), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['zhangh7']
+==================================================
+FAULT #3: (<type 'exceptions.ValueError'>, ValueError('cannot convert 0 to int',), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['zhouxuh']
+==================================================
+FAULT #4: (<type 'exceptions.TypeError'>, TypeError("'asin' object is not callable",), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['zhangh7']
+==================================================
+FAULT #5: (<type 'exceptions.ValueError'>, ValueError('gamma function pole',), 
+FOUND 3 TIMES
+FOUND BY 3 STUDENTS ['zhouxuh', 'zhangcha', 'alghamha']
+==================================================
+FAULT #6: (<type 'exceptions.TypeError'>, TypeError("'mpf' object is not iterable",), 
+FOUND 4 TIMES
+FOUND BY 3 STUDENTS ['zhouxuh', 'hexu', 'pengxin']
+==================================================
+FAULT #7: (<type 'exceptions.TypeError'>, TypeError("'exp' object is not callable",), 
+FOUND 4 TIMES
+FOUND BY 3 STUDENTS ['zhangh7', 'alizades', 'panju']
+==================================================
+FAULT #8: (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded while calling a Python object',), 
+FOUND 4 TIMES
+FOUND BY 4 STUDENTS ['kaneokak', 'lix6', 'yub', 'chenk4']
+==================================================
+FAULT #9: (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError('integer division or modulo by zero',), 
+FOUND 12 TIMES
+FOUND BY 7 STUDENTS ['wangq5', 'hoangmin', 'guohe', 'xuhui', 'yub', 'zhangcha', 'alghamha']
+==================================================
+FAULT #10: (<type 'exceptions.AssertionError'>, AssertionError(), 
+FOUND 10 TIMES
+FOUND BY 8 STUDENTS ['zhouxuh', 'alghamha', 'pengxin', 'hoangmin', 'xuhui', 'zhangh7', 'zhangcha', 'alizades']
+==================================================
+FAULT #11: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison 
+FOUND 12 TIMES
+FOUND BY 10 STUDENTS ['shik', 'alghamha', 'zhangcha', 'liuh2', 'lix6', 'kaneokak', 'xuhui', 'Linwey', 'alizades', 'almadhoe']
+==================================================
+FAULT #12: (<type 'exceptions.AttributeError'>, AttributeError("'NaN' object has no attribute '_mpf_'",), 
+FOUND 30 TIMES
+FOUND BY 13 STUDENTS ['shik', 'chenzeh', 'shenyif', 'alghamha', 'liuh2', 'chenk4', 'thakuro', 'xuhui', 'zhouxuh', 'hoangmin', 'zhangcha', 'alizades', 'almadhoe']
+==================================================
+FAULT #13: (<class 'sympy.polys.polyerrors.NotAlgebraic'>, 
+FOUND 19 TIMES
+FOUND BY 14 STUDENTS ['shik', 'zhouxuh', 'alghamha', 'pengxin', 'wangq5', 'hoangmin', 'zhengxu', 'lix6', 'guohe', 'kaneokak', 'xuhui', 'chenk4', 'zhangcha', 'almadhoe']
+==================================================
+FAULT #14: (<type 'exceptions.ValueError'>, ValueError('Invalid limits 
+FOUND 71 TIMES
+FOUND BY 23 STUDENTS ['shik', 'bangashm', 'thakuro', 'alizades', 'wangq5', 'zhangh7', 'wangyi', 'lix6', 'kaneokak', 'yangyic', 'wutso', 'zhouzh', 'shenyif', 'almadhoe', 'chenzeh', 'hanxia', 'alghamha', 'hoangmin', 'tsengyu', 'wangyans', 'changti', 'zhangcha', 'wangweny']
+==================================================
+FAULT #15: (<type 'exceptions.TypeError'>, TypeError('Invalid NaN comparison',), 
+FOUND 88 TIMES
+FOUND BY 31 STUDENTS ['shik', 'zhengxu', 'guohe', 'bangashm', 'thakuro', 'alizades', 'almadhoe', 'xuhui', 'lintzu', 'hexu', 'xujing', 'zhouxuh', 'nelsonni', 'chenk4', 'lasharih', 'liuh2', 'lix6', 'kaneokak', 'yangyic', 'liuw3', 'zhouzh', 'shenyif', 'rayalas', 'limsuwap', 'chenzeh', 'hanxia', 'alghamha', 'panju', 'hoangmin', 'wangyans', 'zhangcha']
+==================================================
+FAULT #16: (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded in cmp',), 
+FOUND 406 TIMES
+FOUND BY 38 STUDENTS ['shik', 'wanghao', 'zhengxu', 'guohe', 'bangashm', 'thakuro', 'Linwey', 'alizades', 'shenyif', 'almadhoe', 'zhaozixu', 'xuhui', 'zhangh7', 'tangz', 'hexu', 'zhouxuh', 'nelsonni', 'chenk4', 'lasharih', 'liuh2', 'guoru', 'kaneokak', 'yangyic', 'liuw3', 'zhouzh', 'lix6', 'rayalas', 'wangq5', 'chenzeh', 'hanxia', 'alghamha', 'pengxin', 'panju', 'hoangmin', 'tsengyu', 'wangyans', 'yub', 'zhangcha']
+**********************************************************************
+#1: alghamha 9 FAULTS MEAN 2.29 SD 1.16 / 30 FAILURES MEAN 4.29 SD 2.86 #5:1 #9:2 #10:1 #11:1 #12:1 #13:2 #14:1 #15:1 #16:20
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN nelsonni (#29) p-value = 0.042843601828
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#12) p-value = 0.0322773460948
+#2: zhouxuh 9 FAULTS MEAN 2.22 SD 0.92 / 32 FAILURES MEAN 3.56 SD 1.5 #1:1 #3:1 #5:1 #6:2 #10:2 #12:3 #13:2 #15:1 #16:19
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN shik (#16) p-value = 0.0469447269785
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhangcha (#8) p-value = 0.0440827085562
+#3: kaneokak 6 FAULTS MEAN 2.0 SD 0.94 / 33 FAILURES MEAN 3.67 SD 2.75 #8:1 #11:3 #13:2 #14:1 #15:2 #16:24
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN nelsonni (#29) p-value = 0.0485396228973
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN wangq5 (#26) p-value = 0.0172351501328
+#4: alizades 7 FAULTS MEAN 1.88 SD 1.27 / 27 FAILURES MEAN 3.38 SD 3.81 #7:1 #10:2 #11:1 #12:1 #14:2 #15:1 #16:19
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhangh7 (#11) p-value = 0.0352397037738
+#5: chenzeh 4 FAULTS MEAN 1.8 SD 0.75 / 10 FAILURES MEAN 2.0 SD 0.89 #12:1 #14:4 #15:1 #16:4
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhangh7 (#11) p-value = 0.00917056138562
+#6: shenyif 4 FAULTS MEAN 1.75 SD 0.83 / 8 FAILURES MEAN 2.0 SD 1.0 #12:1 #14:4 #15:1 #16:2
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhangh7 (#11) p-value = 0.0187709723339
+#7: hoangmin 7 FAULTS MEAN 1.75 SD 1.09 / 24 FAILURES MEAN 3.0 SD 1.41 #9:5 #10:1 #12:1 #13:1 #14:1 #15:2 #16:13
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhangh7 (#11) p-value = 0.0286575503833
+#8: zhangcha 9 FAULTS MEAN 1.64 SD 0.77 / 24 FAILURES MEAN 2.18 SD 1.99 #5:1 #9:1 #10:1 #11:1 #12:4 #13:1 #14:1 #15:2 #16:12
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhangh7 (#11) p-value = 0.00144877596645
+#9: thakuro 4 FAULTS MEAN 1.6 SD 0.8 / 10 FAILURES MEAN 2.0 SD 0.89 #12:1 #14:6 #15:1 #16:2
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhangh7 (#11) p-value = 0.00917056138562
+#10: chenk4 5 FAULTS MEAN 1.57 SD 0.9 / 77 FAILURES MEAN 11.0 SD 10.84 #8:1 #12:12 #13:3 #15:22 #16:39
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#12) p-value = 0.0491408339119
+#11: zhangh7 6 FAULTS MEAN 1.55 SD 0.78 / 69 FAILURES MEAN 6.27 SD 3.6 #2:1 #4:1 #7:2 #10:1 #14:1 #16:63
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#12) p-value = 0.000710581387589
+#12: xuhui 7 FAULTS MEAN 1.5 SD 0.71 / 12 FAILURES MEAN 1.5 SD 0.71 #9:1 #10:1 #11:1 #12:1 #13:1 #15:2 #16:5
+#13: bangashm 3 FAULTS MEAN 1.4 SD 0.49 / 8 FAILURES MEAN 1.6 SD 0.8 #14:5 #15:1 #16:2
+#14: hanxia 3 FAULTS MEAN 1.4 SD 0.49 / 8 FAILURES MEAN 1.6 SD 0.8 #14:5 #15:1 #16:2
+#15: wangyans 3 FAULTS MEAN 1.4 SD 0.49 / 8 FAILURES MEAN 1.6 SD 0.8 #14:5 #15:1 #16:2
+#16: shik 6 FAULTS MEAN 1.33 SD 0.47 / 19 FAILURES MEAN 2.11 SD 0.99 #11:1 #12:1 #13:1 #14:1 #15:2 #16:13
+#17: lix6 6 FAULTS MEAN 1.33 SD 0.47 / 21 FAILURES MEAN 2.33 SD 1.41 #8:1 #11:1 #13:1 #14:1 #15:2 #16:15
+#18: guohe 4 FAULTS MEAN 1.29 SD 0.45 / 11 FAILURES MEAN 1.57 SD 0.73 #9:1 #13:1 #15:1 #16:8
+#19: Linwey 2 FAULTS MEAN 1.25 SD 0.43 / 5 FAILURES MEAN 1.25 SD 0.43 #11:1 #16:4
+#20: liuh2 4 FAULTS MEAN 1.25 SD 0.66 / 17 FAILURES MEAN 2.13 SD 1.27 #11:1 #12:1 #15:2 #16:13
+#21: panju 3 FAULTS MEAN 1.2 SD 0.4 / 11 FAILURES MEAN 2.2 SD 1.17 #7:1 #15:1 #16:9
+#22: zhengxu 3 FAULTS MEAN 1.14 SD 0.35 / 14 FAILURES MEAN 2.0 SD 0.93 #13:1 #15:3 #16:10
+#23: hexu 3 FAULTS MEAN 1.14 SD 0.35 / 12 FAILURES MEAN 1.71 SD 0.88 #6:1 #15:3 #16:8
+#24: zhouzh 3 FAULTS MEAN 1.14 SD 0.35 / 11 FAILURES MEAN 1.57 SD 0.9 #14:1 #15:2 #16:8
+#25: rayalas 2 FAULTS MEAN 1.14 SD 0.35 / 10 FAILURES MEAN 1.43 SD 0.49 #15:2 #16:8
+#26: wangq5 4 FAULTS MEAN 1.14 SD 0.35 / 8 FAILURES MEAN 1.14 SD 0.35 #9:1 #13:1 #14:2 #16:4
+#27: pengxin 4 FAULTS MEAN 1.14 SD 0.35 / 10 FAILURES MEAN 1.43 SD 0.73 #6:1 #10:1 #13:1 #16:7
+#28: yub 3 FAULTS MEAN 1.14 SD 0.35 / 9 FAILURES MEAN 1.29 SD 0.45 #8:1 #9:1 #16:7
+#29: nelsonni 2 FAULTS MEAN 1.13 SD 0.33 / 11 FAILURES MEAN 1.38 SD 0.48 #15:2 #16:9
+#30: tsengyu 2 FAULTS MEAN 1.1 SD 0.3 / 15 FAILURES MEAN 1.5 SD 0.67 #14:3 #16:12
+#31: almadhoe 6 FAULTS MEAN 1.09 SD 0.29 / 15 FAILURES MEAN 1.36 SD 0.88 #11:1 #12:2 #13:1 #14:1 #15:2 #16:8
+#32: wanghao 1 FAULTS MEAN 1.0 SD 0.0 / 1 FAILURES MEAN 1.0 SD 0.0 #16:1
+#33: zhaozixu 1 FAULTS MEAN 1.0 SD 0.0 / 1 FAILURES MEAN 1.0 SD 0.0 #16:1
+#34: lintzu 1 FAULTS MEAN 1.0 SD 0.0 / 13 FAILURES MEAN 1.44 SD 0.5 #15:13
+#35: tangz 1 FAULTS MEAN 1.0 SD 0.0 / 12 FAILURES MEAN 1.5 SD 0.71 #16:12
+#36: xujing 1 FAULTS MEAN 1.0 SD 0.0 / 4 FAILURES MEAN 1.33 SD 0.47 #15:4
+#37: wangyi 1 FAULTS MEAN 1.0 SD 0.0 / 1 FAILURES MEAN 1.0 SD 0.0 #14:1
+#38: lasharih 2 FAULTS MEAN 1.0 SD 0.0 / 8 FAILURES MEAN 1.33 SD 0.47 #15:2 #16:6
+#39: guoru 1 FAULTS MEAN 1.0 SD 0.0 / 12 FAILURES MEAN 1.33 SD 0.67 #16:12
+#40: yangyic 3 FAULTS MEAN 1.0 SD 0.0 / 4 FAILURES MEAN 1.0 SD 0.0 #14:2 #15:1 #16:1
+#41: liuw3 2 FAULTS MEAN 1.0 SD 0.0 / 4 FAILURES MEAN 1.33 SD 0.47 #15:2 #16:2
+#42: wutso 1 FAULTS MEAN 1.0 SD 0.0 / 9 FAILURES MEAN 1.29 SD 0.45 #14:9
+#43: limsuwap 1 FAULTS MEAN 1.0 SD 0.0 / 5 FAILURES MEAN 1.25 SD 0.43 #15:5
+#44: changti 1 FAULTS MEAN 1.0 SD 0.0 / 1 FAILURES MEAN 1.0 SD 0.0 #14:1
+#45: wangweny 1 FAULTS MEAN 1.0 SD 0.0 / 13 FAILURES MEAN 1.86 SD 0.99 #14:13
