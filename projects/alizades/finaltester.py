@@ -84,9 +84,9 @@ while(time.time()< start + TIME_OUT):
                         bugs += 1
                         fault = sut.failure();
                         fname = 'fault'+str(bugs)+'.test'
-                        #wfile = open(fname,'w')
-                        #wfile.write(str(fault))
-                        #wfile.close()
+                        wfile = open(fname,'w')
+                        wfile.write(str(fault))
+                        wfile.close()
                         sut.restart()
                 else:
                     if len(sut.newBranches()) != 0:
