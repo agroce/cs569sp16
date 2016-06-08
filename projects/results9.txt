@@ -1,0 +1,157 @@
+
+
+MEAN BRANCH COVERGE OVER 9 RUNS
+kaneokak 12637.78 9 1798.2
+zhangcha 11954.78 9 1181.32
+zhaozixu 11642.22 9 2198.39
+zhangh7 11588.33 9 1423.5
+zhouxuh 11550.67 9 2773.33
+lix6 11288.56 9 1373.69
+alghamha 10993.11 9 3326.04
+shik 10849.33 9 1608.2
+nelsonni 10841.33 9 1755.86
+zhouzh 10757.22 9 1629.7
+chenk4 10653.56 9 1156.61
+alizades 10605.78 9 3125.88
+SAHARFIX 10600.89 9 3078.35
+zhengxu 10578.0 9 1576.0
+hexu 10531.44 9 1525.2
+almadhoe 10492.0 9 700.27
+lintzu 10490.22 9 1352.34
+wangweny 10488.78 9 1451.42
+liuh2 10295.44 9 1484.62
+hoangmin 10222.44 9 1401.98
+tangz 10206.44 9 1432.04
+pengxin 10141.44 9 2240.79
+rayalas 10048.11 9 1575.45
+xuhui 10011.22 9 958.12
+lasharih 9886.22 9 1284.95
+guohe 9830.0 9 1963.73
+guoru 9628.22 9 1294.21
+wangyans 9526.0 9 2302.53
+chenzeh 9520.11 9 2048.0
+hanxia 9500.89 9 2290.1
+bangashm 9486.89 9 2265.68
+wutso 9345.33 9 2419.07
+shenyif 9333.22 9 2106.23
+yub 9268.89 9 2378.45
+thakuro 9228.33 9 2039.02
+wangq5 9166.22 9 1638.71
+wangyi 9097.44 9 1711.89
+xujing 8725.44 9 1129.7
+Linwey 8660.67 9 1953.96
+panju 8626.89 9 894.75
+liuw3 8449.11 9 983.81
+yangyic 8434.78 9 1907.35
+limsuwap 8286.33 9 1638.11
+changti 7683.11 9 1551.71
+wanghao 7628.56 9 1185.19
+tsengyu 6765.33 9 2586.49
+**********************************************************************
+==================================================
+BUG: (<type 'exceptions.ValueError'>, ValueError('negative shift count',), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS set(['zhouxuh'])
+==================================================
+BUG: (<type 'exceptions.TypeError'>, TypeError("'factorial' object is not callable",), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS set(['zhangh7'])
+==================================================
+BUG: (<type 'exceptions.ValueError'>, ValueError('cannot convert 0 to int',), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS set(['zhouxuh'])
+==================================================
+BUG: (<type 'exceptions.TypeError'>, TypeError("'asin' object is not callable",), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS set(['zhangh7'])
+==================================================
+BUG: (<type 'exceptions.ValueError'>, ValueError('gamma function pole',), 
+FOUND 3 TIMES
+FOUND BY 3 STUDENTS set(['zhouxuh', 'zhangcha', 'alghamha'])
+==================================================
+BUG: (<type 'exceptions.TypeError'>, TypeError("'mpf' object is not iterable",), 
+FOUND 4 TIMES
+FOUND BY 3 STUDENTS set(['zhouxuh', 'hexu', 'pengxin'])
+==================================================
+BUG: (<type 'exceptions.TypeError'>, TypeError("'exp' object is not callable",), 
+FOUND 4 TIMES
+FOUND BY 3 STUDENTS set(['SAHARFIX', 'zhangh7', 'panju'])
+==================================================
+BUG: (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded while calling a Python object',), 
+FOUND 4 TIMES
+FOUND BY 4 STUDENTS set(['kaneokak', 'lix6', 'yub', 'chenk4'])
+==================================================
+BUG: (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError('integer division or modulo by zero',), 
+FOUND 6 TIMES
+FOUND BY 5 STUDENTS set(['wangq5', 'zhangcha', 'xuhui', 'alghamha', 'guohe'])
+==================================================
+BUG: (<class 'sympy.polys.polyerrors.NotAlgebraic'>, 
+FOUND 7 TIMES
+FOUND BY 6 STUDENTS set(['zhouxuh', 'wangq5', 'pengxin', 'guohe', 'kaneokak', 'alghamha'])
+==================================================
+BUG: (<type 'exceptions.AssertionError'>, AssertionError(), 
+FOUND 10 TIMES
+FOUND BY 8 STUDENTS set(['zhouxuh', 'alghamha', 'pengxin', 'zhaozixu', 'SAHARFIX', 'xuhui', 'zhangh7', 'zhangcha'])
+==================================================
+BUG: (<type 'exceptions.AttributeError'>, AttributeError("'NaN' object has no attribute '_mpf_'",), 
+FOUND 26 TIMES
+FOUND BY 10 STUDENTS set(['shik', 'zhouxuh', 'alghamha', 'liuh2', 'chenk4', 'SAHARFIX', 'xuhui', 'hoangmin', 'zhangcha', 'almadhoe'])
+==================================================
+BUG: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison 
+FOUND 11 TIMES
+FOUND BY 10 STUDENTS set(['shik', 'alghamha', 'zhangcha', 'liuh2', 'lix6', 'kaneokak', 'SAHARFIX', 'xuhui', 'Linwey', 'almadhoe'])
+==================================================
+BUG: (<type 'exceptions.ValueError'>, ValueError('Invalid limits 
+FOUND 42 TIMES
+FOUND BY 19 STUDENTS set(['shik', 'chenzeh', 'hanxia', 'zhouzh', 'alghamha', 'wangq5', 'wutso', 'wangyans', 'lix6', 'thakuro', 'kaneokak', 'SAHARFIX', 'yangyic', 'bangashm', 'zhangh7', 'shenyif', 'zhangcha', 'tsengyu', 'almadhoe'])
+==================================================
+BUG: (<type 'exceptions.TypeError'>, TypeError('Invalid NaN comparison',), 
+FOUND 38 TIMES
+FOUND BY 20 STUDENTS set(['shik', 'zhouxuh', 'nelsonni', 'almadhoe', 'chenk4', 'panju', 'rayalas', 'lasharih', 'zhengxu', 'liuh2', 'lix6', 'hoangmin', 'kaneokak', 'SAHARFIX', 'xuhui', 'liuw3', 'zhangcha', 'zhouzh', 'guohe', 'hexu'])
+==================================================
+BUG: (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded in cmp',), 
+FOUND 355 TIMES
+FOUND BY 40 STUDENTS set(['shik', 'zhengxu', 'guohe', 'bangashm', 'thakuro', 'Linwey', 'shenyif', 'almadhoe', 'SAHARFIX', 'xuhui', 'lintzu', 'zhangh7', 'tangz', 'hexu', 'xujing', 'zhouxuh', 'nelsonni', 'chenk4', 'lasharih', 'liuh2', 'guoru', 'kaneokak', 'yangyic', 'liuw3', 'zhouzh', 'lix6', 'rayalas', 'limsuwap', 'wangq5', 'chenzeh', 'hanxia', 'alghamha', 'pengxin', 'panju', 'hoangmin', 'tsengyu', 'wangyans', 'yub', 'zhangcha', 'wangweny'])
+**********************************************************************
+STUDENT: zhouxuh 25 FAILURES 9 BUGS
+STUDENT: alghamha 26 FAILURES 8 BUGS
+STUDENT: zhangcha 21 FAILURES 8 BUGS
+STUDENT: SAHARFIX 26 FAILURES 7 BUGS
+STUDENT: zhangh7 63 FAILURES 6 BUGS
+STUDENT: kaneokak 24 FAILURES 6 BUGS
+STUDENT: xuhui 9 FAILURES 6 BUGS
+STUDENT: shik 14 FAILURES 5 BUGS
+STUDENT: lix6 13 FAILURES 5 BUGS
+STUDENT: almadhoe 12 FAILURES 5 BUGS
+STUDENT: chenk4 46 FAILURES 4 BUGS
+STUDENT: liuh2 15 FAILURES 4 BUGS
+STUDENT: guohe 10 FAILURES 4 BUGS
+STUDENT: pengxin 10 FAILURES 4 BUGS
+STUDENT: wangq5 7 FAILURES 4 BUGS
+STUDENT: hoangmin 14 FAILURES 3 BUGS
+STUDENT: panju 11 FAILURES 3 BUGS
+STUDENT: hexu 10 FAILURES 3 BUGS
+STUDENT: zhouzh 9 FAILURES 3 BUGS
+STUDENT: tsengyu 12 FAILURES 2 BUGS
+STUDENT: zhengxu 11 FAILURES 2 BUGS
+STUDENT: nelsonni 8 FAILURES 2 BUGS
+STUDENT: rayalas 8 FAILURES 2 BUGS
+STUDENT: lasharih 7 FAILURES 2 BUGS
+STUDENT: yub 7 FAILURES 2 BUGS
+STUDENT: thakuro 6 FAILURES 2 BUGS
+STUDENT: chenzeh 6 FAILURES 2 BUGS
+STUDENT: bangashm 5 FAILURES 2 BUGS
+STUDENT: Linwey 5 FAILURES 2 BUGS
+STUDENT: hanxia 5 FAILURES 2 BUGS
+STUDENT: wangyans 5 FAILURES 2 BUGS
+STUDENT: shenyif 4 FAILURES 2 BUGS
+STUDENT: yangyic 3 FAILURES 2 BUGS
+STUDENT: liuw3 3 FAILURES 2 BUGS
+STUDENT: lintzu 11 FAILURES 1 BUGS
+STUDENT: guoru 10 FAILURES 1 BUGS
+STUDENT: wangweny 10 FAILURES 1 BUGS
+STUDENT: wutso 8 FAILURES 1 BUGS
+STUDENT: tangz 7 FAILURES 1 BUGS
+STUDENT: limsuwap 4 FAILURES 1 BUGS
+STUDENT: xujing 3 FAILURES 1 BUGS
+STUDENT: zhaozixu 1 FAILURES 1 BUGS
