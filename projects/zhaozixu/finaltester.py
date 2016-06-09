@@ -40,11 +40,10 @@ def handleFailure(sut, faultPool):
     temp = []
     for f in faultPool:
         k += 1
-        sut.restart()
-        sut.failsCheck(f[size-1])
-        sut.reduce(sut.test(), sut.fails)
+#        sut.failsCheck(f[size-1])
+#        sut.reduce(sut.test(), sut.fails)
         filename = 'failure'+str(k)+'.test'
-        sut.saveTest(sut.test(), filename)
+        sut.saveTest(f[size-1], filename)
         
 #        f = open("failure.test", 'a')
 #        f.write("\\\\\\\\\\FAILURE NO." + str(k) + "\\\\\\\\\\\n")
@@ -75,7 +74,7 @@ passPool = []
 passPool.append(sut.state())
 faultPool = []
 
-it = 0
+b = 0
 start = time.time()
 while time.time() - start < args['timeout']:
     sut.restart()
@@ -85,7 +84,7 @@ while time.time() - start < args['timeout']:
     
     i = 0
     action = sut.randomEnabled(rand)
-    nums = random.randint(1, 20)
+    nums = random.randint(10, 50)
     safe = None
     prop = None
     while i<nums:
@@ -124,9 +123,9 @@ while time.time() - start < args['timeout']:
             
     if safe and prop:    
         passPool.append(sut.state())
-        #filename = 'case'+str(it)+'.test'
+        #filename = 'case'+str(b)+'.test'
         #sut.saveTest(sut.test(), filename)
-        #it += 1
+        #b += 1
         
 duration = (time.time() - start)
 print "\n\n\nProducing Report...\n\n\n"
