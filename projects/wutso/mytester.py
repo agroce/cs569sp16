@@ -9,10 +9,10 @@ def notOK():
     bugs += 1
     print "FOUND A FAILURE"
     print sut.failure()
-    print "REDUCING"
-    R = sut.reduce(sut.test(), sut.fails, True, True)
-    sut.prettyPrintTest(R)
-    print sut.failure()
+    # print "REDUCING"
+    # R = sut.reduce(sut.test(), sut.fails, True, True)
+    # sut.prettyPrintTest(R)
+    # print sut.failure()
 
     # save test
     name = "failure" + str(bugs) + ".test"
