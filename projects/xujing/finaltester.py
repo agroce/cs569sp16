@@ -28,17 +28,12 @@ def randomAction():
 
     if not ok:
         bugs += 1
-        print "FOUND A FAILURE"
-
+        print "FOUND A FAILURE:"
+        currseq.append((sut.test(),set(sut.currStatements())))
+        print("SHOW FAULT")
         if faults:
-			
-            currseq.append((sut.test(),set(sut.currStatements())))
-            print("SHOW FAULT")
             file = 'failure' + str(actCount) + '.test'
             sut.saveTest(sut.test(), file)
-            sut.restart()
-            print sut.failure()
-
     return ok
 
 
