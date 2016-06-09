@@ -31,9 +31,8 @@ def randomAction():
         print "FOUND A FAILURE"
 
         if faults:
-            f = sut.reduce(sut.test(), sut.fails, True, True)
-            sut.prettyPrintTest(f)
-            currseq.append((f,set(sut.currStatements())))
+			
+            currseq.append((sut.test(),set(sut.currStatements())))
             print("SHOW FAULT")
             file = 'failure' + str(actCount) + '.test'
             sut.saveTest(sut.test(), file)
@@ -54,15 +53,7 @@ def checkAlg():
     else:
         error.append(sut.currStatements())
 
-    #if not error ==[]:
-    #    print "SHOW ERROR SEQUENCE"
-        #    print error
-        #f = open(("failure" + str(actCount) + ".test"), 'w')
-        #f.write(str(error))
-        #f.close()
-    #else:
-    #    print "Data in noerror sequence"
-        # print noerror
+
 
 def main():
     global start,sut,R,noerror,error,actCount, bugs,ntest,newseq,currseq,states
@@ -91,8 +82,20 @@ def main():
                     break
                 ok = randomAction()
                 if not ok:
+                    error.append(sut.currStatements())
                     break
                 checkAlg()
+
+    #if not error ==[]:
+    #    print "SHOW ERROR SEQUENCE"
+    #    print error
+    #    f = open(("error" + str(actCount) + ".test"), 'w')
+    #    f.write(str(error))
+    #    f.close()
+    #else:
+    #    print "Data in noerror sequence"
+        # print noerror
+
 
     if coverage:
         sut.internalReport()
