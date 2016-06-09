@@ -132,13 +132,13 @@ def main():
                     if (not propok) or (not stepOk):
                         bugs += 1
                         print "TEST FAILED"
+                        print sut.failure()
                         print "REDUCING..."
                         R = sut.reduce(sut.test(),sut.fails, True, True)
                         sut.prettyPrintTest(R)
-                        print sut.failure()
                         if config.fault:
                             filename= config.output +str(bugs)+'.test'
-                            sut.saveTest(sut.test(),filename)
+                            sut.saveTest(R,filename)
                 
                     runningelapsed = time.time() - startprog
                     if config.running:
