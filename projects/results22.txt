@@ -1,0 +1,493 @@
+MEAN BRANCH COVERGE OVER 22 RUNS
+#1: zhangcha BRANCHES MEAN 12151.0 SD 2053.46 / 20709 TOTAL BRANCHES (#2) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN chenk4 (#12) p-value = 0.041139779041
+#2: lix6 BRANCHES MEAN 12126.09 SD 1904.47 / 20072 TOTAL BRANCHES (#9) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN almadhoe (#18) p-value = 0.00172678648453
+#3: shik BRANCHES MEAN 11913.14 SD 2365.67 / 20095 TOTAL BRANCHES (#8) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN almadhoe (#18) p-value = 0.00694746434906
+#4: kaneokak BRANCHES MEAN 11670.36 SD 2240.9 / 20740 TOTAL BRANCHES (#1) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN almadhoe (#18) p-value = 0.036701985452
+#5: nelsonni BRANCHES MEAN 11536.27 SD 1822.07 / 19442 TOTAL BRANCHES (#13) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN almadhoe (#18) p-value = 0.0227954978611
+#6: zhaozixu BRANCHES MEAN 11402.36 SD 2598.45 / 20134 TOTAL BRANCHES (#5) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.00982327450752
+#7: hoangmin BRANCHES MEAN 11306.36 SD 2165.2 / 20115 TOTAL BRANCHES (#7) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.00982327450752
+#8: lintzu BRANCHES MEAN 11279.95 SD 1941.32 / 19210 TOTAL BRANCHES (#15) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.00694746434906
+#9: zhengxu BRANCHES MEAN 11178.05 SD 2255.97 / 19532 TOTAL BRANCHES (#11) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.0120195098587
+#10: zhouxuh BRANCHES MEAN 11144.73 SD 2910.9 / 20129 TOTAL BRANCHES (#6) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN almadhoe (#18) p-value = 0.0045086983649
+#11: wangweny BRANCHES MEAN 11132.09 SD 2294.48 / 19254 TOTAL BRANCHES (#14) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.015619784399
+#12: chenk4 BRANCHES MEAN 11130.59 SD 1480.48 / 19556 TOTAL BRANCHES (#10) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.00917505779479
+#13: rayalas BRANCHES MEAN 11088.95 SD 1787.8 / 18983 TOTAL BRANCHES (#18) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.0112433316909
+#14: alghamha BRANCHES MEAN 11061.59 SD 2804.36 / 20206 TOTAL BRANCHES (#4) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.0290391793405
+#15: hexu BRANCHES MEAN 11047.05 SD 2464.91 / 19449 TOTAL BRANCHES (#12) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.0242356953507
+#16: liuh2 BRANCHES MEAN 10888.41 SD 1854.05 / 18924 TOTAL BRANCHES (#19) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.0146404449585
+#17: zhouzh BRANCHES MEAN 10792.86 SD 2337.52 / 18804 TOTAL BRANCHES (#20) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.0308128215024
+#18: almadhoe BRANCHES MEAN 10700.95 SD 741.87 / 19120 TOTAL BRANCHES (#17) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.0399897467179
+#19: zhangh7 BRANCHES MEAN 10696.82 SD 1923.0 / 19194 TOTAL BRANCHES (#16) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#23) p-value = 0.0346404697942
+#20: tangz BRANCHES MEAN 10657.23 SD 2296.01 / 18353 TOTAL BRANCHES (#26) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN panju (#35) p-value = 0.0257541154461
+#21: lasharih BRANCHES MEAN 10284.05 SD 1745.32 / 18201 TOTAL BRANCHES (#28) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN panju (#35) p-value = 0.0423177067504
+#22: alizades BRANCHES MEAN 10178.95 SD 3960.96 / 20463 TOTAL BRANCHES (#3) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN limsuwap (#39) p-value = 0.036701985452
+#23: xuhui BRANCHES MEAN 9933.73 SD 1265.32 / 18153 TOTAL BRANCHES (#31) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN panju (#35) p-value = 0.036701985452
+#24: guohe BRANCHES MEAN 9906.64 SD 2344.09 / 18615 TOTAL BRANCHES (#22) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN limsuwap (#39) p-value = 0.0435240403102
+#25: chenzeh BRANCHES MEAN 9847.64 SD 1967.99 / 18591 TOTAL BRANCHES (#23) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN limsuwap (#39) p-value = 0.0326786804878
+#26: pengxin BRANCHES MEAN 9802.64 SD 2334.66 / 18360 TOTAL BRANCHES (#25) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN limsuwap (#39) p-value = 0.0308128215024
+#27: shenyif BRANCHES MEAN 9760.86 SD 1980.94 / 18484 TOTAL BRANCHES (#24) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN liuw3 (#40) p-value = 0.0257541154461
+#28: bangashm BRANCHES MEAN 9740.73 SD 1852.0 / 18183 TOTAL BRANCHES (#30) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN limsuwap (#39) p-value = 0.036701985452
+#29: wangyans BRANCHES MEAN 9739.18 SD 1847.12 / 18120 TOTAL BRANCHES (#32) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN limsuwap (#39) p-value = 0.0388671038124
+#30: hanxia BRANCHES MEAN 9738.82 SD 1849.71 / 18190 TOTAL BRANCHES (#29) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN limsuwap (#39) p-value = 0.0435240403102
+#31: thakuro BRANCHES MEAN 9646.41 SD 1745.36 / 18204 TOTAL BRANCHES (#27) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN limsuwap (#39) p-value = 0.0399897467179
+#32: Linwey BRANCHES MEAN 9575.82 SD 1997.24 / 18740 TOTAL BRANCHES (#21) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN limsuwap (#39) p-value = 0.0486437936801
+#33: wutso BRANCHES MEAN 9525.73 SD 2088.02 / 16864 TOTAL BRANCHES (#37) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN limsuwap (#39) p-value = 0.0273541249644
+#34: wangq5 BRANCHES MEAN 9377.32 SD 1950.06 / 17411 TOTAL BRANCHES (#33) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN yangyic (#41) p-value = 0.0317339937569
+#35: panju BRANCHES MEAN 9311.59 SD 1082.15 / 16993 TOTAL BRANCHES (#35) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN yangyic (#41) p-value = 0.0235060257189
+#36: yub BRANCHES MEAN 9252.36 SD 2263.05 / 16949 TOTAL BRANCHES (#36) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN changti (#44) p-value = 0.00310093528777
+#37: xujing BRANCHES MEAN 9231.5 SD 1234.32 / 17396 TOTAL BRANCHES (#34) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN changti (#44) p-value = 3.60902323675e-05
+#38: guoru BRANCHES MEAN 9076.91 SD 1640.25 / 15976 TOTAL BRANCHES (#42) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN changti (#44) p-value = 0.000789112989016
+#39: limsuwap BRANCHES MEAN 8671.91 SD 1336.06 / 16511 TOTAL BRANCHES (#39) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN changti (#44) p-value = 0.00210563224136
+#40: liuw3 BRANCHES MEAN 8596.14 SD 1088.86 / 16332 TOTAL BRANCHES (#40) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN changti (#44) p-value = 0.00165898486463
+#41: yangyic BRANCHES MEAN 8304.68 SD 1626.5 / 16727 TOTAL BRANCHES (#38) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN changti (#44) p-value = 0.0137156420348
+#42: wangyi BRANCHES MEAN 8268.09 SD 1729.8 / 12285 TOTAL BRANCHES (#43) 22 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN changti (#44) p-value = 0.0435240403102
+#43: tsengyu BRANCHES MEAN 7794.77 SD 2293.88 / 16000 TOTAL BRANCHES (#41) 22 EXPERIMENTS
+#44: changti BRANCHES MEAN 7135.95 SD 1600.44 / 11439 TOTAL BRANCHES (#44) 22 EXPERIMENTS
+#45: wanghao BRANCHES MEAN 7037.27 SD 1310.31 / 11260 TOTAL BRANCHES (#45) 22 EXPERIMENTS
+NEW BUG (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded in cmp',), 
+NEW BUG (<type 'exceptions.TypeError'>, TypeError('Invalid comparison 
+NEW BUG (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError('integer division or modulo by zero',), 
+NEW BUG (<type 'exceptions.AttributeError'>, AttributeError("'NaN' object has no attribute '_mpf_'",), 
+NEW BUG (<type 'exceptions.AssertionError'>, AssertionError(), 
+NEW BUG (<type 'exceptions.ValueError'>, ValueError('gamma function pole',), 
+NEW BUG (<type 'exceptions.ValueError'>, ValueError('Invalid limits 
+NEW BUG (<class 'sympy.polys.polyerrors.NotAlgebraic'>, 
+NEW BUG (<type 'exceptions.TypeError'>, TypeError('Invalid NaN comparison',), 
+NEW BUG (<type 'exceptions.TypeError'>, TypeError("'exp' object is not callable",), 
+NO FAILURE IN sympytests.changti/1010/failure1.test.out
+NEW BUG (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded while calling a Python object',), 
+NEW BUG (<type 'exceptions.ValueError'>, ValueError('got complex zero with unknown accuracy',), 
+NO FAILURE IN sympytests.guoru/1000/failure0.test.out
+NO FAILURE IN sympytests.guoru/1001/failure0.test.out
+NO FAILURE IN sympytests.guoru/1004/failure0.test.out
+NO FAILURE IN sympytests.guoru/1005/failure0.test.out
+NO FAILURE IN sympytests.guoru/1006/failure0.test.out
+NO FAILURE IN sympytests.guoru/1006/failure1.test.out
+NO FAILURE IN sympytests.guoru/1006/failure2.test.out
+NO FAILURE IN sympytests.guoru/1007/failure0.test.out
+NO FAILURE IN sympytests.guoru/1008/failure0.test.out
+NO FAILURE IN sympytests.guoru/1008/failure1.test.out
+NO FAILURE IN sympytests.guoru/1009/failure0.test.out
+NO FAILURE IN sympytests.guoru/1010/failure0.test.out
+NO FAILURE IN sympytests.guoru/1011/failure0.test.out
+NO FAILURE IN sympytests.guoru/1013/failure0.test.out
+NO FAILURE IN sympytests.guoru/1015/failure0.test.out
+NO FAILURE IN sympytests.guoru/1015/failure1.test.out
+NO FAILURE IN sympytests.guoru/1015/failure2.test.out
+NO FAILURE IN sympytests.guoru/1015/failure3.test.out
+NO FAILURE IN sympytests.guoru/1016/failure0.test.out
+NO FAILURE IN sympytests.guoru/1016/failure1.test.out
+NO FAILURE IN sympytests.guoru/1018/failure0.test.out
+NO FAILURE IN sympytests.guoru/1018/failure1.test.out
+NO FAILURE IN sympytests.guoru/1018/failure2.test.out
+NO FAILURE IN sympytests.guoru/1018/failure3.test.out
+NO FAILURE IN sympytests.guoru/1019/failure0.test.out
+NO FAILURE IN sympytests.guoru/1019/failure1.test.out
+NO FAILURE IN sympytests.guoru/1019/failure2.test.out
+NO FAILURE IN sympytests.guoru/1020/failure0.test.out
+NO FAILURE IN sympytests.guoru/1020/failure1.test.out
+NEW BUG (KeyboardInterrupt)
+NO FAILURE IN sympytests.guoru/1021/failure0.test.out
+NO FAILURE IN sympytests.guoru/1021/failure1.test.out
+NO FAILURE IN sympytests.guoru/1021/failure2.test.out
+NO FAILURE IN sympytests.guoru/1021/failure3.test.out
+NEW BUG (<type 'exceptions.TypeError'>, TypeError("'mpf' object is not iterable",), 
+NO FAILURE IN sympytests.limsuwap/1004/failure1.test.out
+NO FAILURE IN sympytests.limsuwap/1005/failure1.test.out
+NO FAILURE IN sympytests.limsuwap/1007/failure1.test.out
+NO FAILURE IN sympytests.limsuwap/1007/failure2.test.out
+NO FAILURE IN sympytests.limsuwap/1010/failure1.test.out
+NO FAILURE IN sympytests.limsuwap/1011/failure1.test.out
+NO FAILURE IN sympytests.limsuwap/1011/failure2.test.out
+NO FAILURE IN sympytests.limsuwap/1012/failure1.test.out
+NO FAILURE IN sympytests.limsuwap/1018/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1000/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1001/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1003/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1004/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1005/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1005/failure2.test.out
+NO FAILURE IN sympytests.lintzu/1006/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1007/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1007/failure2.test.out
+NO FAILURE IN sympytests.lintzu/1008/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1008/failure2.test.out
+NO FAILURE IN sympytests.lintzu/1010/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1010/failure2.test.out
+NO FAILURE IN sympytests.lintzu/1011/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1012/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1013/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1013/failure2.test.out
+NO FAILURE IN sympytests.lintzu/1013/failure3.test.out
+NO FAILURE IN sympytests.lintzu/1013/failure4.test.out
+NO FAILURE IN sympytests.lintzu/1015/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1015/failure2.test.out
+NO FAILURE IN sympytests.lintzu/1015/failure3.test.out
+NO FAILURE IN sympytests.lintzu/1016/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1016/failure2.test.out
+NO FAILURE IN sympytests.lintzu/1017/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1017/failure2.test.out
+NO FAILURE IN sympytests.lintzu/1017/failure3.test.out
+NO FAILURE IN sympytests.lintzu/1017/failure4.test.out
+NO FAILURE IN sympytests.lintzu/1018/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1019/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1020/failure1.test.out
+NO FAILURE IN sympytests.lintzu/1020/failure2.test.out
+NO FAILURE IN sympytests.lintzu/1020/failure3.test.out
+NO FAILURE IN sympytests.liuh2/1005/failure3.test.out
+NO FAILURE IN sympytests.liuh2/1005/failure4.test.out
+NO FAILURE IN sympytests.liuh2/1019/failure1.test.out
+NO FAILURE IN sympytests.lix6/1013/failure2.test.out
+NEW BUG (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError(), 
+NEW BUG (<type 'exceptions.TypeError'>, TypeError("unsupported operand type(s) for //: 'Sum' and 'int'",), 
+NEW BUG (<class 'sympy.core.facts.InconsistentAssumptions'>, InconsistentAssumptions({'even': False, 'prime': False, 'real': True, 'commutative': True, 'nonzero': True, 'nonpositive': True, 'composite': False, 'positive': False, 'noninteger': True, 'negative': True, 'nonnegative': False, 'zero': False, 'complex': True, 'rational': False, 'infinite': None, 'integer': False, 'hermitian': True, 'finite': None, 'odd': False, 'imaginary': False, 'irrational': True}, 'negative', False), 
+NO FAILURE IN sympytests.tangz/1000/failure1.test.out
+NO FAILURE IN sympytests.tangz/1002/failure1.test.out
+NO FAILURE IN sympytests.tangz/1003/failure1.test.out
+NO FAILURE IN sympytests.tangz/1005/failure1.test.out
+NO FAILURE IN sympytests.tangz/1005/failure2.test.out
+NO FAILURE IN sympytests.tangz/1006/failure1.test.out
+NO FAILURE IN sympytests.tangz/1008/failure1.test.out
+NO FAILURE IN sympytests.tangz/1009/failure1.test.out
+NO FAILURE IN sympytests.tangz/1009/failure2.test.out
+NO FAILURE IN sympytests.tangz/1010/failure1.test.out
+NO FAILURE IN sympytests.tangz/1010/failure2.test.out
+NO FAILURE IN sympytests.tangz/1010/failure3.test.out
+NO FAILURE IN sympytests.tangz/1011/failure1.test.out
+NO FAILURE IN sympytests.tangz/1011/failure2.test.out
+NO FAILURE IN sympytests.tangz/1011/failure3.test.out
+NO FAILURE IN sympytests.tangz/1012/failure1.test.out
+NO FAILURE IN sympytests.tangz/1013/failure1.test.out
+NO FAILURE IN sympytests.tangz/1013/failure2.test.out
+NO FAILURE IN sympytests.tangz/1013/failure3.test.out
+NO FAILURE IN sympytests.tangz/1013/failure4.test.out
+NO FAILURE IN sympytests.tangz/1013/failure5.test.out
+NO FAILURE IN sympytests.tangz/1014/failure1.test.out
+NO FAILURE IN sympytests.tangz/1015/failure1.test.out
+NO FAILURE IN sympytests.tangz/1015/failure2.test.out
+NO FAILURE IN sympytests.tangz/1017/failure1.test.out
+NO FAILURE IN sympytests.tangz/1017/failure2.test.out
+NO FAILURE IN sympytests.tangz/1017/failure3.test.out
+NO FAILURE IN sympytests.tangz/1018/failure1.test.out
+NO FAILURE IN sympytests.tangz/1019/failure1.test.out
+NO FAILURE IN sympytests.tangz/1020/failure1.test.out
+NO FAILURE IN sympytests.tsengyu/1000/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1001/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1002/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1002/failure2.test.out
+NO FAILURE IN sympytests.tsengyu/1003/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1004/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1004/failure1.test.out
+NO FAILURE IN sympytests.tsengyu/1005/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1006/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1008/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1009/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1010/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1011/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1014/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1015/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1015/failure1.test.out
+NO FAILURE IN sympytests.tsengyu/1016/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1017/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1018/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1018/failure2.test.out
+NO FAILURE IN sympytests.tsengyu/1019/failure0.test.out
+NO FAILURE IN sympytests.tsengyu/1021/failure0.test.out
+NO FAILURE IN sympytests.wanghao/1010/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1004/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1004/failure2.test.out
+NO FAILURE IN sympytests.wangweny/1005/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1005/failure2.test.out
+NO FAILURE IN sympytests.wangweny/1006/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1007/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1007/failure2.test.out
+NO FAILURE IN sympytests.wangweny/1007/failure3.test.out
+NO FAILURE IN sympytests.wangweny/1007/failure4.test.out
+NO FAILURE IN sympytests.wangweny/1008/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1009/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1009/failure2.test.out
+NO FAILURE IN sympytests.wangweny/1010/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1011/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1012/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1013/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1013/failure2.test.out
+NO FAILURE IN sympytests.wangweny/1014/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1015/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1015/failure2.test.out
+NO FAILURE IN sympytests.wangweny/1016/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1018/failure1.test.out
+NO FAILURE IN sympytests.wangweny/1018/failure2.test.out
+NO FAILURE IN sympytests.wangweny/1018/failure3.test.out
+NO FAILURE IN sympytests.wangweny/1020/failure1.test.out
+NO FAILURE IN sympytests.wangyi/1010/failure1.test.out
+NO FAILURE IN sympytests.wutso/1000/failure1.test.out
+NO FAILURE IN sympytests.wutso/1001/failure1.test.out
+NO FAILURE IN sympytests.wutso/1001/failure2.test.out
+NO FAILURE IN sympytests.wutso/1003/failure1.test.out
+NO FAILURE IN sympytests.wutso/1004/failure1.test.out
+NO FAILURE IN sympytests.wutso/1004/failure2.test.out
+NO FAILURE IN sympytests.wutso/1005/failure1.test.out
+NO FAILURE IN sympytests.wutso/1007/failure1.test.out
+NO FAILURE IN sympytests.wutso/1009/failure1.test.out
+NO FAILURE IN sympytests.wutso/1012/failure1.test.out
+NO FAILURE IN sympytests.wutso/1012/failure2.test.out
+NO FAILURE IN sympytests.wutso/1013/failure1.test.out
+NO FAILURE IN sympytests.wutso/1014/failure1.test.out
+NO FAILURE IN sympytests.wutso/1016/failure1.test.out
+NO FAILURE IN sympytests.wutso/1018/failure1.test.out
+NO FAILURE IN sympytests.wutso/1019/failure1.test.out
+NO FAILURE IN sympytests.wutso/1021/failure1.test.out
+NO FAILURE IN sympytests.xujing/1003/failure433.test.out
+NO FAILURE IN sympytests.xujing/1007/failure189.test.out
+NO FAILURE IN sympytests.xujing/1007/failure585.test.out
+NO FAILURE IN sympytests.xujing/1010/failure45.test.out
+NO FAILURE IN sympytests.xujing/1011/failure33.test.out
+NO FAILURE IN sympytests.xujing/1014/failure145.test.out
+NEW BUG (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError('long division or modulo by zero',), 
+NEW BUG (<type 'exceptions.TypeError'>, TypeError("'asin' object is not callable",), 
+NEW BUG (<type 'exceptions.TypeError'>, TypeError("'factorial' object is not callable",), 
+NO FAILURE IN sympytests.zhaozixu/1008/failure1.test.out
+NO FAILURE IN sympytests.zhaozixu/1017/failure1.test.out
+NEW BUG (<type 'exceptions.ValueError'>, ValueError('negative shift count',), 
+NEW BUG (<type 'exceptions.ValueError'>, ValueError('cannot convert 0 to int',), 
+**********************************************************************
+==================================================
+FAULT #1: (<type 'exceptions.ValueError'>, ValueError('cannot convert 0 to int',), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['zhouxuh']
+==================================================
+FAULT #2: (<type 'exceptions.ValueError'>, ValueError('negative shift count',), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['zhouxuh']
+==================================================
+FAULT #3: (<type 'exceptions.TypeError'>, TypeError("'factorial' object is not callable",), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['zhangh7']
+==================================================
+FAULT #4: (<class 'sympy.core.facts.InconsistentAssumptions'>, InconsistentAssumptions({'even': False, 'prime': False, 'real': True, 'commutative': True, 'nonzero': True, 'nonpositive': True, 'composite': False, 'positive': False, 'noninteger': True, 'negative': True, 'nonnegative': False, 'zero': False, 'complex': True, 'rational': False, 'infinite': None, 'integer': False, 'hermitian': True, 'finite': None, 'odd': False, 'imaginary': False, 'irrational': True}, 'negative', False), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['shik']
+==================================================
+FAULT #5: (<type 'exceptions.TypeError'>, TypeError("unsupported operand type(s) for //: 'Sum' and 'int'",), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['pengxin']
+==================================================
+FAULT #6: (<type 'exceptions.TypeError'>, TypeError("'asin' object is not callable",), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['zhangh7']
+==================================================
+FAULT #7: (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError('long division or modulo by zero',), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['zhangcha']
+==================================================
+FAULT #8: (KeyboardInterrupt)
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['guoru']
+==================================================
+FAULT #9: (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded while calling a Python object',), 
+FOUND 4 TIMES
+FOUND BY 4 STUDENTS ['kaneokak', 'lix6', 'yub', 'chenk4']
+==================================================
+FAULT #10: (<type 'exceptions.ValueError'>, ValueError('got complex zero with unknown accuracy',), 
+FOUND 5 TIMES
+FOUND BY 5 STUDENTS ['shik', 'hoangmin', 'liuh2', 'lix6', 'chenk4']
+==================================================
+FAULT #11: (<type 'exceptions.TypeError'>, TypeError("'mpf' object is not iterable",), 
+FOUND 7 TIMES
+FOUND BY 5 STUDENTS ['kaneokak', 'zhouxuh', 'hexu', 'alizades', 'pengxin']
+==================================================
+FAULT #12: (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError(), 
+FOUND 5 TIMES
+FOUND BY 5 STUDENTS ['zhangcha', 'yub', 'xuhui', 'alizades', 'lix6']
+==================================================
+FAULT #13: (<type 'exceptions.TypeError'>, TypeError("'exp' object is not callable",), 
+FOUND 12 TIMES
+FOUND BY 10 STUDENTS ['shik', 'alghamha', 'panju', 'zhangcha', 'hoangmin', 'liuw3', 'zhangh7', 'thakuro', 'Linwey', 'alizades']
+==================================================
+FAULT #14: (<type 'exceptions.ValueError'>, ValueError('gamma function pole',), 
+FOUND 17 TIMES
+FOUND BY 10 STUDENTS ['shik', 'zhouxuh', 'alghamha', 'hoangmin', 'liuh2', 'lix6', 'chenk4', 'zhangcha', 'alizades', 'almadhoe']
+==================================================
+FAULT #15: (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError('integer division or modulo by zero',), 
+FOUND 19 TIMES
+FOUND BY 10 STUDENTS ['yub', 'alghamha', 'liuh2', 'hoangmin', 'kaneokak', 'xuhui', 'guohe', 'zhangcha', 'alizades', 'wangq5']
+==================================================
+FAULT #16: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison 
+FOUND 14 TIMES
+FOUND BY 11 STUDENTS ['shik', 'alghamha', 'pengxin', 'zhangcha', 'liuh2', 'lix6', 'kaneokak', 'xuhui', 'Linwey', 'alizades', 'almadhoe']
+==================================================
+FAULT #17: (<type 'exceptions.AssertionError'>, AssertionError(), 
+FOUND 30 TIMES
+FOUND BY 16 STUDENTS ['shik', 'zhouxuh', 'nelsonni', 'alghamha', 'pengxin', 'zhangcha', 'lasharih', 'zhengxu', 'liuh2', 'hoangmin', 'xuhui', 'zhouzh', 'zhangh7', 'hexu', 'alizades', 'almadhoe']
+==================================================
+FAULT #18: (<type 'exceptions.ValueError'>, ValueError('Invalid limits 
+FOUND 57 TIMES
+FOUND BY 22 STUDENTS ['shik', 'bangashm', 'thakuro', 'alizades', 'shenyif', 'wangq5', 'zhangh7', 'liuh2', 'lix6', 'kaneokak', 'yangyic', 'zhouzh', 'chenk4', 'almadhoe', 'chenzeh', 'hanxia', 'alghamha', 'pengxin', 'hoangmin', 'wangyans', 'yub', 'zhangcha']
+==================================================
+FAULT #19: (<type 'exceptions.AttributeError'>, AttributeError("'NaN' object has no attribute '_mpf_'",), 
+FOUND 70 TIMES
+FOUND BY 23 STUDENTS ['shik', 'zhengxu', 'thakuro', 'alizades', 'almadhoe', 'xuhui', 'zhangh7', 'hexu', 'zhouxuh', 'nelsonni', 'chenk4', 'lasharih', 'liuh2', 'lix6', 'kaneokak', 'zhouzh', 'shenyif', 'rayalas', 'chenzeh', 'alghamha', 'pengxin', 'hoangmin', 'zhangcha']
+==================================================
+FAULT #20: (<class 'sympy.polys.polyerrors.NotAlgebraic'>, 
+FOUND 43 TIMES
+FOUND BY 24 STUDENTS ['shik', 'zhengxu', 'guohe', 'alizades', 'wangq5', 'xuhui', 'zhangh7', 'hexu', 'zhouxuh', 'nelsonni', 'lasharih', 'liuh2', 'lix6', 'kaneokak', 'zhouzh', 'chenk4', 'rayalas', 'almadhoe', 'alghamha', 'pengxin', 'panju', 'hoangmin', 'yub', 'zhangcha']
+==================================================
+FAULT #21: (<type 'exceptions.TypeError'>, TypeError('Invalid NaN comparison',), 
+FOUND 70 TIMES
+FOUND BY 28 STUDENTS ['shik', 'zhengxu', 'guohe', 'bangashm', 'thakuro', 'alizades', 'almadhoe', 'xuhui', 'hexu', 'zhouxuh', 'nelsonni', 'chenk4', 'lasharih', 'liuh2', 'lix6', 'kaneokak', 'yangyic', 'liuw3', 'zhouzh', 'shenyif', 'rayalas', 'chenzeh', 'hanxia', 'alghamha', 'panju', 'hoangmin', 'wangyans', 'zhangcha']
+==================================================
+FAULT #22: (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded in cmp',), 
+FOUND 747 TIMES
+FOUND BY 34 STUDENTS ['shik', 'zhengxu', 'guohe', 'bangashm', 'thakuro', 'Linwey', 'alizades', 'almadhoe', 'xuhui', 'zhangh7', 'hexu', 'zhouxuh', 'nelsonni', 'chenk4', 'lasharih', 'liuh2', 'lix6', 'kaneokak', 'yangyic', 'liuw3', 'zhouzh', 'shenyif', 'rayalas', 'wangq5', 'chenzeh', 'hanxia', 'alghamha', 'pengxin', 'panju', 'hoangmin', 'tsengyu', 'wangyans', 'yub', 'zhangcha']
+**********************************************************************
+#1: zhangcha 12 FAULTS (#2) MEAN 1.82 SD 0.89 / 59 FAILURES (#5) MEAN 2.68 SD 1.92 #7:1 #12:1 #13:1 #14:4 #15:1 #16:1 #17:5 #18:3 #19:5 #20:2 #21:2 #22:33
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN alghamha (#9) p-value = 0.0336473485088
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#11) p-value = 0.000934159308781
+#2: alizades 12 FAULTS (#1) MEAN 1.55 SD 1.41 / 57 FAILURES (#6) MEAN 2.59 SD 3.1 #11:1 #12:1 #13:1 #14:1 #15:3 #16:1 #17:2 #18:3 #19:4 #20:2 #21:1 #22:37
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN lasharih (#21) p-value = 0.0460239886828
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guohe (#20) p-value = 0.0356585214118
+#3: zhouxuh 9 FAULTS (#8) MEAN 1.5 SD 1.08 / 56 FAILURES (#7) MEAN 2.55 SD 1.75 #1:1 #2:1 #11:3 #14:1 #17:3 #19:4 #20:3 #21:1 #22:39
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhengxu (#16) p-value = 0.041139779041
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#11) p-value = 0.00255936944061
+#4: shik 11 FAULTS (#3) MEAN 1.41 SD 0.94 / 62 FAILURES (#3) MEAN 2.82 SD 2.74 #4:1 #10:1 #13:1 #14:3 #16:1 #17:2 #18:1 #19:3 #20:2 #21:2 #22:45
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhengxu (#16) p-value = 0.0435240403102
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#11) p-value = 0.00827421565072
+#5: lix6 10 FAULTS (#5) MEAN 1.32 SD 0.82 / 56 FAILURES (#8) MEAN 2.55 SD 2.55 #9:1 #10:1 #12:1 #14:2 #16:1 #18:4 #19:1 #20:2 #21:2 #22:41
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhouzh (#18) p-value = 0.041139779041
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#11) p-value = 0.0137156420348
+#6: hoangmin 10 FAULTS (#7) MEAN 1.32 SD 0.97 / 60 FAILURES (#4) MEAN 2.73 SD 2.51 #10:1 #13:1 #14:2 #15:5 #17:2 #18:1 #19:3 #20:2 #21:2 #22:41
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN rayalas (#19) p-value = 0.0460239886828
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#11) p-value = 0.00771847233762
+#7: kaneokak 9 FAULTS (#9) MEAN 1.27 SD 1.05 / 55 FAILURES (#9) MEAN 2.5 SD 2.44 #9:1 #11:1 #15:1 #16:3 #18:1 #19:1 #20:3 #21:2 #22:42
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN lasharih (#21) p-value = 0.0460239886828
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#11) p-value = 0.0346404697942
+#8: zhangh7 8 FAULTS (#12) MEAN 1.23 SD 0.95 / 111 FAILURES (#2) MEAN 5.05 SD 4.7 #3:1 #6:1 #13:3 #17:2 #18:1 #19:1 #20:1 #22:101
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN yub (#23) p-value = 0.0499999631908
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN alghamha (#9) p-value = 0.0473186459345
+#9: alghamha 10 FAULTS (#6) MEAN 1.18 SD 1.3 / 53 FAILURES (#10) MEAN 2.41 SD 3.14 #13:1 #14:1 #15:3 #16:1 #17:1 #18:2 #19:4 #20:2 #21:1 #22:37
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN shenyif (#29) p-value = 0.0423177067504
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN chenzeh (#26) p-value = 0.0423177067504
+#10: chenk4 8 FAULTS (#13) MEAN 1.14 SD 0.97 / 130 FAILURES (#1) MEAN 5.91 SD 8.1 #9:1 #10:1 #14:1 #18:1 #19:22 #20:6 #21:22 #22:76
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN thakuro (#24) p-value = 0.0356585214118
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xuhui (#11) p-value = 0.041139779041
+#11: xuhui 8 FAULTS (#11) MEAN 0.95 SD 0.82 / 21 FAILURES (#19) MEAN 0.95 SD 0.82 #12:1 #15:1 #16:1 #17:3 #19:2 #20:2 #21:2 #22:9
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN bangashm (#28) p-value = 0.0317339937569
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN bangashm (#28) p-value = 0.036701985452
+#12: liuh2 10 FAULTS (#4) MEAN 0.95 SD 0.77 / 33 FAILURES (#11) MEAN 1.5 SD 1.37 #10:1 #14:1 #15:1 #16:1 #17:1 #18:1 #19:2 #20:1 #21:2 #22:22
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN chenzeh (#26) p-value = 0.0377713489514
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN wangq5 (#22) p-value = 0.0499999631908
+#13: almadhoe 8 FAULTS (#10) MEAN 0.91 SD 0.6 / 25 FAILURES (#14) MEAN 1.14 SD 0.97 #14:1 #16:1 #17:2 #18:1 #19:2 #20:2 #21:2 #22:14
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN thakuro (#24) p-value = 0.0486437936801
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN thakuro (#24) p-value = 0.0460239886828
+#14: nelsonni 5 FAULTS (#20) MEAN 0.91 SD 0.67 / 27 FAILURES (#12) MEAN 1.23 SD 1.04 #17:1 #19:2 #20:1 #21:3 #22:20
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN chenzeh (#26) p-value = 0.041139779041
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN thakuro (#24) p-value = 0.0460239886828
+#15: pengxin 8 FAULTS (#14) MEAN 0.91 SD 0.79 / 25 FAILURES (#15) MEAN 1.14 SD 1.06 #5:1 #11:1 #16:2 #17:2 #18:2 #19:2 #20:1 #22:14
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN bangashm (#28) p-value = 0.0388671038124
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN chenzeh (#26) p-value = 0.041139779041
+#16: zhengxu 5 FAULTS (#18) MEAN 0.82 SD 0.65 / 25 FAILURES (#13) MEAN 1.14 SD 1.06 #17:1 #19:2 #20:2 #21:4 #22:16
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN bangashm (#28) p-value = 0.0499999631908
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN chenzeh (#26) p-value = 0.041139779041
+#17: hexu 6 FAULTS (#15) MEAN 0.82 SD 0.57 / 22 FAILURES (#17) MEAN 1.0 SD 0.85 #11:1 #17:1 #19:2 #20:1 #21:4 #22:13
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN bangashm (#28) p-value = 0.0346404697942
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN chenzeh (#26) p-value = 0.0388671038124
+#18: zhouzh 6 FAULTS (#16) MEAN 0.77 SD 0.6 / 22 FAILURES (#18) MEAN 1.0 SD 0.95 #17:1 #18:1 #19:2 #20:1 #21:3 #22:14
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN shenyif (#29) p-value = 0.036701985452
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN bangashm (#28) p-value = 0.0388671038124
+#19: rayalas 4 FAULTS (#24) MEAN 0.73 SD 0.54 / 21 FAILURES (#20) MEAN 0.95 SD 0.82 #19:2 #20:1 #21:2 #22:16
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN shenyif (#29) p-value = 0.0423177067504
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN bangashm (#28) p-value = 0.036701985452
+#20: guohe 4 FAULTS (#22) MEAN 0.68 SD 0.7 / 19 FAILURES (#21) MEAN 0.86 SD 0.92 #15:2 #20:1 #21:1 #22:15
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN yangyic (#32) p-value = 0.0473186459345
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN yangyic (#32) p-value = 0.0308128215024
+#21: lasharih 5 FAULTS (#21) MEAN 0.64 SD 0.48 / 16 FAILURES (#22) MEAN 0.73 SD 0.62 #17:1 #19:1 #20:1 #21:2 #22:11
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN yangyic (#32) p-value = 0.0201367515503
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN yangyic (#32) p-value = 0.0146404449585
+#22: wangq5 4 FAULTS (#25) MEAN 0.64 SD 0.64 / 15 FAILURES (#23) MEAN 0.68 SD 0.76 #15:1 #18:3 #20:2 #22:9
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN liuw3 (#33) p-value = 0.0435240403102
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guoru (#35) p-value = 0.00418776707613
+#23: yub 6 FAULTS (#17) MEAN 0.64 SD 0.71 / 15 FAILURES (#24) MEAN 0.68 SD 0.76 #9:1 #12:1 #15:1 #18:1 #20:1 #22:10
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guoru (#35) p-value = 0.0088654941533
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guoru (#35) p-value = 0.00856529449021
+#24: thakuro 5 FAULTS (#19) MEAN 0.55 SD 0.84 / 14 FAILURES (#25) MEAN 0.64 SD 0.98 #13:1 #18:6 #19:1 #21:1 #22:5
+#25: Linwey 3 FAULTS (#29) MEAN 0.5 SD 0.66 / 14 FAILURES (#26) MEAN 0.64 SD 0.88 #13:1 #16:1 #22:12
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guoru (#35) p-value = 0.036701985452
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guoru (#35) p-value = 0.0346404697942
+#26: chenzeh 4 FAULTS (#26) MEAN 0.5 SD 0.84 / 12 FAILURES (#27) MEAN 0.55 SD 0.94 #18:4 #19:1 #21:1 #22:6
+#27: panju 4 FAULTS (#27) MEAN 0.5 SD 0.58 / 25 FAILURES (#16) MEAN 1.14 SD 1.79 #13:1 #20:1 #21:1 #22:22
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guoru (#35) p-value = 0.0195159425424
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN guoru (#35) p-value = 0.0171968596299
+#28: bangashm 3 FAULTS (#28) MEAN 0.41 SD 0.65 / 10 FAILURES (#28) MEAN 0.45 SD 0.78 #18:5 #21:1 #22:4
+#29: shenyif 4 FAULTS (#23) MEAN 0.41 SD 0.78 / 10 FAILURES (#29) MEAN 0.45 SD 0.89 #18:4 #19:1 #21:1 #22:4
+#30: hanxia 3 FAULTS (#32) MEAN 0.41 SD 0.65 / 10 FAILURES (#30) MEAN 0.45 SD 0.78 #18:5 #21:1 #22:4
+#31: wangyans 3 FAULTS (#33) MEAN 0.41 SD 0.65 / 10 FAILURES (#31) MEAN 0.45 SD 0.78 #18:5 #21:1 #22:4
+#32: yangyic 3 FAULTS (#30) MEAN 0.23 SD 0.42 / 5 FAILURES (#33) MEAN 0.23 SD 0.42 #18:2 #21:1 #22:2
+#33: liuw3 3 FAULTS (#31) MEAN 0.23 SD 0.52 / 7 FAILURES (#32) MEAN 0.32 SD 0.76 #13:1 #21:2 #22:4
+#34: tsengyu 1 FAULTS (#35) MEAN 0.23 SD 0.42 / 5 FAILURES (#34) MEAN 0.23 SD 0.42 #22:5
+#35: guoru 1 FAULTS (#34) MEAN 0.05 SD 0.21 / 1 FAILURES (#35) MEAN 0.05 SD 0.21 #8:1
+**********************************************************************
+KENDALL TAU CORRELATIONS:
+TOTAL FAULTS VS. TOTAL BRANCHES
+KendalltauResult(correlation=0.64218624522791368, pvalue=5.7508898902740527e-08)
+TOTAL FAULTS VS. TOTAL FAILURES
+KendalltauResult(correlation=0.74734009207536489, pvalue=2.7031340367727889e-10)
+TOTAL FAULTS VS. MEAN FAULTS
+KendalltauResult(correlation=0.85916245438323258, pvalue=3.8767612667040335e-13)
+TOTAL FAULTS VS. MEAN FAILURES
+KendalltauResult(correlation=0.74734009207536489, pvalue=2.7031340367727889e-10)
+TOTAL FAULTS VS. MEAN BRANCHES
+KendalltauResult(correlation=0.6032658667292522, pvalue=3.4415533560891626e-07)
+TOTAL BRANCHES VS. MEAN BRANCHES
+KendalltauResult(correlation=0.73445378151260476, pvalue=5.4341315985870039e-10)
+MEAN FAULTS VS. MEAN BRANCHES
+KendalltauResult(correlation=0.65365552117494252, pvalue=3.3270552053497982e-08)
+MEAN FAULTS VS. MEAN FAILURES
+KendalltauResult(correlation=0.85317405352936859, pvalue=5.6283881812949496e-13)
+MEAN FAILURES VS. MEAN BRANCHES
+KendalltauResult(correlation=0.62635373977141173, pvalue=1.2059192841291348e-07)
+TOTAL FAILURES VS. TOTAL BRANCHES
+KendalltauResult(correlation=0.65707408668118128, pvalue=2.8213098579332572e-08)
+TOTAL FAILURES VS. MEAN BRANCHES
+KendalltauResult(correlation=0.62635373977141173, pvalue=1.2059192841291348e-07)
