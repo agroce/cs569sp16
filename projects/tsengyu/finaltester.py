@@ -17,6 +17,7 @@ ErrSeqs    = []
 nonErrSeqs = []
 sut        = sut.sut()
 
+BUG = 0
 
 def RandomSeqs(nonErrSeqs, n = 1):
 	if (nonErrSeqs == [] or n > len(nonErrSeqs)):
@@ -32,7 +33,7 @@ def ExecutingInfo(run, elapsed):
 			print elapsed, len(sut.allBranches()), "New branch", b
 
 def RecordFail():
-	BUG = 0
+	global BUG
 	while os.path.exists('failure' + str(BUG) + 'test') == True:
 		BUG += 1
 
@@ -46,12 +47,11 @@ def main():
 	rgen = random.Random()
 	rgen.seed(seed)
 	sTime = time.time()
-	Num_BUG = 0
 	Action_Count = 0
 
 	while (time.time() - sTime) < timeout:
 		newSeqs = sut.randomEnableds(rgen, depth)
-		Seqs = RandomSeqs(non_Errtemp, n = 10)
+		Seqs = RandomSeqs(non_Errtemp, n = 5)
 		newSeqs.extend(Seqs)
 		
 		not_okay = False
@@ -68,15 +68,10 @@ def main():
 			if faults == 1:
 				if okay == False or not_okay == True:
 					RecordFail()
-					Num_BUG += 1
 					print "BUG FOUND!"
 					print sut.failure()
-					print "REDUCING ..."
-					R = sut.reduce(sut.test(), sut.fails, True, True)
-					sut.prettyPrintTest(R)
-					print sut.failure()
-					filename = 'failure%d.test' % Num_BUG
-					sut.saveTest(R , filename)
+					filename = 'failure%d.test' % BUG
+					sut.saveTest(sut.test() , filename)
 					break
 
 		if not_okay == True:
@@ -84,7 +79,7 @@ def main():
 		else:
 			non_Errtemp += newSeqs
 
-	print Num_BUG, "BUGS FOUND!"
+	print BUG, "BUGS FOUND!"
 	print "Total Actions: ", Action_Count
 	print "Total Runtime: ", (time.time() - sTime)
 

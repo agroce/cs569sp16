@@ -82,7 +82,6 @@ def randomAction():
             bugs += 1
             fail.append(sut.test())
             saveCover()
-            R = sut.reduce(sut.test(),sut.fails, True, True)
             sut.restart()
             print "FAILURE FOUND.....FAILURES ARE STORING IN FILES"
             errCount += 1
