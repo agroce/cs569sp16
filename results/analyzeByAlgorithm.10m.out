@@ -1,0 +1,150 @@
+MEAN BRANCH COVERGE OVER 3 RUNS
+#1: rayalas_avoidKnownBugs BRANCHES MEAN 14531.67 SD 1175.9 / 17733 TOTAL BRANCHES (#3) 3 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhangh7_MRTBFS (#9) p-value = 0.0495346134356
+#2: SWARM BRANCHES MEAN 14523.67 SD 1150.18 / 17690 TOTAL BRANCHES (#4) 3 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhangh7_MRTBFS (#9) p-value = 0.0495346134356
+#3: wutso_coverTesterBalanceActs BRANCHES MEAN 13780.0 SD 2645.24 / 17817 TOTAL BRANCHES (#2) 3 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing_feedback (#21) p-value = 0.0495346134356
+#4: tangz_ARTpartition BRANCHES MEAN 12904.33 SD 1834.57 / 15723 TOTAL BRANCHES (#7) 3 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing_feedback (#21) p-value = 0.0495346134356
+#5: COVERTESTER BRANCHES MEAN 12557.67 SD 2531.74 / 17395 TOTAL BRANCHES (#5) 3 EXPERIMENTS
+#6: zhouxuh_feedback BRANCHES MEAN 12511.33 SD 5475.76 / 18948 TOTAL BRANCHES (#1) 3 EXPERIMENTS
+#7: PURERANDOM BRANCHES MEAN 12318.67 SD 1808.37 / 15426 TOTAL BRANCHES (#8) 3 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN panju_sparseBFS (#17) p-value = 0.0495346134356
+#8: kaneokak_feedback BRANCHES MEAN 12011.33 SD 3771.55 / 17316 TOTAL BRANCHES (#6) 3 EXPERIMENTS
+#9: zhangh7_MRTBFS BRANCHES MEAN 11902.33 SD 1023.77 / 14648 TOTAL BRANCHES (#11) 3 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing_feedback (#21) p-value = 0.0495346134356
+#10: alghamha_PROP BRANCHES MEAN 11723.67 SD 2408.24 / 15087 TOTAL BRANCHES (#10) 3 EXPERIMENTS
+#11: pengxin_coverTesterOnlyNew BRANCHES MEAN 11711.0 SD 2015.57 / 9241 TOTAL BRANCHES (#23) 3 EXPERIMENTS
+#12: zhengxu_poolBased BRANCHES MEAN 11156.67 SD 436.17 / 14110 TOTAL BRANCHES (#12) 3 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN panju_sparseBFS (#17) p-value = 0.0495346134356
+#13: hoangmin_genetic BRANCHES MEAN 11052.33 SD 2931.15 / 15230 TOTAL BRANCHES (#9) 3 EXPERIMENTS
+#14: chenzeh_BFSmutation BRANCHES MEAN 10942.67 SD 680.74 / 12848 TOTAL BRANCHES (#15) 3 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing_feedback (#21) p-value = 0.0495346134356
+#15: hexu_genetic BRANCHES MEAN 10854.67 SD 1033.49 / 13170 TOTAL BRANCHES (#14) 3 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing_feedback (#21) p-value = 0.0495346134356
+#16: nelsonni_genetic BRANCHES MEAN 10557.0 SD 922.8 / 12839 TOTAL BRANCHES (#16) 3 EXPERIMENTS
+#17: panju_sparseBFS BRANCHES MEAN 10254.0 SD 260.02 / 11899 TOTAL BRANCHES (#20) 3 EXPERIMENTS
+  RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing_feedback (#21) p-value = 0.0495346134356
+#18: liuh2_oneShotBelowMeanPool BRANCHES MEAN 10158.0 SD 754.52 / 12199 TOTAL BRANCHES (#17) 3 EXPERIMENTS
+#19: zhouzh_genetic BRANCHES MEAN 9601.33 SD 1652.55 / 11572 TOTAL BRANCHES (#21) 3 EXPERIMENTS
+#20: zhaozixu_feedback BRANCHES MEAN 9463.33 SD 1382.02 / 13599 TOTAL BRANCHES (#13) 3 EXPERIMENTS
+#21: xujing_feedback BRANCHES MEAN 8466.67 SD 1024.33 / 10790 TOTAL BRANCHES (#22) 3 EXPERIMENTS
+#22: chenk4_2phaseBFS BRANCHES MEAN 8208.0 SD 3286.97 / 12171 TOTAL BRANCHES (#18) 3 EXPERIMENTS
+#23: alizades_mutatenewcover BRANCHES MEAN 7746.67 SD 3384.1 / 12085 TOTAL BRANCHES (#19) 3 EXPERIMENTS
+**********************************************************************
+==================================================
+FAULT #1: (<type 'exceptions.TypeError'>, TypeError('Invalid NaN comparison',), 
+FOUND 2 TIMES
+FOUND BY 1 STUDENTS ['wutso_coverTesterBalanceActs']
+==================================================
+FAULT #2: (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError(), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['tangz_ARTpartition']
+==================================================
+FAULT #3: (<type 'exceptions.TypeError'>, TypeError("'cos' object is not callable",), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['zhouxuh_feedback']
+==================================================
+FAULT #4: (<type 'exceptions.TypeError'>, TypeError('cannot create mpf from None',), 
+FOUND 1 TIMES
+FOUND BY 1 STUDENTS ['tangz_ARTpartition']
+==================================================
+FAULT #5: (<type 'exceptions.TypeError'>, TypeError("'exp' object is not callable",), 
+FOUND 2 TIMES
+FOUND BY 1 STUDENTS ['wutso_coverTesterBalanceActs']
+==================================================
+FAULT #6: (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded while calling a Python object',), 
+FOUND 3 TIMES
+FOUND BY 3 STUDENTS ['SWARM', 'tangz_ARTpartition', 'rayalas_avoidKnownBugs']
+==================================================
+FAULT #7: (<type 'exceptions.AssertionError'>, AssertionError(), 
+FOUND 4 TIMES
+FOUND BY 3 STUDENTS ['tangz_ARTpartition', 'wutso_coverTesterBalanceActs', 'alghamha_PROP']
+==================================================
+FAULT #8: (<type 'exceptions.TypeError'>, TypeError("'mpf' object is not iterable",), 
+FOUND 3 TIMES
+FOUND BY 3 STUDENTS ['SWARM', 'rayalas_avoidKnownBugs', 'zhouxuh_feedback']
+==================================================
+FAULT #9: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison 
+FOUND 3 TIMES
+FOUND BY 3 STUDENTS ['SWARM', 'rayalas_avoidKnownBugs', 'wutso_coverTesterBalanceActs']
+==================================================
+FAULT #10: (<type 'exceptions.ValueError'>, ValueError('got complex zero with unknown accuracy',), 
+FOUND 4 TIMES
+FOUND BY 4 STUDENTS ['PURERANDOM', 'xujing_feedback', 'wutso_coverTesterBalanceActs', 'hoangmin_genetic']
+==================================================
+FAULT #11: (<type 'exceptions.AttributeError'>, AttributeError("'NaN' object has no attribute '_mpf_'",), 
+FOUND 4 TIMES
+FOUND BY 4 STUDENTS ['kaneokak_feedback', 'zhouxuh_feedback', 'wutso_coverTesterBalanceActs', 'COVERTESTER']
+==================================================
+FAULT #12: (<class 'sympy.polys.polyerrors.NotAlgebraic'>, 
+FOUND 4 TIMES
+FOUND BY 4 STUDENTS ['chenzeh_BFSmutation', 'zhouzh_genetic', 'zhouxuh_feedback', 'wutso_coverTesterBalanceActs']
+==================================================
+FAULT #13: (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError('integer division or modulo by zero',), 
+FOUND 10 TIMES
+FOUND BY 7 STUDENTS ['tangz_ARTpartition', 'wutso_coverTesterBalanceActs', 'zhouxuh_feedback', 'kaneokak_feedback', 'SWARM', 'zhaozixu_feedback', 'rayalas_avoidKnownBugs']
+==================================================
+FAULT #14: (<type 'exceptions.ValueError'>, ValueError('Invalid limits 
+FOUND 12 TIMES
+FOUND BY 8 STUDENTS ['wutso_coverTesterBalanceActs', 'SWARM', 'zhouxuh_feedback', 'kaneokak_feedback', 'PURERANDOM', 'rayalas_avoidKnownBugs', 'COVERTESTER', 'hoangmin_genetic']
+==================================================
+FAULT #15: (<type 'exceptions.RuntimeError'>, RuntimeError('maximum recursion depth exceeded in cmp',), 
+FOUND 199 TIMES
+FOUND BY 21 STUDENTS ['hexu_genetic', 'chenzeh_BFSmutation', 'zhouzh_genetic', 'tangz_ARTpartition', 'wutso_coverTesterBalanceActs', 'SWARM', 'panju_sparseBFS', 'liuh2_oneShotBelowMeanPool', 'zhengxu_poolBased', 'zhouxuh_feedback', 'chenk4_2phaseBFS', 'kaneokak_feedback', 'PURERANDOM', 'rayalas_avoidKnownBugs', 'COVERTESTER', 'zhangh7_MRTBFS', 'xujing_feedback', 'alizades_mutatenewcover', 'nelsonni_genetic', 'alghamha_PROP', 'hoangmin_genetic']
+**********************************************************************
+#1: wutso_coverTesterBalanceActs 10 FAULTS (#1) MEAN 4.0 SD 3.56 / 33 FAILURES (#1) MEAN 11.0 SD 9.27 #1:2 #5:2 #7:2 #9:1 #10:1 #11:1 #12:1 #13:2 #14:1 #15:20
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN zhouzh_genetic (#14) p-value = 0.0495346134356
+#2: SWARM 6 FAULTS (#3) MEAN 3.0 SD 0.82 / 17 FAILURES (#6) MEAN 5.67 SD 1.25 #6:1 #8:1 #9:1 #13:1 #14:2 #15:11
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN chenk4_2phaseBFS (#11) p-value = 0.0495346134356
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing_feedback (#13) p-value = 0.0495346134356
+#3: rayalas_avoidKnownBugs 6 FAULTS (#5) MEAN 3.0 SD 0.82 / 17 FAILURES (#7) MEAN 5.67 SD 1.25 #6:1 #8:1 #9:1 #13:1 #14:2 #15:11
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN chenk4_2phaseBFS (#11) p-value = 0.0495346134356
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing_feedback (#13) p-value = 0.0495346134356
+#4: zhouxuh_feedback 7 FAULTS (#2) MEAN 2.67 SD 1.89 / 23 FAILURES (#3) MEAN 7.67 SD 7.04 #3:1 #8:1 #11:1 #12:1 #13:1 #14:1 #15:17
+#5: tangz_ARTpartition 6 FAULTS (#4) MEAN 2.67 SD 0.47 / 20 FAILURES (#5) MEAN 6.67 SD 3.68 #2:1 #4:1 #6:1 #7:1 #13:1 #15:15
+  FAULTS RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN chenk4_2phaseBFS (#11) p-value = 0.0495346134356
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN nelsonni_genetic (#15) p-value = 0.0495346134356
+#6: kaneokak_feedback 4 FAULTS (#6) MEAN 2.33 SD 1.7 / 20 FAILURES (#4) MEAN 6.67 SD 6.8 #11:1 #13:2 #14:2 #15:15
+#7: PURERANDOM 3 FAULTS (#9) MEAN 1.67 SD 0.94 / 13 FAILURES (#10) MEAN 4.33 SD 3.4 #10:1 #14:1 #15:11
+#8: hoangmin_genetic 3 FAULTS (#7) MEAN 1.33 SD 1.25 / 10 FAILURES (#12) MEAN 3.33 SD 4.03 #10:1 #14:1 #15:8
+#9: COVERTESTER 3 FAULTS (#8) MEAN 1.33 SD 1.25 / 8 FAILURES (#13) MEAN 2.67 SD 2.49 #11:1 #14:2 #15:5
+#10: alghamha_PROP 2 FAULTS (#12) MEAN 1.33 SD 0.47 / 12 FAILURES (#11) MEAN 4.0 SD 2.16 #7:1 #15:11
+#11: chenk4_2phaseBFS 1 FAULTS (#14) MEAN 1.0 SD 0.0 / 13 FAILURES (#9) MEAN 4.33 SD 4.71 #15:13
+#12: zhangh7_MRTBFS 1 FAULTS (#15) MEAN 1.0 SD 0.0 / 15 FAILURES (#8) MEAN 5.0 SD 2.94 #15:15
+#13: xujing_feedback 2 FAULTS (#10) MEAN 1.0 SD 0.82 / 5 FAILURES (#14) MEAN 1.67 SD 1.25 #10:1 #15:4
+#14: zhouzh_genetic 2 FAULTS (#11) MEAN 1.0 SD 0.0 / 4 FAILURES (#15) MEAN 1.33 SD 0.47 #12:1 #15:3
+#15: nelsonni_genetic 1 FAULTS (#17) MEAN 1.0 SD 0.0 / 3 FAILURES (#16) MEAN 1.0 SD 0.0 #15:3
+#16: panju_sparseBFS 1 FAULTS (#19) MEAN 1.0 SD 0.0 / 25 FAILURES (#2) MEAN 8.33 SD 2.49 #15:25
+  FAILURES RANK-SUM STATISTICALLY SIGNIFICANTLY BETTER THAN xujing_feedback (#13) p-value = 0.0495346134356
+#17: hexu_genetic 1 FAULTS (#16) MEAN 0.67 SD 0.47 / 2 FAILURES (#20) MEAN 0.67 SD 0.47 #15:2
+#18: zhengxu_poolBased 1 FAULTS (#20) MEAN 0.67 SD 0.47 / 3 FAILURES (#17) MEAN 1.0 SD 0.82 #15:3
+#19: chenzeh_BFSmutation 2 FAULTS (#13) MEAN 0.67 SD 0.94 / 3 FAILURES (#18) MEAN 1.0 SD 1.41 #12:1 #15:2
+#20: liuh2_oneShotBelowMeanPool 1 FAULTS (#21) MEAN 0.67 SD 0.47 / 3 FAILURES (#19) MEAN 1.0 SD 0.82 #15:3
+#21: alizades_mutatenewcover 1 FAULTS (#22) MEAN 0.67 SD 0.47 / 2 FAILURES (#22) MEAN 0.67 SD 0.47 #15:2
+#22: zhaozixu_feedback 1 FAULTS (#18) MEAN 0.33 SD 0.47 / 2 FAILURES (#21) MEAN 0.67 SD 0.94 #13:2
+**********************************************************************
+KENDALL TAU CORRELATIONS:
+TOTAL FAULTS VS. TOTAL BRANCHES
+KendalltauResult(correlation=0.63714717350908734, pvalue=3.3218589165313371e-05)
+TOTAL FAULTS VS. TOTAL FAILURES
+KendalltauResult(correlation=0.59942333243037504, pvalue=9.4429484090795905e-05)
+TOTAL FAULTS VS. MEAN FAULTS
+KendalltauResult(correlation=0.813394112882877, pvalue=1.1693522495320568e-07)
+TOTAL FAULTS VS. MEAN FAILURES
+KendalltauResult(correlation=0.59942333243037504, pvalue=9.4429484090795905e-05)
+TOTAL FAULTS VS. MEAN BRANCHES
+KendalltauResult(correlation=0.62741973574558974, pvalue=4.3729319757672862e-05)
+TOTAL BRANCHES VS. MEAN BRANCHES
+KendalltauResult(correlation=0.75757575757575779, pvalue=8.0299725689964055e-07)
+MEAN FAULTS VS. MEAN BRANCHES
+KendalltauResult(correlation=0.65435751431611577, pvalue=2.0233113391567899e-05)
+MEAN FAULTS VS. MEAN FAILURES
+KendalltauResult(correlation=0.7149425959887904, pvalue=3.2094854948143176e-06)
+MEAN FAILURES VS. MEAN BRANCHES
+KendalltauResult(correlation=0.46683268113889298, pvalue=0.0023593630366472908)
+TOTAL FAILURES VS. TOTAL BRANCHES
+KendalltauResult(correlation=0.41348037472301952, pvalue=0.0070749415822713478)
+TOTAL FAILURES VS. MEAN BRANCHES
+KendalltauResult(correlation=0.46683268113889298, pvalue=0.0023593630366472908)
