@@ -74,7 +74,7 @@ passPool = []
 passPool.append(sut.state())
 faultPool = []
 
-b = 0
+filenum = 0
 start = time.time()
 while time.time() - start < args['timeout']:
     sut.restart()
@@ -99,6 +99,10 @@ while time.time() - start < args['timeout']:
         
         if not safe or not prop:
             faultPool.append(sut.state())
+            if args['faults']:
+                filename = 'failure'+str(filenum)+'.test'
+                sut.saveTest(sut.test(), filename)
+            filenum += 1
             break
         
         if (time.time() - start) >= args['timeout']:
@@ -134,9 +138,9 @@ print"##########################  TEST REPORT  ##########################"
 print "TEST DURATION:", duration
 if args['faults']:
     print len(faultPool), "FAILED"
-    if len(faultPool) > 0:
-        handleFailure(sut, faultPool)
-        print "OUTPUT TEST REPORT"
+    #if len(faultPool) > 0:
+    #    handleFailure(sut, faultPool)
+    #    print "OUTPUT TEST REPORT"
     
 if args['cover']:
     sut.internalReport()
